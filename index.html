@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="ink" data-season="spring">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>具身山海志 · Embodied Atlas</title>
+<meta name="description" content="具身智能行业资料库：公司、研究机构、模型、基准榜单、岗位与行业动态，每条附出处和核验日期。">
+<link rel="canonical" href="https://fbddcz.github.io/Embodied-Shanhai-Atlas/index.html">
+<meta name="atlas-fp" content="3e9f49-1dfa79">
+<meta name="author" content="具身山海志 · Embodied Atlas">
+<meta property="og:url" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/index.html">
+<meta name="twitter:url" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/index.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"具身山海志 · Embodied Atlas","description":"具身智能行业资料库：公司、研究机构、模型、基准榜单、岗位与行业动态，每条附出处和核验日期。","url":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/index.html","inLanguage":"zh-CN","dateModified":"2026-11-16","isPartOf":{"@type":"WebSite","name":"具身山海志 · Embodied Atlas","url":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/index.html","inLanguage":"zh-CN"},"creator":{"@type":"Person","name":"具身山海志","url":"https://github.com/FBddcz"},"copyrightHolder":{"@type":"Person","name":"具身山海志","url":"https://github.com/FBddcz"},"copyrightYear":2026,"license":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/copyright.html","citation":"具身山海志（Embodied Atlas）· 核验 2026-11-16 · https://fbddcz.github.io/Embodied-Shanhai-Atlas/index.html"}</script>
+<meta name="theme-color" content="#f2e6ce" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1423" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.svg">
+<meta property="og:site_name" content="具身山海志">
+<meta property="og:title" content="具身山海志 · Embodied Atlas">
+<meta property="og:description" content="具身智能行业资料库：公司、研究机构、模型、基准榜单、岗位与行业动态，每条附出处和核验日期。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="license" href="copyright.html">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+(function(){
+  var d=document.documentElement;
+  try{d.dataset.theme=localStorage.getItem('atlas-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'ink');}catch(e){d.dataset.theme='ink';}
+  // 季候与时辰：四时配色、山海图的天候都从这里取
+  var m=new Date().getMonth()+1;
+  d.dataset.season = (m>=3&&m<=5)?'spring':(m>=6&&m<=8)?'summer':(m>=9&&m<=11)?'autumn':'winter';
+  var h=new Date().getHours();
+  d.dataset.hour = h<5?'night':h<8?'dawn':h<11?'morning':h<16?'day':h<19?'dusk':'night';
+  var XDOC='CSSViewTransitionRule' in window;
+  d.classList.add(XDOC?'vt-x':'vt-fallback');
+  if(!XDOC){try{if(sessionStorage.getItem('veil')){sessionStorage.removeItem('veil');d.classList.add('veil-pending');}}catch(e){}return;}
+  var file=function(p){return p.split('/').pop()||'index.html';};
+  var seen=function(path){
+    var el=document.querySelector('[data-list] a[href$="'+file(path)+'"] .plate');
+    if(!el)return null;
+    el.style.viewTransitionName='entity-seal';
+    return el;
+  };
+  addEventListener('pageswap',function(e){
+    if(!e.viewTransition||!e.activation)return;
+    try{sessionStorage.setItem('vt-from',location.pathname);}catch(err){}
+    var el=seen(new URL(e.activation.entry.url).pathname);
+    if(el)e.viewTransition.finished.finally(function(){el.style.viewTransitionName='';});
+  });
+  addEventListener('pagereveal',function(e){
+    if(!e.viewTransition)return;
+    var nt=(window.navigation&&navigation.activation&&navigation.activation.navigationType)||(performance.getEntriesByType('navigation')[0]||{}).type;
+    var back=nt==='traverse'||nt==='back_forward';
+    e.viewTransition.types.add(back?'back':'ink');
+    if(back){
+      var prev='';try{prev=sessionStorage.getItem('vt-from')||'';}catch(err){}
+      if(prev)seen(prev);
+    }
+  });
+})();
+</script>
+</head>
+<body data-page="home">
+<a class="skip" href="#main">跳到正文</a>
+<div class="atmo" aria-hidden="true"><video class="atmo-video" muted loop playsinline disablepictureinpicture preload="none"></video><span class="atmo-season"></span><span class="atmo-hour"></span><span class="atmo-veil"></span><span class="atmo-tint"></span></div>
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="index.html" aria-label="具身山海志 · 返回首页">
+    <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55" stroke-dasharray="86 6" transform="rotate(-24 20 20)"/>
+  <path d="M7.5 26.5 14 15.6l4.4 7 3.5-5.6 10.6 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6.4 30.2c2.4-1.5 3.6-.2 5.6-.9 2-.7 3.2-1.0 5.2-.2 2 .8 3.4.3 5.3-.4 2-.7 3.3-.1 5.4.6 1.8.6 3.4.2 5.4-.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28.6" cy="12.4" r="2.6" fill="#c21f30"/>
+</svg>
+    <span class="brand-word"><span class="brand-cn">具身山海志</span><span class="brand-en">Embodied Atlas</span></span>
+  </a>
+  <nav class="nav" aria-label="主导航"><a href="world.html" class="nav-world" title="山海大世界 · 总纲">总览</a><a href="companies.html" data-zone="company" title="人间 · 诸司都邑">公司</a><a href="labs.html" data-zone="lab" title="学宫 · 讲学著述">机构</a><a href="models.html" data-zone="model" title="灵物 · 山海异兽">模型</a><a href="leaderboard.html" data-zone="benchmark" title="碑林 · 刻石记分">榜单</a><a href="jobs.html" data-zone="job" title="招贤 · 悬榜求士">岗位</a><a href="resources.html" data-zone="resource" title="藏经 · 典籍器用">资源</a><a href="news.html" data-zone="news" title="驿路 · 驿报存录">动态</a><a href="atlas.html" title="七域一图">山海图</a></nav>
+  <div class="header-tools">
+    <button class="tool tool-search" data-open-search aria-label="搜索，快捷键 Command K">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <span class="ph">搜索公司、模型、论文</span><span class="kbd">⌘K</span>
+    </button>
+    <a class="tool tool-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer" aria-label="到 GitHub 给具身山海志点 Star" title="到 GitHub 点 Star">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.16l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg><span class="gs-t">Star</span><span class="gs-n" data-gh-count hidden></span>
+    </a>
+    <a class="tool tool-follow" href="following.html" aria-label="我的关注" title="我的关注">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+    </a>
+    <button class="tool" id="themeBtn" aria-label="切换昼夜" title="切换昼夜">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>
+    </button>
+    <button class="tool menu-btn" id="menuBtn" aria-label="打开七卷目录" aria-expanded="false" aria-controls="toc">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+<main id="main" data-fp="3e9f49-1dfa79"><section class="mast">
+  <div class="mast-scene" aria-hidden="true">
+    <div class="layer sky"></div>
+    <div class="layer art back"><img src="assets/paintings/kunyu-1400.jpg" alt="" fetchpriority="low" decoding="async"></div>
+    <div class="layer art"><img src="assets/paintings/mast-1600.jpg" alt="" fetchpriority="high" decoding="async"></div>
+    <div class="mist"></div><div class="mist b"></div>
+    <video class="mast-cloud" data-theme-video muted loop playsinline disablepictureinpicture preload="none" aria-hidden="true"></video>
+    <div class="mast-season" aria-hidden="true"></div>
+    <canvas class="mast-weather" aria-hidden="true"></canvas>
+    <div class="veil"></div>
+  </div>
+  <div class="layout"><div class="mast-inner">
+    <div class="mast-eyebrow rise" style="--i:0">卷一 · 山海图志</div>
+    <h1 class="mast-title"><span class="ch" style="--i:0">具</span><span class="ch" style="--i:1">身</span><span class="ch" style="--i:2">山</span><span class="ch" style="--i:3">海</span><span class="ch" style="--i:4">志</span></h1>
+    <div class="mast-line rise" style="--i:4">
+      <span class="seal">志</span>
+      <blockquote class="mast-quote"><span class="ch" style="--i:5">多</span><span class="ch" style="--i:6">闻</span><span class="ch" style="--i:7">阙</span><span class="ch" style="--i:8">疑</span>　<span class="ch" style="--i:10">慎</span><span class="ch" style="--i:11">言</span><span class="ch" style="--i:12">其</span><span class="ch" style="--i:13">余</span><cite>《论语 · 为政》</cite></blockquote>
+    </div>
+    <p class="mast-lede rise" style="--i:5">具身之事，散于百家。今分七卷而志之，所录皆注出处，未可考者阙之。</p>
+    <div class="mast-acts rise" style="--i:6">
+      <a class="btn btn-solid" href="atlas.html">打开山海图</a>
+      <a class="btn" href="companies.html">从公司看起</a>
+      <a class="link-arrow" href="world.html">总览</a>
+    </div>
+  </div></div>
+  <span class="mast-scroll" aria-hidden="true">七卷</span>
+</section>
+
+<section class="band layout"><div>
+  <div class="volumes">
+    <a class="volume-row" href="companies.html" data-zone="company">
+      <span class="vno">壹</span>
+      <span><h3>人间<small>公司</small></h3><span class="vquote">会社林立，城郭相望，一司一邑，各载其事。</span></span>
+      <span class="vcount">154<small>条</small></span>
+    </a><a class="volume-row" href="labs.html" data-zone="lab">
+      <span class="vno">贰</span>
+      <span><h3>学宫<small>机构</small></h3><span class="vquote">山高水长，讲席所在，人物与著作各系其名。</span></span>
+      <span class="vcount">60<small>条</small></span>
+    </a><a class="volume-row" href="models.html" data-zone="model">
+      <span class="vno">叁</span>
+      <span><h3>灵物<small>模型</small></h3><span class="vquote">有其状，有其名，有其能，录其可见之数与未见之数。</span></span>
+      <span class="vcount">91<small>条</small></span>
+    </a><a class="volume-row" href="leaderboard.html" data-zone="benchmark">
+      <span class="vno">肆</span>
+      <span><h3>碑林<small>榜单</small></h3><span class="vquote">石上刻名，名下刻分；分有出处，方可刻石。</span></span>
+      <span class="vcount">33<small>条</small></span>
+    </a><a class="volume-row" href="jobs.html" data-zone="job">
+      <span class="vno">伍</span>
+      <span><h3>招贤<small>岗位</small></h3><span class="vquote">司求其人，录其方向、其地、其期，投书有门。</span></span>
+      <span class="vcount">57<small>条</small></span>
+    </a><a class="volume-row" href="resources.html" data-zone="resource">
+      <span class="vno">陆</span>
+      <span><h3>藏经<small>资源</small></h3><span class="vquote">自本体至部署，自数据至评测，一器一册，皆注所出。</span></span>
+      <span class="vcount">116<small>条</small></span>
+    </a><a class="volume-row" href="news.html" data-zone="news">
+      <span class="vno">柒</span>
+      <span><h3>驿路<small>动态</small></h3><span class="vquote">自六月讫十一月，驿传诸事，各附原文所出。</span></span>
+      <span class="vcount">95<small>条</small></span>
+    </a>
+  </div>
+</div></section>
+
+<section class="band layout"><div>
+  <div class="sec-head"><span class="sec-no">壹</span><span class="sec-title">本期</span><span class="rule"></span><a class="sec-more" href="news.html">全部动态 →</a></div>
+  <div class="front-grid">
+    <div>
+      <a class="news-item" id="n-antlingbo-final-2026-11-16" href="https://k.sina.cn/article_5952915705_162d248f906703th4c.html" target="_blank" rel="noopener noreferrer">
+  <span class="d">11·16</span>
+  
+  <span><h3>蚂蚁灵波具身大模型挑战赛决赛：TARS 战队 82.5 分获一等奖</h3><p>15 支队伍基于 LingBot-VLA 2.0 在统一真机上比赛 48 小时；TARS 队员来自福田实验室、西北工业大学、普渡机器人和天津大学，EVA、SST 获二等奖。</p><span class="meta"><span>上观新闻（新浪转载）</span><span>赛事</span></span></span>
+</a>
+      <a class="news-item" id="n-huawei-cloudrobo-wm12-2026-11-16" href="https://k.sina.cn/article_5953740931_162dee083067045pf8.html" target="_blank" rel="noopener noreferrer">
+  <span class="d">11·16</span>
+  
+  <span><h3>华为云发布具身世界模型 CloudRobo-WM1.2，计划 11 月 30 日开源</h3><p>华为云称该模型在 RoboTwin 2.0、LIBERO Pro 2.0 排名第一，未给分数；11 月 30 日开放权重、推理与后训练代码，预训练经验只对部分伙伴开放。</p><span class="meta"><span>网易科技（新浪转载）</span><span>发布</span></span></span>
+</a><a class="news-item" id="n-lg-kiria-humanoid-safety-2026-11-16" href="https://www.lge.co.kr/story/newsroom/236241" target="_blank" rel="noopener noreferrer">
+  <span class="d">11·16</span>
+  
+  <span><h3>LG 电子与韩国机器人产业振兴院签约，共建人形机器人安全评价体系</h3><p>双方 11 月 13 日签署 MOU，LG 参与振兴院人形机器人安全认证中心评价系统建设与国际、国家标准制定，CLOiD 等机型将申请韩国安全试点认证。</p><span class="meta"><span>LG 电子新闻室</span><span>合作</span></span></span>
+</a><a class="news-item" id="n-robotwin-cloudrobo-wm-2026-11-15" href="https://robotwin-platform.github.io/leaderboard" target="_blank" rel="noopener noreferrer">
+  <span class="d">11·15</span>
+  
+  <span><h3>CloudRobo-WM 以均值 88.98 列 RoboTwin 2.0 官方榜第一</h3><p>官方榜 11 月 15 日收录，cotrain 设置 easy 95.28%、hard 82.68%；11 月 14 日收录的 Awomo-0.6 均值 86.47 列第二。</p><span class="meta"><span>RoboTwin 官方榜单</span><span>榜单</span><span>RoboTwin 2.0</span></span></span>
+</a><a class="news-item" id="n-weijian-round5-2026-11-15" href="https://news.qq.com/rain/a/20261115A08BJ500" target="_blank" rel="noopener noreferrer">
+  <span class="d">11·15</span>
+  
+  <span><h3>建筑机器人公司蔚建科技完成超亿元第五轮融资，财通资本投资</h3><p>蔚建科技做抹灰、喷涂等建筑施工机器人，本轮资金用于生产制造、海外市场和具身智能研发；公司称 2026 年订单预计超 1 亿元。</p><span class="meta"><span>36 氪（腾讯新闻）</span><span>融资</span></span></span>
+</a><a class="news-item" id="n-openai-robotics-2026-11-13" href="https://fortune.com/2026/11/13/openai-disbands-robotics-team-as-its-general-models-start-running-robots/" target="_blank" rel="noopener noreferrer">
+  <span class="d">11·13</span>
+  
+  <span><h3>OpenAI 解散独立机器人团队，人员并入研究与应用部门</h3><p>据《财富》独家报道，OpenAI 解散独立机器人团队，研究组并入 Mark Chen 的研究部门，应用与硬件组转入 Greg Brockman 的应用部门。</p><span class="meta"><span>Fortune</span><span>人事</span></span></span>
+</a><a class="news-item" id="n-asus-gallop-2026-11-13" href="https://press.asus.com/blog/factory-proven-physical-ai-asus-gallop-humanoid-robot/" target="_blank" rel="noopener noreferrer">
+  <span class="d">11·13</span>
+  
+  <span><h3>华硕发布人形机器人 Gallop，在自家工厂学习包装主板配件</h3><p>华硕称 Gallop 为固定底座双臂机型，用单台 Jetson AGX Thor，目标 20 秒装好 15 件配件、成功率 99.5%；2027 年客户试点，2028 年下半年上市。</p><span class="meta"><span>华硕官方新闻室</span><span>发布</span></span></span>
+</a>
+    </div>
+    <aside>
+      <div class="side-block">
+        <h4>碑林新刻</h4>
+        <a class="beat" href="lb-robotwin.html#row-cloudrobo-wm"><span class="beat-t">CloudRobo-WM 以 88.98 列第一</span><span class="beat-s">RoboTwin 2.0 · RoboTwin 2.0 · 官方榜 · 原第一 GO-3 Nano Preview 85.01</span><span class="beat-d">首位</span></a><a class="beat" href="lb-robotwin.html#row-awomo-0-6"><span class="beat-t">Awomo-0.6 以 86.47 列第二</span><span class="beat-s">RoboTwin 2.0 · RoboTwin 2.0 · 官方榜</span><span class="beat-d">新</span></a><a class="beat" href="lb-libero.html"><span class="beat-t">补入 17 条四 suite 平均成功率</span><span class="beat-s">LIBERO · LIBERO · 自报</span><span class="beat-d">新</span></a><a class="beat" href="lb-robocasa.html#row-long-wam"><span class="beat-t">Long-WAM 以 19.2 s 上下文 78.7%，列 GR1 千演示组第一</span><span class="beat-s">RoboCasa · RoboCasa GR1 · 自报</span><span class="beat-d">新</span></a><a class="beat" href="lb-worldarena.html#row-worldincept"><span class="beat-t">WorldIncept 以 72.33 列 2.0 Track1 第一</span><span class="beat-s">WorldArena · BWM-Turbo 71.49 第二</span><span class="beat-d">新</span></a>
+      </div>
+      <div class="side-block">
+        <h4>会期</h4>
+        <a class="outlook-row" href="https://www.ishaanxi.com/c/2026-11-11/3848415.shtml" target="_blank" rel="noopener noreferrer"><span class="d">11·16</span><span><span class="t">蚂蚁灵波具身大模型挑战赛决赛</span><span class="s">15 支战队、48 小时线下真机决赛；初赛共 1855 支队伍参赛。</span></span></a><a class="outlook-row" href="https://www.chtf.com/" target="_blank" rel="noopener noreferrer"><span class="d">11·26</span><span><span class="t">第二十八届高交会</span><span class="s">深圳国际会展中心（宝安），11 月 26 日开幕；展区含机器人产业链、人工智能产业链。</span></span></a><a class="outlook-row" href="https://roboticsconference.org/" target="_blank" rel="noopener noreferrer"><span class="d">12·04</span><span><span class="t">RSS 2027 扩展摘要截止</span><span class="s">扩展摘要 AoE 23:59 截止；2027 年 2 月 5 日公布第一阶段结果，完整论文 4 月 16 日截止。</span></span></a><a class="outlook-row" href="https://neurips.cc/" target="_blank" rel="noopener noreferrer"><span class="d">12·06</span><span><span class="t">NeurIPS 2026</span><span class="s">悉尼主会场 12 月 6–12 日；亚特兰大、巴黎两个分会场 12 月 9–13 日。</span></span></a>
+        <a class="side-more" href="events.html">全部会期与投稿日历 →</a>
+      </div>
+      <div class="side-block">
+        <h4>悬榜</h4>
+        <a class="hire" href="job-lightwheel2027.html"><span class="hire-name">Robotics RL Environment &amp; Benchmark Infrastructure Engineer【校招】</span><span class="hire-meta">光轮智能 · 上海 / 北京</span><span class="hire-pay">未公开</span></a><a class="hire" href="job-figure-helix.html"><span class="hire-name">Helix AI Engineer, Perception</span><span class="hire-meta">Figure AI · San Jose</span><span class="hire-pay">$200K–$400K/年（基本薪资）</span></a><a class="hire" href="job-figure-reliability.html"><span class="hire-name">PCBA Reliability Engineer - All Levels</span><span class="hire-meta">Figure AI · San Jose</span><span class="hire-pay">$120K–$250K/年（基本薪资）</span></a><a class="hire" href="job-boston-atlas.html"><span class="hire-name">Research Scientist · Atlas VLA 模型</span><span class="hire-meta">Boston Dynamics · Waltham</span><span class="hire-pay">面议</span></a>
+        <a class="side-more" href="jobs.html">全部岗位 →</a>
+      </div>
+    </aside>
+  </div>
+</div></section>
+
+<section class="band layout"><div>
+  <div class="feature">
+    <a class="plate-art" href="atlas.html" data-zone="news" style="aspect-ratio:16/10;display:block">
+      <img src="assets/paintings/kunyu-1400.jpg" alt="《坤舆万国全图》局部" loading="lazy" decoding="async" width="1400" height="629">
+      <span class="cap">山海图 · 七域一图 · 拖动旋转，滚轮缩放</span>
+    </a>
+    <div>
+      <span class="vol-no" data-zone="news">图</span>
+      <h3 style="margin-top:14px">一张图看遍七域</h3>
+      <p>七域分据海上诸岛：人间在中央大陆，学宫居西北高峰，灵物在南面的火山岛，碑林是东边的石林，招贤在西南平原，藏经在东北崖壁，驿路绕岛航行。山道与航道来自条目里登记的关系。</p>
+      <a class="btn" href="atlas.html" style="margin-top:22px">打开山海图</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="band layout"><div>
+  <div class="sec-head"><span class="sec-no">贰</span><span class="sec-title">具身全链路</span><span class="rule"></span><a class="sec-more" href="resources.html">按环节看资源 →</a></div>
+  <p class="chain-line" style="margin-top:0">自造器至成器，凡十一关。每关列可用之器与当核之数，循序而入。</p>
+  <nav class="chain" aria-label="具身全链路"><a href="resources.html#stage-1"><span class="no">1</span><span class="nm">本体硬件</span></a><a href="resources.html#stage-2"><span class="no">2</span><span class="nm">传感</span></a><a href="resources.html#stage-3"><span class="no">3</span><span class="nm">遥操作</span></a><a href="resources.html#stage-4"><span class="no">4</span><span class="nm">数据</span></a><a href="resources.html#stage-5"><span class="no">5</span><span class="nm">仿真</span></a><a href="resources.html#stage-6"><span class="no">6</span><span class="nm">中间件</span></a><a href="resources.html#stage-7"><span class="no">7</span><span class="nm">算法</span></a><a href="resources.html#stage-8"><span class="no">8</span><span class="nm">训练</span></a><a href="resources.html#stage-9"><span class="no">9</span><span class="nm">部署</span></a><a href="resources.html#stage-10"><span class="no">10</span><span class="nm">评测</span></a><a href="resources.html#stage-11"><span class="no">11</span><span class="nm">学习</span></a></nav>
+</div></section>
+
+<section class="band layout"><div>
+  <div class="sec-head"><span class="sec-no">叁</span><span class="sec-title">藏经</span><span class="rule"></span><a class="sec-more" href="resources.html">全部 116 项 →</a></div>
+  <div class="res-grid">
+    <a class="res-card" href="resource-vlahandbook.html" data-zone="resource"><h4>VLA-Handbook<span class="stars">sou350121</span></h4><p class="one">工程实战导向的 VLA 知识库：理论、部署、公司实录题库、社区踩坑。</p><p class="how">工程 · 面试 · VLA</p></a><a class="res-card" href="resource-guide.html" data-zone="resource"><h4>Embodied-AI-Guide<span class="stars">TianxingChen / Lumina</span></h4><p class="one">GitHub 17k 星的中文具身智能百科，附一周动手入门教程。</p><p class="how">入门 · 百科</p></a><a class="res-card" href="resource-notebooks.html" data-zone="resource"><h4>Robotics_Notebooks<span class="stars">ImChong</span></h4><p class="one">人形机器人技术栈知识图谱与纵深路线。</p><p class="how">知识图谱 · 运控</p></a><a class="res-card" href="resource-qa.html" data-zone="resource"><h4>embodied-interview-qa<span class="stars">WinstonJQ</span></h4><p class="one">公开面经选题的具身面试题库；频次分层与手撕题。</p><p class="how">面试 · 题库</p></a><a class="res-card" href="resource-hmi.html" data-zone="resource"><h4>humanoid-motion-intelligence<span class="stars">flyingGH</span></h4><p class="one">人形运动智能的论文、项目、产业与求职知识库，内置供 AI 助手检索的说明文件。</p><p class="how">运控 · 产业</p></a>
+  </div>
+</div></section>
+
+<section class="band layout"><div>
+  <div class="sec-head"><span class="sec-no">肆</span><span class="sec-title">论文索引</span><span class="rule"></span><a class="sec-more" href="papers.html">全部 10,000 篇 →</a></div>
+  <div class="paper-list">
+    <a class="paper-row" href="paper-2611.18562.html"><span class="d">26.11.13</span><span><h3>Training Reasoning Models in Simulation to Natively Use Real Robots</h3><span class="au">Jiaming Tang、Zhuoyang Zhang、Junxian Guo 等 11 人</span></span><span class="go">arXiv:2611.18562</span></a><a class="paper-row" href="paper-2611.18546.html"><span class="d">26.11.13</span><span><h3>Modeling the Frictional Contact of Continuum Robots with Environments through Linear Complementarity Problem</h3><span class="au">Jia Shen、Junhyoung Ha、Yue Chen</span></span><span class="go">arXiv:2611.18546</span></a><a class="paper-row" href="paper-2611.18505.html"><span class="d">26.11.13</span><span><h3>Disturbance-Aware Informative Planning in Spatiotemporal Environments</h3><span class="au">Kaleb Ben Naveed、Haejoon Lee、Anouck Girard 等 4 人</span></span><span class="go">arXiv:2611.18505</span></a><a class="paper-row" href="paper-2611.18501.html"><span class="d">26.11.13</span><span><h3>In Situ Monitoring and Predictive Modeling of Harmful Algal Blooms with Autonomous Surface Vehicles</h3><span class="au">Nenyi Kweku Nkensen Dadson、Jean Paul Gonzalez、Daniel P. Arabie 等 6 人</span></span><span class="go">arXiv:2611.18501</span></a><a class="paper-row" href="paper-2611.18496.html"><span class="d">26.11.13</span><span><h3>Toward Resilient Self-Driving Laboratories through Telerobotic Interventions</h3><span class="au">Ziheng Wu、Adrian Vecina Tercero、Andre A. Fatehi 等 9 人</span></span><span class="go">arXiv:2611.18496</span></a>
+  </div>
+</div></section>
+</main>
+<span id="main-end"></span>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="foot-brand">
+      <a class="foot-mark" href="index.html" aria-label="具身山海志 · 返回首页"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55" stroke-dasharray="86 6" transform="rotate(-24 20 20)"/>
+  <path d="M7.5 26.5 14 15.6l4.4 7 3.5-5.6 10.6 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6.4 30.2c2.4-1.5 3.6-.2 5.6-.9 2-.7 3.2-1.0 5.2-.2 2 .8 3.4.3 5.3-.4 2-.7 3.3-.1 5.4.6 1.8.6 3.4.2 5.4-.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28.6" cy="12.4" r="2.6" fill="#c21f30"/>
+</svg><span class="foot-word"><b>具身山海志</b><small>Embodied Atlas</small></span></a>
+      <p class="foot-motto">多闻阙疑　慎言其余</p>
+      <a class="btn foot-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.16l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg>到 GitHub 点 Star</a>
+    </div>
+    <nav class="set" aria-label="页脚导航">
+      <div class="set-col"><b>七卷</b><a href="companies.html">公司</a><a href="labs.html">机构</a><a href="models.html">模型</a><a href="leaderboard.html">榜单</a><a href="jobs.html">岗位</a><a href="resources.html">资源</a><a href="news.html">动态</a></div>
+      <div class="set-col"><b>别册</b><a href="world.html">总览</a><a href="atlas.html">山海图</a><a href="compare.html">选型对比</a><a href="papers.html">论文索引</a><a href="events.html">会期与投稿</a></div>
+      <div class="set-col"><b>卷末</b><a href="about.html">关于</a><a href="legend.html">凡例</a><a href="credits.html">素材与许可</a><a href="copyright.html">版权</a></div>
+      <div class="set-col"><b>往来</b><button type="button" class="footer-btn" data-open-contact>合作联系</button><a href="coop.html">合作方式</a><a href="news.html#subscribe">订阅更新</a></div>
+    </nav>
+    <div class="foot-base">
+      <span class="src-line">源：<a href="https://fbddcz.github.io/Embodied-Shanhai-Atlas/index.html">具身山海志</a> · <a href="copyright.html">版权与许可</a> · 核验 2026-11-16</span>
+      <span class="colophon">© 2026 具身山海志 · <span data-world-label>秋·小雪</span></span>
+      <button class="clock-btn" id="worldClock" type="button" aria-haspopup="true" aria-expanded="false" title="四时天候：跟随真实时间，或把一年浓缩成一天">
+        <span class="cc-dot" aria-hidden="true"></span><span data-clock-mode>随天时</span>
+      </button>
+      <div class="clock-menu" id="worldClockMenu" hidden>
+        <p class="clock-q">四时如何流转</p>
+        <button data-clock="real" type="button">跟随真实时间</button>
+        <button data-clock="cycle" type="button">一年浓缩成一日（每 24 小时一轮）</button>
+        <button data-clock="fast" type="button">一年浓缩成四分钟（演示用）</button>
+        <button data-clock="off" type="button">停在当前节令</button>
+        <p class="clock-now" data-world-label></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="toc" id="toc" role="dialog" aria-modal="true" aria-label="七卷目录">
+  <div class="toc-head"><span class="toc-title">七卷</span><button class="tool" id="tocClose" aria-label="关闭目录"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="toc-body"><div class="toc-list"><a class="toc-item" href="world.html"><span class="no">纲</span><span class="nm">总纲<small>总览</small></span><span class="ct">7宗</span></a><a class="toc-item" href="companies.html" data-zone="company"><span class="no">壹</span><span class="nm">人间<small>公司</small></span><span class="ct">154</span></a><a class="toc-item" href="labs.html" data-zone="lab"><span class="no">贰</span><span class="nm">学宫<small>机构</small></span><span class="ct">60</span></a><a class="toc-item" href="models.html" data-zone="model"><span class="no">叁</span><span class="nm">灵物<small>模型</small></span><span class="ct">91</span></a><a class="toc-item" href="leaderboard.html" data-zone="benchmark"><span class="no">肆</span><span class="nm">碑林<small>榜单</small></span><span class="ct">33</span></a><a class="toc-item" href="jobs.html" data-zone="job"><span class="no">伍</span><span class="nm">招贤<small>岗位</small></span><span class="ct">57</span></a><a class="toc-item" href="resources.html" data-zone="resource"><span class="no">陆</span><span class="nm">藏经<small>资源</small></span><span class="ct">116</span></a><a class="toc-item" href="news.html" data-zone="news"><span class="no">柒</span><span class="nm">驿路<small>动态</small></span><span class="ct">95</span></a><a class="toc-item" href="atlas.html"><span class="no">图</span><span class="nm">山海图<small>七域一图</small></span><span class="ct">606</span></a></div></div>
+  <div class="toc-foot"><a href="hardware.html">本体与传感</a><a href="compare.html">选型对比</a><a href="papers.html">论文索引</a><a href="events.html">会期与投稿</a><a href="following.html">我的关注</a><a href="legend.html">凡例</a><a href="about.html">关于</a><a class="toc-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer">★ 到 GitHub 点 Star</a></div>
+</div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="搜索">
+  <div class="palette-panel">
+    <div class="palette-input">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <input id="paletteInput" type="search" placeholder="寻一司、一器、一碑、一文" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="paletteResults" aria-autocomplete="list">
+      <span class="palette-hint">ESC</span>
+    </div>
+    <div class="palette-results" id="paletteResults" role="listbox" aria-label="搜索结果"></div>
+  </div>
+</div>
+<div class="modal" id="claimModal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="claimTitle">
+    <div class="modal-head"><h3 id="claimTitle">认领与纠错</h3><button class="modal-close" type="button" data-close-modal aria-label="关闭">×</button></div>
+    <p class="modal-sub" id="claimTarget">写明要更正的内容，附可打开的来源。</p>
+    <form id="claimForm" data-issues="https://github.com/FBddcz/Embodied-Shanhai-Atlas">
+      <label class="field"><span>称呼或机构（可不填）</span><input name="name" autocomplete="off" placeholder="例如：某公司市场部"></label>
+      <label class="field"><span>要更正或补充的内容</span><textarea name="message" required rows="5" placeholder="哪一条事实、原文是什么、应改为什么。"></textarea></label>
+      <label class="field"><span>来源链接</span><input name="source" type="url" placeholder="https://"></label>
+      <div class="modal-actions"><button type="button" class="btn" data-copy-claim>复制</button><button type="submit" class="btn btn-solid">在 GitHub 提交</button></div>
+    </form>
+  </div>
+</div>
+<div class="modal" id="contactModal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal-head"><h3 id="contactTitle">合作联系</h3><button class="modal-close" type="button" data-close-contact aria-label="关闭">×</button></div>
+    <p class="modal-sub">合作、招聘、投稿或数据授权。可以填写在线表单，也可以扫码进群直接联系。</p>
+    <div class="contact-link"><a class="btn btn-solid" href="https://www.wjx.top/vm/mB7vmKF.aspx" target="_blank" rel="noopener noreferrer">填写在线表单 ↗</a><p class="modal-note">表单由问卷星托管，提交后维护者会收到通知。</p></div>
+    
+    <div class="contact-qr">
+      <img src="assets/contact/xhs-group-2.png" alt="小红书交流群二维码" width="132" height="132" loading="lazy" decoding="async">
+      <div class="contact-qr-text"><b>小红书交流群</b><p>具身 AI 交流实习群 2 · 扫码加入，直接在群里联系维护者。</p><p class="contact-qr-valid">此码 2026-12-14 前有效</p></div>
+    </div>
+    <form id="contactForm" hidden data-endpoint="" data-key="" data-email="" data-qr="1" data-mode="link">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+      
+      
+      <div class="field-row">
+        <label class="field"><span>称呼或机构</span><input name="name" required autocomplete="off" placeholder="张三 / 某公司"></label>
+        <label class="field"><span>来意</span><select name="intent"><option>合作</option><option>招聘</option><option>投稿</option><option>数据授权</option><option>其他</option></select></label>
+      </div>
+      <label class="field"><span>微信、邮箱或电话</span><input name="contact" required autocomplete="off"></label>
+      <label class="field"><span>想聊什么</span><textarea name="message" rows="4" required></textarea></label>
+      <label class="check"><input type="checkbox" name="consent" required><span>以上信息只用于回复，不作他用。</span></label>
+      <div class="modal-actions"><button type="button" class="btn" data-copy-contact>复制</button><button type="submit" class="btn btn-solid">复制这段文字</button></div>
+      <p class="modal-note" id="contactStatus"></p>
+    </form>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="title-card" aria-hidden="true"><b>具身山海志</b><small>Embodied Atlas</small></div>
+<script src="app.js" defer></script>
+
+
+<script src="mast-weather.js" defer></script>
+</body>
+</html>

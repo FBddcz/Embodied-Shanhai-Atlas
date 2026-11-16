@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+title: 具身山海志 · Embodied Atlas
+message: >-
+  引用本站时请注明「具身山海志 · Embodied Atlas」、原文链接与核验日期。
+  数据与图志采用 CC BY-NC-SA 4.0，代码与原创文字保留所有权利。
+type: dataset
+abstract: >-
+  一部仿《山海经》分区记物的具身智能产业志：收录公司、研究机构、模型、基准榜单、
+  论文索引、动态、活动、岗位、本体与传感硬件，共 789 条人工策展实体、33 个榜单家族
+  与 1,162 行成绩。每条注明出处与核验日期；榜单成绩按「官方榜 / 自报 / 平台复现 /
+  已撤榜」分别标注，撤榜保留记录。另有 arXiv cs.RO 一万篇自动索引，与人工策展明确区分。
+authors:
+  - alias: 具身山海志
+    name-particle: ""
+    website: "https://fbddcz.github.io/Embodied-Shanhai-Atlas/"
+version: "2026.11.15"
+date-released: 2026-11-15
+license:
+  - type: other
+    text: "代码与原创文字：保留所有权利；结构化数据与图志：CC BY-NC-SA 4.0"
+    url: "https://fbddcz.github.io/Embodied-Shanhai-Atlas/copyright.html"
+keywords:
+  - embodied AI
+  - robotics
+  - vision-language-action
+  - humanoid
+  - benchmark
+  - 具身智能
+repository-code: "https://fbddcz.github.io/Embodied-Shanhai-Atlas/"
+url: "https://fbddcz.github.io/Embodied-Shanhai-Atlas/"
+preferred-citation:
+  type: generic
+  title: 具身山海志 · Embodied Atlas
+  year: 2026
+  url: "https://fbddcz.github.io/Embodied-Shanhai-Atlas/"
+  publisher:
+    name: 具身山海志
+  notes: >-
+    引用条目时请附该条目页 URL 与页面标注的核验日期；榜单数据请注明家族名与抓取日期。

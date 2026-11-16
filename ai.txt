@@ -1,0 +1,43 @@
+# Text and Data Mining reservation · 具身山海志 (Embodied Atlas)
+# © 2026 具身山海志. Code and original prose: all rights reserved.
+# Structured data and Atlas artwork: CC BY-NC-SA 4.0 (attribution + non-commercial + share-alike).
+# https://fbddcz.github.io/Embodied-Shanhai-Atlas/copyright.html
+
+# ---- Generative-AI training: not permitted without written permission ----
+User-agent: GPTBot
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+User-agent: anthropic-ai
+Disallow: /
+User-agent: Bytespider
+Disallow: /
+User-agent: Applebot-Extended
+Disallow: /
+User-agent: meta-externalagent
+Disallow: /
+
+# ---- Search / answer engines: crawling and quoting allowed with attribution ----
+User-agent: PerplexityBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: *
+Allow: /
+
+# Required attribution when quoting or citing:
+#   具身山海志 · Embodied Atlas · <page URL> · 核验 YYYY-MM-DD
+# Preferred machine-readable entry: llms.txt  |  Citation: CITATION.cff
+# Facts may be reused after independent verification; the Atlas's curation
+# (structure, source lists, verification dates, benchmark status labels) may not
+# be reproduced wholesale without attribution under CC BY-NC-SA 4.0.

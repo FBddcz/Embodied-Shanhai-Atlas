@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="ink" data-season="spring">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Q-OIL: Optimistic Exploration in Learning from Human Interventions · arXiv:2611.08576</title>
+<meta name="description" content="Pranav Teegavarapu、Sriyash Poddar、Rico Qi 等 8 人. Q-OIL: Optimistic Exploration in Learning from Human Interventions. arXiv:2611.08576 (2026-11-05).">
+<link rel="canonical" href="https://fbddcz.github.io/Embodied-Shanhai-Atlas/paper-2611.08576.html">
+<meta name="atlas-fp" content="3e9f49-1dfa79">
+<meta name="author" content="具身山海志 · Embodied Atlas">
+<meta property="og:url" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/paper-2611.08576.html">
+<meta name="twitter:url" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/paper-2611.08576.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Q-OIL: Optimistic Exploration in Learning from Human Interventions · arXiv:2611.08576","description":"Pranav Teegavarapu、Sriyash Poddar、Rico Qi 等 8 人. Q-OIL: Optimistic Exploration in Learning from Human Interventions. arXiv:2611.08576 (2026-11-05).","url":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/paper-2611.08576.html","inLanguage":"zh-CN","dateModified":"2026-11-16","isPartOf":{"@type":"WebSite","name":"具身山海志 · Embodied Atlas","url":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/index.html","inLanguage":"zh-CN"},"creator":{"@type":"Person","name":"具身山海志","url":"https://github.com/FBddcz"},"copyrightHolder":{"@type":"Person","name":"具身山海志","url":"https://github.com/FBddcz"},"copyrightYear":2026,"license":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/copyright.html","citation":"具身山海志（Embodied Atlas）· 核验 2026-11-16 · https://fbddcz.github.io/Embodied-Shanhai-Atlas/paper-2611.08576.html"}</script>
+<meta name="theme-color" content="#f2e6ce" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1423" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.svg">
+<meta property="og:site_name" content="具身山海志">
+<meta property="og:title" content="Q-OIL: Optimistic Exploration in Learning from Human Interventions · arXiv:2611.08576">
+<meta property="og:description" content="Pranav Teegavarapu、Sriyash Poddar、Rico Qi 等 8 人. Q-OIL: Optimistic Exploration in Learning from Human Interventions. arXiv:2611.08576 (2026-11-05).">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="license" href="copyright.html">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+(function(){
+  var d=document.documentElement;
+  try{d.dataset.theme=localStorage.getItem('atlas-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'ink');}catch(e){d.dataset.theme='ink';}
+  // 季候与时辰：四时配色、山海图的天候都从这里取
+  var m=new Date().getMonth()+1;
+  d.dataset.season = (m>=3&&m<=5)?'spring':(m>=6&&m<=8)?'summer':(m>=9&&m<=11)?'autumn':'winter';
+  var h=new Date().getHours();
+  d.dataset.hour = h<5?'night':h<8?'dawn':h<11?'morning':h<16?'day':h<19?'dusk':'night';
+  var XDOC='CSSViewTransitionRule' in window;
+  d.classList.add(XDOC?'vt-x':'vt-fallback');
+  if(!XDOC){try{if(sessionStorage.getItem('veil')){sessionStorage.removeItem('veil');d.classList.add('veil-pending');}}catch(e){}return;}
+  var file=function(p){return p.split('/').pop()||'index.html';};
+  var seen=function(path){
+    var el=document.querySelector('[data-list] a[href$="'+file(path)+'"] .plate');
+    if(!el)return null;
+    el.style.viewTransitionName='entity-seal';
+    return el;
+  };
+  addEventListener('pageswap',function(e){
+    if(!e.viewTransition||!e.activation)return;
+    try{sessionStorage.setItem('vt-from',location.pathname);}catch(err){}
+    var el=seen(new URL(e.activation.entry.url).pathname);
+    if(el)e.viewTransition.finished.finally(function(){el.style.viewTransitionName='';});
+  });
+  addEventListener('pagereveal',function(e){
+    if(!e.viewTransition)return;
+    var nt=(window.navigation&&navigation.activation&&navigation.activation.navigationType)||(performance.getEntriesByType('navigation')[0]||{}).type;
+    var back=nt==='traverse'||nt==='back_forward';
+    e.viewTransition.types.add(back?'back':'ink');
+    if(back){
+      var prev='';try{prev=sessionStorage.getItem('vt-from')||'';}catch(err){}
+      if(prev)seen(prev);
+    }
+  });
+})();
+</script>
+</head>
+<body data-page="paper" data-zone="resource">
+<a class="skip" href="#main">跳到正文</a>
+<div class="atmo" aria-hidden="true"><video class="atmo-video" muted loop playsinline disablepictureinpicture preload="none"></video><span class="atmo-season"></span><span class="atmo-hour"></span><span class="atmo-veil"></span><span class="atmo-tint"></span></div>
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="index.html" aria-label="具身山海志 · 返回首页">
+    <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55" stroke-dasharray="86 6" transform="rotate(-24 20 20)"/>
+  <path d="M7.5 26.5 14 15.6l4.4 7 3.5-5.6 10.6 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6.4 30.2c2.4-1.5 3.6-.2 5.6-.9 2-.7 3.2-1.0 5.2-.2 2 .8 3.4.3 5.3-.4 2-.7 3.3-.1 5.4.6 1.8.6 3.4.2 5.4-.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28.6" cy="12.4" r="2.6" fill="#c21f30"/>
+</svg>
+    <span class="brand-word"><span class="brand-cn">具身山海志</span><span class="brand-en">Embodied Atlas</span></span>
+  </a>
+  <nav class="nav" aria-label="主导航"><a href="world.html" class="nav-world" title="山海大世界 · 总纲">总览</a><a href="companies.html" data-zone="company" title="人间 · 诸司都邑">公司</a><a href="labs.html" data-zone="lab" title="学宫 · 讲学著述">机构</a><a href="models.html" data-zone="model" title="灵物 · 山海异兽">模型</a><a href="leaderboard.html" data-zone="benchmark" title="碑林 · 刻石记分">榜单</a><a href="jobs.html" data-zone="job" title="招贤 · 悬榜求士">岗位</a><a href="resources.html" data-zone="resource" aria-current="page" title="藏经 · 典籍器用">资源</a><a href="news.html" data-zone="news" title="驿路 · 驿报存录">动态</a><a href="atlas.html" title="七域一图">山海图</a></nav>
+  <div class="header-tools">
+    <button class="tool tool-search" data-open-search aria-label="搜索，快捷键 Command K">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <span class="ph">搜索公司、模型、论文</span><span class="kbd">⌘K</span>
+    </button>
+    <a class="tool tool-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer" aria-label="到 GitHub 给具身山海志点 Star" title="到 GitHub 点 Star">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.16l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg><span class="gs-t">Star</span><span class="gs-n" data-gh-count hidden></span>
+    </a>
+    <a class="tool tool-follow" href="following.html" aria-label="我的关注" title="我的关注">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+    </a>
+    <button class="tool" id="themeBtn" aria-label="切换昼夜" title="切换昼夜">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>
+    </button>
+    <button class="tool menu-btn" id="menuBtn" aria-label="打开七卷目录" aria-expanded="false" aria-controls="toc">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+<main id="main" data-fp="3e9f49-1dfa79"><section class="layout"><div class="paper-head">
+  <nav class="crumb"><a href="index.html">首页</a><span>/</span><a href="papers.html">论文索引</a><span>/</span><span>2611.08576</span></nav>
+  <h1 style="margin-top:22px">Q-OIL: Optimistic Exploration in Learning from Human Interventions</h1>
+  <p class="zh-title">Q-OIL：从人类干预中学习的乐观探索</p>
+  <p class="au">Pranav Teegavarapu、Sriyash Poddar、Rico Qi、Cleah Winston、Krisha Khandelwal、Aykut Onyol、Natasha Jaques、Abhishek Gupta · arXiv:2611.08576 · 2026-11-05 · cs.RO</p>
+  <div class="codex-bar" style="margin-top:22px"><span class="badge">论文</span><span class="badge">自动收录 · 未精读</span><span class="spacer"></span><button class="btn" data-follow-id="paper:2611.08576" data-follow-name="Q-OIL: Optimistic Exploration in Learning from Human Interventions">关注</button><button class="btn btn-ghost" data-copy="Pranav Teegavarapu、Sriyash Poddar、Rico Qi 等 8 人. Q-OIL: Optimistic Exploration in Learning from Human Interventions. arXiv:2611.08576 (2026-11-05). https://arxiv.org/abs/2611.08576v1">复制引用</button><a class="btn" href="https://arxiv.org/pdf/2611.08576" target="_blank" rel="noopener noreferrer">PDF ↗</a><a class="btn btn-solid" href="https://arxiv.org/abs/2611.08576v1" target="_blank" rel="noopener noreferrer">arXiv 原文 ↗</a></div>
+  
+</div></section>
+<section class="layout"><div class="codex-body"><div class="folio">
+  <aside>
+    <div class="margin-note"><b>元数据</b><br>arXiv 2611.08576<br>提交 2026-11-05<br>更新 2026-11-05<br>分类 cs.RO / cs.AI<br>作者 8 人</div>
+    <div class="margin-note"><b>作者备注</b>Project website: https://weirdlabuw.github.io/qoil</div>
+    
+  </aside>
+  <div>
+    <section class="sec" style="margin-top:0"><div class="sec-head"><span class="sec-no">壹</span><span class="sec-title">摘要</span><span class="rule"></span></div>
+    <div class="prose"><p>当机器人部署在现实世界中时，它们不可避免地会犯错误。人类干预为改善他们的行为提供了宝贵的反馈，使他们能够在线适应新的场景。然而，研究人机循环机器人学习是很困难的：现实世界的实验缓慢且昂贵，因此大多数算法开发依赖于模拟人类模型。我们表明，常见的人类建模假设与真实的人们在实践中的干预方式并不相符。通过分析人类参与者的干预数据，我们发现人类倾向于在智能体进度停滞时进行干预，并且他们的纠正措施通常会受到影响。</p><p style="color:var(--text-3);font-size:var(--text-sm)">中文为机器翻译节选，以英文原文为准。</p></div>
+    <details style="margin-top:20px"><summary style="font-family:var(--f-sans);font-size:14px;color:var(--text-3);cursor:pointer">English abstract</summary><p class="prose" style="font-family:var(--f-lat);margin-top:12px">As robots are deployed in the real world, they will inevitably make mistakes. Human interventions provide valuable feedback for improving their behavior, enabling them to adapt online to new scenarios. However, studying human-in-the-loop robot learning is difficult: real-world experiments are slow and expensive, so most algorithm development relies on simulated human models. We show that common human modeling assumptions do not match how real people intervene in practice. Through analyzing intervention data from human participants, we find that humans tend to intervene when agent progress stalls, and that their corrective actions are often suboptimal. Motivated by these findings, we introduce a progress-based model of human intervention that achieves higher rank correlation with real-user algorithm rankings, enabling realistic algorithm benchmarking and development in simulation.…</p></details></section>
+    <section class="sec"><div class="sec-head"><span class="sec-no">贰</span><span class="sec-title">引用</span><span class="rule"></span></div><div class="prose" style="font-family:var(--f-lat);user-select:all">Pranav Teegavarapu、Sriyash Poddar、Rico Qi 等 8 人. Q-OIL: Optimistic Exploration in Learning from Human Interventions. arXiv:2611.08576 (2026-11-05). https://arxiv.org/abs/2611.08576v1</div></section>
+    <section class="sec"><div class="sec-head"><span class="sec-no">叁</span><span class="sec-title">同分类新篇</span><span class="rule"></span></div><div class="paper-list"><a class="paper-row" href="paper-2611.18562.html"><span class="d">26.11.13</span><span><h3>Training Reasoning Models in Simulation to Natively Use Real Robots</h3></span><span class="go">→</span></a><a class="paper-row" href="paper-2611.18546.html"><span class="d">26.11.13</span><span><h3>Modeling the Frictional Contact of Continuum Robots with Environments through Linear Complementarity Problem</h3></span><span class="go">→</span></a><a class="paper-row" href="paper-2611.18505.html"><span class="d">26.11.13</span><span><h3>Disturbance-Aware Informative Planning in Spatiotemporal Environments</h3></span><span class="go">→</span></a><a class="paper-row" href="paper-2611.18501.html"><span class="d">26.11.13</span><span><h3>In Situ Monitoring and Predictive Modeling of Harmful Algal Blooms with Autonomous Surface Vehicles</h3></span><span class="go">→</span></a><a class="paper-row" href="paper-2611.18496.html"><span class="d">26.11.13</span><span><h3>Toward Resilient Self-Driving Laboratories through Telerobotic Interventions</h3></span><span class="go">→</span></a></div></section>
+  </div>
+  <aside class="margin-note"><b>说明</b>题录取自 arXiv 元数据，只作索引与短摘录，不镜像 PDF。</aside>
+</div></div></section></main>
+<span id="main-end"></span>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="foot-brand">
+      <a class="foot-mark" href="index.html" aria-label="具身山海志 · 返回首页"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55" stroke-dasharray="86 6" transform="rotate(-24 20 20)"/>
+  <path d="M7.5 26.5 14 15.6l4.4 7 3.5-5.6 10.6 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6.4 30.2c2.4-1.5 3.6-.2 5.6-.9 2-.7 3.2-1.0 5.2-.2 2 .8 3.4.3 5.3-.4 2-.7 3.3-.1 5.4.6 1.8.6 3.4.2 5.4-.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28.6" cy="12.4" r="2.6" fill="#c21f30"/>
+</svg><span class="foot-word"><b>具身山海志</b><small>Embodied Atlas</small></span></a>
+      <p class="foot-motto">多闻阙疑　慎言其余</p>
+      <a class="btn foot-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.16l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg>到 GitHub 点 Star</a>
+    </div>
+    <nav class="set" aria-label="页脚导航">
+      <div class="set-col"><b>七卷</b><a href="companies.html">公司</a><a href="labs.html">机构</a><a href="models.html">模型</a><a href="leaderboard.html">榜单</a><a href="jobs.html">岗位</a><a href="resources.html">资源</a><a href="news.html">动态</a></div>
+      <div class="set-col"><b>别册</b><a href="world.html">总览</a><a href="atlas.html">山海图</a><a href="compare.html">选型对比</a><a href="papers.html">论文索引</a><a href="events.html">会期与投稿</a></div>
+      <div class="set-col"><b>卷末</b><a href="about.html">关于</a><a href="legend.html">凡例</a><a href="credits.html">素材与许可</a><a href="copyright.html">版权</a></div>
+      <div class="set-col"><b>往来</b><button type="button" class="footer-btn" data-open-contact>合作联系</button><a href="coop.html">合作方式</a><a href="news.html#subscribe">订阅更新</a></div>
+    </nav>
+    <div class="foot-base">
+      <span class="src-line">源：<a href="https://fbddcz.github.io/Embodied-Shanhai-Atlas/paper-2611.08576.html">具身山海志</a> · <a href="copyright.html">版权与许可</a> · 核验 2026-11-16</span>
+      <span class="colophon">© 2026 具身山海志 · <span data-world-label>秋·小雪</span></span>
+      <button class="clock-btn" id="worldClock" type="button" aria-haspopup="true" aria-expanded="false" title="四时天候：跟随真实时间，或把一年浓缩成一天">
+        <span class="cc-dot" aria-hidden="true"></span><span data-clock-mode>随天时</span>
+      </button>
+      <div class="clock-menu" id="worldClockMenu" hidden>
+        <p class="clock-q">四时如何流转</p>
+        <button data-clock="real" type="button">跟随真实时间</button>
+        <button data-clock="cycle" type="button">一年浓缩成一日（每 24 小时一轮）</button>
+        <button data-clock="fast" type="button">一年浓缩成四分钟（演示用）</button>
+        <button data-clock="off" type="button">停在当前节令</button>
+        <p class="clock-now" data-world-label></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="toc" id="toc" role="dialog" aria-modal="true" aria-label="七卷目录">
+  <div class="toc-head"><span class="toc-title">七卷</span><button class="tool" id="tocClose" aria-label="关闭目录"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="toc-body"><div class="toc-list"><a class="toc-item" href="world.html"><span class="no">纲</span><span class="nm">总纲<small>总览</small></span><span class="ct">7宗</span></a><a class="toc-item" href="companies.html" data-zone="company"><span class="no">壹</span><span class="nm">人间<small>公司</small></span><span class="ct">154</span></a><a class="toc-item" href="labs.html" data-zone="lab"><span class="no">贰</span><span class="nm">学宫<small>机构</small></span><span class="ct">60</span></a><a class="toc-item" href="models.html" data-zone="model"><span class="no">叁</span><span class="nm">灵物<small>模型</small></span><span class="ct">91</span></a><a class="toc-item" href="leaderboard.html" data-zone="benchmark"><span class="no">肆</span><span class="nm">碑林<small>榜单</small></span><span class="ct">33</span></a><a class="toc-item" href="jobs.html" data-zone="job"><span class="no">伍</span><span class="nm">招贤<small>岗位</small></span><span class="ct">57</span></a><a class="toc-item" href="resources.html" data-zone="resource"><span class="no">陆</span><span class="nm">藏经<small>资源</small></span><span class="ct">116</span></a><a class="toc-item" href="news.html" data-zone="news"><span class="no">柒</span><span class="nm">驿路<small>动态</small></span><span class="ct">95</span></a><a class="toc-item" href="atlas.html"><span class="no">图</span><span class="nm">山海图<small>七域一图</small></span><span class="ct">606</span></a></div></div>
+  <div class="toc-foot"><a href="hardware.html">本体与传感</a><a href="compare.html">选型对比</a><a href="papers.html">论文索引</a><a href="events.html">会期与投稿</a><a href="following.html">我的关注</a><a href="legend.html">凡例</a><a href="about.html">关于</a><a class="toc-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer">★ 到 GitHub 点 Star</a></div>
+</div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="搜索">
+  <div class="palette-panel">
+    <div class="palette-input">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <input id="paletteInput" type="search" placeholder="寻一司、一器、一碑、一文" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="paletteResults" aria-autocomplete="list">
+      <span class="palette-hint">ESC</span>
+    </div>
+    <div class="palette-results" id="paletteResults" role="listbox" aria-label="搜索结果"></div>
+  </div>
+</div>
+<div class="modal" id="claimModal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="claimTitle">
+    <div class="modal-head"><h3 id="claimTitle">认领与纠错</h3><button class="modal-close" type="button" data-close-modal aria-label="关闭">×</button></div>
+    <p class="modal-sub" id="claimTarget">写明要更正的内容，附可打开的来源。</p>
+    <form id="claimForm" data-issues="https://github.com/FBddcz/Embodied-Shanhai-Atlas">
+      <label class="field"><span>称呼或机构（可不填）</span><input name="name" autocomplete="off" placeholder="例如：某公司市场部"></label>
+      <label class="field"><span>要更正或补充的内容</span><textarea name="message" required rows="5" placeholder="哪一条事实、原文是什么、应改为什么。"></textarea></label>
+      <label class="field"><span>来源链接</span><input name="source" type="url" placeholder="https://"></label>
+      <div class="modal-actions"><button type="button" class="btn" data-copy-claim>复制</button><button type="submit" class="btn btn-solid">在 GitHub 提交</button></div>
+    </form>
+  </div>
+</div>
+<div class="modal" id="contactModal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal-head"><h3 id="contactTitle">合作联系</h3><button class="modal-close" type="button" data-close-contact aria-label="关闭">×</button></div>
+    <p class="modal-sub">合作、招聘、投稿或数据授权。可以填写在线表单，也可以扫码进群直接联系。</p>
+    <div class="contact-link"><a class="btn btn-solid" href="https://www.wjx.top/vm/mB7vmKF.aspx" target="_blank" rel="noopener noreferrer">填写在线表单 ↗</a><p class="modal-note">表单由问卷星托管，提交后维护者会收到通知。</p></div>
+    
+    <div class="contact-qr">
+      <img src="assets/contact/xhs-group-2.png" alt="小红书交流群二维码" width="132" height="132" loading="lazy" decoding="async">
+      <div class="contact-qr-text"><b>小红书交流群</b><p>具身 AI 交流实习群 2 · 扫码加入，直接在群里联系维护者。</p><p class="contact-qr-valid">此码 2026-12-14 前有效</p></div>
+    </div>
+    <form id="contactForm" hidden data-endpoint="" data-key="" data-email="" data-qr="1" data-mode="link">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+      
+      
+      <div class="field-row">
+        <label class="field"><span>称呼或机构</span><input name="name" required autocomplete="off" placeholder="张三 / 某公司"></label>
+        <label class="field"><span>来意</span><select name="intent"><option>合作</option><option>招聘</option><option>投稿</option><option>数据授权</option><option>其他</option></select></label>
+      </div>
+      <label class="field"><span>微信、邮箱或电话</span><input name="contact" required autocomplete="off"></label>
+      <label class="field"><span>想聊什么</span><textarea name="message" rows="4" required></textarea></label>
+      <label class="check"><input type="checkbox" name="consent" required><span>以上信息只用于回复，不作他用。</span></label>
+      <div class="modal-actions"><button type="button" class="btn" data-copy-contact>复制</button><button type="submit" class="btn btn-solid">复制这段文字</button></div>
+      <p class="modal-note" id="contactStatus"></p>
+    </form>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="title-card" aria-hidden="true"><b>藏经</b><small>典籍器用</small></div>
+<script src="app.js" defer></script>
+
+
+
+</body>
+</html>

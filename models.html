@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="ink" data-season="spring">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>灵物 · 模型 · 具身山海志</title>
+<meta name="description" content="具身基座、操作策略与世界模型：许可、模态、评测与出处。">
+<link rel="canonical" href="https://fbddcz.github.io/Embodied-Shanhai-Atlas/models.html">
+<meta name="atlas-fp" content="3e9f49-1dfa79">
+<meta name="author" content="具身山海志 · Embodied Atlas">
+<meta property="og:url" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/models.html">
+<meta name="twitter:url" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/models.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"灵物 · 模型 · 具身山海志","description":"具身基座、操作策略与世界模型：许可、模态、评测与出处。","url":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/models.html","inLanguage":"zh-CN","dateModified":"2026-11-16","isPartOf":{"@type":"WebSite","name":"具身山海志 · Embodied Atlas","url":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/index.html","inLanguage":"zh-CN"},"creator":{"@type":"Person","name":"具身山海志","url":"https://github.com/FBddcz"},"copyrightHolder":{"@type":"Person","name":"具身山海志","url":"https://github.com/FBddcz"},"copyrightYear":2026,"license":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/copyright.html","citation":"具身山海志（Embodied Atlas）· 核验 2026-11-16 · https://fbddcz.github.io/Embodied-Shanhai-Atlas/models.html"}</script>
+<meta name="theme-color" content="#f2e6ce" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1423" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.svg">
+<meta property="og:site_name" content="具身山海志">
+<meta property="og:title" content="灵物 · 模型 · 具身山海志">
+<meta property="og:description" content="具身基座、操作策略与世界模型：许可、模态、评测与出处。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="license" href="copyright.html">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+(function(){
+  var d=document.documentElement;
+  try{d.dataset.theme=localStorage.getItem('atlas-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'ink');}catch(e){d.dataset.theme='ink';}
+  // 季候与时辰：四时配色、山海图的天候都从这里取
+  var m=new Date().getMonth()+1;
+  d.dataset.season = (m>=3&&m<=5)?'spring':(m>=6&&m<=8)?'summer':(m>=9&&m<=11)?'autumn':'winter';
+  var h=new Date().getHours();
+  d.dataset.hour = h<5?'night':h<8?'dawn':h<11?'morning':h<16?'day':h<19?'dusk':'night';
+  var XDOC='CSSViewTransitionRule' in window;
+  d.classList.add(XDOC?'vt-x':'vt-fallback');
+  if(!XDOC){try{if(sessionStorage.getItem('veil')){sessionStorage.removeItem('veil');d.classList.add('veil-pending');}}catch(e){}return;}
+  var file=function(p){return p.split('/').pop()||'index.html';};
+  var seen=function(path){
+    var el=document.querySelector('[data-list] a[href$="'+file(path)+'"] .plate');
+    if(!el)return null;
+    el.style.viewTransitionName='entity-seal';
+    return el;
+  };
+  addEventListener('pageswap',function(e){
+    if(!e.viewTransition||!e.activation)return;
+    try{sessionStorage.setItem('vt-from',location.pathname);}catch(err){}
+    var el=seen(new URL(e.activation.entry.url).pathname);
+    if(el)e.viewTransition.finished.finally(function(){el.style.viewTransitionName='';});
+  });
+  addEventListener('pagereveal',function(e){
+    if(!e.viewTransition)return;
+    var nt=(window.navigation&&navigation.activation&&navigation.activation.navigationType)||(performance.getEntriesByType('navigation')[0]||{}).type;
+    var back=nt==='traverse'||nt==='back_forward';
+    e.viewTransition.types.add(back?'back':'ink');
+    if(back){
+      var prev='';try{prev=sessionStorage.getItem('vt-from')||'';}catch(err){}
+      if(prev)seen(prev);
+    }
+  });
+})();
+</script>
+</head>
+<body data-page="models" data-zone="model">
+<a class="skip" href="#main">跳到正文</a>
+<div class="atmo" aria-hidden="true"><video class="atmo-video" muted loop playsinline disablepictureinpicture preload="none"></video><span class="atmo-season"></span><span class="atmo-hour"></span><span class="atmo-veil"></span><span class="atmo-tint"></span></div>
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="index.html" aria-label="具身山海志 · 返回首页">
+    <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55" stroke-dasharray="86 6" transform="rotate(-24 20 20)"/>
+  <path d="M7.5 26.5 14 15.6l4.4 7 3.5-5.6 10.6 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6.4 30.2c2.4-1.5 3.6-.2 5.6-.9 2-.7 3.2-1.0 5.2-.2 2 .8 3.4.3 5.3-.4 2-.7 3.3-.1 5.4.6 1.8.6 3.4.2 5.4-.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28.6" cy="12.4" r="2.6" fill="#c21f30"/>
+</svg>
+    <span class="brand-word"><span class="brand-cn">具身山海志</span><span class="brand-en">Embodied Atlas</span></span>
+  </a>
+  <nav class="nav" aria-label="主导航"><a href="world.html" class="nav-world" title="山海大世界 · 总纲">总览</a><a href="companies.html" data-zone="company" title="人间 · 诸司都邑">公司</a><a href="labs.html" data-zone="lab" title="学宫 · 讲学著述">机构</a><a href="models.html" data-zone="model" aria-current="page" title="灵物 · 山海异兽">模型</a><a href="leaderboard.html" data-zone="benchmark" title="碑林 · 刻石记分">榜单</a><a href="jobs.html" data-zone="job" title="招贤 · 悬榜求士">岗位</a><a href="resources.html" data-zone="resource" title="藏经 · 典籍器用">资源</a><a href="news.html" data-zone="news" title="驿路 · 驿报存录">动态</a><a href="atlas.html" title="七域一图">山海图</a></nav>
+  <div class="header-tools">
+    <button class="tool tool-search" data-open-search aria-label="搜索，快捷键 Command K">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <span class="ph">搜索公司、模型、论文</span><span class="kbd">⌘K</span>
+    </button>
+    <a class="tool tool-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer" aria-label="到 GitHub 给具身山海志点 Star" title="到 GitHub 点 Star">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.16l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg><span class="gs-t">Star</span><span class="gs-n" data-gh-count hidden></span>
+    </a>
+    <a class="tool tool-follow" href="following.html" aria-label="我的关注" title="我的关注">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+    </a>
+    <button class="tool" id="themeBtn" aria-label="切换昼夜" title="切换昼夜">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>
+    </button>
+    <button class="tool menu-btn" id="menuBtn" aria-label="打开七卷目录" aria-expanded="false" aria-controls="toc">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+<main id="main" data-fp="3e9f49-1dfa79"><section class="layout"><div class="vol-head" data-zone="model">
+  <span class="vol-no">卷叁 · 山海异兽</span>
+  <h1 class="vol-title">灵物<small>模型与本体</small></h1>
+  <p class="vol-epigraph">灵物九十一，凡九门：VLA 十八，世界模型 十四，扩散策略 六，模仿学习 五，强化学习 六，运动控制 十，导航 九，具身推理 十，数据生成 四。有代码可寻者记其码，有分可录者八十三，余者记许可与出处，不见可核之分则阙之。</p>
+  
+  <div class="realm-line" data-zone="model">
+    <span class="realm-sect">鲲 · 灵物之宗</span>
+    <span class="realm-links"><a href="atlas.html#r=model">在山海图中查看 →</a></span>
+  </div>
+  
+  <div class="vol-tools"><div class="seg" role="group" aria-label="按类目筛选"><button data-filter="全部" aria-pressed="true">全部 <span class="mono" style="color:var(--text-3)">91</span></button><button data-filter="VLA">VLA <span class="mono" style="color:var(--text-3)">18</span></button><button data-filter="world-model">世界模型 <span class="mono" style="color:var(--text-3)">14</span></button><button data-filter="diffusion-policy">扩散策略 <span class="mono" style="color:var(--text-3)">6</span></button><button data-filter="IL">模仿学习 <span class="mono" style="color:var(--text-3)">5</span></button><button data-filter="RL">强化学习 <span class="mono" style="color:var(--text-3)">6</span></button><button data-filter="locomotion">运动控制 <span class="mono" style="color:var(--text-3)">10</span></button><button data-filter="navigation">导航 <span class="mono" style="color:var(--text-3)">9</span></button><button data-filter="embodied-LLM">具身推理 <span class="mono" style="color:var(--text-3)">10</span></button><button data-filter="data-gen">数据生成 <span class="mono" style="color:var(--text-3)">4</span></button></div><span class="count-note">91 件</span></div>
+</div></section>
+  <div class="layout"><div>
+    <div class="ledger" data-list><a class="ledger-item" href="model-spirit16.html" data-zone="model" data-tags="">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/qianxun.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/qianxun-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Spirit v1.6</h3><div class="en">Spirit v1.6</div></div></div>
+        <p class="one">千寻智能的具身基座模型；2026 年 11 月 RoboArena 官方榜以 1,788 Elo 列第一。</p>
+        <div class="meta-row"><span class="tag z"></span><span class="tag">千寻智能</span><span class="tag">2026-06</span><span class="tag">未发布代码与权重；v1.5 仓库为 MIT（2026-11 核）</span></div>
+      </a><a class="ledger-item" href="model-mwa.html" data-zone="model" data-tags="">
+        <div class="item-top"><span class="plate"><img class="lg has-dark" src="assets/logos/v2/wujie.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/wujie-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>MWA-WALA</h3><div class="en">MWA-WALA</div></div></div>
+        <p class="one">无界动力的隐空间世界模型，在 RoboCasa GR1 TableTop 自报 75.2%。</p>
+        <div class="meta-row"><span class="tag z"></span><span class="tag">无界动力</span><span class="tag">2026-06</span><span class="tag">闭源，未发布代码与权重</span></div>
+      </a><a class="ledger-item" href="model-beingh07.html" data-zone="model" data-tags="">
+        <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/beingbeyond.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/beingbeyond-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Being-H0.7</h3><div class="en">Being-H0.7</div></div></div>
+        <p class="one">智在无界用 20 万小时人类视频训练的模型，发布方称 6 项评测综合排名第一。</p>
+        <div class="meta-row"><span class="tag z"></span><span class="tag">智在无界</span><span class="tag">2026-04</span><span class="tag">代码 Apache-2.0；权重未发布</span></div>
+      </a><a class="ledger-item" href="model-abot.html" data-zone="model" data-tags="">
+        <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/v2/amap.png" alt="" loading="lazy" decoding="async"></span><div><h3>ABot-M0</h3><div class="en">ABot-M0</div></div></div>
+        <p class="one">高德的操作基座模型，发布方称在 10 项评测上取得最高分。</p>
+        <div class="meta-row"><span class="tag z"></span><span class="tag">高德</span><span class="tag">2026-02</span><span class="tag">代码 Apache-2.0；权重 Apache-2.0（ModelScope 卡标注）</span></div>
+      </a><a class="ledger-item" href="model-ljm.html" data-zone="model" data-tags="">
+        <div class="item-top"><span class="plate"><img class="lg has-dark" src="assets/logos/v2/moke.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/moke-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>LJM</h3><div class="en">LJM</div></div></div>
+        <p class="one">莫刻机器人的隐空间世界模型，WorldArena EWMScore_P 自报 73.06，列第二。</p>
+        <div class="meta-row"><span class="tag z"></span><span class="tag">莫刻机器人</span><span class="tag">2026-07</span><span class="tag">闭源，未发布代码与权重</span></div>
+      </a><a class="ledger-item" href="model-pi05.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/pi.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/pi-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>π0.5</h3><div class="en">π0.5</div></div></div>
+        <p class="one">π0.5 用异构协同训练把 VLA 推向开放世界泛化。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">Physical Intelligence</span><span class="tag">2025-04</span><span class="tag">代码 Apache-2.0；权重随 openpi 以 Gemma 使用条款发布</span></div>
+      </a><a class="ledger-item" href="model-groot.html" data-zone="model" data-tags="">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/nvidia.svg" alt="" loading="lazy" decoding="async"></span><div><h3>GR00T N1.6</h3><div class="en">GR00T N1.6</div></div></div>
+        <p class="one">NVIDIA 的人形 VLA 基座，与 Isaac 仿真生态配套。</p>
+        <div class="meta-row"><span class="tag z"></span><span class="tag">NVIDIA</span><span class="tag">2025-12</span><span class="tag">代码 Apache-2.0；权重 NVIDIA License（2022-03-22 单向非商用许可）</span></div>
+      </a><a class="ledger-item" href="model-cosmos.html" data-zone="model" data-tags="">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/nvidia.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Cosmos3</h3><div class="en">Cosmos3</div></div></div>
+        <p class="one">NVIDIA 的物理 AI 世界模型，公司称其路线为先推理、再执行。</p>
+        <div class="meta-row"><span class="tag z"></span><span class="tag">NVIDIA</span><span class="tag">2026-05</span><span class="tag">代码与权重均按 Linux Foundation OpenMDW-1.1 发布</span></div>
+      </a><a class="ledger-item" href="model-agibot-go1.html" data-zone="model" data-tags="">
+        <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/agibot.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/agibot-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>GO-1</h3><div class="en">GO-1</div></div></div>
+        <p class="one">智元的具身基座模型，面向多本体操作。</p>
+        <div class="meta-row"><span class="tag z"></span><span class="tag">智元机器人</span><span class="tag">2025-03</span><span class="tag">仓库未附 LICENSE 文件；README 与论文标 CC BY-NC-SA 4.0（非商用）</span></div>
+      </a><a class="ledger-item" href="model-robotera-era42.html" data-zone="model" data-tags="">
+        <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/robotera.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/robotera-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>ERA-42</h3><div class="en">ERA-42</div></div></div>
+        <p class="one">星动纪元的端到端具身模型，用于其人形与轮式本体。</p>
+        <div class="meta-row"><span class="tag z"></span><span class="tag">星动纪元</span><span class="tag">2024-12</span><span class="tag">闭源，未发布代码与权重</span></div>
+      </a><a class="ledger-item" href="model-pi0.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/pi.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/pi-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>π0</h3><div class="en">π0: A Vision-Language-Action Flow Model fo</div></div></div>
+        <p class="one">Physical Intelligence 开源 π0，首个通用机器人流匹配 VLA。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">Physical Intelligence</span><span class="tag">2024-10</span><span class="tag">代码 Apache-2.0；权重随 openpi 以 Gemma 使用条款发布</span></div>
+      </a><a class="ledger-item" href="model-pi0fast.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/pi.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/pi-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>π0-FAST</h3><div class="en">FAST: Efficient Action Tokenization for VL</div></div></div>
+        <p class="one">π0-FAST 用 FAST 动作分词器让自回归 VLA 提速。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">Physical Intelligence</span><span class="tag">2025-01</span><span class="tag">代码 Apache-2.0；权重随 openpi 以 Gemma 使用条款发布</span></div>
+      </a><a class="ledger-item" href="model-oft.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/stanford.svg" alt="" loading="lazy" decoding="async"></span><div><h3>OpenVLA-OFT</h3><div class="en">Fine-Tuning VLAs: Optimizing Speed and Suc</div></div></div>
+        <p class="one">OFT 把 OpenVLA 微调成连续动作、并行解码的快策略。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">Stanford</span><span class="tag">2025-02</span><span class="tag">MIT（代码与权重同一仓库许可）</span></div>
+      </a><a class="ledger-item" href="model-rdt1b.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate pin"><span class="glyph">RD</span></span><div><h3>RDT-1B</h3><div class="en">RDT-1B: a Diffusion Foundation Model for B</div></div></div>
+        <p class="one">RDT-1B 是 1.3B 的双臂操作扩散基座模型。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">清华大学 TSAIL（朱军团队）</span><span class="tag">2024-10</span><span class="tag">MIT（代码、权重、微调数据同许可，据 HF 模型卡）</span></div>
+      </a><a class="ledger-item" href="model-rdt2.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate pin"><span class="glyph">RD</span></span><div><h3>RDT2</h3><div class="en">RDT2（RDT2-VQ / RDT2-FM）</div></div></div>
+        <p class="one">RDT2 面向未见本体零样本部署的双版本 VLA。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">清华大学 TSAIL（朱军团队）</span><span class="tag">2025-09</span><span class="tag">代码 Apache-2.0；权重 Apache-2.0（HF 卡 cardData）</span></div>
+      </a><a class="ledger-item" href="model-groot1.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/nvidia.svg" alt="" loading="lazy" decoding="async"></span><div><h3>GR00T N1</h3><div class="en">GR00T N1: Open Foundation Model for Genera</div></div></div>
+        <p class="one">GR00T N1 是 NVIDIA 首个开源人形机器人通用基座模型。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">NVIDIA</span><span class="tag">2025-03</span><span class="tag">代码 Apache-2.0；权重 NVIDIA License（2022-03-22 单向非商用许可）</span></div>
+      </a><a class="ledger-item" href="model-groot15.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/nvidia.svg" alt="" loading="lazy" decoding="async"></span><div><h3>GR00T N1.5</h3><div class="en">NVIDIA Isaac GR00T N1.5</div></div></div>
+        <p class="one">GR00T N1.5 升级 Eagle 2.5 骨干，人形语言跟随大幅提升。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">NVIDIA</span><span class="tag">2025-06</span><span class="tag">代码 Apache-2.0；权重 NVIDIA License（2022-03-22 单向非商用许可）</span></div>
+      </a><a class="ledger-item" href="model-rt2.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/v2/deepmind.png" alt="" loading="lazy" decoding="async"></span><div><h3>RT-2</h3><div class="en">RT-2: VLA Models Transfer Web Knowledge to</div></div></div>
+        <p class="one">RT-2 首次把网络知识经 VLM 共微调迁移到机器人动作。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">Google DeepMind</span><span class="tag">2023-07</span><span class="tag">项目页与论文均无代码仓库或权重下载链接；Google DeepMind 未发布 RT-2 权重</span></div>
+      </a><a class="ledger-item" href="model-rtx.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/v2/deepmind.png" alt="" loading="lazy" decoding="async"></span><div><h3>RT-X / Open X-Embodiment</h3><div class="en">Open X-Embodiment: Robotic Learning Datase</div></div></div>
+        <p class="one">OXE 汇集 22 种本体数据，训出 RT-1-X 与 RT-2-X。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">Google DeepMind + 21 家机构</span><span class="tag">2023-10</span><span class="tag">代码 Apache-2.0（仓库 LICENSE）；数据集依各自原始许可</span></div>
+      </a><a class="ledger-item" href="model-beingh0.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/beingbeyond.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/beingbeyond-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Being-H0</h3><div class="en">Being-H0: VLA Pretraining from Large-Scale</div></div></div>
+        <p class="one">Being-H0 用大规模人手视频预训练 VLA，放出三档权重。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">智在无界</span><span class="tag">2025-07</span><span class="tag">代码 MIT；权重 MIT（HF 卡标注）</span></div>
+      </a><a class="ledger-item" href="model-univla.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/shanghai-ai-lab.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/shanghai-ai-lab-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>UniVLA</h3><div class="en">UniVLA: Learning to Act Anywhere with Task</div></div></div>
+        <p class="one">UniVLA 从无动作标签视频里学任务中心潜在动作。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">上海 AI Lab OpenDriveLab / 港大</span><span class="tag">2025-05</span><span class="tag">Apache-2.0（代码与权重同一仓库许可）</span></div>
+      </a><a class="ledger-item" href="model-tinyvla.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate pin"><span class="glyph">TI</span></span><div><h3>TinyVLA</h3><div class="en">TinyVLA: Fast, Data-Efficient VLA Models</div></div></div>
+        <p class="one">TinyVLA 用 0.4B–1.3B 小模型证明 VLA 可以又快又省数据。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">美的 AI 研究院 / 上海创智学院（合作）</span><span class="tag">2024-09</span><span class="tag">MIT（仓库 LICENSE）</span></div>
+      </a><a class="ledger-item" href="model-dexvla.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate pin"><span class="glyph">DE</span></span><div><h3>DexVLA</h3><div class="en">DexVLA: VLM with Plug-In Diffusion Expert </div></div></div>
+        <p class="one">DexVLA 把 1B 扩散专家插件接到 Qwen2-VL 上做通用控制。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">美的 AI 研究院 / 北京大学（合作）</span><span class="tag">2025-02</span><span class="tag">CC BY-NC 4.0（仓库 LICENSE 为非商用）</span></div>
+      </a><a class="ledger-item" href="model-rynnvla.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/alibaba-damo.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/alibaba-damo-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>RynnVLA-001</h3><div class="en">RynnVLA-001: Using Human Demonstrations to</div></div></div>
+        <p class="one">RynnVLA-001 用人类第一视角视频给机器人补操作先验。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">阿里巴巴达摩院</span><span class="tag">2025-08</span><span class="tag">Apache-2.0（仓库 LICENSE）</span></div>
+      </a><a class="ledger-item" href="model-xvla.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate pin"><span class="glyph">XV</span></span><div><h3>X-VLA</h3><div class="en">X-VLA: Soft-Prompted Transformer as Scalab</div></div></div>
+        <p class="one">X-VLA 用 0.9B 软提示 Transformer 跨六仿真平台列第一。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">清华大学 AIR</span><span class="tag">2025-10</span><span class="tag">代码 Apache-2.0；权重 Apache-2.0</span></div>
+      </a><a class="ledger-item" href="model-villax.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/microsoft.svg" alt="" loading="lazy" decoding="async"></span><div><h3>villa-X</h3><div class="en">villa-X: Enhancing Latent Action Modeling </div></div></div>
+        <p class="one">villa-X 在 VLA 里加本体驱动的潜在动作专家。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">微软研究院</span><span class="tag">2025-07</span><span class="tag">MIT（代码与权重同一仓库许可）</span></div>
+      </a><a class="ledger-item" href="model-spirit15.html" data-zone="model" data-tags="VLA">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/qianxun.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/qianxun-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Spirit v1.5</h3><div class="en">Spirit-v1.5: A Robotic Foundation Model by</div></div></div>
+        <p class="one">千寻智能开源 Spirit-v1.5，登榜 RoboChallenge Table30。</p>
+        <div class="meta-row"><span class="tag z">VLA</span><span class="tag">千寻智能</span><span class="tag">2026-01</span><span class="tag">代码 MIT；权重 Apache-2.0</span></div>
+      </a><a class="ledger-item" href="model-cosmos-predict1.html" data-zone="model" data-tags="world-model">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/nvidia.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Cosmos-Predict1 / Transfer1</h3><div class="en">NVIDIA Cosmos World Foundation Models</div></div></div>
+        <p class="one">NVIDIA 首个开放世界基础模型平台，含 Predict、Transfer、Tokenize。</p>
+        <div class="meta-row"><span class="tag z">世界模型</span><span class="tag">NVIDIA</span><span class="tag">2025-01</span><span class="tag">代码 Apache-2.0；权重 NVIDIA Open Model License</span></div>
+      </a><a class="ledger-item" href="model-cosmos-predict2.html" data-zone="model" data-tags="world-model">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/nvidia.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Cosmos-Predict2</h3><div class="en">Cosmos-Predict2</div></div></div>
+        <p class="one">Cosmos 第二代预测模型，开放后训练与推理代码及权重。</p>
+        <div class="meta-row"><span class="tag z">世界模型</span><span class="tag">NVIDIA</span><span class="tag">2025-06</span><span class="tag">代码 Apache-2.0；权重 NVIDIA Open Model License</span></div>
+      </a><a class="ledger-item" href="model-cosmos-predict25.html" data-zone="model" data-tags="world-model">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/nvidia.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Cosmos-Predict2.5</h3><div class="en">Cosmos-Predict2.5</div></div></div>
+        <p class="one">Cosmos 第三代前的集大成版：一个模型统一三种世界生成入口。</p>
+        <div class="meta-row"><span class="tag z">世界模型</span><span class="tag">NVIDIA</span><span class="tag">2025-10</span><span class="tag">代码 Apache-2.0；权重 NVIDIA Open Model License</span></div>
+      </a><a class="ledger-item" href="model-gigaworld0.html" data-zone="model" data-tags="world-model">
+        <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/gigaai.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/gigaai-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>GigaWorld-0</h3><div class="en">GigaWorld-0: World Models as Data Engine t</div></div></div>
+        <p class="one">把世界模型当数据引擎，为 VLA 合成具身交互数据。</p>
+        <div class="meta-row"><span class="tag z">世界模型</span><span class="tag">极佳视界</span><span class="tag">2025-11</span><span class="tag">代码 Apache-2.0；权重 Apache-2.0</span></div>
+      </a><a class="ledger-item" href="model-unisim.html" data-zone="model" data-tags="world-model">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/berkeley-rail.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/berkeley-rail-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>UniSim</h3><div class="en">Learning Interactive Real-World Simulators</div></div></div>
+        <p class="one">把互联网视频变成可交互模拟器，ICLR 2024 杰出论文。</p>
+        <div class="meta-row"><span class="tag z">世界模型</span><span class="tag">UC Berkeley / Google DeepMind / MIT</span><span class="tag">2023-10</span><span class="tag">未发布代码与权重，项目页只放在线交互演示（2026-11-14 核）</span></div>
+      </a><a class="ledger-item" href="model-dreamerv3.html" data-zone="model" data-tags="world-model">
+        <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/v2/deepmind.png" alt="" loading="lazy" decoding="async"></span><div><h3>DreamerV3</h3><div class="en">Mastering Diverse Domains through World Mo</div></div></div>
+        <p class="one">固定一套超参通吃多域的世界模型强化学习算法，登上 Nature。</p>
+        <div class="meta-row"><span class="tag z">世界模型</span><span class="tag">Google DeepMind</span><span class="tag">2023-01</span><span class="tag">MIT（代码，仓库 LICENSE 记 Copyright (c) 2024 Danijar Hafner）；不提供预训练权重</span></div>
+      </a><a class="ledger-item" href="model-genie1.html" data-zone="model" data-tags="world-model">
+        <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/v2/deepmind.png" alt="" loading="lazy" decoding="async"></span><div><h3>Genie</h3><div class="en">Genie: Generative Interactive Environments</div></div></div>
+        <p class="one">11B 参数、从 20 万小时游戏视频自学的可交互世界模型。</p>
+        <div class="meta-row"><span class="tag z">世界模型</span><span class="tag">Google DeepMind</span><span class="tag">2024-02</span><span class="tag">未发布代码与权重，只有论文与项目页（2026-11-14 核）</span></div>
+      </a><a class="ledger-item" href="model-genie2.html" data-zone="model" data-tags="world-model">
+        <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/v2/deepmind.png" alt="" loading="lazy" decoding="async"></span><div><h3>Genie 2</h3><div class="en">Genie 2: A Large-Scale Foundation World Mo</div></div></div>
+        <p class="one">从一张图生成可玩 3D 世界，最长维持约一分钟一致性。</p>
+        <div class="meta-row"><span class="tag z">世界模型</span><span class="tag">Google DeepMind</span><span class="tag">2024-12</span><span class="tag">未发布代码与权重，只有博客（2026-11-14 核）</span></div>
+      </a><a class="ledger-item" href="model-genie3.html" data-zone="model" data-tags="world-model">
+        <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/v2/deepmind.png" alt="" loading="lazy" decoding="async"></span><div><h3>Genie 3</h3><div class="en">Genie 3: A New Frontier for World Models</div></div></div>
+        <p class="one">首个可实时交互的通用世界模型，720p、24fps、分钟级一致性。</p>
+        <div class="meta-row"><span class="tag z">世界模型</span><span class="tag">Google DeepMind</span><span class="tag">2025-08</span><span class="tag">有限研究预览，仅小范围学者与创作者可用；未发布代码与权重（2026-11-14 核）</span></div>
+      </a><a class="ledger-item" href="model-vjepa2.html" data-zone="model" data-tags="world-model">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/meta.svg" alt="" loading="lazy" decoding="async"></span><div><h3>V-JEPA 2</h3><div class="en">V-JEPA 2: Self-Supervised Video Models Ena</div></div></div>
+        <p class="one">在潜空间预测未来的视频世界模型，能零样本指挥机器人。</p>
+        <div class="meta-row"><span class="tag z">世界模型</span><span class="tag">Meta FAIR</span><span class="tag">2025-06</span><span class="tag">MIT（代码与权重，仓库 LICENSE 记 Meta Platforms）</span></div>
+      </a><a class="ledger-item" href="model-1xwm.html" data-zone="model" data-tags="world-model">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/onex.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/onex-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>1X World Model</h3><div class="en">1X World Model (1XWM)</div></div></div>
+        <p class="one">为全身人形机器人造的评估型世界模型，用预测成功率挑策略。</p>
+        <div class="meta-row"><span class="tag z">世界模型</span><span class="tag">1X Technologies</span><span class="tag">2025-06</span><span class="tag">闭源，只公开博客与技术报告 PDF（2026-11-14 核）</span></div>
+      </a><a class="ledger-item" href="model-gaia1.html" data-zone="model" data-tags="world-model">
+        <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/wayve.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/wayve-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>GAIA-1</h3><div class="en">GAIA-1: A Generative World Model for Auton</div></div></div>
+        <p class="one">9.4B 的驾驶世界模型，把视频、文本、动作统一进生成。</p>
+        <div class="meta-row"><span class="tag z">世界模型</span><span class="tag">Wayve</span><span class="tag">2023-06</span><span class="tag">闭源；论文与项目页均未给出代码或权重入口（2026-11-14 核）</span></div>
+      </a><a class="ledger-item" href="model-gaia2.html" data-zone="model" data-tags="world-model">
+        <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/wayve.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/wayve-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>GAIA-2</h3><div class="en">GAIA-2: A Controllable Multi-View Generati</div></div></div>
+        <p class="one">可精细控制的多视角驾驶世界模型，主打安全场景合成。</p>
+        <div class="meta-row"><span class="tag z">世界模型</span><span class="tag">Wayve</span><span class="tag">2025-03</span><span class="tag">闭源；论文与项目页均未给出代码或权重入口（2026-11-14 核）</span></div>
+      </a><a class="ledger-item" href="model-worldvla.html" data-zone="model" data-tags="world-model">
+        <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/alibaba-damo.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/alibaba-damo-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>WorldVLA</h3><div class="en">WorldVLA: Towards Autoregressive Action Wo</div></div></div>
+        <p class="one">把动作预测与未来视频生成放进同一个自回归模型。</p>
+        <div class="meta-row"><span class="tag z">世界模型</span><span class="tag">阿里巴巴达摩院</span><span class="tag">2025-06</span><span class="tag">代码 Apache-2.0（README 声明）；仓库无 LICENSE 文件，权重许可未单列</span></div>
+      </a><a class="ledger-item" href="model-diffusion-policy.html" data-zone="model" data-tags="diffusion-policy">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/columbia.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/columbia-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Diffusion Policy</h3><div class="en">Diffusion Policy: Visuomotor Policy Learni</div></div></div>
+        <p class="one">扩散策略的开山之作，RSS 2023，把动作生成写成条件去噪。</p>
+        <div class="meta-row"><span class="tag z">扩散策略</span><span class="tag">Columbia / TRI / MIT</span><span class="tag">2023-03</span><span class="tag">代码 MIT（仓库另附 LICENSE，2026-11 核）</span></div>
+      </a><a class="ledger-item" href="model-3d-diffuser-actor.html" data-zone="model" data-tags="diffusion-policy">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/cmu-ri.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/cmu-ri-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>3D Diffuser Actor</h3><div class="en">3D Diffuser Actor: Policy Diffusion with 3</div></div></div>
+        <p class="one">把扩散策略建在 3D 场景表征上，RLBench 领先一大截。</p>
+        <div class="meta-row"><span class="tag z">扩散策略</span><span class="tag">CMU</span><span class="tag">2024-02</span><span class="tag">代码 MIT（仓库 LICENSE，2026-11 核）</span></div>
+      </a><a class="ledger-item" href="model-equivariant-dp.html" data-zone="model" data-tags="diffusion-policy">
+        <div class="item-top"><span class="plate pin"><span class="glyph">EQ</span></span><div><h3>Equivariant Diffusion Policy</h3><div class="en">Equivariant Diffusion Policy</div></div></div>
+        <p class="one">给扩散策略加上旋转等变性，少数据也能学好。</p>
+        <div class="meta-row"><span class="tag z">扩散策略</span><span class="tag">Northeastern University</span><span class="tag">2024-07</span><span class="tag">代码 MIT（pointW/equidiff 仓库 LICENSE，2026-11 核）</span></div>
+      </a><a class="ledger-item" href="model-consistency-policy.html" data-zone="model" data-tags="diffusion-policy">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/stanford.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Consistency Policy</h3><div class="en">Consistency Policy: Accelerated Visuomotor</div></div></div>
+        <p class="one">把扩散策略蒸馏成两步推理，专治算力受限平台。</p>
+        <div class="meta-row"><span class="tag z">扩散策略</span><span class="tag">Stanford（Bohg 组）</span><span class="tag">2024-05</span><span class="tag">代码 MIT（Aaditya-Prasad/Consistency-Policy 仓库 LICENSE，2026-11 核）</span></div>
+      </a><a class="ledger-item" href="model-dita.html" data-zone="model" data-tags="diffusion-policy">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/shanghai-ai-lab.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/shanghai-ai-lab-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Dita</h3><div class="en">Dita: Scaling Diffusion Transformer for Ge</div></div></div>
+        <p class="one">把扩散头换成 Transformer 直接去噪，VLA 动作空间不再受限。</p>
+        <div class="meta-row"><span class="tag z">扩散策略</span><span class="tag">上海 AI Lab OpenDriveLab / 港大</span><span class="tag">2025-03</span><span class="tag">Apache-2.0（仓库 LICENSE；README 徽章标 MIT，以 LICENSE 文件为准）</span></div>
+      </a><a class="ledger-item" href="model-streaming-flow-policy.html" data-zone="model" data-tags="diffusion-policy">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/mit-csail.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Streaming Flow Policy</h3><div class="en">Streaming Flow Policy: Streaming Robot Pol</div></div></div>
+        <p class="one">把动作轨迹当流轨迹，采样过程中就能把动作流给机器人。</p>
+        <div class="meta-row"><span class="tag z">扩散策略</span><span class="tag">MIT</span><span class="tag">2025-05</span><span class="tag">代码仓库未附 LICENSE 文件（2026-11 核 root 目录与 raw LICENSE 均无）</span></div>
+      </a><a class="ledger-item" href="model-vinn.html" data-zone="model" data-tags="IL">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/nyu.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/nyu-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>VINN</h3><div class="en">The Surprising Effectiveness of Representa</div></div></div>
+        <p class="one">不训练策略网络，用表征空间里的 k 近邻直接查动作。</p>
+        <div class="meta-row"><span class="tag z">模仿学习</span><span class="tag">NYU</span><span class="tag">2021-12</span><span class="tag">代码仓库未附 LICENSE 文件（2026-11 核 root 目录无 LICENSE）</span></div>
+      </a><a class="ledger-item" href="model-hover.html" data-zone="model" data-tags="IL">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/nvidia.svg" alt="" loading="lazy" decoding="async"></span><div><h3>HOVER</h3><div class="en">HOVER: Versatile Neural Whole-Body Control</div></div></div>
+        <p class="one">一个策略切换多种控制模式的人形全身控制器。</p>
+        <div class="meta-row"><span class="tag z">模仿学习</span><span class="tag">NVIDIA GEAR × CMU</span><span class="tag">2024-10</span><span class="tag">仓库 Apache-2.0</span></div>
+      </a><a class="ledger-item" href="model-twist.html" data-zone="model" data-tags="IL">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/stanford.svg" alt="" loading="lazy" decoding="async"></span><div><h3>TWIST</h3><div class="en">TWIST: Teleoperated Whole-Body Imitation S</div></div></div>
+        <p class="one">用 RL+BC 把人体动作映射到人形全身，一套网络兼顾操作与行走。</p>
+        <div class="meta-row"><span class="tag z">模仿学习</span><span class="tag">Stanford / CMU / Amazon</span><span class="tag">2025-05</span><span class="tag">代码 MIT（2026-11 核 GitHub LICENSE）；论文未单独发布权重</span></div>
+      </a><a class="ledger-item" href="model-twist2.html" data-zone="model" data-tags="IL">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/stanford.svg" alt="" loading="lazy" decoding="async"></span><div><h3>TWIST2</h3><div class="en">TWIST2: Scalable, Portable, and Holistic H</div></div></div>
+        <p class="one">免动捕、可携带的人形全身遥操作与数据采集系统。</p>
+        <div class="meta-row"><span class="tag z">模仿学习</span><span class="tag">Stanford / CMU / Amazon</span><span class="tag">2025-11</span><span class="tag">代码 MIT（2026-11 核 GitHub LICENSE）；数据集经仓库 README 的 Google Drive 链接下载，未注许可</span></div>
+      </a><a class="ledger-item" href="model-roboagent.html" data-zone="model" data-tags="IL">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/cmu-ri.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/cmu-ri-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>RoboAgent / MT-ACT</h3><div class="en">RoboAgent: Generalization and Efficiency i</div></div></div>
+        <p class="one">用 7500 条演示训出会 12 类技能、可跨 38 个任务泛化的智能体。</p>
+        <div class="meta-row"><span class="tag z">模仿学习</span><span class="tag">CMU / Meta AI</span><span class="tag">2023-09</span><span class="tag">代码仓库未附 LICENSE 文件（2026-11 核 root 目录无 LICENSE）</span></div>
+      </a><a class="ledger-item" href="model-serl.html" data-zone="model" data-tags="RL">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/berkeley-rail.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/berkeley-rail-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>SERL</h3><div class="en">SERL: A Software Suite for Sample-Efficien</div></div></div>
+        <p class="one">把真机视觉 RL 从难复现变成一套可跑的软件栈。</p>
+        <div class="meta-row"><span class="tag z">强化学习</span><span class="tag">UC Berkeley</span><span class="tag">2024-01</span><span class="tag">代码 Apache-2.0（仓库 LICENSE，2026-11 核）</span></div>
+      </a><a class="ledger-item" href="model-hil-serl.html" data-zone="model" data-tags="RL">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/berkeley-rail.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/berkeley-rail-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>HIL-SERL</h3><div class="en">Human-in-the-Loop RL: Real-World Robot Lea</div></div></div>
+        <p class="one">人类干预 + 在线 RL，1–2.5 小时把真机任务练到接近满分。</p>
+        <div class="meta-row"><span class="tag z">强化学习</span><span class="tag">UC Berkeley</span><span class="tag">2024-10</span><span class="tag">代码 Apache-2.0（仓库 LICENSE，2026-11 核）</span></div>
+      </a><a class="ledger-item" href="model-tdmpc2.html" data-zone="model" data-tags="RL">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/ucsd-sulab.svg" alt="" loading="lazy" decoding="async"></span><div><h3>TD-MPC2</h3><div class="en">TD-MPC2: Scalable, Robust World Models for</div></div></div>
+        <p class="one">同一套超参横扫 104 个任务，还能扩到 317M 多任务智能体。</p>
+        <div class="meta-row"><span class="tag z">强化学习</span><span class="tag">UC San Diego</span><span class="tag">2023-10</span><span class="tag">MIT（代码与权重，仓库 LICENSE 记 Nicklas Hansen 2023）</span></div>
+      </a><a class="ledger-item" href="model-dapg.html" data-zone="model" data-tags="RL">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/berkeley-rail.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/berkeley-rail-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>DAPG</h3><div class="en">Learning Complex Dexterous Manipulation wi</div></div></div>
+        <p class="one">少量演示即可让 24 自由度五指手的 RL 从跑不动到跑得动。</p>
+        <div class="meta-row"><span class="tag z">强化学习</span><span class="tag">UC Berkeley</span><span class="tag">2017-09</span><span class="tag">代码 Apache-2.0（仓库 LICENSE，2026-11 核；原记录写 MIT，已改正）</span></div>
+      </a><a class="ledger-item" href="model-drqv2.html" data-zone="model" data-tags="RL">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/meta.svg" alt="" loading="lazy" decoding="async"></span><div><h3>DrQ-v2</h3><div class="en">DrQ-v2: Improved Data-Augmented RL for Vis</div></div></div>
+        <p class="one">从像素直接学控制的强基线，humanoid 任务首次被 model-free 拿下。</p>
+        <div class="meta-row"><span class="tag z">强化学习</span><span class="tag">Meta AI</span><span class="tag">2021-07</span><span class="tag">代码 MIT（仓库 LICENSE，2026-11 核）</span></div>
+      </a><a class="ledger-item" href="model-rlpd.html" data-zone="model" data-tags="RL">
+        <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/oxford-ori.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/oxford-ori-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>RLPD</h3><div class="en">Efficient Online RL with Offline Data</div></div></div>
+        <p class="one">不发明新算法，只改几处细节就让 off-policy RL 用好离线数据。</p>
+        <div class="meta-row"><span class="tag z">强化学习</span><span class="tag">牛津大学 / UC Berkeley</span><span class="tag">2023-02</span><span class="tag">代码 MIT（仓库 LICENSE，2026-11 核）</span></div>
+      </a><a class="ledger-item" href="model-asap.html" data-zone="model" data-tags="locomotion">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/cmu-ri.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/cmu-ri-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>ASAP</h3><div class="en">ASAP: Aligning Simulation and Real-World P</div></div></div>
+        <p class="one">先仿真预训练，再用真机数据学一个残差模型补上动力学差。</p>
+        <div class="meta-row"><span class="tag z">运动控制</span><span class="tag">CMU LeCAR Lab × NVIDIA</span><span class="tag">2025-02</span><span class="tag">代码 MIT（2026-11 核 GitHub LICENSE）</span></div>
+      </a><a class="ledger-item" href="model-h2o.html" data-zone="model" data-tags="locomotion">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/cmu-ri.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/cmu-ri-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>H2O</h3><div class="en">Learning Human-to-Humanoid Real-Time Whole</div></div></div>
+        <p class="one">仅用一台 RGB 相机就把人体动作实时搬到全尺寸人形上。</p>
+        <div class="meta-row"><span class="tag z">运动控制</span><span class="tag">CMU LeCAR Lab</span><span class="tag">2024-03</span><span class="tag">代码 CC BY-NC 4.0（README 明示，含 Legged Gym 与 RSL RL 的继承许可）；未发布权重</span></div>
+      </a><a class="ledger-item" href="model-omnih2o.html" data-zone="model" data-tags="locomotion">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/cmu-ri.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/cmu-ri-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>OmniH2O</h3><div class="en">OmniH2O: Universal and Dexterous Human-to-</div></div></div>
+        <p class="one">用姿态当通用接口，VR、语音、相机都能驱动同一台人形。</p>
+        <div class="meta-row"><span class="tag z">运动控制</span><span class="tag">CMU LeCAR Lab</span><span class="tag">2024-06</span><span class="tag">代码 CC BY-NC 4.0（README 明示）；OmniH2O-6 数据集随仓库发布，未单列许可</span></div>
+      </a><a class="ledger-item" href="model-humanplus.html" data-zone="model" data-tags="locomotion">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/stanford.svg" alt="" loading="lazy" decoding="async"></span><div><h3>HumanPlus</h3><div class="en">HumanPlus: Humanoid Shadowing and Imitatio</div></div></div>
+        <p class="one">人类穿动捕影子跟动人形采数据，再让其模仿学技能。</p>
+        <div class="meta-row"><span class="tag z">运动控制</span><span class="tag">Stanford</span><span class="tag">2024-06</span><span class="tag">仓库未附 LICENSE 文件（2026-11 核 GitHub API 返回 Not Found）；未发布权重</span></div>
+      </a><a class="ledger-item" href="model-exbody.html" data-zone="model" data-tags="locomotion">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/ucsd-sulab.svg" alt="" loading="lazy" decoding="async"></span><div><h3>ExBody</h3><div class="en">Expressive Whole-Body Control for Humanoid</div></div></div>
+        <p class="one">上半身照抄人体动作，双腿只管稳住走，于是能跳舞、握手。</p>
+        <div class="meta-row"><span class="tag z">运动控制</span><span class="tag">UC San Diego / CMU</span><span class="tag">2024-02</span><span class="tag">代码 Apache-2.0（2026-11 核仓库 LICENSE，作者为 Xuxin Cheng 等）；未发布权重</span></div>
+      </a><a class="ledger-item" href="model-exbody2.html" data-zone="model" data-tags="locomotion">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/ucsd-sulab.svg" alt="" loading="lazy" decoding="async"></span><div><h3>ExBody2</h3><div class="en">ExBody2: Advanced Expressive Humanoid Whol</div></div></div>
+        <p class="one">把速度跟踪和关键点跟踪解耦，让人形能走能蹲还能跳舞。</p>
+        <div class="meta-row"><span class="tag z">运动控制</span><span class="tag">UC San Diego / CMU</span><span class="tag">2024-12</span><span class="tag">代码 Apache-2.0（2026-11 核仓库 LICENSE）；权重未发布，README 的 Release 清单三项均未勾选</span></div>
+      </a><a class="ledger-item" href="model-beyondmimic.html" data-zone="model" data-tags="locomotion">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/berkeley-rail.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/berkeley-rail-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>BeyondMimic</h3><div class="en">From Motion Tracking to Versatile Humanoid</div></div></div>
+        <p class="one">一套配方学会空翻、旋踢、冲刺，再用扩散模型自由组合。</p>
+        <div class="meta-row"><span class="tag z">运动控制</span><span class="tag">UC Berkeley Hybrid Robotics</span><span class="tag">2025-08</span><span class="tag">代码 MIT（仓库用 LICENCE 文件，2026-11 核）；仓库已归档，代码转由 mjlab 维护</span></div>
+      </a><a class="ledger-item" href="model-unitracker.html" data-zone="model" data-tags="locomotion">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/shanghai-ai-lab.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/shanghai-ai-lab-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>UniTracker</h3><div class="en">UniTracker: Universal Whole-Body Motion Tr</div></div></div>
+        <p class="one">用 CVAE 学生策略治全局朝向漂移，再快速适配难动作。</p>
+        <div class="meta-row"><span class="tag z">运动控制</span><span class="tag">上海 AI Lab OpenDriveLab / 港大</span><span class="tag">2025-07</span><span class="tag">未发布官方代码与权重：作者名下仅见同名的空壳仓库，无 LICENSE 与实现（2026-11 核）</span></div>
+      </a><a class="ledger-item" href="model-booster-gym.html" data-zone="model" data-tags="locomotion">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/booster.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Booster Gym</h3><div class="en">Booster Gym: An End-to-End RL Framework fo</div></div></div>
+        <p class="one">把「仿真能跑」变成「真机能走」的整套工程细节开源。</p>
+        <div class="meta-row"><span class="tag z">运动控制</span><span class="tag">加速进化</span><span class="tag">2025-06</span><span class="tag">代码 Apache-2.0（仓库 LICENSE 版权方为 Booster Robotics，2026-11 核）</span></div>
+      </a><a class="ledger-item" href="model-unitree-rl-gym.html" data-zone="model" data-tags="locomotion">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/unitree.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/unitree-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Unitree RL Gym</h3><div class="en">unitree_rl_gym</div></div></div>
+        <p class="one">宇树官方 RL 运控仓库，四款机器狗/人形一套流程跑通。</p>
+        <div class="meta-row"><span class="tag z">运动控制</span><span class="tag">宇树科技</span><span class="tag">2023-10</span><span class="tag">代码 BSD-3-Clause（仓库 LICENSE，版权方杭州宇树科技，2026-11 核）</span></div>
+      </a><a class="ledger-item" href="model-navid.html" data-zone="model" data-tags="navigation">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/pku.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/pku-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>NaVid</h3><div class="en">NaVid: Video-based VLM Plans the Next Step</div></div></div>
+        <p class="one">不靠地图和深度，只看视频流让 VLM 一步步决定往哪走。</p>
+        <div class="meta-row"><span class="tag z">导航</span><span class="tag">北京大学 PKU-EPIC</span><span class="tag">2024-02</span><span class="tag">MIT（NaVid-VLN-CE 仓库，仅评测代码；Hugging Face 未见官方权重页）</span></div>
+      </a><a class="ledger-item" href="model-vint.html" data-zone="model" data-tags="navigation">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/berkeley-rail.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/berkeley-rail-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>ViNT</h3><div class="en">ViNT: A Foundation Model for Visual Naviga</div></div></div>
+        <p class="one">把「跟着目标图走」做成可迁移的导航基础模型。</p>
+        <div class="meta-row"><span class="tag z">导航</span><span class="tag">UC Berkeley</span><span class="tag">2023-06</span><span class="tag">MIT（代码与 checkpoint，visualnav-transformer 仓库，与 GNM、NoMaD 共用）</span></div>
+      </a><a class="ledger-item" href="model-nomad.html" data-zone="model" data-tags="navigation">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/berkeley-rail.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/berkeley-rail-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>NoMaD</h3><div class="en">NoMaD: Goal Masked Diffusion Policies for </div></div></div>
+        <p class="one">一个扩散策略同时干「去找」和「去那」两件事。</p>
+        <div class="meta-row"><span class="tag z">导航</span><span class="tag">UC Berkeley</span><span class="tag">2023-10</span><span class="tag">MIT（代码与 checkpoint，visualnav-transformer 仓库，与 GNM、ViNT 共用）</span></div>
+      </a><a class="ledger-item" href="model-gnm.html" data-zone="model" data-tags="navigation">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/berkeley-rail.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/berkeley-rail-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>GNM</h3><div class="en">GNM: A General Navigation Model to Drive A</div></div></div>
+        <p class="one">一份数据训一个策略，直接开 6 种不同的机器人。</p>
+        <div class="meta-row"><span class="tag z">导航</span><span class="tag">UC Berkeley</span><span class="tag">2022-10</span><span class="tag">MIT（代码与 checkpoint，visualnav-transformer 仓库，与 ViNT、NoMaD 共用）</span></div>
+      </a><a class="ledger-item" href="model-cow.html" data-zone="model" data-tags="navigation">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/columbia.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/columbia-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>CoW</h3><div class="en">CoWs on Pasture: Baselines and Benchmarks </div></div></div>
+        <p class="one">把目标导航拆成「找物体 + 走过去」，零训练就能跑。</p>
+        <div class="meta-row"><span class="tag z">导航</span><span class="tag">华盛顿大学 / 哥伦比亚大学</span><span class="tag">2022-03</span><span class="tag">仓库未附 LICENSE 文件（GitHub API 许可字段为空），权重为公开 CLIP / OWL-ViT 权重</span></div>
+      </a><a class="ledger-item" href="model-streamvln.html" data-zone="model" data-tags="navigation">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/shanghai-ai-lab.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/shanghai-ai-lab-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>StreamVLN</h3><div class="en">StreamVLN: Streaming Vision-and-Language N</div></div></div>
+        <p class="one">用「快对话 + 慢记忆」让视频 VLN 做到低延迟实时。</p>
+        <div class="meta-row"><span class="tag z">导航</span><span class="tag">上海 AI Lab OpenDriveLab / 港大 / 浙大</span><span class="tag">2025-07</span><span class="tag">代码与权重 CC BY-NC-SA 4.0（仓库 README 声明的知识共享许可，未见独立 LICENSE 文件）</span></div>
+      </a><a class="ledger-item" href="model-mobility-vla.html" data-zone="model" data-tags="navigation">
+        <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/v2/deepmind.png" alt="" loading="lazy" decoding="async"></span><div><h3>Mobility VLA</h3><div class="en">Multimodal Instruction Navigation with Lon</div></div></div>
+        <p class="one">先看一遍演示视频，再听懂「带我去那」的多模态指令。</p>
+        <div class="meta-row"><span class="tag z">导航</span><span class="tag">Google DeepMind</span><span class="tag">2024-07</span><span class="tag">论文未给出代码或权重地址，作者未发布官方实现</span></div>
+      </a><a class="ledger-item" href="model-ving.html" data-zone="model" data-tags="navigation">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/berkeley-rail.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/berkeley-rail-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>ViNG</h3><div class="en">ViNG: Learning Open-World Navigation with </div></div></div>
+        <p class="one">用离线数据和「到达时间」预测构图，做到目标图导航。</p>
+        <div class="meta-row"><span class="tag z">导航</span><span class="tag">UC Berkeley / CMU</span><span class="tag">2020-12</span><span class="tag">论文未给出官方代码或权重地址，作者未发布实现</span></div>
+      </a><a class="ledger-item" href="model-uninavid.html" data-zone="model" data-tags="navigation">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/pku.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/pku-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Uni-NaVid</h3><div class="en">Uni-NaVid: A Video-based VLA Model for Uni</div></div></div>
+        <p class="one">把指令跟随、找物、问答、跟人四类导航任务塞进一个视频 VLA。</p>
+        <div class="meta-row"><span class="tag z">导航</span><span class="tag">北京大学 PKU-EPIC</span><span class="tag">2024-12</span><span class="tag">MIT（Uni-NaVid 仓库，LICENSE 记 EPIC Lab 2023）；7B 权重另发于 Hugging Face 的 Jzzhang/Uni-NaVid</span></div>
+      </a><a class="ledger-item" href="model-robobrain1.html" data-zone="model" data-tags="embodied-LLM">
+        <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/baai.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/baai-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>RoboBrain</h3><div class="en">RoboBrain: A Unified Brain Model for Robot</div></div></div>
+        <p class="one">智源首个「机器人大脑」MLLM，把抽象指令落到可供性与轨迹。</p>
+        <div class="meta-row"><span class="tag z">具身推理</span><span class="tag">北京智源人工智能研究院</span><span class="tag">2025-03</span><span class="tag">代码 Apache-2.0；权重 Apache-2.0（HF 卡）</span></div>
+      </a><a class="ledger-item" href="model-robobrain2.html" data-zone="model" data-tags="embodied-LLM">
+        <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/baai.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/baai-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>RoboBrain 2.0</h3><div class="en">RoboBrain 2.0 Technical Report</div></div></div>
+        <p class="one">7B/32B 双档异构具身基座，空间与时间推理同时列第一开源。</p>
+        <div class="meta-row"><span class="tag z">具身推理</span><span class="tag">北京智源人工智能研究院</span><span class="tag">2025-06</span><span class="tag">代码 Apache-2.0（仓库 LICENSE）；权重 Apache-2.0（HF 卡）</span></div>
+      </a><a class="ledger-item" href="model-robobrain-x0.html" data-zone="model" data-tags="embodied-LLM">
+        <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/baai.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/baai-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>RoboBrain-X0</h3><div class="en">RoboBrain-X0 Preview</div></div></div>
+        <p class="one">跨本体 VLA 化的大脑：SE(3) 末端位姿 + 统一动作词表做零样本迁移。</p>
+        <div class="meta-row"><span class="tag z">具身推理</span><span class="tag">北京智源人工智能研究院</span><span class="tag">2025-09</span><span class="tag">代码 Apache-2.0；权重 Apache-2.0（HF 卡）</span></div>
+      </a><a class="ledger-item" href="model-mimo-embodied.html" data-zone="model" data-tags="embodied-LLM">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/xiaomi.svg" alt="" loading="lazy" decoding="async"></span><div><h3>MiMo-Embodied</h3><div class="en">MiMo-Embodied: X-Embodied Foundation Model</div></div></div>
+        <p class="one">首个把自动驾驶与具身推理合训的开源 7B 跨本体 VLM。</p>
+        <div class="meta-row"><span class="tag z">具身推理</span><span class="tag">小米</span><span class="tag">2025-11</span><span class="tag">代码 MIT（仓库 LICENSE 声明沿用 lm-evaluation-harness 的 MIT）；权重 MIT（HF 卡）</span></div>
+      </a><a class="ledger-item" href="model-gemini-robotics.html" data-zone="model" data-tags="embodied-LLM">
+        <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/v2/deepmind.png" alt="" loading="lazy" decoding="async"></span><div><h3>Gemini Robotics</h3><div class="en">Gemini Robotics: Bringing AI into the Phys</div></div></div>
+        <p class="one">闭源上限，顺手开源了 ERQA 具身推理基准。</p>
+        <div class="meta-row"><span class="tag z">具身推理</span><span class="tag">Google DeepMind</span><span class="tag">2025-03</span><span class="tag">闭源，未发布代码与权重</span></div>
+      </a><a class="ledger-item" href="model-embodied-r.html" data-zone="model" data-tags="embodied-LLM">
+        <div class="item-top"><span class="plate pin"><span class="glyph">EM</span></span><div><h3>Embodied-R</h3><div class="en">Embodied-R: Collaborative Framework for Ac</div></div></div>
+        <p class="one">大 VLM 感知 + 小 LM 强化学习推理，5k 样本追平 o1。</p>
+        <div class="meta-row"><span class="tag z">具身推理</span><span class="tag">EmbodiedCity 团队</span><span class="tag">2025-04</span><span class="tag">代码：仓库未附 LICENSE 文件（GitHub 许可接口返回无许可证）；权重：HF 卡未声明许可</span></div>
+      </a><a class="ledger-item" href="model-magma.html" data-zone="model" data-tags="embodied-LLM">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/microsoft.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Magma</h3><div class="en">Magma: A Foundation Model for Multimodal A</div></div></div>
+        <p class="one">打通数字界面与物理世界的具身智能体基座，MIT 放权重。</p>
+        <div class="meta-row"><span class="tag z">具身推理</span><span class="tag">微软研究院</span><span class="tag">2025-02</span><span class="tag">仓库 MIT；权重随仓库以 MIT 发布</span></div>
+      </a><a class="ledger-item" href="model-cosmos-reason1.html" data-zone="model" data-tags="embodied-LLM">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/nvidia.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Cosmos-Reason1</h3><div class="en">Cosmos-Reason1: From Physical Common Sense</div></div></div>
+        <p class="one">NVIDIA 的物理常识推理 VLM，开源权重与训练数据。</p>
+        <div class="meta-row"><span class="tag z">具身推理</span><span class="tag">NVIDIA</span><span class="tag">2025-03</span><span class="tag">代码 Apache-2.0；权重 NVIDIA Open Model License</span></div>
+      </a><a class="ledger-item" href="model-dreamgen.html" data-zone="model" data-tags="data-gen">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/nvidia.svg" alt="" loading="lazy" decoding="async"></span><div><h3>DreamGen / GR00T-Dreams</h3><div class="en">DreamGen: Unlocking Generalization in Robo</div></div></div>
+        <p class="one">用视频世界模型造「神经轨迹」，让机器人零遥操作学新任务。</p>
+        <div class="meta-row"><span class="tag z">数据生成</span><span class="tag">NVIDIA</span><span class="tag">2025-05</span><span class="tag">仓库 NVIDIA/GR00T-Dreams 为 Apache-2.0；论文主线用 Wan2.1 作视频世界模型</span></div>
+      </a><a class="ledger-item" href="model-cosmos-transfer1.html" data-zone="model" data-tags="data-gen">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/nvidia.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Cosmos-Transfer1</h3><div class="en">Cosmos-Transfer1: Conditional World Genera</div></div></div>
+        <p class="one">可控多模态条件的世界生成器，把仿真画面「转」成真实质感。</p>
+        <div class="meta-row"><span class="tag z">数据生成</span><span class="tag">NVIDIA</span><span class="tag">2025-03</span><span class="tag">代码 Apache-2.0；权重 NVIDIA Open Model License</span></div>
+      </a><a class="ledger-item" href="model-dexmimicgen.html" data-zone="model" data-tags="data-gen">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/nvidia.svg" alt="" loading="lazy" decoding="async"></span><div><h3>DexMimicGen</h3><div class="en">DexMimicGen: Automated Data Generation for</div></div></div>
+        <p class="one">60 条人类示教 → 2.1 万条双臂灵巧手数据，含真机闭环验证。</p>
+        <div class="meta-row"><span class="tag z">数据生成</span><span class="tag">NVIDIA</span><span class="tag">2024-10</span><span class="tag">自定义 NVIDIA License（仓库附 LICENSE 文件，非 SPDX 标准协议）</span></div>
+      </a><a class="ledger-item" href="model-robotwin2.html" data-zone="model" data-tags="data-gen">
+        <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/sjtu.svg" alt="" loading="lazy" decoding="async"></span><div><h3>RoboTwin 2.0</h3><div class="en">RoboTwin 2.0: A Scalable Data Generator an</div></div></div>
+        <p class="one">MLLM 写任务、五轴域随机化、731 个物体的双臂数据工厂。</p>
+        <div class="meta-row"><span class="tag z">数据生成</span><span class="tag">上海交大 ScaleLab / 港大（合作）</span><span class="tag">2025-06</span><span class="tag">MIT（仓库 LICENSE）</span></div>
+      </a><a class="ledger-item" href="model-claude-fable-52.html" data-zone="model" data-tags="embodied-LLM">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/anthropic.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/anthropic-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Claude Fable 5.2</h3><div class="en">Claude Fable 5.2</div></div></div>
+        <p class="one">通用的 Claude 基座模型；发布方自测在 RoboDojo 仿真上平均成功率 64.9%。</p>
+        <div class="meta-row"><span class="tag z">具身推理</span><span class="tag">Anthropic</span><span class="tag">2026-11</span><span class="tag">闭源</span></div>
+      </a><a class="ledger-item" href="model-gpt6-astra.html" data-zone="model" data-tags="embodied-LLM">
+        <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/openai.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/openai-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>GPT-6 Astra</h3><div class="en">GPT-6 Astra</div></div></div>
+        <p class="one">OpenAI 的 GPT-6 版本，以 RoboDojo 仿真综合分 28.97 出现在官方榜第 18 位。</p>
+        <div class="meta-row"><span class="tag z">具身推理</span><span class="tag">OpenAI</span><span class="tag">2026</span><span class="tag">闭源</span></div>
+      </a></div>
+  </div></div>
+  <section class="layout"><a class="next-vol" href="leaderboard.html" data-zone="benchmark" style="border-top:1px solid var(--line)">
+    <span><span class="lbl">下一卷 · 碑林</span><span class="nm">榜单</span></span><span class="link-arrow">碑林 · 刻石记分</span>
+  </a></section></main>
+<span id="main-end"></span>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="foot-brand">
+      <a class="foot-mark" href="index.html" aria-label="具身山海志 · 返回首页"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55" stroke-dasharray="86 6" transform="rotate(-24 20 20)"/>
+  <path d="M7.5 26.5 14 15.6l4.4 7 3.5-5.6 10.6 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6.4 30.2c2.4-1.5 3.6-.2 5.6-.9 2-.7 3.2-1.0 5.2-.2 2 .8 3.4.3 5.3-.4 2-.7 3.3-.1 5.4.6 1.8.6 3.4.2 5.4-.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28.6" cy="12.4" r="2.6" fill="#c21f30"/>
+</svg><span class="foot-word"><b>具身山海志</b><small>Embodied Atlas</small></span></a>
+      <p class="foot-motto">多闻阙疑　慎言其余</p>
+      <a class="btn foot-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.16l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg>到 GitHub 点 Star</a>
+    </div>
+    <nav class="set" aria-label="页脚导航">
+      <div class="set-col"><b>七卷</b><a href="companies.html">公司</a><a href="labs.html">机构</a><a href="models.html">模型</a><a href="leaderboard.html">榜单</a><a href="jobs.html">岗位</a><a href="resources.html">资源</a><a href="news.html">动态</a></div>
+      <div class="set-col"><b>别册</b><a href="world.html">总览</a><a href="atlas.html">山海图</a><a href="compare.html">选型对比</a><a href="papers.html">论文索引</a><a href="events.html">会期与投稿</a></div>
+      <div class="set-col"><b>卷末</b><a href="about.html">关于</a><a href="legend.html">凡例</a><a href="credits.html">素材与许可</a><a href="copyright.html">版权</a></div>
+      <div class="set-col"><b>往来</b><button type="button" class="footer-btn" data-open-contact>合作联系</button><a href="coop.html">合作方式</a><a href="news.html#subscribe">订阅更新</a></div>
+    </nav>
+    <div class="foot-base">
+      <span class="src-line">源：<a href="https://fbddcz.github.io/Embodied-Shanhai-Atlas/models.html">具身山海志</a> · <a href="copyright.html">版权与许可</a> · 核验 2026-11-16</span>
+      <span class="colophon">© 2026 具身山海志 · <span data-world-label>秋·小雪</span></span>
+      <button class="clock-btn" id="worldClock" type="button" aria-haspopup="true" aria-expanded="false" title="四时天候：跟随真实时间，或把一年浓缩成一天">
+        <span class="cc-dot" aria-hidden="true"></span><span data-clock-mode>随天时</span>
+      </button>
+      <div class="clock-menu" id="worldClockMenu" hidden>
+        <p class="clock-q">四时如何流转</p>
+        <button data-clock="real" type="button">跟随真实时间</button>
+        <button data-clock="cycle" type="button">一年浓缩成一日（每 24 小时一轮）</button>
+        <button data-clock="fast" type="button">一年浓缩成四分钟（演示用）</button>
+        <button data-clock="off" type="button">停在当前节令</button>
+        <p class="clock-now" data-world-label></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="toc" id="toc" role="dialog" aria-modal="true" aria-label="七卷目录">
+  <div class="toc-head"><span class="toc-title">七卷</span><button class="tool" id="tocClose" aria-label="关闭目录"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="toc-body"><div class="toc-list"><a class="toc-item" href="world.html"><span class="no">纲</span><span class="nm">总纲<small>总览</small></span><span class="ct">7宗</span></a><a class="toc-item" href="companies.html" data-zone="company"><span class="no">壹</span><span class="nm">人间<small>公司</small></span><span class="ct">154</span></a><a class="toc-item" href="labs.html" data-zone="lab"><span class="no">贰</span><span class="nm">学宫<small>机构</small></span><span class="ct">60</span></a><a class="toc-item" href="models.html" data-zone="model"><span class="no">叁</span><span class="nm">灵物<small>模型</small></span><span class="ct">91</span></a><a class="toc-item" href="leaderboard.html" data-zone="benchmark"><span class="no">肆</span><span class="nm">碑林<small>榜单</small></span><span class="ct">33</span></a><a class="toc-item" href="jobs.html" data-zone="job"><span class="no">伍</span><span class="nm">招贤<small>岗位</small></span><span class="ct">57</span></a><a class="toc-item" href="resources.html" data-zone="resource"><span class="no">陆</span><span class="nm">藏经<small>资源</small></span><span class="ct">116</span></a><a class="toc-item" href="news.html" data-zone="news"><span class="no">柒</span><span class="nm">驿路<small>动态</small></span><span class="ct">95</span></a><a class="toc-item" href="atlas.html"><span class="no">图</span><span class="nm">山海图<small>七域一图</small></span><span class="ct">606</span></a></div></div>
+  <div class="toc-foot"><a href="hardware.html">本体与传感</a><a href="compare.html">选型对比</a><a href="papers.html">论文索引</a><a href="events.html">会期与投稿</a><a href="following.html">我的关注</a><a href="legend.html">凡例</a><a href="about.html">关于</a><a class="toc-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer">★ 到 GitHub 点 Star</a></div>
+</div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="搜索">
+  <div class="palette-panel">
+    <div class="palette-input">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <input id="paletteInput" type="search" placeholder="寻一司、一器、一碑、一文" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="paletteResults" aria-autocomplete="list">
+      <span class="palette-hint">ESC</span>
+    </div>
+    <div class="palette-results" id="paletteResults" role="listbox" aria-label="搜索结果"></div>
+  </div>
+</div>
+<div class="modal" id="claimModal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="claimTitle">
+    <div class="modal-head"><h3 id="claimTitle">认领与纠错</h3><button class="modal-close" type="button" data-close-modal aria-label="关闭">×</button></div>
+    <p class="modal-sub" id="claimTarget">写明要更正的内容，附可打开的来源。</p>
+    <form id="claimForm" data-issues="https://github.com/FBddcz/Embodied-Shanhai-Atlas">
+      <label class="field"><span>称呼或机构（可不填）</span><input name="name" autocomplete="off" placeholder="例如：某公司市场部"></label>
+      <label class="field"><span>要更正或补充的内容</span><textarea name="message" required rows="5" placeholder="哪一条事实、原文是什么、应改为什么。"></textarea></label>
+      <label class="field"><span>来源链接</span><input name="source" type="url" placeholder="https://"></label>
+      <div class="modal-actions"><button type="button" class="btn" data-copy-claim>复制</button><button type="submit" class="btn btn-solid">在 GitHub 提交</button></div>
+    </form>
+  </div>
+</div>
+<div class="modal" id="contactModal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal-head"><h3 id="contactTitle">合作联系</h3><button class="modal-close" type="button" data-close-contact aria-label="关闭">×</button></div>
+    <p class="modal-sub">合作、招聘、投稿或数据授权。可以填写在线表单，也可以扫码进群直接联系。</p>
+    <div class="contact-link"><a class="btn btn-solid" href="https://www.wjx.top/vm/mB7vmKF.aspx" target="_blank" rel="noopener noreferrer">填写在线表单 ↗</a><p class="modal-note">表单由问卷星托管，提交后维护者会收到通知。</p></div>
+    
+    <div class="contact-qr">
+      <img src="assets/contact/xhs-group-2.png" alt="小红书交流群二维码" width="132" height="132" loading="lazy" decoding="async">
+      <div class="contact-qr-text"><b>小红书交流群</b><p>具身 AI 交流实习群 2 · 扫码加入，直接在群里联系维护者。</p><p class="contact-qr-valid">此码 2026-12-14 前有效</p></div>
+    </div>
+    <form id="contactForm" hidden data-endpoint="" data-key="" data-email="" data-qr="1" data-mode="link">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+      
+      
+      <div class="field-row">
+        <label class="field"><span>称呼或机构</span><input name="name" required autocomplete="off" placeholder="张三 / 某公司"></label>
+        <label class="field"><span>来意</span><select name="intent"><option>合作</option><option>招聘</option><option>投稿</option><option>数据授权</option><option>其他</option></select></label>
+      </div>
+      <label class="field"><span>微信、邮箱或电话</span><input name="contact" required autocomplete="off"></label>
+      <label class="field"><span>想聊什么</span><textarea name="message" rows="4" required></textarea></label>
+      <label class="check"><input type="checkbox" name="consent" required><span>以上信息只用于回复，不作他用。</span></label>
+      <div class="modal-actions"><button type="button" class="btn" data-copy-contact>复制</button><button type="submit" class="btn btn-solid">复制这段文字</button></div>
+      <p class="modal-note" id="contactStatus"></p>
+    </form>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="title-card" aria-hidden="true"><b>灵物</b><small>山海异兽</small></div>
+<script src="app.js" defer></script>
+
+
+
+</body>
+</html>

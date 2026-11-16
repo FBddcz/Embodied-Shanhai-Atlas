@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="ink" data-season="spring">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RLBench · Imperial College London 等 · 榜单 · 碑林 · 具身山海志</title>
+<meta name="description" content="多任务机械臂操作仿真基准，常用 18 任务、每任务 100 条演示的设置。">
+<link rel="canonical" href="https://fbddcz.github.io/Embodied-Shanhai-Atlas/benchmark-rlbench.html">
+<meta name="atlas-fp" content="3e9f49-1dfa79">
+<meta name="author" content="具身山海志 · Embodied Atlas">
+<meta property="og:url" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/benchmark-rlbench.html">
+<meta name="twitter:url" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/benchmark-rlbench.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"RLBench","description":"多任务机械臂操作仿真基准，常用 18 任务、每任务 100 条演示的设置。","url":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/benchmark-rlbench.html","inLanguage":"zh-CN","dateModified":"2026-11-12","isPartOf":{"@type":"WebSite","name":"具身山海志 · Embodied Atlas","url":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/index.html","inLanguage":"zh-CN"},"creator":{"@type":"Person","name":"具身山海志","url":"https://github.com/FBddcz"},"copyrightHolder":{"@type":"Person","name":"具身山海志","url":"https://github.com/FBddcz"},"copyrightYear":2026,"license":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/copyright.html","citation":"具身山海志（Embodied Atlas）· 核验 2026-11-16 · https://fbddcz.github.io/Embodied-Shanhai-Atlas/benchmark-rlbench.html","alternateName":"RLBench","isBasedOn":["https://paperswithcode.co/benchmark/rlbench"],"about":[{"@type":"Thing","name":"仿真"},{"@type":"Thing","name":"评测"}],"identifier":"136186","creditText":"具身山海志 · 核验 2026-11-12"}</script>
+<meta name="theme-color" content="#f2e6ce" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1423" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.svg">
+<meta property="og:site_name" content="具身山海志">
+<meta property="og:title" content="RLBench · Imperial College London 等 · 榜单 · 碑林 · 具身山海志">
+<meta property="og:description" content="多任务机械臂操作仿真基准，常用 18 任务、每任务 100 条演示的设置。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="license" href="copyright.html">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+(function(){
+  var d=document.documentElement;
+  try{d.dataset.theme=localStorage.getItem('atlas-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'ink');}catch(e){d.dataset.theme='ink';}
+  // 季候与时辰：四时配色、山海图的天候都从这里取
+  var m=new Date().getMonth()+1;
+  d.dataset.season = (m>=3&&m<=5)?'spring':(m>=6&&m<=8)?'summer':(m>=9&&m<=11)?'autumn':'winter';
+  var h=new Date().getHours();
+  d.dataset.hour = h<5?'night':h<8?'dawn':h<11?'morning':h<16?'day':h<19?'dusk':'night';
+  var XDOC='CSSViewTransitionRule' in window;
+  d.classList.add(XDOC?'vt-x':'vt-fallback');
+  if(!XDOC){try{if(sessionStorage.getItem('veil')){sessionStorage.removeItem('veil');d.classList.add('veil-pending');}}catch(e){}return;}
+  var file=function(p){return p.split('/').pop()||'index.html';};
+  var seen=function(path){
+    var el=document.querySelector('[data-list] a[href$="'+file(path)+'"] .plate');
+    if(!el)return null;
+    el.style.viewTransitionName='entity-seal';
+    return el;
+  };
+  addEventListener('pageswap',function(e){
+    if(!e.viewTransition||!e.activation)return;
+    try{sessionStorage.setItem('vt-from',location.pathname);}catch(err){}
+    var el=seen(new URL(e.activation.entry.url).pathname);
+    if(el)e.viewTransition.finished.finally(function(){el.style.viewTransitionName='';});
+  });
+  addEventListener('pagereveal',function(e){
+    if(!e.viewTransition)return;
+    var nt=(window.navigation&&navigation.activation&&navigation.activation.navigationType)||(performance.getEntriesByType('navigation')[0]||{}).type;
+    var back=nt==='traverse'||nt==='back_forward';
+    e.viewTransition.types.add(back?'back':'ink');
+    if(back){
+      var prev='';try{prev=sessionStorage.getItem('vt-from')||'';}catch(err){}
+      if(prev)seen(prev);
+    }
+  });
+})();
+</script>
+</head>
+<body data-page="benchmark" data-zone="benchmark">
+<a class="skip" href="#main">跳到正文</a>
+<div class="atmo" aria-hidden="true"><video class="atmo-video" muted loop playsinline disablepictureinpicture preload="none"></video><span class="atmo-season"></span><span class="atmo-hour"></span><span class="atmo-veil"></span><span class="atmo-tint"></span></div>
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="index.html" aria-label="具身山海志 · 返回首页">
+    <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55" stroke-dasharray="86 6" transform="rotate(-24 20 20)"/>
+  <path d="M7.5 26.5 14 15.6l4.4 7 3.5-5.6 10.6 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6.4 30.2c2.4-1.5 3.6-.2 5.6-.9 2-.7 3.2-1.0 5.2-.2 2 .8 3.4.3 5.3-.4 2-.7 3.3-.1 5.4.6 1.8.6 3.4.2 5.4-.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28.6" cy="12.4" r="2.6" fill="#c21f30"/>
+</svg>
+    <span class="brand-word"><span class="brand-cn">具身山海志</span><span class="brand-en">Embodied Atlas</span></span>
+  </a>
+  <nav class="nav" aria-label="主导航"><a href="world.html" class="nav-world" title="山海大世界 · 总纲">总览</a><a href="companies.html" data-zone="company" title="人间 · 诸司都邑">公司</a><a href="labs.html" data-zone="lab" title="学宫 · 讲学著述">机构</a><a href="models.html" data-zone="model" title="灵物 · 山海异兽">模型</a><a href="leaderboard.html" data-zone="benchmark" aria-current="page" title="碑林 · 刻石记分">榜单</a><a href="jobs.html" data-zone="job" title="招贤 · 悬榜求士">岗位</a><a href="resources.html" data-zone="resource" title="藏经 · 典籍器用">资源</a><a href="news.html" data-zone="news" title="驿路 · 驿报存录">动态</a><a href="atlas.html" title="七域一图">山海图</a></nav>
+  <div class="header-tools">
+    <button class="tool tool-search" data-open-search aria-label="搜索，快捷键 Command K">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <span class="ph">搜索公司、模型、论文</span><span class="kbd">⌘K</span>
+    </button>
+    <a class="tool tool-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer" aria-label="到 GitHub 给具身山海志点 Star" title="到 GitHub 点 Star">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.16l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg><span class="gs-t">Star</span><span class="gs-n" data-gh-count hidden></span>
+    </a>
+    <a class="tool tool-follow" href="following.html" aria-label="我的关注" title="我的关注">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+    </a>
+    <button class="tool" id="themeBtn" aria-label="切换昼夜" title="切换昼夜">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>
+    </button>
+    <button class="tool menu-btn" id="menuBtn" aria-label="打开七卷目录" aria-expanded="false" aria-controls="toc">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+<main id="main" data-fp="136186"><section class="layout"><div class="codex-mast" data-zone="benchmark">
+  <nav class="crumb" aria-label="位置"><a href="index.html">首页</a><span>/</span><a href="leaderboard.html">榜单</a><span>/</span><span>RLBench</span><a href="atlas.html#n=rlbench" style="margin-left:auto">在山海图中查看 →</a></nav>
+  <div class="codex-title-row">
+    <div class="codex-seal">RL</div>
+    <div>
+      <h1 class="codex-name">RLBench</h1>
+      
+      <p class="codex-one">多任务机械臂操作仿真基准，常用 18 任务、每任务 100 条演示的设置。</p>
+    </div>
+  </div>
+  <div class="codex-bar">
+    <span class="badge z">榜单</span>
+    <span class="badge">仿真</span><span class="badge">评测</span>
+    
+    <span class="realm-badges" title="境界按站内已核字段推导，是证据刻度，不是评价"><a class="realm-badge" href="world.html#trial-5" title="看这一级要交什么">铸境</a></span>
+    <span class="act-break" aria-hidden="true"></span>
+    <span class="spacer"></span>
+    <a class="btn" href="https://paperswithcode.co/benchmark/rlbench" target="_blank" rel="noopener noreferrer">官网 ↗</a>
+    
+    
+    <button class="btn" data-follow-id="rlbench" data-follow-name="RLBench">关注</button>
+    <button class="btn btn-ghost" data-copy="RLBench（RLBench）· 具身山海志 · 核验 2026-11-12 · https://fbddcz.github.io/Embodied-Shanhai-Atlas/benchmark-rlbench.html">复制引用</button>
+    <button class="btn btn-ghost" data-claim-id="rlbench" data-claim-name="RLBench">认领 / 纠错</button>
+  </div>
+</div></section>
+<section class="layout"><div class="codex-body"><div class="folio">
+  <aside><div style="position:sticky;top:calc(var(--header-h) + 32px)">
+  <div class="side-head"><span class="seal-mini">志</span><span style="font-family:var(--f-kai);font-size:15px;letter-spacing:.3em;color:var(--text-3)">档案</span></div>
+  <dl class="facts-dl" style="margin-top:18px;grid-template-columns:1fr"><div><dt>运营</dt><dd>Imperial College London 等</dd></div><div><dt>类型</dt><dd>仿真</dd></div><div><dt>任务</dt><dd>18 任务 / 100 demos</dd></div><div><dt>指标</dt><dd>平均成功率</dd></div><div><dt>核验</dt><dd>2026-11-12</dd></div></dl>
+  <div class="margin-note" style="margin-top:24px"><b>出处</b><ol class="ref-list"><li><a href="https://paperswithcode.co/benchmark/rlbench" target="_blank" rel="noopener noreferrer">官方/公开榜单</a> <span class="mono" style="color:var(--text-3)">2026-11-12</span></li></ol></div>
+  <div class="margin-note" style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap"><b>纠错</b><span>出处或事实有误？</span><button class="link-arrow" style="background:none;border:0;padding:0;cursor:pointer" data-claim-id="rlbench" data-claim-name="RLBench">认领 / 纠错</button></div>
+</div></aside>
+  <div><section class="sec"><div class="judge"><div class="who">判词</div><p class="codex-summary">BridgeVLA++ 的 93.7% 与 EquAct 的 89.4% 来自不同任务子集与训练数据，不能直接比较。</p></div></section><section class="sec"><div class="sec-head"><span class="sec-no">壹</span><span class="sec-title">已知之弊</span><span class="rule"></span></div><ul class="prose" style="padding-left:1.2em;list-style:disc"><li>官方站只提供环境与论文，没有排行榜。</li><li>第三方汇总的条目口径不完全统一。</li><li>部分工作只评任务子集，或改变演示条数。</li></ul></section><section class="sec"><div class="sec-head"><span class="sec-no">贰</span><span class="sec-title">碑面</span><span class="rule"></span></div><div class="board-head"><h2>RLBench</h2><a class="btn" href="https://sites.google.com/view/rlbench" target="_blank" rel="noopener noreferrer">官方榜单 ↗</a></div>
+  <figure class="board-cover"><img src="assets/lb-covers/rlbench.jpg" alt="RLBench 官方图" loading="lazy" decoding="async"><figcaption>RLBench 24 个仿真任务网格（与站内现图同源的高清版，可选替换以满足短边≥480） <a href="https://github.com/stepjam/RLBench" target="_blank" rel="noopener noreferrer">图源 ↗</a></figcaption></figure>
+  <div class="board-sub"><span><b>类型</b> 仿真</span><span><b>指标</b> 平均成功率</span><span><b>行数</b> 22</span><span><b>最近</b> 2026-10</span></div>
+  <p class="board-note">官方不设排行榜，以下为各论文自报的 18 任务多任务成绩。评测回合数、重复次数、步数上限或检查点选取与标准设定不同的行，已在协议列注明；PerAct、HiveFormer、C2F-ARM-BC 三行数字引自后续论文。</p>
+  <div class="board-changes"><span class="change-chip"><span>18 任务多任务榜补入 22 条</span><span class="delta">新</span></span></div>
+  <div class="table-wrap" style="margin-top:22px"><table class="data-table board-table">
+    <thead><tr><th class="th-rank">#</th><th class="th-name">模型</th><th class="th-score">平均成功率</th><th class="th-proto">协议</th><th class="th-date">日期</th><th class="th-status">状态</th></tr></thead>
+    <tbody><tr id="row-bridgevla-" class=""><td class="rank top">1</td>
+        <td class="name-cell"><div class="name">BridgeVLA++</div><div class="org">中科院自动化所 + FiveAges + 字节跳动 Seed</div></td>
+        <td class="score-cell"><div class="score">93.7%</div><div class="bar" style="width:100%;animation-delay:40ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务；100 示范/任务；5 次评测 × 25 回合，±0.6；Place Cups 与 Stack Blocks 步数上限放宽到 35；带时空记忆模块"><span class="cl">18 任务；</span><span class="cl">100 示范/任务；</span><span class="cl">5 次评测 × 25 回合，±0.6；</span><span class="cl">Place Cups 与 Stack Blocks 步数上限放宽到 35；</span><span class="cl">带时空记忆模块</span></div></td>
+        
+        <td class="when">08</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-reenvision" class=""><td class="rank">2</td>
+        <td class="name-cell"><div class="name">ReEnvision</div><div class="org">港科大（广州）+ 南京大学</div></td>
+        <td class="score-cell"><div class="score">88.8%</div><div class="bar" style="width:95%;animation-delay:80ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务；每任务 50 个评测回合（标准为 25）；以 BridgeVLA 为骨干加动作修复模块；同文复测 BridgeVLA 为 85.7%"><span class="cl">18 任务；</span><span class="cl">每任务 50 个评测回合（标准为 25）；</span><span class="cl">以 BridgeVLA 为骨干加动作修复模块；</span><span class="cl">同文复测 BridgeVLA 为 85.7%</span></div></td>
+        
+        <td class="when">10</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-bridgevla" class=""><td class="rank">3</td>
+        <td class="name-cell"><div class="name">BridgeVLA</div><div class="org">中科院自动化所 + 字节跳动 Seed</div></td>
+        <td class="score-cell"><div class="score">88.2%</div><div class="bar" style="width:94%;animation-delay:120ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务；100 示范/任务；5 次评测 × 25 回合，每回合最多 25 步"><span class="cl">18 任务；</span><span class="cl">100 示范/任务；</span><span class="cl">5 次评测 × 25 回合，每回合最多 25 步</span></div></td>
+        
+        <td class="when">06</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-gpa-ram" class=""><td class="rank">4</td>
+        <td class="name-cell"><div class="name">GPA-RAM</div><div class="org">北大深研院 + 深圳先进院 + 澳门大学</div></td>
+        <td class="score-cell"><div class="score">87.5%</div><div class="bar" style="width:93%;animation-delay:160ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务；100 示范/任务；4 次 × 25 个未见场景；在最后 30 个 epoch 的模型中取成绩最高者"><span class="cl">18 任务；</span><span class="cl">100 示范/任务；</span><span class="cl">4 次 × 25 个未见场景；</span><span class="cl">在最后 30 个 epoch 的模型中取成绩最高者</span></div></td>
+        
+        <td class="when">04</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-spatialactor" class=""><td class="rank">5</td>
+        <td class="name-cell"><div class="name">SpatialActor</div><div class="org">清华大学 + 原力灵机 + 旷视 + 阶跃星辰</div></td>
+        <td class="score-cell"><div class="score">87.4%</div><div class="bar" style="width:93%;animation-delay:200ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务 249 变体；100 示范/任务；每任务 25 个未见回合；±0.8"><span class="cl">18 任务 249 变体；</span><span class="cl">100 示范/任务；</span><span class="cl">每任务 25 个未见回合；</span><span class="cl">±0.8</span></div></td>
+        
+        <td class="when">11</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-sam2act" class=""><td class="rank">6</td>
+        <td class="name-cell"><div class="name">SAM2Act</div><div class="org">University of Washington / NVIDIA / AI2</div></td>
+        <td class="score-cell"><div class="score">86.8%</div><div class="bar" style="width:93%;animation-delay:240ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务；100 示范/任务；4 次评测均值，±0.5"><span class="cl">18 任务；</span><span class="cl">100 示范/任务；</span><span class="cl">4 次评测均值，±0.5</span></div></td>
+        
+        <td class="when">01</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-arp-" class=""><td class="rank">7</td>
+        <td class="name-cell"><div class="name">ARP+</div><div class="org">Rutgers University</div></td>
+        <td class="score-cell"><div class="score">86.0%</div><div class="bar" style="width:92%;animation-delay:280ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务；3 次独立运行均值；不使用时间步输入；同文 ARP（层数较少）为 81.2%"><span class="cl">18 任务；</span><span class="cl">3 次独立运行均值；</span><span class="cl">不使用时间步输入；</span><span class="cl">同文 ARP（层数较少）为 81.2%</span></div></td>
+        
+        <td class="when">10</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-3d-lotus" class=""><td class="rank">8</td>
+        <td class="name-cell"><div class="name">3D-LOTUS</div><div class="org">Inria / ENS</div></td>
+        <td class="score-cell"><div class="score">83.1%</div><div class="bar" style="width:89%;animation-delay:320ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="RLBench-18Task；18 任务 249 变体，训练与测试同一任务集；±0.8"><span class="cl">RLBench-18Task；</span><span class="cl">18 任务 249 变体，训练与测试同一任务集；</span><span class="cl">±0.8</span></div></td>
+        
+        <td class="when">10</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-rvt-2" class=""><td class="rank">9</td>
+        <td class="name-cell"><div class="name">RVT-2</div><div class="org">NVIDIA</div></td>
+        <td class="score-cell"><div class="score">81.4%</div><div class="bar" style="width:87%;animation-delay:360ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务；100 示范/任务，25 个未见回合；128×128 四路 RGB-D；同一模型评测 4 次取均值"><span class="cl">18 任务；</span><span class="cl">100 示范/任务，25 个未见回合；</span><span class="cl">128×128 四路 RGB-D；</span><span class="cl">同一模型评测 4 次取均值</span></div></td>
+        
+        <td class="when">06</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-3d-diffuser-actor" class=""><td class="rank">10</td>
+        <td class="name-cell"><div class="name">3D Diffuser Actor</div><div class="org">CMU</div></td>
+        <td class="score-cell"><div class="score">81.3%</div><div class="bar" style="width:87%;animation-delay:400ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务多视角设定（PerAct 设定）；四路 RGB-D；多随机种子均值"><span class="cl">18 任务多视角设定（PerAct 设定）；</span><span class="cl">四路 RGB-D；</span><span class="cl">多随机种子均值</span></div></td>
+        
+        <td class="when">02</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-cortical-policy" class=""><td class="rank">11</td>
+        <td class="name-cell"><div class="name">Cortical Policy</div><div class="org">哈工大（深圳）</div></td>
+        <td class="score-cell"><div class="score">81.0%</div><div class="bar" style="width:86%;animation-delay:440ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务 249 变体；100 示范/任务；单一检查点；同文在相同条件下重训 RVT-2 得 77.5%"><span class="cl">18 任务 249 变体；</span><span class="cl">100 示范/任务；</span><span class="cl">单一检查点；</span><span class="cl">同文在相同条件下重训 RVT-2 得 77.5%</span></div></td>
+        
+        <td class="when">03</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-mini-diffuser" class=""><td class="rank">12</td>
+        <td class="name-cell"><div class="name">Mini-Diffuser</div><div class="org">KU Leuven / ETH Zurich</div></td>
+        <td class="score-cell"><div class="score">77.6%</div><div class="bar" style="width:83%;animation-delay:480ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务 249 变体；100 示范/任务；每任务 300 个评测回合、3 个随机种子；单张 RTX 4090 训练约 13 小时"><span class="cl">18 任务 249 变体；</span><span class="cl">100 示范/任务；</span><span class="cl">每任务 300 个评测回合、3 个随机种子；</span><span class="cl">单张 RTX 4090 训练约 13 小时</span></div></td>
+        
+        <td class="when">05</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-vihe" class=""><td class="rank">13</td>
+        <td class="name-cell"><div class="name">VIHE</div><div class="org">约翰斯·霍普金斯大学 + 百度研究院</div></td>
+        <td class="score-cell"><div class="score">77%</div><div class="bar" style="width:82%;animation-delay:520ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务；100 示范/任务；PerAct 同一 25 个测试变体；原表为整数"><span class="cl">18 任务；</span><span class="cl">100 示范/任务；</span><span class="cl">PerAct 同一 25 个测试变体；</span><span class="cl">原表为整数</span></div></td>
+        
+        <td class="when">03</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-sam-e" class=""><td class="rank">14</td>
+        <td class="name-cell"><div class="name">SAM-E</div><div class="org">清华深研院 + 上海人工智能实验室 + 港科大</div></td>
+        <td class="score-cell"><div class="score">70.6%</div><div class="bar" style="width:75%;animation-delay:560ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务 249 变体；5 次评测均值，±0.7"><span class="cl">18 任务 249 变体；</span><span class="cl">5 次评测均值，±0.7</span></div></td>
+        
+        <td class="when">05</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row---agent" class=""><td class="rank">15</td>
+        <td class="name-cell"><div class="name">Σ-agent</div><div class="org">港科大（广州）</div></td>
+        <td class="score-cell"><div class="score">68.8%</div><div class="bar" style="width:73%;animation-delay:600ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务；100 示范/任务；同一 25 回合评测 3 次取均值；10 示范/任务设定为 47.3%"><span class="cl">18 任务；</span><span class="cl">100 示范/任务；</span><span class="cl">同一 25 回合评测 3 次取均值；</span><span class="cl">10 示范/任务设定为 47.3%</span></div></td>
+        
+        <td class="when">06</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-3d-mvp" class=""><td class="rank">16</td>
+        <td class="name-cell"><div class="name">3D-MVP</div><div class="org">NVIDIA + 密歇根大学 + NYU</div></td>
+        <td class="score-cell"><div class="score">67.5%</div><div class="bar" style="width:72%;animation-delay:640ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务；四路 128×128 RGB-D；RVT 架构加 3D 多视角预训练"><span class="cl">18 任务；</span><span class="cl">四路 128×128 RGB-D；</span><span class="cl">RVT 架构加 3D 多视角预训练</span></div></td>
+        
+        <td class="when">06</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-act3d" class=""><td class="rank">17</td>
+        <td class="name-cell"><div class="name">Act3D</div><div class="org">CMU</div></td>
+        <td class="score-cell"><div class="score">65.1%</div><div class="bar" style="width:69%;animation-delay:680ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="原文表 1（CLIP ResNet50 主干）为 65.1，正文写作 65%；18 任务 249 变体，每任务 500 个未见回合；3D Diffuser Actor 论文称其划分与标准设定不同，按标准设定重训为 63.2%"><span class="cl">原文表 1（CLIP ResNet50 主干）为 65.1，正文写作 65%；</span><span class="cl">18 任务 249 变体，每任务 500 个未见回合；</span><span class="cl">3D Diffuser Actor 论文称其划分与标准设定不同，按标准设定重训为 63.2%</span></div></td>
+        
+        <td class="when">06</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-rvt" class=""><td class="rank">18</td>
+        <td class="name-cell"><div class="name">RVT</div><div class="org">NVIDIA</div></td>
+        <td class="score-cell"><div class="score">62.9%</div><div class="bar" style="width:67%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务；100 示范/任务；同一 25 个变体评测 5 次取均值"><span class="cl">18 任务；</span><span class="cl">100 示范/任务；</span><span class="cl">同一 25 个变体评测 5 次取均值</span></div></td>
+        
+        <td class="when">06</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-peract" class=""><td class="rank">19</td>
+        <td class="name-cell"><div class="name">PerAct</div><div class="org">University of Washington / NVIDIA</div></td>
+        <td class="score-cell"><div class="score">49.4%</div><div class="bar" style="width:53%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="数字引自 RVT 论文表 1：用 PerAct 发布的最终模型重评 5 次；PerAct 原文只列分任务成绩"><span class="cl">数字引自 RVT 论文表 1：用 PerAct 发布的最终模型重评 5 次；</span><span class="cl">PerAct 原文只列分任务成绩</span></div></td>
+        
+        <td class="when">09</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-polarnet" class=""><td class="rank">20</td>
+        <td class="name-cell"><div class="name">PolarNet</div><div class="org">Inria / ENS</div></td>
+        <td class="score-cell"><div class="score">46.4%</div><div class="bar" style="width:50%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="18 任务 249 变体；100 示范/任务；每任务 25 回合；按 PerAct 加正面相机"><span class="cl">18 任务 249 变体；</span><span class="cl">100 示范/任务；</span><span class="cl">每任务 25 回合；</span><span class="cl">按 PerAct 加正面相机</span></div></td>
+        
+        <td class="when">09</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-hiveformer" class=""><td class="rank">21</td>
+        <td class="name-cell"><div class="name">HiveFormer</div><div class="org">Inria</div></td>
+        <td class="score-cell"><div class="score">45.3%</div><div class="bar" style="width:48%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="数字引自 PolarNet 论文表 11（PolarNet 作者的复现实现）；100 示范/任务"><span class="cl">数字引自 PolarNet 论文表 11（PolarNet 作者的复现实现）；</span><span class="cl">100 示范/任务</span></div></td>
+        
+        <td class="when">09</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-c2f-arm-bc" class=""><td class="rank">22</td>
+        <td class="name-cell"><div class="name">C2F-ARM-BC</div><div class="org">Imperial College London</div></td>
+        <td class="score-cell"><div class="score">20.1%</div><div class="bar" style="width:21%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="数字引自 RVT 论文表 1，源自 PerAct 论文；RVT 指出该数按任务分别挑选最佳模型，会高估"><span class="cl">数字引自 RVT 论文表 1，源自 PerAct 论文；</span><span class="cl">RVT 指出该数按任务分别挑选最佳模型，会高估</span></div></td>
+        
+        <td class="when">06</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr></tbody></table></div>
+  <div class="board-foot"><a class="btn btn-ghost" href="lb-rlbench.html">本碑专页 →</a></div></section><section class="sec"><div class="sec-head"><span class="sec-no">叁</span><span class="sec-title">上榜之器</span><span class="rule"></span><span class="aside">1 个</span></div><div class="rel-grid"><a class="rel-card" href="model-3d-diffuser-actor.html" data-zone="model"><span class="glyph-mini">3</span><span><span class="nm">3D Diffuser Actor</span><span class="sub">RLBench（多视角） +16.3</span></span><span class="go">→</span></a></div></section><section class="sec"><div class="sec-head"><span class="sec-no">肆</span><span class="sec-title">同类之碑</span><span class="rule"></span></div><div class="rel-grid"><a class="rel-card" href="benchmark-libero.html" data-zone="benchmark"><span class="glyph-mini">L</span><span><span class="nm">LIBERO</span><span class="sub">仿真 · 17 行</span></span><span class="go">→</span></a><a class="rel-card" href="benchmark-robotwin.html" data-zone="benchmark"><span class="glyph-mini">R</span><span><span class="nm">RoboTwin 2.0</span><span class="sub">仿真 · 31 行</span></span><span class="go">→</span></a><a class="rel-card" href="benchmark-robocasa.html" data-zone="benchmark"><span class="glyph-mini">R</span><span><span class="nm">RoboCasa GR1 TableTop</span><span class="sub">仿真 · 30 行</span></span><span class="go">→</span></a><a class="rel-card" href="benchmark-robocoliseum.html" data-zone="benchmark"><span class="glyph-mini">R</span><span><span class="nm">RoboColiseum</span><span class="sub">仿真 · 82 行</span></span><span class="go">→</span></a><a class="rel-card" href="benchmark-calvin.html" data-zone="benchmark"><span class="glyph-mini">C</span><span><span class="nm">CALVIN</span><span class="sub">仿真 · 33 行</span></span><span class="go">→</span></a><a class="rel-card" href="benchmark-behavior1k.html" data-zone="benchmark"><span class="glyph-mini">B</span><span><span class="nm">BEHAVIOR-1K</span><span class="sub">仿真 · 40 行</span></span><span class="go">→</span></a></div></section></div>
+  <aside class="margin-note" style="padding-top:6px">
+    <b>榜单页</b>
+    碑林 · 榜单
+  </aside>
+</div></div></section><section class="layout"><a class="next-vol" href="jobs.html" data-zone="job" style="border-top:1px solid var(--line)">
+    <span><span class="lbl">下一卷 · 招贤</span><span class="nm">岗位</span></span><span class="link-arrow">招贤 · 悬榜求士</span>
+  </a></section></main>
+<span id="main-end"></span>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="foot-brand">
+      <a class="foot-mark" href="index.html" aria-label="具身山海志 · 返回首页"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55" stroke-dasharray="86 6" transform="rotate(-24 20 20)"/>
+  <path d="M7.5 26.5 14 15.6l4.4 7 3.5-5.6 10.6 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6.4 30.2c2.4-1.5 3.6-.2 5.6-.9 2-.7 3.2-1.0 5.2-.2 2 .8 3.4.3 5.3-.4 2-.7 3.3-.1 5.4.6 1.8.6 3.4.2 5.4-.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28.6" cy="12.4" r="2.6" fill="#c21f30"/>
+</svg><span class="foot-word"><b>具身山海志</b><small>Embodied Atlas</small></span></a>
+      <p class="foot-motto">多闻阙疑　慎言其余</p>
+      <a class="btn foot-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.16l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg>到 GitHub 点 Star</a>
+    </div>
+    <nav class="set" aria-label="页脚导航">
+      <div class="set-col"><b>七卷</b><a href="companies.html">公司</a><a href="labs.html">机构</a><a href="models.html">模型</a><a href="leaderboard.html">榜单</a><a href="jobs.html">岗位</a><a href="resources.html">资源</a><a href="news.html">动态</a></div>
+      <div class="set-col"><b>别册</b><a href="world.html">总览</a><a href="atlas.html">山海图</a><a href="compare.html">选型对比</a><a href="papers.html">论文索引</a><a href="events.html">会期与投稿</a></div>
+      <div class="set-col"><b>卷末</b><a href="about.html">关于</a><a href="legend.html">凡例</a><a href="credits.html">素材与许可</a><a href="copyright.html">版权</a></div>
+      <div class="set-col"><b>往来</b><button type="button" class="footer-btn" data-open-contact>合作联系</button><a href="coop.html">合作方式</a><a href="news.html#subscribe">订阅更新</a></div>
+    </nav>
+    <div class="foot-base">
+      <span class="src-line">源：<a href="https://fbddcz.github.io/Embodied-Shanhai-Atlas/benchmark-rlbench.html">具身山海志</a> · <a href="copyright.html">版权与许可</a> · 核验 2026-11-16</span>
+      <span class="colophon">© 2026 具身山海志 · <span data-world-label>秋·小雪</span></span>
+      <button class="clock-btn" id="worldClock" type="button" aria-haspopup="true" aria-expanded="false" title="四时天候：跟随真实时间，或把一年浓缩成一天">
+        <span class="cc-dot" aria-hidden="true"></span><span data-clock-mode>随天时</span>
+      </button>
+      <div class="clock-menu" id="worldClockMenu" hidden>
+        <p class="clock-q">四时如何流转</p>
+        <button data-clock="real" type="button">跟随真实时间</button>
+        <button data-clock="cycle" type="button">一年浓缩成一日（每 24 小时一轮）</button>
+        <button data-clock="fast" type="button">一年浓缩成四分钟（演示用）</button>
+        <button data-clock="off" type="button">停在当前节令</button>
+        <p class="clock-now" data-world-label></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="toc" id="toc" role="dialog" aria-modal="true" aria-label="七卷目录">
+  <div class="toc-head"><span class="toc-title">七卷</span><button class="tool" id="tocClose" aria-label="关闭目录"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="toc-body"><div class="toc-list"><a class="toc-item" href="world.html"><span class="no">纲</span><span class="nm">总纲<small>总览</small></span><span class="ct">7宗</span></a><a class="toc-item" href="companies.html" data-zone="company"><span class="no">壹</span><span class="nm">人间<small>公司</small></span><span class="ct">154</span></a><a class="toc-item" href="labs.html" data-zone="lab"><span class="no">贰</span><span class="nm">学宫<small>机构</small></span><span class="ct">60</span></a><a class="toc-item" href="models.html" data-zone="model"><span class="no">叁</span><span class="nm">灵物<small>模型</small></span><span class="ct">91</span></a><a class="toc-item" href="leaderboard.html" data-zone="benchmark"><span class="no">肆</span><span class="nm">碑林<small>榜单</small></span><span class="ct">33</span></a><a class="toc-item" href="jobs.html" data-zone="job"><span class="no">伍</span><span class="nm">招贤<small>岗位</small></span><span class="ct">57</span></a><a class="toc-item" href="resources.html" data-zone="resource"><span class="no">陆</span><span class="nm">藏经<small>资源</small></span><span class="ct">116</span></a><a class="toc-item" href="news.html" data-zone="news"><span class="no">柒</span><span class="nm">驿路<small>动态</small></span><span class="ct">95</span></a><a class="toc-item" href="atlas.html"><span class="no">图</span><span class="nm">山海图<small>七域一图</small></span><span class="ct">606</span></a></div></div>
+  <div class="toc-foot"><a href="hardware.html">本体与传感</a><a href="compare.html">选型对比</a><a href="papers.html">论文索引</a><a href="events.html">会期与投稿</a><a href="following.html">我的关注</a><a href="legend.html">凡例</a><a href="about.html">关于</a><a class="toc-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer">★ 到 GitHub 点 Star</a></div>
+</div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="搜索">
+  <div class="palette-panel">
+    <div class="palette-input">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <input id="paletteInput" type="search" placeholder="寻一司、一器、一碑、一文" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="paletteResults" aria-autocomplete="list">
+      <span class="palette-hint">ESC</span>
+    </div>
+    <div class="palette-results" id="paletteResults" role="listbox" aria-label="搜索结果"></div>
+  </div>
+</div>
+<div class="modal" id="claimModal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="claimTitle">
+    <div class="modal-head"><h3 id="claimTitle">认领与纠错</h3><button class="modal-close" type="button" data-close-modal aria-label="关闭">×</button></div>
+    <p class="modal-sub" id="claimTarget">写明要更正的内容，附可打开的来源。</p>
+    <form id="claimForm" data-issues="https://github.com/FBddcz/Embodied-Shanhai-Atlas">
+      <label class="field"><span>称呼或机构（可不填）</span><input name="name" autocomplete="off" placeholder="例如：某公司市场部"></label>
+      <label class="field"><span>要更正或补充的内容</span><textarea name="message" required rows="5" placeholder="哪一条事实、原文是什么、应改为什么。"></textarea></label>
+      <label class="field"><span>来源链接</span><input name="source" type="url" placeholder="https://"></label>
+      <div class="modal-actions"><button type="button" class="btn" data-copy-claim>复制</button><button type="submit" class="btn btn-solid">在 GitHub 提交</button></div>
+    </form>
+  </div>
+</div>
+<div class="modal" id="contactModal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal-head"><h3 id="contactTitle">合作联系</h3><button class="modal-close" type="button" data-close-contact aria-label="关闭">×</button></div>
+    <p class="modal-sub">合作、招聘、投稿或数据授权。可以填写在线表单，也可以扫码进群直接联系。</p>
+    <div class="contact-link"><a class="btn btn-solid" href="https://www.wjx.top/vm/mB7vmKF.aspx" target="_blank" rel="noopener noreferrer">填写在线表单 ↗</a><p class="modal-note">表单由问卷星托管，提交后维护者会收到通知。</p></div>
+    
+    <div class="contact-qr">
+      <img src="assets/contact/xhs-group-2.png" alt="小红书交流群二维码" width="132" height="132" loading="lazy" decoding="async">
+      <div class="contact-qr-text"><b>小红书交流群</b><p>具身 AI 交流实习群 2 · 扫码加入，直接在群里联系维护者。</p><p class="contact-qr-valid">此码 2026-12-14 前有效</p></div>
+    </div>
+    <form id="contactForm" hidden data-endpoint="" data-key="" data-email="" data-qr="1" data-mode="link">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+      
+      
+      <div class="field-row">
+        <label class="field"><span>称呼或机构</span><input name="name" required autocomplete="off" placeholder="张三 / 某公司"></label>
+        <label class="field"><span>来意</span><select name="intent"><option>合作</option><option>招聘</option><option>投稿</option><option>数据授权</option><option>其他</option></select></label>
+      </div>
+      <label class="field"><span>微信、邮箱或电话</span><input name="contact" required autocomplete="off"></label>
+      <label class="field"><span>想聊什么</span><textarea name="message" rows="4" required></textarea></label>
+      <label class="check"><input type="checkbox" name="consent" required><span>以上信息只用于回复，不作他用。</span></label>
+      <div class="modal-actions"><button type="button" class="btn" data-copy-contact>复制</button><button type="submit" class="btn btn-solid">复制这段文字</button></div>
+      <p class="modal-note" id="contactStatus"></p>
+    </form>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="title-card" aria-hidden="true"><b>碑林</b><small>刻石记分</small></div>
+<script src="app.js" defer></script>
+
+
+
+</body>
+</html>

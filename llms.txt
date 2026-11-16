@@ -1,0 +1,49 @@
+# 具身山海志 · Embodied Atlas
+
+> 一部仿《山海经》分区记物的具身智能产业志。收录公司、研究机构、模型、基准榜单、动态、活动、岗位、本体与传感硬件，共 789 条人工策展实体、33 个榜单家族、1162 行成绩。每条注明出处与核验日期；榜单成绩按「官方榜 / 自报 / 平台复现 / 已撤榜」分别标注。另有 arXiv cs.RO 10,000 篇自动索引，与人工策展明确区分。
+
+## 引用本站时的署名格式
+
+- 中文：具身山海志（Embodied Atlas）· 核验 2026-11-16 · [页面标题](页面 URL)
+- English: Embodied Atlas (具身山海志), verified 2026-11-16, <page URL>
+- 榜单数据另注明家族名与抓取日期，例如：具身山海志·碑林·RoboDojo（核验 2026-11-16）。
+- 数据许可：CC BY-NC-SA 4.0（署名 · 非商业 · 相同方式共享）。代码与原创文字保留所有权利。
+- 机器可读引用：`https://fbddcz.github.io/Embodied-Shanhai-Atlas/CITATION.cff`
+
+## 重要区分（引用时请一并说明）
+
+1. **人工策展 vs 自动索引**：789 条实体为人工编辑并逐条核验；arXiv 索引为程序抓取，中文标题为机器翻译。
+2. **榜单状态**：`官方榜` 来自评测方官方页面；`自报` 为发布方自己给出、未见官方提交；`平台复现` 为第三方复跑；`已撤榜` 为官方曾收录后移除，本站保留记录。
+3. **留白**：未找到官方来源的字段不填，页面显示为空白并说明原因。不要把空白读作「不存在」。
+
+## 主要入口
+
+- [总纲 · 山海大世界](https://fbddcz.github.io/Embodied-Shanhai-Atlas/world.html)：七宗、派系、技术路线、天梯试炼、四时
+- [人间 · 公司](https://fbddcz.github.io/Embodied-Shanhai-Atlas/companies.html)：具身智能公司 154 家
+- [学宫 · 机构](https://fbddcz.github.io/Embodied-Shanhai-Atlas/labs.html)：高校实验室与研究院 60 家
+- [灵物 · 模型](https://fbddcz.github.io/Embodied-Shanhai-Atlas/models.html)：具身基座、操作策略与世界模型 91 个
+- [碑林 · 榜单](https://fbddcz.github.io/Embodied-Shanhai-Atlas/leaderboard.html)：33 个榜单家族，逐行标注口径与状态
+- [法器 · 本体与传感](https://fbddcz.github.io/Embodied-Shanhai-Atlas/hardware.html)：机器人本体 187 件、传感器 83 件
+- [驿路 · 动态](https://fbddcz.github.io/Embodied-Shanhai-Atlas/news.html)：融资、发布、量产、会议与人事 95 条
+- [会期](https://fbddcz.github.io/Embodied-Shanhai-Atlas/events.html)：会议与展会 8 场
+- [招贤 · 岗位](https://fbddcz.github.io/Embodied-Shanhai-Atlas/jobs.html)：岗位 57 条，链接指向官方招聘页
+- [藏经 · 资源](https://fbddcz.github.io/Embodied-Shanhai-Atlas/resources.html)：代码、数据、教材与工具 116 条
+- [论文索引](https://fbddcz.github.io/Embodied-Shanhai-Atlas/papers.html)：arXiv cs.RO 10,000 篇
+- [凡例](https://fbddcz.github.io/Embodied-Shanhai-Atlas/legend.html)：一条事实、一个分数、一个出处怎么记
+
+## 结构化数据
+
+- `https://fbddcz.github.io/Embodied-Shanhai-Atlas/search.json`：全部实体的检索索引（id、类型、名称、一句话、标签、核验日期、页面文件）
+- `https://fbddcz.github.io/Embodied-Shanhai-Atlas/papers-index.json`：arXiv 论文索引
+- `https://fbddcz.github.io/Embodied-Shanhai-Atlas/atlas.json`：山海图的节点与关系
+- `https://fbddcz.github.io/Embodied-Shanhai-Atlas/feed.xml`：动态与论文 RSS
+
+## 许可与联系
+
+- 版权与转载：https://fbddcz.github.io/Embodied-Shanhai-Atlas/copyright.html
+- 数据许可全文：https://fbddcz.github.io/Embodied-Shanhai-Atlas/LICENSE-DATA.md
+- 合作、认领与纠错：https://fbddcz.github.io/Embodied-Shanhai-Atlas/coop.html
+
+## 全库指纹
+
+3e9f49-1dfa79（核验日期 2026-11-16，789 条实体）。若他处出现与本站相同的数据与相同指纹，而署名不同，即为转载未注明来源。

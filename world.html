@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="ink" data-season="spring">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>总纲 · 山海大世界 · 具身山海志</title>
+<meta name="description" content="山海大世界：总纲、五行、十一关、九阶、派系、天梯试炼、学派、宗门圣兽、奇观异象与底蕴。">
+<link rel="canonical" href="https://fbddcz.github.io/Embodied-Shanhai-Atlas/world.html">
+<meta name="atlas-fp" content="3e9f49-1dfa79">
+<meta name="author" content="具身山海志 · Embodied Atlas">
+<meta property="og:url" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/world.html">
+<meta name="twitter:url" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/world.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"总纲 · 山海大世界 · 具身山海志","description":"山海大世界：总纲、五行、十一关、九阶、派系、天梯试炼、学派、宗门圣兽、奇观异象与底蕴。","url":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/world.html","inLanguage":"zh-CN","dateModified":"2026-11-16","isPartOf":{"@type":"WebSite","name":"具身山海志 · Embodied Atlas","url":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/index.html","inLanguage":"zh-CN"},"creator":{"@type":"Person","name":"具身山海志","url":"https://github.com/FBddcz"},"copyrightHolder":{"@type":"Person","name":"具身山海志","url":"https://github.com/FBddcz"},"copyrightYear":2026,"license":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/copyright.html","citation":"具身山海志（Embodied Atlas）· 核验 2026-11-16 · https://fbddcz.github.io/Embodied-Shanhai-Atlas/world.html"}</script>
+<meta name="theme-color" content="#f2e6ce" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1423" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.svg">
+<meta property="og:site_name" content="具身山海志">
+<meta property="og:title" content="总纲 · 山海大世界 · 具身山海志">
+<meta property="og:description" content="山海大世界：总纲、五行、十一关、九阶、派系、天梯试炼、学派、宗门圣兽、奇观异象与底蕴。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="license" href="copyright.html">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+(function(){
+  var d=document.documentElement;
+  try{d.dataset.theme=localStorage.getItem('atlas-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'ink');}catch(e){d.dataset.theme='ink';}
+  // 季候与时辰：四时配色、山海图的天候都从这里取
+  var m=new Date().getMonth()+1;
+  d.dataset.season = (m>=3&&m<=5)?'spring':(m>=6&&m<=8)?'summer':(m>=9&&m<=11)?'autumn':'winter';
+  var h=new Date().getHours();
+  d.dataset.hour = h<5?'night':h<8?'dawn':h<11?'morning':h<16?'day':h<19?'dusk':'night';
+  var XDOC='CSSViewTransitionRule' in window;
+  d.classList.add(XDOC?'vt-x':'vt-fallback');
+  if(!XDOC){try{if(sessionStorage.getItem('veil')){sessionStorage.removeItem('veil');d.classList.add('veil-pending');}}catch(e){}return;}
+  var file=function(p){return p.split('/').pop()||'index.html';};
+  var seen=function(path){
+    var el=document.querySelector('[data-list] a[href$="'+file(path)+'"] .plate');
+    if(!el)return null;
+    el.style.viewTransitionName='entity-seal';
+    return el;
+  };
+  addEventListener('pageswap',function(e){
+    if(!e.viewTransition||!e.activation)return;
+    try{sessionStorage.setItem('vt-from',location.pathname);}catch(err){}
+    var el=seen(new URL(e.activation.entry.url).pathname);
+    if(el)e.viewTransition.finished.finally(function(){el.style.viewTransitionName='';});
+  });
+  addEventListener('pagereveal',function(e){
+    if(!e.viewTransition)return;
+    var nt=(window.navigation&&navigation.activation&&navigation.activation.navigationType)||(performance.getEntriesByType('navigation')[0]||{}).type;
+    var back=nt==='traverse'||nt==='back_forward';
+    e.viewTransition.types.add(back?'back':'ink');
+    if(back){
+      var prev='';try{prev=sessionStorage.getItem('vt-from')||'';}catch(err){}
+      if(prev)seen(prev);
+    }
+  });
+})();
+</script>
+</head>
+<body data-page="world">
+<a class="skip" href="#main">跳到正文</a>
+<div class="atmo" aria-hidden="true"><video class="atmo-video" muted loop playsinline disablepictureinpicture preload="none"></video><span class="atmo-season"></span><span class="atmo-hour"></span><span class="atmo-veil"></span><span class="atmo-tint"></span></div>
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="index.html" aria-label="具身山海志 · 返回首页">
+    <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55" stroke-dasharray="86 6" transform="rotate(-24 20 20)"/>
+  <path d="M7.5 26.5 14 15.6l4.4 7 3.5-5.6 10.6 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6.4 30.2c2.4-1.5 3.6-.2 5.6-.9 2-.7 3.2-1.0 5.2-.2 2 .8 3.4.3 5.3-.4 2-.7 3.3-.1 5.4.6 1.8.6 3.4.2 5.4-.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28.6" cy="12.4" r="2.6" fill="#c21f30"/>
+</svg>
+    <span class="brand-word"><span class="brand-cn">具身山海志</span><span class="brand-en">Embodied Atlas</span></span>
+  </a>
+  <nav class="nav" aria-label="主导航"><a href="world.html" class="nav-world" aria-current="page" title="山海大世界 · 总纲">总览</a><a href="companies.html" data-zone="company" title="人间 · 诸司都邑">公司</a><a href="labs.html" data-zone="lab" title="学宫 · 讲学著述">机构</a><a href="models.html" data-zone="model" title="灵物 · 山海异兽">模型</a><a href="leaderboard.html" data-zone="benchmark" title="碑林 · 刻石记分">榜单</a><a href="jobs.html" data-zone="job" title="招贤 · 悬榜求士">岗位</a><a href="resources.html" data-zone="resource" title="藏经 · 典籍器用">资源</a><a href="news.html" data-zone="news" title="驿路 · 驿报存录">动态</a><a href="atlas.html" title="七域一图">山海图</a></nav>
+  <div class="header-tools">
+    <button class="tool tool-search" data-open-search aria-label="搜索，快捷键 Command K">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <span class="ph">搜索公司、模型、论文</span><span class="kbd">⌘K</span>
+    </button>
+    <a class="tool tool-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer" aria-label="到 GitHub 给具身山海志点 Star" title="到 GitHub 点 Star">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.16l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg><span class="gs-t">Star</span><span class="gs-n" data-gh-count hidden></span>
+    </a>
+    <a class="tool tool-follow" href="following.html" aria-label="我的关注" title="我的关注">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+    </a>
+    <button class="tool" id="themeBtn" aria-label="切换昼夜" title="切换昼夜">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>
+    </button>
+    <button class="tool menu-btn" id="menuBtn" aria-label="打开七卷目录" aria-expanded="false" aria-controls="toc">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+<main id="main" data-fp="3e9f49-1dfa79"><section class="layout"><div class="vol-head" data-zone="company">
+  <span class="vol-no">山海大世界</span>
+  <h1 class="vol-title">大世界<small>总纲与七卷</small></h1>
+  <p class="vol-epigraph">洪荒之世，海上有山，山中有人，人中有术。术成则为器，器行则为业。今日海上之山，非古之山；今日山中之器，亦非古之器。然地脉未改，关卡犹在。</p>
+  
+  
+  
+  <div class="vol-tools"></div>
+</div></section>
+
+  <div class="layout"><div class="world-tabs" role="tablist" aria-label="章节">
+    <button class="world-tab on" role="tab" data-world-tab="zonggang" aria-selected="true">总纲</button><button class="world-tab" role="tab" data-world-tab="zongmen" aria-selected="false">宗门</button><button class="world-tab" role="tab" data-world-tab="shiyiguan" aria-selected="false">十一关</button><button class="world-tab" role="tab" data-world-tab="jiujie" aria-selected="false">九阶</button><button class="world-tab" role="tab" data-world-tab="paixi" aria-selected="false">派系</button><button class="world-tab" role="tab" data-world-tab="xuepai" aria-selected="false">学派</button><button class="world-tab" role="tab" data-world-tab="sishi" aria-selected="false">四时</button><button class="world-tab" role="tab" data-world-tab="qiguan" aria-selected="false">奇观</button><button class="world-tab" role="tab" data-world-tab="diyun" aria-selected="false">底蕴</button><button class="world-tab" role="tab" data-world-tab="wulu" aria-selected="false">五路</button>
+  </div></div>
+
+  <div class="layout"><div class="world-panels">
+
+    <section class="world-panel on" data-world-panel="zonggang" id="ch-kaipi">
+      <div class="panel-lead">
+        <div class="motto-wrap"><blockquote class="world-motto"><span class="mc">天地玄黄，宇宙洪荒。</span><span class="mc">日月盈昃，辰宿列张。</span><cite>《千字文》</cite></blockquote></div>
+        <p class="panel-note">此卷是比喻。公司与机构的事实以条目页所列来源为准；境界与法门只标在链路里走到了哪一步，不排名。</p>
+      </div>
+      <div class="world-diagram sect-map">
+        <a class="sect-row" href="companies.html" data-zone="company">
+          <span class="sr-beast">驮山兽</span>
+          <span class="sr-label">人间</span>
+          <span class="sr-name">人间诸司</span>
+          <span class="sr-count">154</span>
+          <span class="sr-go">→</span>
+        </a><a class="sect-row" href="labs.html" data-zone="lab">
+          <span class="sr-beast">白泽</span>
+          <span class="sr-label">学宫</span>
+          <span class="sr-name">学宫讲席</span>
+          <span class="sr-count">60</span>
+          <span class="sr-go">→</span>
+        </a><a class="sect-row" href="models.html" data-zone="model">
+          <span class="sr-beast">鲲</span>
+          <span class="sr-label">灵物</span>
+          <span class="sr-name">灵物之宗</span>
+          <span class="sr-count">91</span>
+          <span class="sr-go">→</span>
+        </a><a class="sect-row" href="leaderboard.html" data-zone="benchmark">
+          <span class="sr-beast">赑屃</span>
+          <span class="sr-label">碑林</span>
+          <span class="sr-name">碑林石盟</span>
+          <span class="sr-count">33</span>
+          <span class="sr-go">→</span>
+        </a><a class="sect-row" href="jobs.html" data-zone="job">
+          <span class="sr-beast">青鸟</span>
+          <span class="sr-label">招贤</span>
+          <span class="sr-name">招贤台</span>
+          <span class="sr-count">57</span>
+          <span class="sr-go">→</span>
+        </a><a class="sect-row" href="resources.html" data-zone="resource">
+          <span class="sr-beast">蠹鱼</span>
+          <span class="sr-label">藏经</span>
+          <span class="sr-name">藏经阁</span>
+          <span class="sr-count">116</span>
+          <span class="sr-go">→</span>
+        </a><a class="sect-row" href="news.html" data-zone="news">
+          <span class="sr-beast">风狸</span>
+          <span class="sr-label">驿路</span>
+          <span class="sr-name">驿路驿丞</span>
+          <span class="sr-count">95</span>
+          <span class="sr-go">→</span>
+        </a>
+      </div>
+      <div class="panel-row">
+        <a class="panel-card" href="world.html#paixi" data-world-goto="paixi"><span class="pc-k">派系</span><span class="pc-v">12 家，两两相持</span></a>
+        <a class="panel-card" href="world.html#xuepai" data-world-goto="xuepai"><span class="pc-k">学派</span><span class="pc-v">6 条技术路线</span></a>
+        <a class="panel-card" href="world.html#jiujie" data-world-goto="jiujie"><span class="pc-k">九阶</span><span class="pc-v">九级天梯，逐级交物</span></a>
+        <a class="panel-card" href="world.html#shiyiguan" data-world-goto="shiyiguan"><span class="pc-k">十一关</span><span class="pc-v">从造器到成器</span></a>
+      </div>
+    </section>
+
+    <section class="world-panel" data-world-panel="zongmen" id="ch-zongmen">
+      <p class="panel-note">天地未分之时，一炁浑沦，谓之洪荒。洪荒散而为气，气聚而为形，形定而为山。海上之山凡七，各有地脉：中央者人间，西北者学宫，南者灵物，东者碑林，西南者招贤，东北者藏经，环岛者驿路。七山之间，舟楫往来，谓之驿道；驿道所至，人事所至。</p>
+      <div class="sect-grid">
+        <a class="sect" href="companies.html" id="sect-company" data-zone="company">
+          <span class="sect-beast">驮山兽</span>
+          <span class="sect-name">人间诸司</span>
+          <span class="sect-creed">造器以行，行以载实。</span>
+          <span class="sect-taboo">禁忌 · 不铸无主之器</span>
+        </a><a class="sect" href="labs.html" id="sect-lab" data-zone="lab">
+          <span class="sect-beast">白泽</span>
+          <span class="sect-name">学宫讲席</span>
+          <span class="sect-creed">辨名以正，正以传后。</span>
+          <span class="sect-taboo">禁忌 · 不立无据之说</span>
+        </a><a class="sect" href="models.html" id="sect-model" data-zone="model">
+          <span class="sect-beast">鲲</span>
+          <span class="sect-name">灵物之宗</span>
+          <span class="sect-creed">有其能，则有其名。</span>
+          <span class="sect-taboo">禁忌 · 不显未训之能</span>
+        </a><a class="sect" href="leaderboard.html" id="sect-benchmark" data-zone="benchmark">
+          <span class="sect-beast">赑屃</span>
+          <span class="sect-name">碑林石盟</span>
+          <span class="sect-creed">分有出处，方可刻石。</span>
+          <span class="sect-taboo">禁忌 · 不刻无源之数</span>
+        </a><a class="sect" href="jobs.html" id="sect-job" data-zone="job">
+          <span class="sect-beast">青鸟</span>
+          <span class="sect-name">招贤台</span>
+          <span class="sect-creed">求其人，录其门。</span>
+          <span class="sect-taboo">禁忌 · 不悬无名之榜</span>
+        </a><a class="sect" href="resources.html" id="sect-resource" data-zone="resource">
+          <span class="sect-beast">蠹鱼</span>
+          <span class="sect-name">藏经阁</span>
+          <span class="sect-creed">一器一册，一册一源。</span>
+          <span class="sect-taboo">禁忌 · 不收无出之篇</span>
+        </a><a class="sect" href="news.html" id="sect-news" data-zone="news">
+          <span class="sect-beast">风狸</span>
+          <span class="sect-name">驿路驿丞</span>
+          <span class="sect-creed">记所见，不记所闻。</span>
+          <span class="sect-taboo">禁忌 · 不传无据之事</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="world-panel" data-world-panel="shiyiguan" id="ch-shiyiguan">
+      <p class="panel-note">自造器至成器，凡十一关。关关相因，后关之难，皆由前关之欠。修者不越关，越关者必返。</p>
+      <svg class="world-svg gates-svg" viewBox="0 0 1040 522" role="img" aria-label="十一关流程图"><a href="resources.html#stage-1" class="gate-node"><rect x="0" y="16" width="1040" height="30" rx="15"></rect>
+        <text x="22" y="36" class="g-no">一</text>
+        <text x="62" y="36" class="g-name">铸体</text>
+        <text x="160" y="36" class="g-text">定形、定重、定自由度。躯体不立，万事无从</text>
+        <text x="1018" y="36" class="g-stage" text-anchor="end">本体硬件 →</text></a><a href="resources.html#stage-2" class="gate-node"><rect x="0" y="62" width="1040" height="30" rx="15"></rect>
+        <text x="22" y="82" class="g-no">二</text>
+        <text x="62" y="82" class="g-name">通感</text>
+        <text x="160" y="82" class="g-text">开目、生触、知力。所见须真，所触须准，力有回响</text>
+        <text x="1018" y="82" class="g-stage" text-anchor="end">传感 →</text></a><a href="resources.html#stage-3" class="gate-node"><rect x="0" y="108" width="1040" height="30" rx="15"></rect>
+        <text x="22" y="128" class="g-no">三</text>
+        <text x="62" y="128" class="g-name">传功</text>
+        <text x="160" y="128" class="g-text">人以手授机，机以身记人。动作须可回溯，时序须对齐</text>
+        <text x="1018" y="128" class="g-stage" text-anchor="end">遥操作与采集 →</text></a><a href="resources.html#stage-4" class="gate-node"><rect x="0" y="154" width="1040" height="30" rx="15"></rect>
+        <text x="22" y="174" class="g-no">四</text>
+        <text x="62" y="174" class="g-name">聚灵</text>
+        <text x="160" y="174" class="g-text">集众手之迹，成一山之藏。量足、本全、许可明</text>
+        <text x="1018" y="174" class="g-stage" text-anchor="end">数据 →</text></a><a href="resources.html#stage-5" class="gate-node"><rect x="0" y="200" width="1040" height="30" rx="15"></rect>
+        <text x="22" y="220" class="g-no">五</text>
+        <text x="62" y="220" class="g-name">开境</text>
+        <text x="160" y="220" class="g-text">另开一场：可并行的天地，用于试错、回归与失败复现</text>
+        <text x="1018" y="220" class="g-stage" text-anchor="end">仿真 →</text></a><a href="resources.html#stage-6" class="gate-node"><rect x="0" y="246" width="1040" height="30" rx="15"></rect>
+        <text x="22" y="266" class="g-no">六</text>
+        <text x="62" y="266" class="g-name">御气</text>
+        <text x="160" y="266" class="g-text">化令为力，按时下发。迟一分则抖，慢一寸则废</text>
+        <text x="1018" y="266" class="g-stage" text-anchor="end">中间件与控制 →</text></a><a href="resources.html#stage-7" class="gate-node"><rect x="0" y="292" width="1040" height="30" rx="15"></rect>
+        <text x="22" y="312" class="g-no">七</text>
+        <text x="62" y="312" class="g-name">结丹</text>
+        <text x="160" y="312" class="g-text">合感知、语言与动作，成一策。策能泛化，方称有成</text>
+        <text x="1018" y="312" class="g-stage" text-anchor="end">算法与模型 →</text></a><a href="resources.html#stage-8" class="gate-node"><rect x="0" y="338" width="1040" height="30" rx="15"></rect>
+        <text x="22" y="358" class="g-no">八</text>
+        <text x="62" y="358" class="g-name">炼炉</text>
+        <text x="160" y="358" class="g-text">并行环境、算法实现与实验管理，决定一炉要多久</text>
+        <text x="1018" y="358" class="g-stage" text-anchor="end">训练 →</text></a><a href="resources.html#stage-9" class="gate-node"><rect x="0" y="384" width="1040" height="30" rx="15"></rect>
+        <text x="22" y="404" class="g-no">九</text>
+        <text x="62" y="404" class="g-name">出关</text>
+        <text x="160" y="404" class="g-text">推其上机，压其延时。能实时跑，才算出关</text>
+        <text x="1018" y="404" class="g-stage" text-anchor="end">部署 →</text></a><a href="resources.html#stage-10" class="gate-node"><rect x="0" y="430" width="1040" height="30" rx="15"></rect>
+        <text x="22" y="450" class="g-no">十</text>
+        <text x="62" y="450" class="g-name">问碑</text>
+        <text x="160" y="450" class="g-text">以同协议比同任务。分数离协议，则无意义</text>
+        <text x="1018" y="450" class="g-stage" text-anchor="end">评测 →</text></a><a href="resources.html#stage-11" class="gate-node"><rect x="0" y="476" width="1040" height="30" rx="15"></rect>
+        <text x="22" y="496" class="g-no">十一</text>
+        <text x="62" y="496" class="g-name">传灯</text>
+        <text x="160" y="496" class="g-text">补其根本：运动学、控制、学习与操作。灯传则关复开</text>
+        <text x="1018" y="496" class="g-stage" text-anchor="end">学习与课程 →</text></a></svg>
+    </section>
+
+    <section class="world-panel" data-world-panel="jiujie" id="ch-jiujie">
+      <p class="panel-note">十一关之外，修者有九阶。阶非名号，乃所见之广：所见愈广，阶愈高。今以站内可核的事实为凭，不凭自述。</p>
+      <svg class="world-svg ladder-svg" viewBox="0 0 1040 300" role="img" aria-label="九阶天梯"><a href="#trial-9" class="ladder-node seal"><circle cx="1000" cy="260" r="5"></circle><text x="1000" y="286" class="l-name" text-anchor="end">立碑（支线）</text></a><path d="M40,260 L177.14285714285714,232.85714285714286 L314.2857142857143,205.71428571428572 L451.42857142857144,178.57142857142856 L588.5714285714286,151.42857142857144 L725.7142857142857,124.28571428571428 L862.8571428571429,97.14285714285714 L1000,70" class="l-path"></path><a href="#trial-1" class="ladder-node"><circle cx="40" cy="260" r="7"></circle>
+      <text x="40" y="244" class="l-name" text-anchor="middle">窥径</text>
+      <text x="40" y="286" class="l-no" text-anchor="middle">一</text></a><a href="#trial-2" class="ladder-node"><circle cx="177.14285714285714" cy="232.85714285714286" r="7"></circle>
+      <text x="177.14285714285714" y="216.85714285714286" class="l-name" text-anchor="middle">持器</text>
+      <text x="177.14285714285714" y="258.8571428571429" class="l-no" text-anchor="middle">二</text></a><a href="#trial-3" class="ladder-node"><circle cx="314.2857142857143" cy="205.71428571428572" r="7"></circle>
+      <text x="314.2857142857143" y="189.71428571428572" class="l-name" text-anchor="middle">察微</text>
+      <text x="314.2857142857143" y="231.71428571428572" class="l-no" text-anchor="middle">三</text></a><a href="#trial-4" class="ladder-node"><circle cx="451.42857142857144" cy="178.57142857142856" r="7"></circle>
+      <text x="451.42857142857144" y="162.57142857142856" class="l-name" text-anchor="middle">引丝</text>
+      <text x="451.42857142857144" y="204.57142857142856" class="l-no" text-anchor="middle">四</text></a><a href="#trial-5" class="ladder-node"><circle cx="588.5714285714286" cy="151.42857142857144" r="7"></circle>
+      <text x="588.5714285714286" y="135.42857142857144" class="l-name" text-anchor="middle">铸境</text>
+      <text x="588.5714285714286" y="177.42857142857144" class="l-no" text-anchor="middle">五</text></a><a href="#trial-6" class="ladder-node"><circle cx="725.7142857142857" cy="124.28571428571428" r="7"></circle>
+      <text x="725.7142857142857" y="108.28571428571428" class="l-name" text-anchor="middle">通脉</text>
+      <text x="725.7142857142857" y="150.28571428571428" class="l-no" text-anchor="middle">六</text></a><a href="#trial-7" class="ladder-node"><circle cx="862.8571428571429" cy="97.14285714285714" r="7"></circle>
+      <text x="862.8571428571429" y="81.14285714285714" class="l-name" text-anchor="middle">炼心</text>
+      <text x="862.8571428571429" y="123.14285714285714" class="l-no" text-anchor="middle">七</text></a><a href="#trial-8" class="ladder-node"><circle cx="1000" cy="70" r="7"></circle>
+      <text x="1000" y="54" class="l-name" text-anchor="middle">临阵</text>
+      <text x="1000" y="96" class="l-no" text-anchor="middle">八</text></a></svg>
+      <div class="trial-list">
+        <details class="trial" id="trial-1">
+          <summary><span class="t-no">一</span><span class="t-name">窥径</span><span class="t-trial">画出一条完整链路，并指出自己要做的那一段在哪、上游给什么、下游要什么。</span></summary>
+          <div class="t-body"><span><b>交物</b>一页链路图，标出五个以上环节与各自的输入输出。</span><span><b>自证</b>把图给一个不同方向的人看，他能复述你的环节要什么、交什么。</span><span><b>卡点</b>说不清上游交来的是数据还是指令，后面每一步都会接错。</span></div>
+        </details><details class="trial" id="trial-2">
+          <summary><span class="t-no">二</span><span class="t-name">持器</span><span class="t-trial">说出你手里那台机器的关节数、单臂负载、重复定位精度与通信接口。</span></summary>
+          <div class="t-body"><span><b>交物</b>一页参数表，每项都注到官方规格页或说明书页码。</span><span><b>自证</b>现场上电走一遍全关节行程，实测值与表上数对得上。</span><span><b>卡点</b>只能背宣传词，被追问接口与限位就卡住。</span></div>
+        </details><details class="trial" id="trial-3">
+          <summary><span class="t-no">三</span><span class="t-name">察微</span><span class="t-trial">把相机、末端与力传感器标定一遍，并给出标定前后的重投影误差。</span></summary>
+          <div class="t-body"><span><b>交物</b>一份标定记录：内参、外参、残差与所用工具版本。</span><span><b>自证</b>换一天、换一次开机，按记录重做，残差落在同一量级。</span><span><b>卡点</b>抓取总是差几厘米，却归因于「模型不行」。</span></div>
+        </details><details class="trial" id="trial-4">
+          <summary><span class="t-no">四</span><span class="t-name">引丝</span><span class="t-trial">用遥操作采一段连续轨迹，按控制频率录下关节、图像与时间戳。</span></summary>
+          <div class="t-body"><span><b>交物</b>一段可回放的轨迹，含频率、时长与对齐方式说明。</span><span><b>自证</b>别人用你的脚本能原样回放，且图像与关节不错帧。</span><span><b>卡点</b>数据采了却不能用，训练时才发现在丢帧与错位。</span></div>
+        </details><details class="trial" id="trial-5">
+          <summary><span class="t-no">五</span><span class="t-name">铸境</span><span class="t-trial">在仿真里复现你手上那个任务，物理参数写清出处，失败也能重现。</span></summary>
+          <div class="t-body"><span><b>交物</b>一个场景包 + 一条失败复现步骤 + 关键参数表。</span><span><b>自证</b>同一随机种子跑两遍，结果一致；换种子后失败模式可解释。</span><span><b>卡点</b>阵图里能过、上机就废，且说不清差在哪一处。</span></div>
+        </details><details class="trial" id="trial-6">
+          <summary><span class="t-no">六</span><span class="t-name">通脉</span><span class="t-trial">把策略输出按时下发到关节，跑满十分钟不掉频、不累积超差。</span></summary>
+          <div class="t-body"><span><b>交物</b>一段全程日志：指令频率、实际频率、峰值跟随误差。</span><span><b>自证</b>日志可指到具体时间点；人为断电重连后能自行恢复。</span><span><b>卡点</b>一走一停、末端发抖，只能靠降速掩盖。</span></div>
+        </details><details class="trial" id="trial-7">
+          <summary><span class="t-no">七</span><span class="t-name">炼心</span><span class="t-trial">训出一个自己的策略，写明模态、数据来源、许可与训练耗时。</span></summary>
+          <div class="t-body"><span><b>交物</b>权重 + 训练配置 + 一条可复跑的命令。</span><span><b>自证</b>换台机器按配置重跑，损失曲线落在同一区间。</span><span><b>卡点</b>只有权重没有配置，出了问题无法回溯到哪一步。</span></div>
+        </details><details class="trial" id="trial-8">
+          <summary><span class="t-no">八</span><span class="t-name">临阵</span><span class="t-trial">在真机上按固定协议跑二十次，记录成功率与全部失败原因。</span></summary>
+          <div class="t-body"><span><b>交物</b>一份成功率表：次数、判据、失败分类与视频片段。</span><span><b>自证</b>判据事先写定；失败样本不被剪掉，第三方可复算。</span><span><b>卡点</b>只报成功那几次，换个评测者分数就崩。</span></div>
+        </details><details class="trial" id="trial-9">
+          <summary><span class="t-no">九</span><span class="t-name">立碑</span><span class="t-trial">把成绩刻到公开榜位上，附协议、版本、日期与撤榜规则。</span></summary>
+          <div class="t-body"><span><b>交物</b>一条榜位记录 + 复现脚本 + 版本锁定清单。</span><span><b>自证</b>他人按脚本复现，分差在协议允许的波动内。</span><span><b>卡点</b>分数没有出处，或出处已被撤下而自己不知道。</span></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="world-panel" data-world-panel="paixi" id="paixi">
+      <div class="faction-pairs">
+        <div class="faction-pair">
+              <article class="faction" id="faction-yanshen">
+                <h3>一气宗</h3>
+                <p class="f-creed">眼到之处，手即到；中间不留接缝。</p>
+                <p class="f-stance">信一条：从像素与指令直接回归动作，中间不设规划器、不设技能库。分工越细，误差越会在接口处累积；上层猜错一点，下层就跟着错一串。与其反复修接口，不如让接口根本不存在，让整条链一起训。</p>
+                <div class="f-members"><a class="f-chip" href="company-pi.html">Physical Intelligence</a><a class="f-chip" href="company-qianxun.html">千寻智能</a><a class="f-chip" href="company-psi.html">灵初智能</a><a class="f-chip" href="company-xsquare.html">自变量机器人</a><a class="f-chip" href="company-robotera.html">星动纪元</a></div>
+              </article><div class="faction-vs" aria-hidden="true">对</div><article class="faction" id="faction-cengtai">
+                <h3>层台宗</h3>
+                <p class="f-creed">高处立意，低处落手；两台各守其职。</p>
+                <p class="f-stance">信系统该由两台组成：上层看全局、出指令，下层管关节、保安全。上层可换、可解释、可审计，换一版语言模型不必重训全身；下层快而稳，只管把指令做成动作。两台分开训练，也分开追责。</p>
+                <div class="f-members"><a class="f-chip" href="company-figure.html">Figure AI</a><a class="f-chip" href="company-nvidia.html">NVIDIA</a><a class="f-chip" href="lab-deepmind.html">Google DeepMind</a><a class="f-chip" href="lab-baai.html">北京智源人工智能研究院</a><a class="f-chip" href="company-tars.html">它石智航</a></div>
+              </article>
+            </div><div class="faction-pair">
+              <article class="faction" id="faction-zhujing">
+                <h3>知来宗</h3>
+                <p class="f-creed">先造一场假天地，再谈真天地。</p>
+                <p class="f-stance">信决策之前必须先会预测：杯子被碰会往哪倒、布被拽会怎么皱、人下一步会伸手还是退后。先学环境怎么变，再学自己该怎么动，两者分炉而炼；预测得准，动作就不必靠试错去猜。</p>
+                <div class="f-members"><a class="f-chip" href="company-beingbeyond.html">智在无界</a><a class="f-chip" href="company-wujie.html">无界动力</a><a class="f-chip" href="company-worldlabs.html">World Labs</a><a class="f-chip" href="company-gigaai.html">极佳视界</a><a class="f-chip" href="company-ai2r.html">智平方</a></div>
+              </article><div class="faction-vs" aria-hidden="true">对</div><article class="faction" id="faction-moying">
+                <h3>摹影派</h3>
+                <p class="f-creed">人怎么做，机就怎么学；不必先懂为什么。</p>
+                <p class="f-stance">信策略可以直接从示范里长出来。不建世界模型、不写奖励函数，只把人的动作连成轨迹，让模型记住「这一刻该往哪动、用多大力」，其余的交给数据覆盖。人不必先讲清原理，机器也能学会照做。</p>
+                <div class="f-members"><a class="f-chip" href="resource-openvla.html">OpenVLA</a><a class="f-chip" href="resource-lerobot.html">LeRobot</a><a class="f-chip" href="resource-droid.html">DROID</a><a class="f-chip" href="company-dexmal.html">北京原力灵机智能科技有限公司</a><a class="f-chip" href="company-droidup.html">上海卓益得机器人有限公司</a></div>
+              </article>
+            </div><div class="faction-pair">
+              <article class="faction" id="faction-jusha">
+                <h3>聚沙派</h3>
+                <p class="f-creed">路数不必巧，量要够；数据面前，架构是小事。</p>
+                <p class="f-stance">信瓶颈在数据而不在算法。多本体、多场景、多任务地堆真机轨迹，让分布自己变宽，模型自然会碰到没见过的组合；评测也按同一套协议在大量任务上做，不挑好看的样本，只问覆盖够不够。</p>
+                <div class="f-members"><a class="f-chip" href="company-agibot.html">智元机器人</a><a class="f-chip" href="lab-huggingface.html">Hugging Face</a><a class="f-chip" href="company-linker.html">灵心巧手</a><a class="f-chip" href="company-lightwheel.html">光轮智能</a><a class="f-chip" href="resource-robomind.html">RoboMIND</a><a class="f-chip" href="benchmark-roboset.html">RoboSet</a></div>
+              </article><div class="faction-vs" aria-hidden="true">对</div><article class="faction" id="faction-lianxu">
+                <h3>炼虚派</h3>
+                <p class="f-creed">真机一寸贵，先在图里走百遍。</p>
+                <p class="f-stance">信数据可以从仿真里生。场景、光照、摩擦、扰动与失败都能在阵图里批量造出来，每一条都带真值；真机只用来验，不用来一条条攒。仿真与真机之间的差距，用随机化与物理对齐去补。</p>
+                <div class="f-members"><a class="f-chip" href="company-nvidia.html">NVIDIA</a><a class="f-chip" href="company-lightwheel.html">光轮智能</a><a class="f-chip" href="company-trans-dimensional.html">深圳跨维智能科技有限公司</a><a class="f-chip" href="company-gigaai.html">极佳视界</a><a class="f-chip" href="benchmark-robotwin.html">RoboTwin 2.0</a></div>
+              </article>
+            </div><div class="faction-pair">
+              <article class="faction" id="faction-zhuti">
+                <h3>铸体派</h3>
+                <p class="f-creed">身子是自己的，算法才敢往深里写。</p>
+                <p class="f-stance">信软硬一体：关节、力矩、散热、通信都由自己定，才敢把控制频率推到极限，才敢让策略一路下到电流环。本体外采，等于把上限交给别人；参数改一个字都要等对方排期，迭代速度就此被锁死。</p>
+                <div class="f-members"><a class="f-chip" href="company-unitree.html">宇树科技</a><a class="f-chip" href="company-agibot.html">智元机器人</a><a class="f-chip" href="company-figure.html">Figure AI</a><a class="f-chip" href="company-onex.html">1X Technologies</a><a class="f-chip" href="company-tesla.html">Tesla</a></div>
+              </article><div class="faction-vs" aria-hidden="true">对</div><article class="faction" id="faction-jieti">
+                <h3>借体派</h3>
+                <p class="f-creed">身是别人的，脑是我的；换身不换脑。</p>
+                <p class="f-stance">信价值全在大脑：一个策略要能跨本体、跨厂商迁移，本体只是执行器。把精力全押在数据与模型上，硬件交给更会造的人，按台付费；同一颗脑装进不同身子，边际成本才摊得薄。</p>
+                <div class="f-members"><a class="f-chip" href="company-skild.html">Skild AI</a><a class="f-chip" href="company-generalist.html">Generalist AI</a><a class="f-chip" href="company-covariant.html">Covariant</a><a class="f-chip" href="company-dyna.html">Dyna Robotics</a><a class="f-chip" href="company-flexiv.html">上海非夕机器人科技有限公司</a></div>
+              </article>
+            </div><div class="faction-pair">
+              <article class="faction" id="faction-renxing">
+                <h3>人形宗</h3>
+                <p class="f-creed">世界是按人的身子造的，那就照人的身子造。</p>
+                <p class="f-stance">信形态决定上限：门、楼梯、工具、工位都为人体尺度设计，只有人等身才不必改造环境。双足是最难的一段，却也是少数几样不必为机器重铺一遍世界的东西；绕过去省了力气，通用性也就跟着丢了。</p>
+                <div class="f-members"><a class="f-chip" href="company-unitree.html">宇树科技</a><a class="f-chip" href="company-ubtech.html">优必选 UBTECH</a><a class="f-chip" href="company-fourier.html">傅利叶智能</a><a class="f-chip" href="company-onex.html">1X Technologies</a><a class="f-chip" href="company-agility.html">Agility Robotics</a><a class="f-chip" href="company-xhumanoid.html">北京人形机器人创新中心</a></div>
+              </article><div class="faction-vs" aria-hidden="true">对</div><article class="faction" id="faction-suixing">
+                <h3>随形派</h3>
+                <p class="f-creed">什么活配什么身，不必都长成人。</p>
+                <p class="f-stance">信形态服从任务：送餐用轮、巡检用四足、操作给臂加升降。把双足省下的成本、重量与故障率，换成续航、负载和更低的售价；先在能算清账的场景里站住，再谈要不要长成人。</p>
+                <div class="f-members"><a class="f-chip" href="company-galbot.html">银河通用</a><a class="f-chip" href="company-keenon.html">上海擎朗智能科技股份有限公司</a><a class="f-chip" href="company-pudu.html">深圳市普渡科技股份有限公司</a><a class="f-chip" href="company-deeprobotics.html">云深处科技</a><a class="f-chip" href="company-bear-robotics.html">Bear Robotics</a><a class="f-chip" href="company-diligent-robotics.html">Diligent Robotics</a></div>
+              </article>
+            </div><div class="faction-pair">
+              <article class="faction" id="faction-qianshi">
+                <h3>遣使宗</h3>
+                <p class="f-creed">不必手握，遣使可也。</p>
+                <p class="f-stance">信通用基座模型已经够用：读得懂场景、会拆步骤、能调工具，机器人只是它可以调用的一种工具，无需另训一个具身模型。换一版模型，能力就跟着涨；难点从「训策略」挪到「写接口与定权限」。</p>
+                <div class="f-members"><a class="f-chip" href="company-anthropic.html">Anthropic</a><a class="f-chip" href="company-openai.html">OpenAI</a><a class="f-chip" href="lab-deepmind.html">Google DeepMind</a><a class="f-chip" href="company-nvidia.html">NVIDIA</a><a class="f-chip" href="lab-baai.html">北京智源人工智能研究院</a></div>
+              </article><div class="faction-vs" aria-hidden="true">对</div><article class="faction" id="faction-zhuanqi">
+                <h3>专器派</h3>
+                <p class="f-creed">一事一器，一器一策。</p>
+                <p class="f-stance">信通用模型不懂力矩、摩擦与延迟：它能说清「把杯子拿起来」，却说不清这一下要多大电流、到什么角度松手。动作的手感只能靠贴身的策略与数据来学，所以宁可给每类任务训一个专用模型。</p>
+                <div class="f-members"><a class="f-chip" href="company-pi.html">Physical Intelligence</a><a class="f-chip" href="company-qianxun.html">千寻智能</a><a class="f-chip" href="company-psi.html">灵初智能</a><a class="f-chip" href="resource-openvla.html">OpenVLA</a><a class="f-chip" href="company-figure.html">Figure AI</a></div>
+              </article>
+            </div>
+      </div>
+    </section>
+
+    <section class="world-panel" data-world-panel="xuepai" id="xuepai">
+      <div class="school-grid">
+        <article class="school" id="school-route-e2e-vla">
+          <h3>一气直出</h3>
+          <p class="s-thesis">把图像、指令与本体状态一起喂进一个模型，让它直接吐出一串动作块。省掉中间表示，就省掉了每一层接口上的信息损耗与延迟；代价是模型得自己学会那些本该由人分好的事——什么该先做、做到什么程度算完。</p>
+          <div class="s-works"><a href="https://arxiv.org/abs/2410.24164" target="_blank" rel="noopener noreferrer"><span>π0</span><em>Physical Intelligence · 2024</em></a><a href="https://arxiv.org/abs/2504.16054" target="_blank" rel="noopener noreferrer"><span>π0.5</span><em>Physical Intelligence · 2025</em></a><a href="https://arxiv.org/abs/2406.09246" target="_blank" rel="noopener noreferrer"><span>OpenVLA</span><em>Stanford / Berkeley 等 · 2024</em></a><a href="https://arxiv.org/abs/2307.15818" target="_blank" rel="noopener noreferrer"><span>RT-2</span><em>Google DeepMind · 2023</em></a></div>
+          <p class="s-limit">推理频率与动作平滑难两全：块越长越稳，越难及时改；块越短越灵活，越容易抖。长程任务仍要靠人拆步骤，失败后也难定位是哪一环出错。</p>
+          <div class="f-members"><a class="f-chip" href="company-pi.html">Physical Intelligence</a><a class="f-chip" href="company-qianxun.html">千寻智能</a><a class="f-chip" href="company-psi.html">灵初智能</a><a class="f-chip" href="company-xsquare.html">自变量机器人</a><a class="f-chip" href="resource-openvla.html">OpenVLA</a></div>
+        </article><article class="school" id="school-route-hier-vla">
+          <h3>上下两台</h3>
+          <p class="s-thesis">上层用视觉语言模型把一句人话拆成子任务与参数，下层用短程策略或技能库把它们逐一做成动作。上层可以换、可以读、可以审计，出问题时能指出是哪一句理解错了；下层只求快而稳，不负责理解意图。</p>
+          <div class="s-works"><a href="https://arxiv.org/abs/2502.19417" target="_blank" rel="noopener noreferrer"><span>Hi Robot</span><em>Physical Intelligence · 2025</em></a><a href="https://arxiv.org/abs/2503.14734" target="_blank" rel="noopener noreferrer"><span>GR00T N1</span><em>NVIDIA · 2025</em></a><a href="https://arxiv.org/abs/2503.20020" target="_blank" rel="noopener noreferrer"><span>Gemini Robotics</span><em>Google DeepMind · 2025</em></a><a href="https://arxiv.org/abs/2507.02029" target="_blank" rel="noopener noreferrer"><span>RoboBrain 2.0</span><em>北京智源人工智能研究院 · 2025</em></a></div>
+          <p class="s-limit">上下两层的接口最难定。上层说的下层做不到，或下层擅自改了上层的意图，责任与调试都落在缝里；接口一变，两层往往要一起重训。</p>
+          <div class="f-members"><a class="f-chip" href="company-figure.html">Figure AI</a><a class="f-chip" href="company-nvidia.html">NVIDIA</a><a class="f-chip" href="lab-deepmind.html">Google DeepMind</a><a class="f-chip" href="lab-baai.html">北京智源人工智能研究院</a><a class="f-chip" href="company-tars.html">它石智航</a></div>
+        </article><article class="school" id="school-route-worldmodel">
+          <h3>先演后行</h3>
+          <p class="s-thesis">先学环境怎么变，再学自己怎么动。有了一个可预测的未来，策略就能在模型内部反复试错，不必每次都拿真机去撞；生成的未来还可以当作训练数据的来源，补上真机采不到的长尾情形与失败样本。</p>
+          <div class="s-works"><a href="https://arxiv.org/abs/2506.09985" target="_blank" rel="noopener noreferrer"><span>V-JEPA 2</span><em>Meta FAIR · 2025</em></a><a href="https://arxiv.org/abs/2501.03575" target="_blank" rel="noopener noreferrer"><span>Cosmos World Foundation Model</span><em>NVIDIA · 2025</em></a><a href="https://arxiv.org/abs/2506.21539" target="_blank" rel="noopener noreferrer"><span>WorldVLA</span><em>阿里巴巴达摩院 · 2025</em></a><a href="https://arxiv.org/abs/2511.19861" target="_blank" rel="noopener noreferrer"><span>GigaWorld-0</span><em>GigaAI（极佳视界）等 · 2025</em></a></div>
+          <p class="s-limit">预测得越远越失真，视频看着真、物理未必对：杯子可以不洒、布可以不皱，真机照做就出岔子；在想象里试错成功，不等于真机上能做到。</p>
+          <div class="f-members"><a class="f-chip" href="company-beingbeyond.html">智在无界</a><a class="f-chip" href="company-wujie.html">无界动力</a><a class="f-chip" href="company-worldlabs.html">World Labs</a><a class="f-chip" href="company-gigaai.html">极佳视界</a><a class="f-chip" href="company-ai2r.html">智平方</a></div>
+        </article><article class="school" id="school-route-diffusion">
+          <h3>以噪求动</h3>
+          <p class="s-thesis">把动作看成一段要去噪的轨迹：扩散或流匹配从噪声起步，一步步收敛出一条平滑连续的动作序列。它天然是多峰的，能同时表示「从左边绕也行、从右边绕也行」，不必像回归那样把两种做法平均成一条撞墙的路。</p>
+          <div class="s-works"><a href="https://arxiv.org/abs/2303.04137" target="_blank" rel="noopener noreferrer"><span>Diffusion Policy</span><em>Columbia / MIT 等 · 2023</em></a><a href="https://arxiv.org/abs/2410.07864" target="_blank" rel="noopener noreferrer"><span>RDT-1B</span><em>清华 TEA Lab · 2024</em></a><a href="https://arxiv.org/abs/2506.01844" target="_blank" rel="noopener noreferrer"><span>SmolVLA</span><em>Hugging Face · 2025</em></a><a href="https://arxiv.org/abs/2410.24164" target="_blank" rel="noopener noreferrer"><span>π0</span><em>Physical Intelligence · 2024</em></a></div>
+          <p class="s-limit">多步去噪与高控制频率天生冲突，靠动作块与蒸馏去补；可蒸馏之后又常把多峰的好处磨掉，回到单一路径，代价是灵活性与对扰动的容忍度。</p>
+          <div class="f-members"><a class="f-chip" href="model-diffusion-policy.html">Diffusion Policy</a><a class="f-chip" href="model-rdt1b.html">RDT-1B</a><a class="f-chip" href="resource-smolvla.html">SmolVLA</a><a class="f-chip" href="resource-hpt.html">HPT</a><a class="f-chip" href="resource-dp3.html">3D Diffusion Policy</a></div>
+        </article><article class="school" id="school-route-rl-sim2real">
+          <h3>试错归真</h3>
+          <p class="s-thesis">让策略在成千上万个并行环境里自己撞出解法，再把仿真里练成的东西搬回真机。奖励写对了，就能得到人示范不出来的动作；域随机化与物理参数对齐负责把仿真与真机之间的那道缝一点点磨平。</p>
+          <div class="s-works"><a href="https://arxiv.org/abs/2410.21845" target="_blank" rel="noopener noreferrer"><span>HIL-SERL（human-in-the-loop RL）</span><em>UC Berkeley（Levine 组） · 2024</em></a><a href="https://arxiv.org/abs/2502.01143" target="_blank" rel="noopener noreferrer"><span>ASAP（仿真与真机物理对齐）</span><em>CMU / NVIDIA 等 · 2025</em></a><a href="https://arxiv.org/abs/2508.08241" target="_blank" rel="noopener noreferrer"><span>BeyondMimic</span><em>UC Berkeley · 2025</em></a></div>
+          <p class="s-limit">奖励函数要人写，写歪了策略就钻空子：推倒杯子也算「移动成功」。真机上的试错有损耗，采集速度远慢于仿真，训练周期被真机时间卡住。</p>
+          <div class="f-members"><a class="f-chip" href="model-serl.html">SERL</a><a class="f-chip" href="model-hil-serl.html">HIL-SERL</a><a class="f-chip" href="model-asap.html">ASAP</a><a class="f-chip" href="model-beyondmimic.html">BeyondMimic</a><a class="f-chip" href="resource-isaaclab.html">Isaac Lab</a></div>
+        </article><article class="school" id="school-route-agentic">
+          <h3>遣使问器</h3>
+          <p class="s-thesis">不把模型当策略，而当调度者：大模型读环境、查工具、写计划，再调用现成的技能、接口或另一台机器人去执行，做完再回头看结果对不对。能力来自被调用的工具，判断与拆解来自语言模型本身。2026 年这条路线出现了一个新变种：直接用通用基座模型（Claude、GPT）当大脑，机器人本体作为它的一项工具。</p>
+          <div class="s-works"><a href="https://arxiv.org/abs/2204.01691" target="_blank" rel="noopener noreferrer"><span>SayCan</span><em>Google Research · 2022</em></a><a href="https://arxiv.org/abs/2207.05608" target="_blank" rel="noopener noreferrer"><span>Inner Monologue</span><em>Google Research · 2022</em></a><a href="https://arxiv.org/abs/2502.19417" target="_blank" rel="noopener noreferrer"><span>Hi Robot</span><em>Physical Intelligence · 2025</em></a><a href="https://arxiv.org/abs/2507.02029" target="_blank" rel="noopener noreferrer"><span>RoboBrain 2.0</span><em>北京智源人工智能研究院 · 2025</em></a><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener noreferrer"><span>Claude Fable 5.2</span><em>Anthropic · 2026</em></a></div>
+          <p class="s-limit">语言模型不知道力矩与摩擦。计划说得通、动作做不出；一旦某个工具调用失败，它很难从反馈里发现自己错了，往往是把错的那步再重复一遍。用通用基座模型时还多一层：模型按版本更新，行为会随之漂移，上线前锁版本、跑回归的代价不小。</p>
+          <div class="f-members"><a class="f-chip" href="model-robobrain2.html">RoboBrain 2.0</a><a class="f-chip" href="model-gemini-robotics.html">Gemini Robotics</a><a class="f-chip" href="model-magma.html">Magma</a><a class="f-chip" href="model-embodied-r.html">Embodied-R</a><a class="f-chip" href="model-robobrain-x0.html">RoboBrain-X0</a><a class="f-chip" href="company-anthropic.html">Anthropic</a><a class="f-chip" href="company-openai.html">OpenAI</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="world-panel" data-world-panel="sishi" id="ch-sishi">
+      <div class="sect-head"><h2>四时</h2><p class="lead">此图有自己的天时：十二个月各有节令，一日之内有晨昏。卷底的云海、山中的光、落下的物，都随节令与钟点改换——不是为了好看，而是提醒：数据有季节，榜单有赛季，人也会随天光变。</p></div>
+      <div class="season-grid"><article class="season-card" data-season="spring">
+        <header><span class="season-name">春</span><span class="season-sign">落花</span><span class="season-months">三、四、五月</span></header>
+        <p class="season-terms"><span>立春</span><span>雨水</span><span>惊蛰</span><span>春分</span><span>清明</span><span>谷雨</span></p>
+        <dl class="season-facts">
+          <div><dt>天</dt><dd>雾重、云低，青绿上浮</dd></div>
+          <div><dt>地</dt><dd>浅草与水气</dd></div>
+          <div><dt>动</dt><dd>花瓣随侧风斜落，缓而密</dd></div>
+        </dl>
+        <blockquote>东风解冻，蛰虫始振。<cite>《礼记·月令》</cite></blockquote>
+      </article><article class="season-card" data-season="summer">
+        <header><span class="season-name">夏</span><span class="season-sign">流萤</span><span class="season-months">六、七、八月</span></header>
+        <p class="season-terms"><span>立夏</span><span>小满</span><span>芒种</span><span>夏至</span><span>小暑</span><span>大暑</span></p>
+        <dl class="season-facts">
+          <div><dt>天</dt><dd>天光高、色最浓，云薄而亮</dd></div>
+          <div><dt>地</dt><dd>林地转为浓绿</dd></div>
+          <div><dt>动</dt><dd>夜间低空有浮光；白日不落物，只提亮</dd></div>
+        </dl>
+        <blockquote>温风始至，蟋蟀居壁。<cite>《礼记·月令》</cite></blockquote>
+      </article><article class="season-card" data-season="autumn">
+        <header><span class="season-name">秋</span><span class="season-sign">落叶</span><span class="season-months">九、十、十一月</span></header>
+        <p class="season-terms"><span>立秋</span><span>处暑</span><span>白露</span><span>秋分</span><span>寒露</span><span>霜降</span></p>
+        <dl class="season-facts">
+          <div><dt>天</dt><dd>云薄天清，赭黄压过青绿</dd></div>
+          <div><dt>地</dt><dd>坡地与林缘转褐</dd></div>
+          <div><dt>动</dt><dd>叶片旋落，色从赭到褐分三档</dd></div>
+        </dl>
+        <blockquote>凉风至，白露降，寒蝉鸣。<cite>《礼记·月令》</cite></blockquote>
+      </article><article class="season-card" data-season="winter">
+        <header><span class="season-name">冬</span><span class="season-sign">飞雪</span><span class="season-months">十二、一、二月</span></header>
+        <p class="season-terms"><span>立冬</span><span>小雪</span><span>大雪</span><span>冬至</span><span>小寒</span><span>大寒</span></p>
+        <dl class="season-facts">
+          <div><dt>天</dt><dd>去色发蓝，雾白压在山脚</dd></div>
+          <div><dt>地</dt><dd>岩面留白，草木退为墨线</dd></div>
+          <div><dt>动</dt><dd>雪粒直落带侧飘，密而慢</dd></div>
+        </dl>
+        <blockquote>水始冰，地始冻。<cite>《礼记·月令》</cite></blockquote>
+      </article></div>
+      <h3 class="season-h3">一日之内</h3>
+      <ol class="season-clock"><li><b>晨</b><span>五点至八点</span><em>天光偏暖，雾未散尽</em></li><li><b>昼</b><span>八点至十六点</span><em>光线最正，阴影最短</em></li><li><b>暮</b><span>十六点至十九点</span><em>暖光压低，山脊镶边</em></li><li><b>夜</b><span>十九点至五点</span><em>转拓片色，灯火与星光起</em></li></ol>
+      <p class="season-rule">时序由页脚的四时按钮控制：跟随真实时间，或把一年压成一日、四分钟一年，或停在某一刻。哪一档都不改任何一条事实——天时只改画面，不改数据。</p>
+      <div class="season-now">此刻：<b data-world-label></b><button class="link-arrow" type="button" data-clock-open>改天时 →</button></div>
+    </section>
+    <section class="world-panel" data-world-panel="qiguan" id="ch-qiguan">
+      <p class="panel-note">海上有异象，非灾非祥，乃地气偶泄：一日之内，或见蜃楼浮于远海，或见云瀑自山脊倾泻，或见星陨落于一屿，或见鲸影过而不惊。见者记之，不以为兆。</p>
+      <div class="pheno-row"><span class="pheno"><b>海市蜃楼</b><em>外海</em></span><span class="pheno"><b>云瀑</b><em>学宫</em></span><span class="pheno"><b>星陨</b><em>全岛</em></span><span class="pheno"><b>鲸落</b><em>深水</em></span><span class="pheno"><b>极光</b><em>北天</em></span><span class="pheno"><b>霞光</b><em>主峰</em></span></div>
+      <div class="beast-grid"><a class="beast" href="world.html#sect-company" data-zone="company"><span class="beast-name">驮山兽</span><span class="beast-form">巨型履带驮兽</span><span class="beast-virtue">负重</span><span class="beast-zone">人间</span></a><a class="beast" href="world.html#sect-lab" data-zone="lab"><span class="beast-name">白泽</span><span class="beast-form">独角白鹿，目有重瞳</span><span class="beast-virtue">辨名</span><span class="beast-zone">学宫</span></a><a class="beast" href="world.html#sect-model" data-zone="model"><span class="beast-name">鲲</span><span class="beast-form">海中有鱼，其名为鲲，化而为鹏</span><span class="beast-virtue">化形</span><span class="beast-zone">灵物</span></a><a class="beast" href="world.html#sect-benchmark" data-zone="benchmark"><span class="beast-name">赑屃</span><span class="beast-form">龙首龟身，背负巨碑</span><span class="beast-virtue">守据</span><span class="beast-zone">碑林</span></a><a class="beast" href="world.html#sect-job" data-zone="job"><span class="beast-name">青鸟</span><span class="beast-form">青羽三足，衔简而飞</span><span class="beast-virtue">传召</span><span class="beast-zone">招贤</span></a><a class="beast" href="world.html#sect-resource" data-zone="resource"><span class="beast-name">蠹鱼</span><span class="beast-form">银鳞小兽，游于卷册</span><span class="beast-virtue">溯源</span><span class="beast-zone">藏经</span></a><a class="beast" href="world.html#sect-news" data-zone="news"><span class="beast-name">风狸</span><span class="beast-form">狸身而翼，行于风隙</span><span class="beast-virtue">纪事</span><span class="beast-zone">驿路</span></a></div>
+    </section>
+
+    <section class="world-panel" data-world-panel="diyun" id="ch-diyun">
+      <div class="depth-grid"><div class="depth" id="depth-company" data-zone="company"><span class="depth-where">人间</span><span class="depth-name">忘形渊</span><p>人间最深一处，埋着未曾量产的样机。传说入渊者能见器之极限，亦能见人之贪。</p></div><div class="depth" id="depth-lab" data-zone="lab"><span class="depth-where">学宫</span><span class="depth-name">无字碑</span><p>学宫后山一方无字碑。凡未能证实之论，皆沉于此，不立文字。</p></div><div class="depth" id="depth-model" data-zone="model"><span class="depth-where">灵物</span><span class="depth-name">火口心</span><p>灵物火山之心，温而不沸。入者见一器之全部失败，而后知一能之可贵。</p></div><div class="depth" id="depth-benchmark" data-zone="benchmark"><span class="depth-where">碑林</span><span class="depth-name">撤榜井</span><p>碑林之侧有一井，已撤之榜沉于井底。井水映出旧分，也映出谁撤的。</p></div><div class="depth" id="depth-job" data-zone="job"><span class="depth-where">招贤</span><span class="depth-name">无名帖</span><p>招贤台下落着一叠无名之帖，投者不留名，求者不留位。三年一启。</p></div><div class="depth" id="depth-resource" data-zone="resource"><span class="depth-where">藏经</span><span class="depth-name">断简崖</span><p>藏经最深处的崖壁，断简残编层层嵌于石中。凡失传之法，此处尚有半页。</p></div><div class="depth" id="depth-news" data-zone="news"><span class="depth-where">驿路</span><span class="depth-name">回声渡</span><p>驿路尽头的渡口，说出去的话会原样回响一遍。凡过此渡者，须收回自己说过的话。</p></div></div>
+    </section>
+
+    <section class="world-panel" data-world-panel="wulu" id="ch-routes">
+      <div class="routes"><div class="route">
+        <span class="route-name">造器之路</span><span class="route-for">做本体与整机的人</span>
+        <ol class="route-steps"><li><a href="companies.html">人间 · 公司名录</a></li><li><a href="resources.html#stage-1">藏经 · 本体硬件与传感</a></li><li><a href="resources.html#stage-3">藏经 · 遥操作与采集</a></li><li><a href="resources.html#stage-4">藏经 · 数据</a></li><li><a href="atlas.html#r=company">山海图 · 人间与学宫两地</a></li></ol>
+        <p class="route-note">先把物理边界定死：关节、力矩、末端与相机基线；再谈数据。</p>
+      </div><div class="route">
+        <span class="route-name">养算法之路</span><span class="route-for">做基座与策略的人</span>
+        <ol class="route-steps"><li><a href="models.html">灵物 · 模型名录</a></li><li><a href="resources.html#stage-7">藏经 · 算法与模型</a></li><li><a href="resources.html#stage-8">藏经 · 训练</a></li><li><a href="leaderboard.html">碑林 · 对应榜单</a></li><li><a href="labs.html">学宫 · 同方向的实验室</a></li></ol>
+        <p class="route-note">读榜先读协议；同一模型在不同协议下的分数不可并排。</p>
+      </div><div class="route">
+        <span class="route-name">上机之路</span><span class="route-for">负责把策略跑在真机上的人</span>
+        <ol class="route-steps"><li><a href="resources.html#stage-6">藏经 · 中间件与控制</a></li><li><a href="resources.html#stage-9">藏经 · 部署</a></li><li><a href="resources.html#stage-10">藏经 · 评测</a></li><li><a href="lb-roboarena.html">碑林 · 真机与赛事</a></li><li><a href="jobs.html">招贤 · 对应岗位</a></li></ol>
+        <p class="route-note">出关的标志是控制频率稳定、掉电可恢复，不是一次演示。</p>
+      </div><div class="route">
+        <span class="route-name">求职之路</span><span class="route-for">准备进入具身行业的人</span>
+        <ol class="route-steps"><li><a href="jobs.html">招贤 · 岗位与方向</a></li><li><a href="resources.html#stage-11">藏经 · 学习与课程</a></li><li><a href="companies.html">人间 · 目标公司</a></li><li><a href="labs.html">学宫 · 目标实验室</a></li><li><a href="news.html">驿路 · 动态</a></li></ol>
+        <p class="route-note">按方向找门，不按公司海投；面试前把面试流程与要求逐条对上。</p>
+      </div><div class="route">
+        <span class="route-name">观风之路</span><span class="route-for">看产业动态的人</span>
+        <ol class="route-steps"><li><a href="news.html">驿路 · 动态与会期</a></li><li><a href="leaderboard.html">碑林 · 近期变化</a></li><li><a href="companies.html">人间 · 公司大事记</a></li><li><a href="atlas.html#r=news">山海图 · 驿路与碑林</a></li></ol>
+        <p class="route-note">融资额与估值分开；轮次不等于成熟度。</p>
+      </div></div>
+      <div class="travel" id="travel" data-zones="company,lab,model,benchmark,job,resource,news">
+        <a class="travel-seal" href="atlas.html#r=company" data-seal="company" data-zone="company"><span class="seal-cn">人间</span><span class="seal-sub">诸司都邑</span><span class="seal-state">未至</span></a><a class="travel-seal" href="atlas.html#r=lab" data-seal="lab" data-zone="lab"><span class="seal-cn">学宫</span><span class="seal-sub">讲学著述</span><span class="seal-state">未至</span></a><a class="travel-seal" href="atlas.html#r=model" data-seal="model" data-zone="model"><span class="seal-cn">灵物</span><span class="seal-sub">山海异兽</span><span class="seal-state">未至</span></a><a class="travel-seal" href="atlas.html#r=benchmark" data-seal="benchmark" data-zone="benchmark"><span class="seal-cn">碑林</span><span class="seal-sub">刻石记分</span><span class="seal-state">未至</span></a><a class="travel-seal" href="atlas.html#r=job" data-seal="job" data-zone="job"><span class="seal-cn">招贤</span><span class="seal-sub">悬榜求士</span><span class="seal-state">未至</span></a><a class="travel-seal" href="atlas.html#r=resource" data-seal="resource" data-zone="resource"><span class="seal-cn">藏经</span><span class="seal-sub">典籍器用</span><span class="seal-state">未至</span></a><a class="travel-seal" href="atlas.html#r=news" data-seal="news" data-zone="news"><span class="seal-cn">驿路</span><span class="seal-sub">驿报存录</span><span class="seal-state">未至</span></a>
+      </div>
+      <p class="panel-cta"><a class="link-arrow" href="atlas.html">入山海图，看七域与异象 →</a></p>
+    </section>
+
+  </div></div></main>
+<span id="main-end"></span>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="foot-brand">
+      <a class="foot-mark" href="index.html" aria-label="具身山海志 · 返回首页"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55" stroke-dasharray="86 6" transform="rotate(-24 20 20)"/>
+  <path d="M7.5 26.5 14 15.6l4.4 7 3.5-5.6 10.6 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6.4 30.2c2.4-1.5 3.6-.2 5.6-.9 2-.7 3.2-1.0 5.2-.2 2 .8 3.4.3 5.3-.4 2-.7 3.3-.1 5.4.6 1.8.6 3.4.2 5.4-.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28.6" cy="12.4" r="2.6" fill="#c21f30"/>
+</svg><span class="foot-word"><b>具身山海志</b><small>Embodied Atlas</small></span></a>
+      <p class="foot-motto">多闻阙疑　慎言其余</p>
+      <a class="btn foot-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.16l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg>到 GitHub 点 Star</a>
+    </div>
+    <nav class="set" aria-label="页脚导航">
+      <div class="set-col"><b>七卷</b><a href="companies.html">公司</a><a href="labs.html">机构</a><a href="models.html">模型</a><a href="leaderboard.html">榜单</a><a href="jobs.html">岗位</a><a href="resources.html">资源</a><a href="news.html">动态</a></div>
+      <div class="set-col"><b>别册</b><a href="world.html">总览</a><a href="atlas.html">山海图</a><a href="compare.html">选型对比</a><a href="papers.html">论文索引</a><a href="events.html">会期与投稿</a></div>
+      <div class="set-col"><b>卷末</b><a href="about.html">关于</a><a href="legend.html">凡例</a><a href="credits.html">素材与许可</a><a href="copyright.html">版权</a></div>
+      <div class="set-col"><b>往来</b><button type="button" class="footer-btn" data-open-contact>合作联系</button><a href="coop.html">合作方式</a><a href="news.html#subscribe">订阅更新</a></div>
+    </nav>
+    <div class="foot-base">
+      <span class="src-line">源：<a href="https://fbddcz.github.io/Embodied-Shanhai-Atlas/world.html">具身山海志</a> · <a href="copyright.html">版权与许可</a> · 核验 2026-11-16</span>
+      <span class="colophon">© 2026 具身山海志 · <span data-world-label>秋·小雪</span></span>
+      <button class="clock-btn" id="worldClock" type="button" aria-haspopup="true" aria-expanded="false" title="四时天候：跟随真实时间，或把一年浓缩成一天">
+        <span class="cc-dot" aria-hidden="true"></span><span data-clock-mode>随天时</span>
+      </button>
+      <div class="clock-menu" id="worldClockMenu" hidden>
+        <p class="clock-q">四时如何流转</p>
+        <button data-clock="real" type="button">跟随真实时间</button>
+        <button data-clock="cycle" type="button">一年浓缩成一日（每 24 小时一轮）</button>
+        <button data-clock="fast" type="button">一年浓缩成四分钟（演示用）</button>
+        <button data-clock="off" type="button">停在当前节令</button>
+        <p class="clock-now" data-world-label></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="toc" id="toc" role="dialog" aria-modal="true" aria-label="七卷目录">
+  <div class="toc-head"><span class="toc-title">七卷</span><button class="tool" id="tocClose" aria-label="关闭目录"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="toc-body"><div class="toc-list"><a class="toc-item" href="world.html"><span class="no">纲</span><span class="nm">总纲<small>总览</small></span><span class="ct">7宗</span></a><a class="toc-item" href="companies.html" data-zone="company"><span class="no">壹</span><span class="nm">人间<small>公司</small></span><span class="ct">154</span></a><a class="toc-item" href="labs.html" data-zone="lab"><span class="no">贰</span><span class="nm">学宫<small>机构</small></span><span class="ct">60</span></a><a class="toc-item" href="models.html" data-zone="model"><span class="no">叁</span><span class="nm">灵物<small>模型</small></span><span class="ct">91</span></a><a class="toc-item" href="leaderboard.html" data-zone="benchmark"><span class="no">肆</span><span class="nm">碑林<small>榜单</small></span><span class="ct">33</span></a><a class="toc-item" href="jobs.html" data-zone="job"><span class="no">伍</span><span class="nm">招贤<small>岗位</small></span><span class="ct">57</span></a><a class="toc-item" href="resources.html" data-zone="resource"><span class="no">陆</span><span class="nm">藏经<small>资源</small></span><span class="ct">116</span></a><a class="toc-item" href="news.html" data-zone="news"><span class="no">柒</span><span class="nm">驿路<small>动态</small></span><span class="ct">95</span></a><a class="toc-item" href="atlas.html"><span class="no">图</span><span class="nm">山海图<small>七域一图</small></span><span class="ct">606</span></a></div></div>
+  <div class="toc-foot"><a href="hardware.html">本体与传感</a><a href="compare.html">选型对比</a><a href="papers.html">论文索引</a><a href="events.html">会期与投稿</a><a href="following.html">我的关注</a><a href="legend.html">凡例</a><a href="about.html">关于</a><a class="toc-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer">★ 到 GitHub 点 Star</a></div>
+</div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="搜索">
+  <div class="palette-panel">
+    <div class="palette-input">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <input id="paletteInput" type="search" placeholder="寻一司、一器、一碑、一文" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="paletteResults" aria-autocomplete="list">
+      <span class="palette-hint">ESC</span>
+    </div>
+    <div class="palette-results" id="paletteResults" role="listbox" aria-label="搜索结果"></div>
+  </div>
+</div>
+<div class="modal" id="claimModal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="claimTitle">
+    <div class="modal-head"><h3 id="claimTitle">认领与纠错</h3><button class="modal-close" type="button" data-close-modal aria-label="关闭">×</button></div>
+    <p class="modal-sub" id="claimTarget">写明要更正的内容，附可打开的来源。</p>
+    <form id="claimForm" data-issues="https://github.com/FBddcz/Embodied-Shanhai-Atlas">
+      <label class="field"><span>称呼或机构（可不填）</span><input name="name" autocomplete="off" placeholder="例如：某公司市场部"></label>
+      <label class="field"><span>要更正或补充的内容</span><textarea name="message" required rows="5" placeholder="哪一条事实、原文是什么、应改为什么。"></textarea></label>
+      <label class="field"><span>来源链接</span><input name="source" type="url" placeholder="https://"></label>
+      <div class="modal-actions"><button type="button" class="btn" data-copy-claim>复制</button><button type="submit" class="btn btn-solid">在 GitHub 提交</button></div>
+    </form>
+  </div>
+</div>
+<div class="modal" id="contactModal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal-head"><h3 id="contactTitle">合作联系</h3><button class="modal-close" type="button" data-close-contact aria-label="关闭">×</button></div>
+    <p class="modal-sub">合作、招聘、投稿或数据授权。可以填写在线表单，也可以扫码进群直接联系。</p>
+    <div class="contact-link"><a class="btn btn-solid" href="https://www.wjx.top/vm/mB7vmKF.aspx" target="_blank" rel="noopener noreferrer">填写在线表单 ↗</a><p class="modal-note">表单由问卷星托管，提交后维护者会收到通知。</p></div>
+    
+    <div class="contact-qr">
+      <img src="assets/contact/xhs-group-2.png" alt="小红书交流群二维码" width="132" height="132" loading="lazy" decoding="async">
+      <div class="contact-qr-text"><b>小红书交流群</b><p>具身 AI 交流实习群 2 · 扫码加入，直接在群里联系维护者。</p><p class="contact-qr-valid">此码 2026-12-14 前有效</p></div>
+    </div>
+    <form id="contactForm" hidden data-endpoint="" data-key="" data-email="" data-qr="1" data-mode="link">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+      
+      
+      <div class="field-row">
+        <label class="field"><span>称呼或机构</span><input name="name" required autocomplete="off" placeholder="张三 / 某公司"></label>
+        <label class="field"><span>来意</span><select name="intent"><option>合作</option><option>招聘</option><option>投稿</option><option>数据授权</option><option>其他</option></select></label>
+      </div>
+      <label class="field"><span>微信、邮箱或电话</span><input name="contact" required autocomplete="off"></label>
+      <label class="field"><span>想聊什么</span><textarea name="message" rows="4" required></textarea></label>
+      <label class="check"><input type="checkbox" name="consent" required><span>以上信息只用于回复，不作他用。</span></label>
+      <div class="modal-actions"><button type="button" class="btn" data-copy-contact>复制</button><button type="submit" class="btn btn-solid">复制这段文字</button></div>
+      <p class="modal-note" id="contactStatus"></p>
+    </form>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="title-card" aria-hidden="true"><b>具身山海志</b><small>Embodied Atlas</small></div>
+<script src="app.js" defer></script>
+
+
+
+</body>
+</html>

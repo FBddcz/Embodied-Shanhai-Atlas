@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="ink" data-season="spring">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>藏经 · 资源 · 具身山海志</title>
+<meta name="description" content="自本体硬件到部署评测的整条链路：代码、数据、教材与工具。">
+<link rel="canonical" href="https://fbddcz.github.io/Embodied-Shanhai-Atlas/resources.html">
+<meta name="atlas-fp" content="3e9f49-1dfa79">
+<meta name="author" content="具身山海志 · Embodied Atlas">
+<meta property="og:url" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/resources.html">
+<meta name="twitter:url" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/resources.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"藏经 · 资源 · 具身山海志","description":"自本体硬件到部署评测的整条链路：代码、数据、教材与工具。","url":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/resources.html","inLanguage":"zh-CN","dateModified":"2026-11-16","isPartOf":{"@type":"WebSite","name":"具身山海志 · Embodied Atlas","url":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/index.html","inLanguage":"zh-CN"},"creator":{"@type":"Person","name":"具身山海志","url":"https://github.com/FBddcz"},"copyrightHolder":{"@type":"Person","name":"具身山海志","url":"https://github.com/FBddcz"},"copyrightYear":2026,"license":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/copyright.html","citation":"具身山海志（Embodied Atlas）· 核验 2026-11-16 · https://fbddcz.github.io/Embodied-Shanhai-Atlas/resources.html"}</script>
+<meta name="theme-color" content="#f2e6ce" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1423" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.svg">
+<meta property="og:site_name" content="具身山海志">
+<meta property="og:title" content="藏经 · 资源 · 具身山海志">
+<meta property="og:description" content="自本体硬件到部署评测的整条链路：代码、数据、教材与工具。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="license" href="copyright.html">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+(function(){
+  var d=document.documentElement;
+  try{d.dataset.theme=localStorage.getItem('atlas-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'ink');}catch(e){d.dataset.theme='ink';}
+  // 季候与时辰：四时配色、山海图的天候都从这里取
+  var m=new Date().getMonth()+1;
+  d.dataset.season = (m>=3&&m<=5)?'spring':(m>=6&&m<=8)?'summer':(m>=9&&m<=11)?'autumn':'winter';
+  var h=new Date().getHours();
+  d.dataset.hour = h<5?'night':h<8?'dawn':h<11?'morning':h<16?'day':h<19?'dusk':'night';
+  var XDOC='CSSViewTransitionRule' in window;
+  d.classList.add(XDOC?'vt-x':'vt-fallback');
+  if(!XDOC){try{if(sessionStorage.getItem('veil')){sessionStorage.removeItem('veil');d.classList.add('veil-pending');}}catch(e){}return;}
+  var file=function(p){return p.split('/').pop()||'index.html';};
+  var seen=function(path){
+    var el=document.querySelector('[data-list] a[href$="'+file(path)+'"] .plate');
+    if(!el)return null;
+    el.style.viewTransitionName='entity-seal';
+    return el;
+  };
+  addEventListener('pageswap',function(e){
+    if(!e.viewTransition||!e.activation)return;
+    try{sessionStorage.setItem('vt-from',location.pathname);}catch(err){}
+    var el=seen(new URL(e.activation.entry.url).pathname);
+    if(el)e.viewTransition.finished.finally(function(){el.style.viewTransitionName='';});
+  });
+  addEventListener('pagereveal',function(e){
+    if(!e.viewTransition)return;
+    var nt=(window.navigation&&navigation.activation&&navigation.activation.navigationType)||(performance.getEntriesByType('navigation')[0]||{}).type;
+    var back=nt==='traverse'||nt==='back_forward';
+    e.viewTransition.types.add(back?'back':'ink');
+    if(back){
+      var prev='';try{prev=sessionStorage.getItem('vt-from')||'';}catch(err){}
+      if(prev)seen(prev);
+    }
+  });
+})();
+</script>
+</head>
+<body data-page="resources" data-zone="resource">
+<a class="skip" href="#main">跳到正文</a>
+<div class="atmo" aria-hidden="true"><video class="atmo-video" muted loop playsinline disablepictureinpicture preload="none"></video><span class="atmo-season"></span><span class="atmo-hour"></span><span class="atmo-veil"></span><span class="atmo-tint"></span></div>
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="index.html" aria-label="具身山海志 · 返回首页">
+    <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55" stroke-dasharray="86 6" transform="rotate(-24 20 20)"/>
+  <path d="M7.5 26.5 14 15.6l4.4 7 3.5-5.6 10.6 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6.4 30.2c2.4-1.5 3.6-.2 5.6-.9 2-.7 3.2-1.0 5.2-.2 2 .8 3.4.3 5.3-.4 2-.7 3.3-.1 5.4.6 1.8.6 3.4.2 5.4-.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28.6" cy="12.4" r="2.6" fill="#c21f30"/>
+</svg>
+    <span class="brand-word"><span class="brand-cn">具身山海志</span><span class="brand-en">Embodied Atlas</span></span>
+  </a>
+  <nav class="nav" aria-label="主导航"><a href="world.html" class="nav-world" title="山海大世界 · 总纲">总览</a><a href="companies.html" data-zone="company" title="人间 · 诸司都邑">公司</a><a href="labs.html" data-zone="lab" title="学宫 · 讲学著述">机构</a><a href="models.html" data-zone="model" title="灵物 · 山海异兽">模型</a><a href="leaderboard.html" data-zone="benchmark" title="碑林 · 刻石记分">榜单</a><a href="jobs.html" data-zone="job" title="招贤 · 悬榜求士">岗位</a><a href="resources.html" data-zone="resource" aria-current="page" title="藏经 · 典籍器用">资源</a><a href="news.html" data-zone="news" title="驿路 · 驿报存录">动态</a><a href="atlas.html" title="七域一图">山海图</a></nav>
+  <div class="header-tools">
+    <button class="tool tool-search" data-open-search aria-label="搜索，快捷键 Command K">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <span class="ph">搜索公司、模型、论文</span><span class="kbd">⌘K</span>
+    </button>
+    <a class="tool tool-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer" aria-label="到 GitHub 给具身山海志点 Star" title="到 GitHub 点 Star">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.16l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg><span class="gs-t">Star</span><span class="gs-n" data-gh-count hidden></span>
+    </a>
+    <a class="tool tool-follow" href="following.html" aria-label="我的关注" title="我的关注">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+    </a>
+    <button class="tool" id="themeBtn" aria-label="切换昼夜" title="切换昼夜">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>
+    </button>
+    <button class="tool menu-btn" id="menuBtn" aria-label="打开七卷目录" aria-expanded="false" aria-controls="toc">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+<main id="main" data-fp="3e9f49-1dfa79"><section class="layout"><div class="vol-head" data-zone="resource">
+  <span class="vol-no">卷陆 · 典籍器用</span>
+  <h1 class="vol-title">藏经<small>资源</small></h1>
+  <p class="vol-epigraph">藏经一百十六部，自本体至部署，凡十一门：本体八，传感八，遥操九，数据十一，仿真十六，中间八，算法十六，训练八，部署八，评测十三，学课十一。每部注三事：何以用之，何以勿用，费时几何。</p>
+  
+  <div class="realm-line" data-zone="resource">
+    <span class="realm-sect">蠹鱼 · 藏经阁</span>
+    <span class="realm-links"><a href="atlas.html#r=resource">在山海图中查看 →</a></span>
+  </div>
+  <nav class="zone-tabs" aria-label="本卷分页"><a href="resources.html" aria-current="page">资源</a><a href="papers.html">论文索引</a></nav>
+  <div class="vol-tools"><div class="seg seg-wide" role="group" aria-label="按环节筛选"><button data-filter="全部" aria-pressed="true">全部<span class="mono">116</span></button><button data-filter="本体硬件">本体硬件<span class="mono">8</span></button><button data-filter="传感">传感<span class="mono">8</span></button><button data-filter="遥操作与采集">遥操作<span class="mono">9</span></button><button data-filter="数据">数据<span class="mono">11</span></button><button data-filter="仿真">仿真<span class="mono">16</span></button><button data-filter="中间件与控制">中间件<span class="mono">8</span></button><button data-filter="算法与模型">算法<span class="mono">16</span></button><button data-filter="训练">训练<span class="mono">8</span></button><button data-filter="部署">部署<span class="mono">8</span></button><button data-filter="评测">评测<span class="mono">13</span></button><button data-filter="学习与课程">学习<span class="mono">11</span></button></div></div>
+</div></section>
+  <div class="layout"><div>
+    <nav class="chain" aria-label="具身全链路"><a href="#stage-1"><span class="no">1</span><span class="nm">本体硬件</span></a><a href="#stage-2"><span class="no">2</span><span class="nm">传感</span></a><a href="#stage-3"><span class="no">3</span><span class="nm">遥操作</span></a><a href="#stage-4"><span class="no">4</span><span class="nm">数据</span></a><a href="#stage-5"><span class="no">5</span><span class="nm">仿真</span></a><a href="#stage-6"><span class="no">6</span><span class="nm">中间件</span></a><a href="#stage-7"><span class="no">7</span><span class="nm">算法</span></a><a href="#stage-8"><span class="no">8</span><span class="nm">训练</span></a><a href="#stage-9"><span class="no">9</span><span class="nm">部署</span></a><a href="#stage-10"><span class="no">10</span><span class="nm">评测</span></a><a href="#stage-11"><span class="no">11</span><span class="nm">学习</span></a></nav>
+  </div></div>
+  <div class="layout"><div data-list>
+    <section class="res-section chain-stage" id="stage-1" data-stage="本体硬件">
+      <div class="res-stage-head"><span class="chain-no">一</span><h3>本体硬件</h3><span class="n">8</span><span class="desc">机械臂、灵巧手与移动、人形平台</span></div>
+      <p class="chain-line">先有其器。结构、关节与自由度，划下此后一切数据的边界。</p>
+      <div class="res-grid"><a class="res-card" href="resource-so-arm100.html" data-tags="本体硬件 硬件 低成本 机械臂 入门">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-so-arm100.jpg" alt="" loading="lazy"></span><span class="res-name">SO-ARM100</span></span><span class="stars" title="8.1k★（GitHub，2026-11-13）">8.1k★</span></h4>
+        <p class="one">The Robot Studio 开源的 6 自由度舵机臂，BOM 用 3D 打印件加桌面级舵机。</p>
+        <p class="how">TheRobotStudio · Apache-2.0 · C++ / STL</p>
+      </a><a class="res-card" href="resource-koch-v11.html" data-tags="本体硬件 硬件 低成本 机械臂">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-koch-v11.jpg" alt="" loading="lazy"></span><span class="res-name">Koch v1.1</span></span><span class="stars" title="737★（GitHub，2026-11-13）">737★</span></h4>
+        <p class="one">Koch 低成本臂的 1.1 版装配与标定说明，配 Dynamixel 舵机与 3D 打印件。</p>
+        <p class="how">Alexander Koch / jess-moss · Apache-2.0 · Python</p>
+      </a><a class="res-card" href="resource-lekiwi.html" data-tags="本体硬件 硬件 移动操作 低成本">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-lekiwi.jpg" alt="" loading="lazy"></span><span class="res-name">LeKiwi</span></span><span class="stars" title="1.5k★（GitHub，2026-11-13）">1.5k★</span></h4>
+        <p class="one">把 SO-100 臂装到全向轮底盘上的低成本移动操作平台，含遥操作与 LeRobot 接入。</p>
+        <p class="how">SIGRobotics-UIUC · Apache-2.0 · Python</p>
+      </a><a class="res-card" href="resource-xlerobot.html" data-tags="本体硬件 硬件 移动操作 低成本 双臂">
+        <h4><span class="res-head"><span class="res-name">XLeRobot</span></span><span class="stars" title="5.8k★（GitHub，2026-11-13）">5.8k★</span></h4>
+        <p class="one">约 660 美元的双臂移动家用机器人方案，含 BOM、装配、遥操作与 LeRobot 数据接口。</p>
+        <p class="how">Vector Wang · Apache-2.0 · Python</p>
+      </a><a class="res-card" href="resource-leap-hand.html" data-tags="本体硬件 硬件 灵巧手 仿真">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-leap-hand.jpg" alt="" loading="lazy"></span><span class="res-name">LEAP Hand</span></span><span class="stars" title="215★（GitHub，2026-11-13）">215★</span></h4>
+        <p class="one">CMU 开源的 16 自由度灵巧手，附 Isaac Gym 仿真环境与实机控制接口。</p>
+        <p class="how">Kenny Shaw / CMU · MIT（仿真仓库）/ CC BY-NC 4.0（API 仓库） · Python / C++</p>
+      </a><a class="res-card" href="resource-berkeley-humanoid-lite.html" data-tags="本体硬件 硬件 人形 低成本 3D 打印">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-berkeley-humanoid-lite.jpg" alt="" loading="lazy"></span><span class="res-name">Berkeley Humanoid Lite</span></span><span class="stars" title="2.0k★（GitHub，2026-11-13）">2.0k★</span></h4>
+        <p class="one">伯克利开源的 3D 打印人形，含摆线针轮执行器设计、嵌入式代码与 RL 部署流程。</p>
+        <p class="how">UC Berkeley Hybrid Robotics · MIT · Python / C++</p>
+      </a><a class="res-card" href="resource-toddlerbot.html" data-tags="本体硬件 硬件 人形 3D 打印 教学">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-toddlerbot.jpg" alt="" loading="lazy"></span><span class="res-name">ToddlerBot</span></span><span class="stars" title="804★（GitHub，2026-11-13）">804★</span></h4>
+        <p class="one">斯坦福开源的 3D 打印小型人形，含硬件图纸、仿真资产与强化学习训练脚本。</p>
+        <p class="how">Stanford / hshi74 · MIT · Python</p>
+      </a><a class="res-card" href="resource-amazing-hand.html" data-tags="本体硬件 硬件 灵巧手 低成本">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-amazing-hand.jpg" alt="" loading="lazy"></span><span class="res-name">AmazingHand</span></span><span class="stars" title="2.5k★（GitHub，2026-11-13）">2.5k★</span></h4>
+        <p class="one">Pollen Robotics 开源的 8 自由度灵巧手，含结构件、控制代码与抓取示例。</p>
+        <p class="how">Pollen Robotics · Apache-2.0 · Python</p>
+      </a></div>
+    </section><section class="res-section chain-stage" id="stage-2" data-stage="传感">
+      <div class="res-stage-head"><span class="chain-no">二</span><h3>传感</h3><span class="n">8</span><span class="desc">深度相机、视触觉与标定</span></div>
+      <p class="chain-line">器能见几分、触几分，数据里便有几分可学。</p>
+      <div class="res-grid"><a class="res-card" href="resource-librealsense.html" data-tags="传感 传感 相机 深度">
+        <h4><span class="res-head"><span class="res-name">librealsense</span></span><span class="stars" title="9.1k★（GitHub，2026-11-13）">9.1k★</span></h4>
+        <p class="one">RealSense 深度相机的官方 SDK，提供驱动、对齐、内参读取与多机同步。</p>
+        <p class="how">RealSense（原 Intel RealSense） · Apache-2.0 · C++ / Python</p>
+      </a><a class="res-card" href="resource-orbbec-sdk.html" data-tags="传感 传感 相机 深度 国产">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-orbbec-sdk.jpg" alt="" loading="lazy"></span><span class="res-name">Orbbec SDK v2</span></span><span class="stars" title="271★（GitHub，2026-11-13）">271★</span></h4>
+        <p class="one">奥比中光深度相机的官方 SDK，覆盖 Femto 与 Gemini 系列的取流、对齐与内参。</p>
+        <p class="how">Orbbec · MIT · C++ / Python</p>
+      </a><a class="res-card" href="resource-zed-sdk.html" data-tags="传感 传感 相机 双目">
+        <h4><span class="res-head"><span class="res-name">ZED SDK</span></span><span class="stars" title="1.2k★（GitHub，2026-11-13）">1.2k★</span></h4>
+        <p class="one">Stereolabs 双目相机的官方示例与接口，提供深度、位姿跟踪与人体骨骼。</p>
+        <p class="how">Stereolabs · MIT（仓库）/ SDK 另有许可 · C++ / Python</p>
+      </a><a class="res-card" href="resource-gelsight-robotics.html" data-tags="传感 传感 触觉 视触觉">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-gelsight-robotics.jpg" alt="" loading="lazy"></span><span class="res-name">GelSight SDK</span></span><span class="stars" title="206★（GitHub，2026-11-13）">206★</span></h4>
+        <p class="one">GelSight 视触觉传感器的官方 SDK，负责取图、标定与接触图像处理。</p>
+        <p class="how">GelSight · GPL-3.0 · Python</p>
+      </a><a class="res-card" href="resource-digit-tactile.html" data-tags="传感 传感 触觉 视触觉">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-digit-tactile.jpg" alt="" loading="lazy"></span><span class="res-name">DIGIT</span></span><span class="stars" title="94★（GitHub，2026-11-13）">94★</span></h4>
+        <p class="one">Meta 开源的视触觉传感器 DIGIT，公开硬件设计与取图接口。</p>
+        <p class="how">Meta AI · CC BY-NC 4.0 · Python</p>
+      </a><a class="res-card" href="resource-anyskin.html" data-tags="传感 传感 触觉 磁性">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-anyskin.jpg" alt="" loading="lazy"></span><span class="res-name">AnySkin</span></span><span class="stars" title="91★（GitHub，2026-11-13）">91★</span></h4>
+        <p class="one">可快速更换磁性皮肤的触觉传感方案，附读数接口与标定流程。</p>
+        <p class="how">RAIL / NYU · MIT · Python</p>
+      </a><a class="res-card" href="resource-kalibr.html" data-tags="传感 传感 标定 多相机">
+        <h4><span class="res-head"><span class="res-name">Kalibr</span></span><span class="stars" title="5.8k★（GitHub，2026-11-13）">5.8k★</span></h4>
+        <p class="one">多相机与视觉惯性系统的标定工具箱，输出相机内外参与时间偏移。</p>
+        <p class="how">ETH Zurich ASL · BSD-3-Clause（LICENSE 原文，GitHub 分类为 Other） · C++ / Python</p>
+      </a><a class="res-card" href="resource-easy-handeye2.html" data-tags="传感 传感 标定 ROS 2">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-easy-handeye2.jpg" alt="" loading="lazy"></span><span class="res-name">easy_handeye2</span></span><span class="stars" title="328★（GitHub，2026-11-13）">328★</span></h4>
+        <p class="one">ROS 2 的手眼标定工具，采多组位姿后解出相机与末端的变换。</p>
+        <p class="how">Marco Esposito · LGPL-3.0 · Python</p>
+      </a></div>
+    </section><section class="res-section chain-stage" id="stage-3" data-stage="遥操作与采集">
+      <div class="res-stage-head"><span class="chain-no">三</span><h3>遥操作与采集</h3><span class="n">9</span><span class="desc">把人的动作变成轨迹</span></div>
+      <p class="chain-line">人先演一遍，器把动作录成带时间戳的轨迹。</p>
+      <div class="res-grid"><a class="res-card" href="resource-aloha.html" data-tags="遥操作与采集 真机 数据 操作">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-aloha.jpg" alt="" loading="lazy"></span><span class="res-name">ALOHA</span></span><span class="stars" title="2.4k★（GitHub，2026-11-13）">2.4k★</span></h4>
+        <p class="one">低成本双臂遥操作与 ACT 模仿学习。</p>
+        <p class="how">Tony Zhao et al. · MIT（以仓库为准） · Python</p>
+      </a><a class="res-card" href="resource-mobile-aloha.html" data-tags="遥操作与采集 模仿学习 移动操作 开源">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-mobile-aloha.jpg" alt="" loading="lazy"></span><span class="res-name">Mobile ALOHA</span></span><span class="stars" title="4.5k★（GitHub，2026-11-13）">4.5k★</span></h4>
+        <p class="one">给 ALOHA 装上移动底盘，可做炒虾、开柜、进电梯等全身任务。</p>
+        <p class="how">MarkFzp et al. · 无 LICENSE 声明 · Python</p>
+      </a><a class="res-card" href="resource-gello.html" data-tags="遥操作与采集 遥操作 低成本 数据采集">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-gello.jpg" alt="" loading="lazy"></span><span class="res-name">GELLO</span></span><span class="stars" title="564★（GitHub，2026-11-13）">564★</span></h4>
+        <p class="one">用 3D 打印关节臂做低成本遥操作，按目标机械臂的关节数定制。</p>
+        <p class="how">Philipp Wu / UC Berkeley · MIT · Python</p>
+      </a><a class="res-card" href="resource-umi.html" data-tags="遥操作与采集 遥操作 数据采集 手持">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-umi.jpg" alt="" loading="lazy"></span><span class="res-name">UMI</span></span><span class="stars" title="1.6k★（GitHub，2026-11-13）">1.6k★</span></h4>
+        <p class="one">用手持夹爪在真实场景采数据，再把轨迹迁到机器人上执行的采集方案。</p>
+        <p class="how">Stanford / Columbia · MIT · Python</p>
+      </a><a class="res-card" href="resource-dexcap.html" data-tags="遥操作与采集 遥操作 数据采集 灵巧手">
+        <h4><span class="res-head"><span class="res-name">DexCap</span></span><span class="stars" title="427★（GitHub，2026-11-13）">427★</span></h4>
+        <p class="one">用便携动捕手套采集灵巧手操作数据的方案，附重定向与策略学习代码。</p>
+        <p class="how">Stanford / j96w · MIT · Python</p>
+      </a><a class="res-card" href="resource-open-television.html" data-tags="遥操作与采集 遥操作 VR 数据采集">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-open-television.jpg" alt="" loading="lazy"></span><span class="res-name">Open-TeleVision</span></span><span class="stars" title="1.3k★（GitHub，2026-11-13）">1.3k★</span></h4>
+        <p class="one">用 VR 头显做立体视觉遥操作的开源实现，含机器人端与头显端代码。</p>
+        <p class="how">UC San Diego / MIT（Cheng 等） · Apache-2.0 · Python</p>
+      </a><a class="res-card" href="resource-dex-retargeting.html" data-tags="遥操作与采集 遥操作 重定向 灵巧手">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-dex-retargeting.jpg" alt="" loading="lazy"></span><span class="res-name">dex-retargeting</span></span><span class="stars" title="1.3k★（GitHub，2026-11-13）">1.3k★</span></h4>
+        <p class="one">把人体手部动作映射到多种机器人灵巧手的重定向库，AnyTeleop 的核心组件。</p>
+        <p class="how">dexsuite · MIT · Python</p>
+      </a><a class="res-card" href="resource-bunny-visionpro.html" data-tags="遥操作与采集 遥操作 VR 双臂">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-bunny-visionpro.jpg" alt="" loading="lazy"></span><span class="res-name">Bunny-VisionPro</span></span><span class="stars" title="359★（GitHub，2026-11-13）">359★</span></h4>
+        <p class="one">用 Vision Pro 手部跟踪驱动双臂灵巧操作，含实时重定向与安全限位。</p>
+        <p class="how">Dingry · MIT · Python</p>
+      </a><a class="res-card" href="resource-xr-teleoperate.html" data-tags="遥操作与采集 遥操作 人形 XR 国产">
+        <h4><span class="res-head"><span class="res-name">xr_teleoperate</span></span><span class="stars" title="1.7k★（GitHub，2026-11-13）">1.7k★</span></h4>
+        <p class="one">宇树官方的人形 XR 遥操作仓库，含头手跟踪、图像回传与关节映射。</p>
+        <p class="how">Unitree · Apache-2.0 · Python</p>
+      </a></div>
+    </section><section class="res-section chain-stage" id="stage-4" data-stage="数据">
+      <div class="res-stage-head"><span class="chain-no">四</span><h3>数据</h3><span class="n">11</span><span class="desc">数据集、格式与可视化</span></div>
+      <p class="chain-line">数据集先问规模与许可，再问覆盖了哪些本体。</p>
+      <div class="res-grid"><a class="res-card" href="resource-openx.html" data-tags="数据 数据 VLA 工程">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-openx.jpg" alt="" loading="lazy"></span><span class="res-name">Open X-Embodiment</span></span><span class="stars" title="2.1k★（GitHub，2026-11-13）">2.1k★</span></h4>
+        <p class="one">跨机器人、跨任务的大规模真实数据集合与工具。</p>
+        <p class="how">Google DeepMind · Apache-2.0（以仓库为准） · Python</p>
+      </a><a class="res-card" href="resource-mimicgen.html" data-tags="数据 数据 仿真 操作">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-mimicgen.jpg" alt="" loading="lazy"></span><span class="res-name">MimicGen</span></span><span class="stars" title="670★（GitHub，2026-11-13）">670★</span></h4>
+        <p class="one">从少量人类演示生成大规模机器人操作数据。</p>
+        <p class="how">NVIDIA · NVIDIA 许可（以仓库为准） · Python</p>
+      </a><a class="res-card" href="resource-droid.html" data-tags="数据 数据 真机 跨场景">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-droid.jpg" alt="" loading="lazy"></span><span class="res-name">DROID</span></span><span class="stars" title="473★（GitHub，2026-11-13）">473★</span></h4>
+        <p class="one">跨 564 个场景采的 76k 条真机操作演示，覆盖 86 个任务与多地采集者。</p>
+        <p class="how">Stanford / TRI / UC Berkeley 等 · 仓库未附许可，数据使用以其页面条款为准 · Python</p>
+      </a><a class="res-card" href="resource-bridgedata-v2.html" data-tags="数据 数据 真机 语言条件">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-bridgedata-v2.jpg" alt="" loading="lazy"></span><span class="res-name">BridgeData V2</span></span><span class="stars" title="295★（GitHub，2026-11-13）">295★</span></h4>
+        <p class="one">60,096 条带语言标注的真机轨迹，覆盖 24 个环境与 13 类技能。</p>
+        <p class="how">UC Berkeley RAIL · CC BY 4.0 · Python</p>
+      </a><a class="res-card" href="resource-res-agibot-world.html" data-tags="数据 数据 真机 大规模 国产">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-res-agibot-world.jpg" alt="" loading="lazy"></span><span class="res-name">AgiBot World</span></span><span class="stars" title="3.2k★（GitHub，2026-11-13）">3.2k★</span></h4>
+        <p class="one">智元开源的百万级真机操作数据集，覆盖 217 个任务与 5 类场景。</p>
+        <p class="how">AgiBot / OpenDriveLab · 仓库未附许可，数据许可见数据集页 · Python</p>
+      </a><a class="res-card" href="resource-robomind.html" data-tags="数据 数据 多本体 真机 国产">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-robomind.jpg" alt="" loading="lazy"></span><span class="res-name">RoboMIND</span></span><span class="stars" title="—（无公开 GitHub 仓库）">—</span></h4>
+        <p class="one">107k 条真机轨迹，覆盖 4 种本体、479 个任务与 96 类物体。</p>
+        <p class="how">北京人形机器人创新中心 等 · 页面未列许可 · Python</p>
+      </a><a class="res-card" href="resource-rh20t.html" data-tags="数据 数据 多模态 力觉 国产">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-rh20t.jpg" alt="" loading="lazy"></span><span class="res-name">RH20T</span></span><span class="stars" title="117★（GitHub，2026-11-13）">117★</span></h4>
+        <p class="one">11 万条接触密集操作序列，带视觉、力、音频、动作与对应人类演示。</p>
+        <p class="how">上海交通大学 等 · CC BY-SA 4.0（RH20T-C）/ CC BY-NC 4.0（RH20T-NC） · Python</p>
+      </a><a class="res-card" href="resource-ego4d.html" data-tags="数据 数据 第一视角 视频">
+        <h4><span class="res-head"><span class="res-name">Ego4D</span></span><span class="stars" title="664★（GitHub，2026-11-13）">664★</span></h4>
+        <p class="one">3,670 小时第一视角日常视频，覆盖 74 个地点与 9 个国家。</p>
+        <p class="how">Meta AI 等 13 家机构 · 需签署许可协议 · Python</p>
+      </a><a class="res-card" href="resource-egodex.html" data-tags="数据 数据 第一视角 灵巧手">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-egodex.jpg" alt="" loading="lazy"></span><span class="res-name">EgoDex</span></span><span class="stars" title="411★（GitHub，2026-11-13）">411★</span></h4>
+        <p class="one">829 小时第一视角桌面操作视频，带手部与头身 3D 位姿标注。</p>
+        <p class="how">Apple · Apple 自定义许可（见仓库 LICENSE） · Python</p>
+      </a><a class="res-card" href="resource-rlds.html" data-tags="数据 数据 格式 工具">
+        <h4><span class="res-head"><span class="res-name">RLDS</span></span><span class="stars" title="492★（GitHub，2026-11-13）">492★</span></h4>
+        <p class="one">机器人数据的统一格式与转换工具，Open X-Embodiment 的底层标准。</p>
+        <p class="how">Google Research · Apache-2.0 · Python</p>
+      </a><a class="res-card" href="resource-rerun.html" data-tags="数据 数据 可视化 调试">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-rerun.jpg" alt="" loading="lazy"></span><span class="res-name">rerun</span></span><span class="stars" title="11.8k★（GitHub，2026-11-13）">11.8k★</span></h4>
+        <p class="one">把图像、点云、轨迹与张量按时间轴记录并可视化的工具，支持训练时流式查看。</p>
+        <p class="how">Rerun · Apache-2.0 · Rust / Python</p>
+      </a></div>
+    </section><section class="res-section chain-stage" id="stage-5" data-stage="仿真">
+      <div class="res-stage-head"><span class="chain-no">五</span><h3>仿真</h3><span class="n">16</span><span class="desc">物理引擎与场景资产</span></div>
+      <p class="chain-line">真机之外另开一场，可并行训练，也可复现失败。</p>
+      <div class="res-grid"><a class="res-card" href="resource-maniskill.html" data-tags="仿真 仿真 工程 操作">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-maniskill.jpg" alt="" loading="lazy"></span><span class="res-name">ManiSkill</span></span><span class="stars" title="3.5k★（GitHub，2026-11-13）">3.5k★</span></h4>
+        <p class="one">GPU 并行机器人操作仿真，适合大规模 RL/模仿学习。</p>
+        <p class="how">Haosu Lab · Apache-2.0 · Python</p>
+      </a><a class="res-card" href="resource-mujoco.html" data-tags="仿真 仿真 运控 工程">
+        <h4><span class="res-head"><span class="res-name">MuJoCo</span></span><span class="stars" title="17.8k★（GitHub，2026-11-13）">17.8k★</span></h4>
+        <p class="one">物理仿真引擎，机器人控制与 RL 的通用底座。</p>
+        <p class="how">Google DeepMind · Apache-2.0 · C / Python</p>
+      </a><a class="res-card" href="resource-isaaclab.html" data-tags="仿真 仿真 工程 运控">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-isaaclab.jpg" alt="" loading="lazy"></span><span class="res-name">Isaac Lab</span></span><span class="stars" title="8.6k★（GitHub，2026-11-13）">8.6k★</span></h4>
+        <p class="one">基于 Isaac Sim 的 GPU 机器人学习框架，适合大规模并行训练。</p>
+        <p class="how">NVIDIA · BSD-3-Clause（以仓库为准） · Python</p>
+      </a><a class="res-card" href="resource-habitat.html" data-tags="仿真 仿真 导航 工程">
+        <h4><span class="res-head"><span class="res-name">Habitat-Lab</span></span><span class="stars" title="3.2k★（GitHub，2026-11-13）">3.2k★</span></h4>
+        <p class="one">室内导航与具身 AI 仿真平台，含 Habitat 3.0 人机协作。</p>
+        <p class="how">Meta AI · MIT（以仓库为准） · Python</p>
+      </a><a class="res-card" href="resource-robosuite.html" data-tags="仿真 仿真 操作 工程">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-robosuite.jpg" alt="" loading="lazy"></span><span class="res-name">robosuite</span></span><span class="stars" title="2.7k★（GitHub，2026-11-13）">2.7k★</span></h4>
+        <p class="one">模块化机械臂仿真，兼容 MuJoCo，适合操作研究。</p>
+        <p class="how">ARISE Initiative · MIT（LICENSE 原文为 MIT，GitHub 分类为 Other） · Python</p>
+      </a><a class="res-card" href="resource-mujoco-playground.html" data-tags="仿真 仿真 并行 RL">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-mujoco-playground.jpg" alt="" loading="lazy"></span><span class="res-name">MuJoCo Playground</span></span><span class="stars" title="2.3k★（GitHub，2026-11-13）">2.3k★</span></h4>
+        <p class="one">在 MJX 上跑的并行机器人环境集合，含训练脚本与真机部署示例。</p>
+        <p class="how">Google DeepMind · Apache-2.0 · Python</p>
+      </a><a class="res-card" href="resource-mujoco-menagerie.html" data-tags="仿真 仿真 模型 MJCF">
+        <h4><span class="res-head"><span class="res-name">MuJoCo Menagerie</span></span><span class="stars" title="4.4k★（GitHub，2026-11-13）">4.4k★</span></h4>
+        <p class="one">整理过的机器人 MJCF 模型集合，含执行器参数与场景示例。</p>
+        <p class="how">Google DeepMind · 各模型分别声明（见仓库 LICENSE） · Python</p>
+      </a><a class="res-card" href="resource-isaac-sim.html" data-tags="仿真 仿真 渲染 合成数据">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-isaac-sim.jpg" alt="" loading="lazy"></span><span class="res-name">Isaac Sim</span></span><span class="stars" title="4.5k★（GitHub，2026-11-13）">4.5k★</span></h4>
+        <p class="one">基于 Omniverse 的机器人仿真应用，提供物理、渲染与合成数据。</p>
+        <p class="how">NVIDIA · Apache-2.0（仓库本体）；依赖组件另有许可 · Python</p>
+      </a><a class="res-card" href="resource-genesis.html" data-tags="仿真 仿真 可微物理 并行">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-genesis.jpg" alt="" loading="lazy"></span><span class="res-name">Genesis</span></span><span class="stars" title="30.2k★（GitHub，2026-11-13）">30.2k★</span></h4>
+        <p class="one">通用机器人仿真平台，覆盖刚体、柔体与可微物理，附大量示例场景。</p>
+        <p class="how">Genesis Embodied AI · Apache-2.0 · Python</p>
+      </a><a class="res-card" href="resource-sapien.html" data-tags="仿真 仿真 关节物体 渲染">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-sapien.jpg" alt="" loading="lazy"></span><span class="res-name">SAPIEN</span></span><span class="stars" title="873★（GitHub，2026-11-13）">873★</span></h4>
+        <p class="one">面向关节物体的物理仿真引擎，支持刚体、柔体与光线追踪渲染。</p>
+        <p class="how">Hillbot / UCSD · Apache-2.0 · C++ / Python</p>
+      </a><a class="res-card" href="resource-pybullet.html" data-tags="仿真 仿真 物理引擎 基线">
+        <h4><span class="res-head"><span class="res-name">PyBullet</span></span><span class="stars" title="14.9k★（GitHub，2026-11-13）">14.9k★</span></h4>
+        <p class="one">实时碰撞检测与刚体仿真库，Python 绑定即 PyBullet。</p>
+        <p class="how">Bullet Physics · zlib（Extras 与第三方目录除外） · C++ / Python</p>
+      </a><a class="res-card" href="resource-drake.html" data-tags="仿真 仿真 动力学 优化 控制">
+        <h4><span class="res-head"><span class="res-name">Drake</span></span><span class="stars" title="4.3k★（GitHub，2026-11-13）">4.3k★</span></h4>
+        <p class="one">MIT 的基于模型设计与验证工具，含多体动力学、优化与仿真。</p>
+        <p class="how">Robot Locomotion Group / MIT · BSD-3-Clause · C++ / Python</p>
+      </a><a class="res-card" href="resource-gazebo.html" data-tags="仿真 仿真 ROS 2 系统集成">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-gazebo.jpg" alt="" loading="lazy"></span><span class="res-name">Gazebo</span></span><span class="stars" title="1.6k★（GitHub，2026-11-13）">1.6k★</span></h4>
+        <p class="one">开源机器人仿真器，与 ROS 2 的桥接和传感器插件配套。</p>
+        <p class="how">Open Robotics / Gazebo 社区 · Apache-2.0 · C++</p>
+      </a><a class="res-card" href="resource-newton.html" data-tags="仿真 仿真 GPU 可微物理">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-newton.jpg" alt="" loading="lazy"></span><span class="res-name">Newton</span></span><span class="stars" title="6.0k★（GitHub，2026-11-13）">6.0k★</span></h4>
+        <p class="one">基于 NVIDIA Warp 的 GPU 物理引擎，由 Disney、DeepMind 与 NVIDIA 发起。</p>
+        <p class="how">Newton Physics（Linux Foundation 项目） · Apache-2.0（代码）/ CC BY 4.0（文档） · Python</p>
+      </a><a class="res-card" href="resource-mjlab.html" data-tags="仿真 仿真 运控 强化学习">
+        <h4><span class="res-head"><span class="res-name">mjlab</span></span><span class="stars" title="3.4k★（GitHub，2026-11-15）">3.4k★</span></h4>
+        <p class="one">把 Isaac Lab 的 manager-based API 搬到 MuJoCo Warp，跑 GPU 并行强化学习。</p>
+        <p class="how">MuJoCo Lab · Apache-2.0 · Python</p>
+      </a><a class="res-card" href="resource-robot-lab.html" data-tags="仿真 仿真 运控 强化学习">
+        <h4><span class="res-head"><span class="res-name">robot_lab</span></span><span class="stars" title="2.0k★（GitHub，2026-11-15）">2.0k★</span></h4>
+        <p class="one">基于 Isaac Lab 的机器人强化学习扩展库，收了一批四足与人形的训练配置。</p>
+        <p class="how">fan-ziqi · Apache-2.0 · Python</p>
+      </a></div>
+    </section><section class="res-section chain-stage" id="stage-6" data-stage="中间件与控制">
+      <div class="res-stage-head"><span class="chain-no">六</span><h3>中间件与控制</h3><span class="n">8</span><span class="desc">通信、规划、动力学与实时下发</span></div>
+      <p class="chain-line">策略出的动作，按控制频率稳稳送到关节。</p>
+      <div class="res-grid"><a class="res-card" href="resource-ros2.html" data-tags="中间件与控制 中间件 通信 系统集成">
+        <h4><span class="res-head"><span class="res-name">ROS 2</span></span><span class="stars" title="6.3k★（GitHub，2026-11-13）">6.3k★</span></h4>
+        <p class="one">分布式机器人中间件，提供节点通信、参数、录包与工具链。</p>
+        <p class="how">Open Robotics / ROS 2 社区 · 元仓库无统一许可，各包分别声明 · C++ / Python</p>
+      </a><a class="res-card" href="resource-moveit2.html" data-tags="中间件与控制 中间件 运动规划 ROS 2">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-moveit2.jpg" alt="" loading="lazy"></span><span class="res-name">MoveIt 2</span></span><span class="stars" title="2.1k★（GitHub，2026-11-13）">2.1k★</span></h4>
+        <p class="one">ROS 2 的运动规划框架，含碰撞检测、规划管线与执行接口。</p>
+        <p class="how">MoveIt / PickNik · BSD-3-Clause · C++</p>
+      </a><a class="res-card" href="resource-ros2-control.html" data-tags="中间件与控制 中间件 控制 ROS 2">
+        <h4><span class="res-head"><span class="res-name">ros2_control</span></span><span class="stars" title="1.1k★（GitHub，2026-11-13）">1.1k★</span></h4>
+        <p class="one">ROS 2 的硬件抽象与控制循环框架，统一关节接口与控制器切换。</p>
+        <p class="how">ROS Controls · Apache-2.0 · C++</p>
+      </a><a class="res-card" href="resource-pinocchio.html" data-tags="中间件与控制 控制 动力学 优化">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-pinocchio.jpg" alt="" loading="lazy"></span><span class="res-name">Pinocchio</span></span><span class="stars" title="3.9k★（GitHub，2026-11-13）">3.9k★</span></h4>
+        <p class="one">刚体动力学与解析导数库，机器人控制与优化的常用底层。</p>
+        <p class="how">Inria / LAAS-CNRS · BSD-2-Clause · C++ / Python</p>
+      </a><a class="res-card" href="resource-ompl.html" data-tags="中间件与控制 控制 运动规划 采样">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-ompl.jpg" alt="" loading="lazy"></span><span class="res-name">OMPL</span></span><span class="stars" title="2.2k★（GitHub，2026-11-13）">2.2k★</span></h4>
+        <p class="one">采样类运动规划算法库，RRT、PRM 等实现的通用底座。</p>
+        <p class="how">Rice University Kavraki Lab · BSD-3-Clause · C++</p>
+      </a><a class="res-card" href="resource-curobo.html" data-tags="中间件与控制 控制 运动规划 GPU">
+        <h4><span class="res-head"><span class="res-name">cuRobo</span></span><span class="stars" title="2.0k★（GitHub，2026-11-13）">2.0k★</span></h4>
+        <p class="one">GPU 并行的运动生成库，含碰撞检测、IK 与轨迹优化。</p>
+        <p class="how">NVIDIA · Apache-2.0 · Python / CUDA</p>
+      </a><a class="res-card" href="resource-ocs2.html" data-tags="中间件与控制 控制 MPC 腿足">
+        <h4><span class="res-head"><span class="res-name">OCS2</span></span><span class="stars" title="1.5k★（GitHub，2026-11-13）">1.5k★</span></h4>
+        <p class="one">面向切换系统的 MPC 工具箱，含全身控制与轨迹优化示例。</p>
+        <p class="how">ETH Zurich Legged Robotics · BSD-3-Clause · C++</p>
+      </a><a class="res-card" href="resource-ruckig.html" data-tags="中间件与控制 控制 轨迹生成 实时">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-ruckig.jpg" alt="" loading="lazy"></span><span class="res-name">Ruckig</span></span><span class="stars" title="1.4k★（GitHub，2026-11-13）">1.4k★</span></h4>
+        <p class="one">加加速度受限的在线轨迹生成库，逐周期给出时间最短轨迹。</p>
+        <p class="how">pantor · MIT · C++ / Python</p>
+      </a></div>
+    </section><section class="res-section chain-stage" id="stage-7" data-stage="算法与模型">
+      <div class="res-stage-head"><span class="chain-no">七</span><h3>算法与模型</h3><span class="n">16</span><span class="desc">模仿学习、VLA 与扩散策略</span></div>
+      <p class="chain-line">自模仿学习至 VLA、世界模型，化感知与指令为动作。</p>
+      <div class="res-grid"><a class="res-card" href="resource-openvla.html" data-tags="算法与模型 VLA 开源">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-openvla.jpg" alt="" loading="lazy"></span><span class="res-name">OpenVLA</span></span><span class="stars" title="7.3k★（GitHub，2026-11-13）">7.3k★</span></h4>
+        <p class="one">OpenVLA 开源 7.5B 视觉-语言-动作模型，含权重。</p>
+        <p class="how">OpenVLA Team · MIT · Python</p>
+      </a><a class="res-card" href="resource-openpi.html" data-tags="算法与模型 VLA 模型 真机">
+        <h4><span class="res-head"><span class="res-name">OpenPI / π0</span></span><span class="stars" title="14.6k★（GitHub，2026-11-13）">14.6k★</span></h4>
+        <p class="one">π0 / π0.5 的官方开源实现与训练/推理脚本。</p>
+        <p class="how">Physical Intelligence · Apache-2.0（以仓库为准） · Python</p>
+      </a><a class="res-card" href="resource-diffusion_policy.html" data-tags="算法与模型 模型 操作 真机">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-diffusion_policy.jpg" alt="" loading="lazy"></span><span class="res-name">Diffusion Policy</span></span><span class="stars" title="4.7k★（GitHub，2026-11-13）">4.7k★</span></h4>
+        <p class="one">扩散策略的官方实现，覆盖 Pusht、Robomimic 与真机示例。</p>
+        <p class="how">Stanford REAL · MIT（以仓库为准） · Python</p>
+      </a><a class="res-card" href="resource-octo.html" data-tags="算法与模型 VLA 通用策略 开源">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-octo.jpg" alt="" loading="lazy"></span><span class="res-name">Octo</span></span><span class="stars" title="1.8k★（GitHub，2026-11-13）">1.8k★</span></h4>
+        <p class="one">Octo 以 27M/93M 小模型在 80 万条轨迹上做通用策略。</p>
+        <p class="how">Octo Team · MIT · Python</p>
+      </a><a class="res-card" href="resource-gigaworld.html" data-tags="算法与模型 世界模型 数据 模型">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-gigaworld.jpg" alt="" loading="lazy"></span><span class="res-name">GigaWorld-0</span></span><span class="stars" title="1.6k★（GitHub，2026-11-13）">1.6k★</span></h4>
+        <p class="one">面向 VLA 训练的世界模型与数据生成工具。</p>
+        <p class="how">GigaAI · Apache-2.0（以仓库为准） · Python</p>
+      </a><a class="res-card" href="resource-res-cosmos.html" data-tags="算法与模型 世界模型 模型 工程">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-res-cosmos.jpg" alt="" loading="lazy"></span><span class="res-name">Cosmos</span></span><span class="stars" title="12.4k★（GitHub，2026-11-13）">12.4k★</span></h4>
+        <p class="one">物理 AI 世界基础模型与视频生成工具链。</p>
+        <p class="how">NVIDIA · OpenMDW-1.1（Open Model Development Worldwide License） · Python</p>
+      </a><a class="res-card" href="resource-act.html" data-tags="算法与模型 模仿学习 动作块 开源">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-act.jpg" alt="" loading="lazy"></span><span class="res-name">ACT</span></span><span class="stars" title="2.3k★（GitHub，2026-11-13）">2.3k★</span></h4>
+        <p class="one">低成本双臂遥操作采集，Transformer 一次预测一段动作。</p>
+        <p class="how">Tony Zhao / Stanford · MIT · Python</p>
+      </a><a class="res-card" href="resource-openvla-oft.html" data-tags="算法与模型 模型 VLA 微调">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-openvla-oft.jpg" alt="" loading="lazy"></span><span class="res-name">OpenVLA-OFT</span></span><span class="stars" title="1.4k★（GitHub，2026-11-13）">1.4k★</span></h4>
+        <p class="one">OpenVLA 的微调改进版，用并行解码与动作分块提高推理速度与成功率。</p>
+        <p class="how">Moo Jin Kim / Stanford · MIT · Python</p>
+      </a><a class="res-card" href="resource-rdt.html" data-tags="算法与模型 模型 扩散策略 双臂 国产">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-rdt.png" alt="" loading="lazy"></span><span class="res-name">RDT-1B</span></span><span class="stars" title="1.8k★（GitHub，2026-11-13）">1.8k★</span></h4>
+        <p class="one">清华开源的 1B 双臂扩散 Transformer，用统一动作向量做多本体微调。</p>
+        <p class="how">清华 TSAIL · MIT · Python</p>
+      </a><a class="res-card" href="resource-groot-n.html" data-tags="算法与模型 模型 人形 基础模型">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-groot-n.jpg" alt="" loading="lazy"></span><span class="res-name">GR00T N1.x</span></span><span class="stars" title="8.4k★（GitHub，2026-11-13）">8.4k★</span></h4>
+        <p class="one">NVIDIA 的人形机器人基础模型，附数据格式、微调与部署脚本。</p>
+        <p class="how">NVIDIA · Apache-2.0（代码）；权重另有许可 · Python</p>
+      </a><a class="res-card" href="resource-smolvla.html" data-tags="算法与模型 VLA 轻量 开源">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-smolvla.jpg" alt="" loading="lazy"></span><span class="res-name">SmolVLA</span></span><span class="stars" title="28.9k★（GitHub，2026-11-13）">28.9k★</span></h4>
+        <p class="one">SmolVLA 用 450M 参数在消费级显卡上做 VLA。</p>
+        <p class="how">Hugging Face · Apache-2.0 · Python</p>
+      </a><a class="res-card" href="resource-cogact.html" data-tags="算法与模型 VLA 扩散 许可待核">
+        <h4><span class="res-head"><span class="res-name">CogACT</span></span><span class="stars" title="435★（GitHub，2026-11-13）">435★</span></h4>
+        <p class="one">CogACT 把认知 VLM 与扩散动作专家解耦组合。</p>
+        <p class="how">Microsoft · 未声明 · Python</p>
+      </a><a class="res-card" href="resource-hpt.html" data-tags="算法与模型 VLA 多本体 开源">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-hpt.jpg" alt="" loading="lazy"></span><span class="res-name">HPT</span></span><span class="stars" title="547★（GitHub，2026-11-13）">547★</span></h4>
+        <p class="one">HPT 用异构预训练 Transformer 统一多本体策略表示。</p>
+        <p class="how">Lirui Wang / MIT · MIT · Python</p>
+      </a><a class="res-card" href="resource-dp3.html" data-tags="算法与模型 扩散策略 3D 开源">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-dp3.jpg" alt="" loading="lazy"></span><span class="res-name">3D Diffusion Policy</span></span><span class="stars" title="1.5k★（GitHub，2026-11-13）">1.5k★</span></h4>
+        <p class="one">用稀疏点云替掉 RGB，扩散策略的泛化明显变好。</p>
+        <p class="how">Yanjie Ze / 上海交大 · MIT · Python</p>
+      </a><a class="res-card" href="resource-spatialvla.html" data-tags="算法与模型 模型 VLA 空间">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-spatialvla.jpg" alt="" loading="lazy"></span><span class="res-name">SpatialVLA</span></span><span class="stars" title="735★（GitHub，2026-11-13）">735★</span></h4>
+        <p class="one">在动作表示里加入空间信息的 VLA，作者称用 110 万条真机片段训练。</p>
+        <p class="how">SpatialVLA Team · 仓库未附许可 · Python</p>
+      </a><a class="res-card" href="resource-starvla.html" data-tags="算法与模型 模型 VLA 框架">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-starvla.jpg" alt="" loading="lazy"></span><span class="res-name">StarVLA</span></span><span class="stars" title="3.9k★（GitHub，2026-11-13）">3.9k★</span></h4>
+        <p class="one">把 VLA 拆成可替换模块的代码库，骨干、动作头与训练流程分开配置。</p>
+        <p class="how">StarVLA Team · MIT · Python</p>
+      </a></div>
+    </section><section class="res-section chain-stage" id="stage-8" data-stage="训练">
+      <div class="res-stage-head"><span class="chain-no">八</span><h3>训练</h3><span class="n">8</span><span class="desc">并行环境与训练框架</span></div>
+      <p class="chain-line">并行环境、算法实现与实验管理，关乎一轮迭代的快慢。</p>
+      <div class="res-grid"><a class="res-card" href="resource-lerobot.html" data-tags="训练 工程 真机 VLA 入门">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-lerobot.jpg" alt="" loading="lazy"></span><span class="res-name">LeRobot</span></span><span class="stars" title="28.9k★（GitHub，2026-11-13）">28.9k★</span></h4>
+        <p class="one">把机器人学习做成可复现的工程栈：数据集、策略、训练与真机部署。</p>
+        <p class="how">Hugging Face · Apache-2.0 · Python</p>
+      </a><a class="res-card" href="resource-res-robomimic.html" data-tags="训练 训练 模仿学习 基线">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-res-robomimic.jpg" alt="" loading="lazy"></span><span class="res-name">robomimic</span></span><span class="stars" title="1.6k★（GitHub，2026-11-13）">1.6k★</span></h4>
+        <p class="one">从演示学习的训练框架，含离线数据集、算法实现与评测脚本。</p>
+        <p class="how">ARISE Initiative / Stanford · MIT · Python</p>
+      </a><a class="res-card" href="resource-rsl-rl.html" data-tags="训练 训练 强化学习 腿足">
+        <h4><span class="res-head"><span class="res-name">rsl_rl</span></span><span class="stars" title="3.1k★（GitHub，2026-11-13）">3.1k★</span></h4>
+        <p class="one">ETH 腿足实验室的轻量强化学习库，PPO 实现常配 Isaac Lab 使用。</p>
+        <p class="how">ETH Zurich Legged Robotics · BSD-3-Clause · Python</p>
+      </a><a class="res-card" href="resource-skrl.html" data-tags="训练 训练 强化学习 多后端">
+        <h4><span class="res-head"><span class="res-name">skrl</span></span><span class="stars" title="1.1k★（GitHub，2026-11-13）">1.1k★</span></h4>
+        <p class="one">模块化强化学习库，支持 PyTorch、JAX 与 Warp 后端并接多种仿真器。</p>
+        <p class="how">Toni-SM · MIT · Python</p>
+      </a><a class="res-card" href="resource-brax.html" data-tags="训练 训练 强化学习 JAX">
+        <h4><span class="res-head"><span class="res-name">Brax</span></span><span class="stars" title="3.3k★（GitHub，2026-11-13）">3.3k★</span></h4>
+        <p class="one">在加速器上跑并行刚体仿真与强化学习的库，基于 JAX。</p>
+        <p class="how">Google · Apache-2.0 · Python / JAX</p>
+      </a><a class="res-card" href="resource-rl-games.html" data-tags="训练 训练 强化学习 Isaac Gym">
+        <h4><span class="res-head"><span class="res-name">rl_games</span></span><span class="stars" title="1.4k★（GitHub，2026-11-13）">1.4k★</span></h4>
+        <p class="one">面向 Isaac Gym 系列环境的强化学习实现，含 PPO 等常用算法。</p>
+        <p class="how">Denys88 · MIT · Python</p>
+      </a><a class="res-card" href="resource-legged-gym.html" data-tags="训练 训练 腿足 强化学习">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-legged-gym.jpg" alt="" loading="lazy"></span><span class="res-name">legged_gym</span></span><span class="stars" title="3.2k★（GitHub，2026-11-13）">3.2k★</span></h4>
+        <p class="one">腿足机器人的训练环境集合，含地形、奖励与课程设置。</p>
+        <p class="how">ETH Zurich Legged Robotics · BSD-3-Clause · Python</p>
+      </a><a class="res-card" href="resource-stable-baselines3.html" data-tags="训练 训练 强化学习 基线">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-stable-baselines3.jpg" alt="" loading="lazy"></span><span class="res-name">Stable-Baselines3</span></span><span class="stars" title="14.0k★（GitHub，2026-11-13）">14.0k★</span></h4>
+        <p class="one">PyTorch 实现的强化学习算法库，接口统一、文档完整。</p>
+        <p class="how">DLR-RM · MIT · Python</p>
+      </a></div>
+    </section><section class="res-section chain-stage" id="stage-9" data-stage="部署">
+      <div class="res-stage-head"><span class="chain-no">九</span><h3>部署</h3><span class="n">8</span><span class="desc">推理优化与边缘执行</span></div>
+      <p class="chain-line">推理压到多快、放在哪块板子上，策略才能在机上实时跑。</p>
+      <div class="res-grid"><a class="res-card" href="resource-tensorrt.html" data-tags="部署 部署 推理 GPU">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-tensorrt.jpg" alt="" loading="lazy"></span><span class="res-name">TensorRT</span></span><span class="stars" title="13.5k★（GitHub，2026-11-13）">13.5k★</span></h4>
+        <p class="one">NVIDIA 的 GPU 推理优化 SDK，负责量化、图层融合与内核选择。</p>
+        <p class="how">NVIDIA · Apache-2.0（仓库开源部分） · C++ / Python</p>
+      </a><a class="res-card" href="resource-onnxruntime.html" data-tags="部署 部署 推理 跨平台">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-onnxruntime.jpg" alt="" loading="lazy"></span><span class="res-name">ONNX Runtime</span></span><span class="stars" title="22.3k★（GitHub，2026-11-13）">22.3k★</span></h4>
+        <p class="one">跨平台推理引擎，支持 CPU、GPU 与多种加速器的执行提供器。</p>
+        <p class="how">Microsoft · MIT · C++ / Python</p>
+      </a><a class="res-card" href="resource-jetson-containers.html" data-tags="部署 部署 边缘 Jetson 容器">
+        <h4><span class="res-head"><span class="res-name">jetson-containers</span></span><span class="stars" title="4.9k★（GitHub，2026-11-13）">4.9k★</span></h4>
+        <p class="one">为 Jetson 预构建的容器集合，省去在板子上编译深度学习栈的时间。</p>
+        <p class="how">dusty-nv · MIT · Python / Shell</p>
+      </a><a class="res-card" href="resource-isaac-ros.html" data-tags="部署 部署 ROS 2 边缘 视觉">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-isaac-ros.jpg" alt="" loading="lazy"></span><span class="res-name">Isaac ROS</span></span><span class="stars" title="324★（GitHub，2026-11-13）">324★</span></h4>
+        <p class="one">NVIDIA 的 ROS 2 加速包集合，把视觉与感知模块跑在 GPU 上。</p>
+        <p class="how">NVIDIA · NVIDIA Isaac ROS 许可（自定义） · C++</p>
+      </a><a class="res-card" href="resource-triton.html" data-tags="部署 部署 推理服务 GPU">
+        <h4><span class="res-head"><span class="res-name">Triton Inference Server</span></span><span class="stars" title="11.1k★（GitHub，2026-11-13）">11.1k★</span></h4>
+        <p class="one">多框架推理服务框架，支持动态批处理与多模型并行。</p>
+        <p class="how">NVIDIA · BSD-3-Clause · C++ / Python</p>
+      </a><a class="res-card" href="resource-rtc.html" data-tags="部署 部署 推理 实时 流模型">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-rtc.jpg" alt="" loading="lazy"></span><span class="res-name">Real-Time Chunking</span></span><span class="stars" title="635★（GitHub，2026-11-13）">635★</span></h4>
+        <p class="one">解决动作分块流策略推理延迟问题的执行方法，附仿真实验代码。</p>
+        <p class="how">Physical Intelligence · MIT · Python</p>
+      </a><a class="res-card" href="resource-torch-tensorrt.html" data-tags="部署 部署 推理 GPU">
+        <h4><span class="res-head"><span class="res-name">Torch-TensorRT</span></span><span class="stars" title="3.0k★（GitHub，2026-11-13）">3.0k★</span></h4>
+        <p class="one">把 PyTorch 模型编译成 TensorRT 引擎的官方接口，省去手写导出。</p>
+        <p class="how">PyTorch · BSD-3-Clause · Python</p>
+      </a><a class="res-card" href="resource-executorch.html" data-tags="部署 部署 端侧 推理">
+        <h4><span class="res-head"><span class="res-name">ExecuTorch</span></span><span class="stars" title="5.2k★（GitHub，2026-11-13）">5.2k★</span></h4>
+        <p class="one">PyTorch 的端侧推理运行时，把模型导出后在手机与嵌入式设备上跑。</p>
+        <p class="how">Meta / PyTorch · BSD-3-Clause · C++ / Python</p>
+      </a></div>
+    </section><section class="res-section chain-stage" id="stage-10" data-stage="评测">
+      <div class="res-stage-head"><span class="chain-no">十</span><h3>评测</h3><span class="n">13</span><span class="desc">基准、环境与榜单</span></div>
+      <p class="chain-line">同一协议之下方可相比；离了协议，分数无从谈起。</p>
+      <div class="res-grid"><a class="res-card" href="resource-rlinf.html" data-tags="评测 评测 Benchmark">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-rlinf.jpg" alt="" loading="lazy"></span><span class="res-name">RLinf 评测指南</span></span><span class="stars" title="5.6k★（GitHub，2026-11-13）">5.6k★</span></h4>
+        <p class="one">RLinf 的 Benchmark 与真机评测文档，含 BEHAVIOR-1K、LIBERO 等评测协议。</p>
+        <p class="how">RLinf · 中文</p>
+      </a><a class="res-card" href="resource-res-robotwin.html" data-tags="评测 仿真 评测 操作">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-res-robotwin.jpg" alt="" loading="lazy"></span><span class="res-name">RoboTwin 2.0</span></span><span class="stars" title="3.1k★（GitHub，2026-11-13）">3.1k★</span></h4>
+        <p class="one">双臂操作仿真与 50 任务 benchmark，含数据生成与评测。</p>
+        <p class="how">RoboTwin Team · MIT（以仓库为准） · Python</p>
+      </a><a class="res-card" href="resource-res-robocasa.html" data-tags="评测 仿真 评测 操作">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-res-robocasa.jpg" alt="" loading="lazy"></span><span class="res-name">RoboCasa</span></span><span class="stars" title="1.9k★（GitHub，2026-11-13）">1.9k★</span></h4>
+        <p class="one">大规模厨房/桌面操作仿真与 GR1 TableTop 任务。</p>
+        <p class="how">RoboCasa Team · MIT（LICENSE 原文为 MIT，GitHub 分类为 Other） · Python</p>
+      </a><a class="res-card" href="resource-res-libero.html" data-tags="评测 仿真 评测 操作">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-res-libero.jpg" alt="" loading="lazy"></span><span class="res-name">LIBERO</span></span><span class="stars" title="2.5k★（GitHub，2026-11-13）">2.5k★</span></h4>
+        <p class="one">长时序语言条件操作 benchmark，VLA 论文常用。</p>
+        <p class="how">Lifelong Robot Learning · MIT（以仓库为准） · Python</p>
+      </a><a class="res-card" href="resource-res-rlbench.html" data-tags="评测 仿真 评测 操作">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-res-rlbench.jpg" alt="" loading="lazy"></span><span class="res-name">RLBench</span></span><span class="stars" title="1.8k★（GitHub，2026-11-13）">1.8k★</span></h4>
+        <p class="one">18 任务机械臂操作仿真，适合研究多任务策略。</p>
+        <p class="how">Stephens et al. · Imperial College London 自定义研究许可（BSD 组件除外） · Python</p>
+      </a><a class="res-card" href="resource-res-simplerenv.html" data-tags="评测 评测 仿真 复现">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-res-simplerenv.jpg" alt="" loading="lazy"></span><span class="res-name">SimplerEnv</span></span><span class="stars" title="1.2k★（GitHub，2026-11-13）">1.2k★</span></h4>
+        <p class="one">在仿真里复现真机操作策略评测的设置，覆盖 RT、Octo 等模型的常见配置。</p>
+        <p class="how">SimplerEnv Team · MIT · Python</p>
+      </a><a class="res-card" href="resource-res-calvin.html" data-tags="评测 评测 长时序 语言条件">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-res-calvin.jpg" alt="" loading="lazy"></span><span class="res-name">CALVIN</span></span><span class="stars" title="1.0k★（GitHub，2026-11-13）">1.0k★</span></h4>
+        <p class="one">长时序语言条件操作的 benchmark，常用 ABCD→D 训练与评测设置。</p>
+        <p class="how">University of Freiburg · MIT · Python</p>
+      </a><a class="res-card" href="resource-res-behavior1k.html" data-tags="评测 评测 家务 仿真">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-res-behavior1k.jpg" alt="" loading="lazy"></span><span class="res-name">BEHAVIOR-1K</span></span><span class="stars" title="1.8k★（GitHub，2026-11-13）">1.8k★</span></h4>
+        <p class="one">1,000 项家务活动的仿真 benchmark，场景含 50 个可交互房间与万余物体。</p>
+        <p class="how">Stanford Vision and Learning Lab · MIT · Python</p>
+      </a><a class="res-card" href="resource-res-roboarena.html" data-tags="评测 评测 真机 Elo">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-res-roboarena.jpg" alt="" loading="lazy"></span><span class="res-name">RoboArena</span></span><span class="stars" title="116★（GitHub，2026-11-13）">116★</span></h4>
+        <p class="one">用分布式真机成对比较给通用策略排名的评测框架。</p>
+        <p class="how">RoboArena Team · MIT · Python</p>
+      </a><a class="res-card" href="resource-res-vlabench.html" data-tags="评测 评测 VLA 国产">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-res-vlabench.jpg" alt="" loading="lazy"></span><span class="res-name">VLABench</span></span><span class="stars" title="481★（GitHub，2026-11-13）">481★</span></h4>
+        <p class="one">100 类语言条件操作任务的评测集，物品 2,000 件以上，含长时序推理。</p>
+        <p class="how">OpenMOSS / 上海 AI Lab · MIT · Python</p>
+      </a><a class="res-card" href="resource-res-robocolosseum.html" data-tags="评测 评测 泛化 操作">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-res-robocolosseum.jpg" alt="" loading="lazy"></span><span class="res-name">RoboColosseum</span></span><span class="stars" title="161★（GitHub，2026-11-13）">161★</span></h4>
+        <p class="one">评测操作策略泛化能力的 benchmark，分指令、空间与鲁棒性等维度。</p>
+        <p class="how">Robot Colosseum Team · 仓库未附许可 · Python</p>
+      </a><a class="res-card" href="resource-res-genie-sim.html" data-tags="评测 评测 仿真 国产">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-res-genie-sim.jpg" alt="" loading="lazy"></span><span class="res-name">Genie Sim</span></span><span class="stars" title="1.6k★（GitHub，2026-11-13）">1.6k★</span></h4>
+        <p class="one">智元开源的仿真平台，含场景重建、数据采集与评测工具。</p>
+        <p class="how">AgiBot · MPL-2.0（geniesim 与 data_collection 目录） · Python</p>
+      </a><a class="res-card" href="resource-res-robochallenge.html" data-tags="评测 评测 真机 平台">
+        <h4><span class="res-head"><span class="res-name">RoboChallenge</span></span><span class="stars" title="158★（GitHub，2026-11-13）">158★</span></h4>
+        <p class="one">真机策略评测平台的推理示例仓库，配套 Table 30 任务集。</p>
+        <p class="how">RoboChallenge · CC BY-NC-SA 4.0 · Python</p>
+      </a></div>
+    </section><section class="res-section chain-stage" id="stage-11" data-stage="学习与课程">
+      <div class="res-stage-head"><span class="chain-no">十一</span><h3>学习与课程</h3><span class="n">11</span><span class="desc">教材与课程</span></div>
+      <p class="chain-line">补运动学、控制、强化学习与操作的底子。</p>
+      <div class="res-grid"><a class="res-card" href="resource-vlahandbook.html" data-tags="学习与课程 工程 面试 VLA">
+        <h4><span class="res-head"><span class="res-name">VLA-Handbook</span></span><span class="stars" title="770★">770★</span></h4>
+        <p class="one">工程实战导向的 VLA 知识库：理论、部署、公司实录题库、社区踩坑。</p>
+        <p class="how">sou350121 · CC BY 4.0 · 中文</p>
+      </a><a class="res-card" href="resource-guide.html" data-tags="学习与课程 入门 百科">
+        <h4><span class="res-head"><span class="res-name">Embodied-AI-Guide</span></span><span class="stars" title="17k★">17k★</span></h4>
+        <p class="one">GitHub 17k 星的中文具身智能百科，附一周动手入门教程。</p>
+        <p class="how">TianxingChen / Lumina · 非商用 · 中文</p>
+      </a><a class="res-card" href="resource-notebooks.html" data-tags="学习与课程 知识图谱 运控">
+        <h4><span class="res-head"><span class="res-name">Robotics_Notebooks</span></span><span class="stars" title="768★（GitHub，2026-11-13）">768★</span></h4>
+        <p class="one">人形机器人技术栈知识图谱与纵深路线。</p>
+        <p class="how">ImChong · MIT · 中文</p>
+      </a><a class="res-card" href="resource-qa.html" data-tags="学习与课程 面试 题库">
+        <h4><span class="res-head"><span class="res-name">embodied-interview-qa</span></span><span class="stars" title="331★">331★</span></h4>
+        <p class="one">公开面经选题的具身面试题库；频次分层与手撕题。</p>
+        <p class="how">WinstonJQ · MIT · 中文</p>
+      </a><a class="res-card" href="resource-hmi.html" data-tags="学习与课程 运控 产业">
+        <h4><span class="res-head"><span class="res-name">humanoid-motion-intelligence</span></span><span class="stars" title="0★（GitHub，2026-11-13）">0★</span></h4>
+        <p class="one">人形运动智能的论文、项目、产业与求职知识库，内置供 AI 助手检索的说明文件。</p>
+        <p class="how">flyingGH · CC BY-NC-SA 4.0（原创内容）+ MIT（校验脚本），分层许可 · 中文</p>
+      </a><a class="res-card" href="resource-modern-robotics.html" data-tags="学习与课程 学习 教材 运动学">
+        <h4><span class="res-head"><span class="res-name">Modern Robotics</span></span><span class="stars" title="3.1k★（GitHub，2026-11-13）">3.1k★</span></h4>
+        <p class="one">Lynch 与 Park 的机器人学教材配套代码库，覆盖运动学、动力学与规划。</p>
+        <p class="how">Kevin Lynch / Frank Park（西北大学） · MIT（代码库） · Python / MATLAB</p>
+      </a><a class="res-card" href="resource-underactuated.html" data-tags="学习与课程 学习 控制 教材">
+        <h4><span class="res-head"><span class="res-name">Underactuated Robotics</span></span><span class="stars" title="1.0k★（GitHub，2026-11-13）">1.0k★</span></h4>
+        <p class="one">MIT 欠驱动机器人课程讲义，从动力学讲到控制与学习控制。</p>
+        <p class="how">Russ Tedrake（MIT） · BSD-3-Clause · Python / HTML</p>
+      </a><a class="res-card" href="resource-robotic-manipulation.html" data-tags="学习与课程 学习 操作 教材">
+        <h4><span class="res-head"><span class="res-name">Robotic Manipulation</span></span><span class="stars" title="682★（GitHub，2026-11-13）">682★</span></h4>
+        <p class="one">MIT 操作课程讲义，从几何感知讲到抓取、规划与学习控制。</p>
+        <p class="how">Russ Tedrake（MIT） · BSD-3-Clause · Python / HTML</p>
+      </a><a class="res-card" href="resource-easy-rl.html" data-tags="学习与课程 学习 强化学习 中文">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/cover-easy-rl.jpg" alt="" loading="lazy"></span><span class="res-name">Easy-RL</span></span><span class="stars" title="14.9k★（GitHub，2026-11-13）">14.9k★</span></h4>
+        <p class="one">中文强化学习教程，从基础概念讲到深度强化学习算法与实现。</p>
+        <p class="how">Datawhale · CC BY-NC-SA 4.0 · 中文</p>
+      </a><a class="res-card" href="resource-hands-on-rl.html" data-tags="学习与课程 学习 强化学习 中文">
+        <h4><span class="res-head"><span class="res-name">Hands-on-RL</span></span><span class="stars" title="5.1k★（GitHub，2026-11-13）">5.1k★</span></h4>
+        <p class="one">中文强化学习课程，按算法逐个给推导、代码与实验设置。</p>
+        <p class="how">boyu-ai · Apache-2.0 · 中文 / Python</p>
+      </a><a class="res-card" href="resource-spinning-up.html" data-tags="学习与课程 学习 强化学习 教材">
+        <h4><span class="res-head"><span class="res-thumb"><img src="assets/real/v2/resource-spinning-up.jpg" alt="" loading="lazy"></span><span class="res-name">Spinning Up</span></span><span class="stars" title="12.0k★（GitHub，2026-11-13）">12.0k★</span></h4>
+        <p class="one">OpenAI 的深度强化学习入门教材，含算法推导、代码与实验指南。</p>
+        <p class="how">OpenAI · MIT · Python / 英文</p>
+      </a></div>
+    </section>
+  </div></div>
+  <section class="layout"><a class="next-vol" href="news.html" data-zone="news" style="border-top:1px solid var(--line)">
+    <span><span class="lbl">下一卷 · 驿路</span><span class="nm">动态</span></span><span class="link-arrow">驿路 · 驿报存录</span>
+  </a></section></main>
+<span id="main-end"></span>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="foot-brand">
+      <a class="foot-mark" href="index.html" aria-label="具身山海志 · 返回首页"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55" stroke-dasharray="86 6" transform="rotate(-24 20 20)"/>
+  <path d="M7.5 26.5 14 15.6l4.4 7 3.5-5.6 10.6 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6.4 30.2c2.4-1.5 3.6-.2 5.6-.9 2-.7 3.2-1.0 5.2-.2 2 .8 3.4.3 5.3-.4 2-.7 3.3-.1 5.4.6 1.8.6 3.4.2 5.4-.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28.6" cy="12.4" r="2.6" fill="#c21f30"/>
+</svg><span class="foot-word"><b>具身山海志</b><small>Embodied Atlas</small></span></a>
+      <p class="foot-motto">多闻阙疑　慎言其余</p>
+      <a class="btn foot-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.16l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg>到 GitHub 点 Star</a>
+    </div>
+    <nav class="set" aria-label="页脚导航">
+      <div class="set-col"><b>七卷</b><a href="companies.html">公司</a><a href="labs.html">机构</a><a href="models.html">模型</a><a href="leaderboard.html">榜单</a><a href="jobs.html">岗位</a><a href="resources.html">资源</a><a href="news.html">动态</a></div>
+      <div class="set-col"><b>别册</b><a href="world.html">总览</a><a href="atlas.html">山海图</a><a href="compare.html">选型对比</a><a href="papers.html">论文索引</a><a href="events.html">会期与投稿</a></div>
+      <div class="set-col"><b>卷末</b><a href="about.html">关于</a><a href="legend.html">凡例</a><a href="credits.html">素材与许可</a><a href="copyright.html">版权</a></div>
+      <div class="set-col"><b>往来</b><button type="button" class="footer-btn" data-open-contact>合作联系</button><a href="coop.html">合作方式</a><a href="news.html#subscribe">订阅更新</a></div>
+    </nav>
+    <div class="foot-base">
+      <span class="src-line">源：<a href="https://fbddcz.github.io/Embodied-Shanhai-Atlas/resources.html">具身山海志</a> · <a href="copyright.html">版权与许可</a> · 核验 2026-11-16</span>
+      <span class="colophon">© 2026 具身山海志 · <span data-world-label>秋·小雪</span></span>
+      <button class="clock-btn" id="worldClock" type="button" aria-haspopup="true" aria-expanded="false" title="四时天候：跟随真实时间，或把一年浓缩成一天">
+        <span class="cc-dot" aria-hidden="true"></span><span data-clock-mode>随天时</span>
+      </button>
+      <div class="clock-menu" id="worldClockMenu" hidden>
+        <p class="clock-q">四时如何流转</p>
+        <button data-clock="real" type="button">跟随真实时间</button>
+        <button data-clock="cycle" type="button">一年浓缩成一日（每 24 小时一轮）</button>
+        <button data-clock="fast" type="button">一年浓缩成四分钟（演示用）</button>
+        <button data-clock="off" type="button">停在当前节令</button>
+        <p class="clock-now" data-world-label></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="toc" id="toc" role="dialog" aria-modal="true" aria-label="七卷目录">
+  <div class="toc-head"><span class="toc-title">七卷</span><button class="tool" id="tocClose" aria-label="关闭目录"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="toc-body"><div class="toc-list"><a class="toc-item" href="world.html"><span class="no">纲</span><span class="nm">总纲<small>总览</small></span><span class="ct">7宗</span></a><a class="toc-item" href="companies.html" data-zone="company"><span class="no">壹</span><span class="nm">人间<small>公司</small></span><span class="ct">154</span></a><a class="toc-item" href="labs.html" data-zone="lab"><span class="no">贰</span><span class="nm">学宫<small>机构</small></span><span class="ct">60</span></a><a class="toc-item" href="models.html" data-zone="model"><span class="no">叁</span><span class="nm">灵物<small>模型</small></span><span class="ct">91</span></a><a class="toc-item" href="leaderboard.html" data-zone="benchmark"><span class="no">肆</span><span class="nm">碑林<small>榜单</small></span><span class="ct">33</span></a><a class="toc-item" href="jobs.html" data-zone="job"><span class="no">伍</span><span class="nm">招贤<small>岗位</small></span><span class="ct">57</span></a><a class="toc-item" href="resources.html" data-zone="resource"><span class="no">陆</span><span class="nm">藏经<small>资源</small></span><span class="ct">116</span></a><a class="toc-item" href="news.html" data-zone="news"><span class="no">柒</span><span class="nm">驿路<small>动态</small></span><span class="ct">95</span></a><a class="toc-item" href="atlas.html"><span class="no">图</span><span class="nm">山海图<small>七域一图</small></span><span class="ct">606</span></a></div></div>
+  <div class="toc-foot"><a href="hardware.html">本体与传感</a><a href="compare.html">选型对比</a><a href="papers.html">论文索引</a><a href="events.html">会期与投稿</a><a href="following.html">我的关注</a><a href="legend.html">凡例</a><a href="about.html">关于</a><a class="toc-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer">★ 到 GitHub 点 Star</a></div>
+</div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="搜索">
+  <div class="palette-panel">
+    <div class="palette-input">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <input id="paletteInput" type="search" placeholder="寻一司、一器、一碑、一文" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="paletteResults" aria-autocomplete="list">
+      <span class="palette-hint">ESC</span>
+    </div>
+    <div class="palette-results" id="paletteResults" role="listbox" aria-label="搜索结果"></div>
+  </div>
+</div>
+<div class="modal" id="claimModal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="claimTitle">
+    <div class="modal-head"><h3 id="claimTitle">认领与纠错</h3><button class="modal-close" type="button" data-close-modal aria-label="关闭">×</button></div>
+    <p class="modal-sub" id="claimTarget">写明要更正的内容，附可打开的来源。</p>
+    <form id="claimForm" data-issues="https://github.com/FBddcz/Embodied-Shanhai-Atlas">
+      <label class="field"><span>称呼或机构（可不填）</span><input name="name" autocomplete="off" placeholder="例如：某公司市场部"></label>
+      <label class="field"><span>要更正或补充的内容</span><textarea name="message" required rows="5" placeholder="哪一条事实、原文是什么、应改为什么。"></textarea></label>
+      <label class="field"><span>来源链接</span><input name="source" type="url" placeholder="https://"></label>
+      <div class="modal-actions"><button type="button" class="btn" data-copy-claim>复制</button><button type="submit" class="btn btn-solid">在 GitHub 提交</button></div>
+    </form>
+  </div>
+</div>
+<div class="modal" id="contactModal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal-head"><h3 id="contactTitle">合作联系</h3><button class="modal-close" type="button" data-close-contact aria-label="关闭">×</button></div>
+    <p class="modal-sub">合作、招聘、投稿或数据授权。可以填写在线表单，也可以扫码进群直接联系。</p>
+    <div class="contact-link"><a class="btn btn-solid" href="https://www.wjx.top/vm/mB7vmKF.aspx" target="_blank" rel="noopener noreferrer">填写在线表单 ↗</a><p class="modal-note">表单由问卷星托管，提交后维护者会收到通知。</p></div>
+    
+    <div class="contact-qr">
+      <img src="assets/contact/xhs-group-2.png" alt="小红书交流群二维码" width="132" height="132" loading="lazy" decoding="async">
+      <div class="contact-qr-text"><b>小红书交流群</b><p>具身 AI 交流实习群 2 · 扫码加入，直接在群里联系维护者。</p><p class="contact-qr-valid">此码 2026-12-14 前有效</p></div>
+    </div>
+    <form id="contactForm" hidden data-endpoint="" data-key="" data-email="" data-qr="1" data-mode="link">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+      
+      
+      <div class="field-row">
+        <label class="field"><span>称呼或机构</span><input name="name" required autocomplete="off" placeholder="张三 / 某公司"></label>
+        <label class="field"><span>来意</span><select name="intent"><option>合作</option><option>招聘</option><option>投稿</option><option>数据授权</option><option>其他</option></select></label>
+      </div>
+      <label class="field"><span>微信、邮箱或电话</span><input name="contact" required autocomplete="off"></label>
+      <label class="field"><span>想聊什么</span><textarea name="message" rows="4" required></textarea></label>
+      <label class="check"><input type="checkbox" name="consent" required><span>以上信息只用于回复，不作他用。</span></label>
+      <div class="modal-actions"><button type="button" class="btn" data-copy-contact>复制</button><button type="submit" class="btn btn-solid">复制这段文字</button></div>
+      <p class="modal-note" id="contactStatus"></p>
+    </form>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="title-card" aria-hidden="true"><b>藏经</b><small>典籍器用</small></div>
+<script src="app.js" defer></script>
+
+
+
+</body>
+</html>

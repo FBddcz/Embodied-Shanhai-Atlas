@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="ink" data-season="spring">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Genie Sim · 智元机器人 · 榜单 · 碑林 · 具身山海志</title>
+<meta name="description" content="智元的仿真平台，用于批量生产具身训练数据，配套挑战赛。">
+<link rel="canonical" href="https://fbddcz.github.io/Embodied-Shanhai-Atlas/benchmark-genie-sim.html">
+<meta name="atlas-fp" content="3e9f49-1dfa79">
+<meta name="author" content="具身山海志 · Embodied Atlas">
+<meta property="og:url" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/benchmark-genie-sim.html">
+<meta name="twitter:url" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/benchmark-genie-sim.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Genie Sim","description":"智元的仿真平台，用于批量生产具身训练数据，配套挑战赛。","url":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/benchmark-genie-sim.html","inLanguage":"zh-CN","dateModified":"2026-11-13","isPartOf":{"@type":"WebSite","name":"具身山海志 · Embodied Atlas","url":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/index.html","inLanguage":"zh-CN"},"creator":{"@type":"Person","name":"具身山海志","url":"https://github.com/FBddcz"},"copyrightHolder":{"@type":"Person","name":"具身山海志","url":"https://github.com/FBddcz"},"copyrightYear":2026,"license":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/copyright.html","citation":"具身山海志（Embodied Atlas）· 核验 2026-11-16 · https://fbddcz.github.io/Embodied-Shanhai-Atlas/benchmark-genie-sim.html","alternateName":"Genie Sim","isBasedOn":["https://agibot-world.com/genie-sim"],"about":[{"@type":"Thing","name":"仿真"},{"@type":"Thing","name":"数据生产"},{"@type":"Thing","name":"赛事"}],"identifier":"6ddd89","creditText":"具身山海志 · 核验 2026-11-13"}</script>
+<meta name="theme-color" content="#f2e6ce" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1423" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.svg">
+<meta property="og:site_name" content="具身山海志">
+<meta property="og:title" content="Genie Sim · 智元机器人 · 榜单 · 碑林 · 具身山海志">
+<meta property="og:description" content="智元的仿真平台，用于批量生产具身训练数据，配套挑战赛。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="license" href="copyright.html">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+(function(){
+  var d=document.documentElement;
+  try{d.dataset.theme=localStorage.getItem('atlas-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'ink');}catch(e){d.dataset.theme='ink';}
+  // 季候与时辰：四时配色、山海图的天候都从这里取
+  var m=new Date().getMonth()+1;
+  d.dataset.season = (m>=3&&m<=5)?'spring':(m>=6&&m<=8)?'summer':(m>=9&&m<=11)?'autumn':'winter';
+  var h=new Date().getHours();
+  d.dataset.hour = h<5?'night':h<8?'dawn':h<11?'morning':h<16?'day':h<19?'dusk':'night';
+  var XDOC='CSSViewTransitionRule' in window;
+  d.classList.add(XDOC?'vt-x':'vt-fallback');
+  if(!XDOC){try{if(sessionStorage.getItem('veil')){sessionStorage.removeItem('veil');d.classList.add('veil-pending');}}catch(e){}return;}
+  var file=function(p){return p.split('/').pop()||'index.html';};
+  var seen=function(path){
+    var el=document.querySelector('[data-list] a[href$="'+file(path)+'"] .plate');
+    if(!el)return null;
+    el.style.viewTransitionName='entity-seal';
+    return el;
+  };
+  addEventListener('pageswap',function(e){
+    if(!e.viewTransition||!e.activation)return;
+    try{sessionStorage.setItem('vt-from',location.pathname);}catch(err){}
+    var el=seen(new URL(e.activation.entry.url).pathname);
+    if(el)e.viewTransition.finished.finally(function(){el.style.viewTransitionName='';});
+  });
+  addEventListener('pagereveal',function(e){
+    if(!e.viewTransition)return;
+    var nt=(window.navigation&&navigation.activation&&navigation.activation.navigationType)||(performance.getEntriesByType('navigation')[0]||{}).type;
+    var back=nt==='traverse'||nt==='back_forward';
+    e.viewTransition.types.add(back?'back':'ink');
+    if(back){
+      var prev='';try{prev=sessionStorage.getItem('vt-from')||'';}catch(err){}
+      if(prev)seen(prev);
+    }
+  });
+})();
+</script>
+</head>
+<body data-page="benchmark" data-zone="benchmark">
+<a class="skip" href="#main">跳到正文</a>
+<div class="atmo" aria-hidden="true"><video class="atmo-video" muted loop playsinline disablepictureinpicture preload="none"></video><span class="atmo-season"></span><span class="atmo-hour"></span><span class="atmo-veil"></span><span class="atmo-tint"></span></div>
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="index.html" aria-label="具身山海志 · 返回首页">
+    <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55" stroke-dasharray="86 6" transform="rotate(-24 20 20)"/>
+  <path d="M7.5 26.5 14 15.6l4.4 7 3.5-5.6 10.6 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6.4 30.2c2.4-1.5 3.6-.2 5.6-.9 2-.7 3.2-1.0 5.2-.2 2 .8 3.4.3 5.3-.4 2-.7 3.3-.1 5.4.6 1.8.6 3.4.2 5.4-.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28.6" cy="12.4" r="2.6" fill="#c21f30"/>
+</svg>
+    <span class="brand-word"><span class="brand-cn">具身山海志</span><span class="brand-en">Embodied Atlas</span></span>
+  </a>
+  <nav class="nav" aria-label="主导航"><a href="world.html" class="nav-world" title="山海大世界 · 总纲">总览</a><a href="companies.html" data-zone="company" title="人间 · 诸司都邑">公司</a><a href="labs.html" data-zone="lab" title="学宫 · 讲学著述">机构</a><a href="models.html" data-zone="model" title="灵物 · 山海异兽">模型</a><a href="leaderboard.html" data-zone="benchmark" aria-current="page" title="碑林 · 刻石记分">榜单</a><a href="jobs.html" data-zone="job" title="招贤 · 悬榜求士">岗位</a><a href="resources.html" data-zone="resource" title="藏经 · 典籍器用">资源</a><a href="news.html" data-zone="news" title="驿路 · 驿报存录">动态</a><a href="atlas.html" title="七域一图">山海图</a></nav>
+  <div class="header-tools">
+    <button class="tool tool-search" data-open-search aria-label="搜索，快捷键 Command K">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <span class="ph">搜索公司、模型、论文</span><span class="kbd">⌘K</span>
+    </button>
+    <a class="tool tool-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer" aria-label="到 GitHub 给具身山海志点 Star" title="到 GitHub 点 Star">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.16l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg><span class="gs-t">Star</span><span class="gs-n" data-gh-count hidden></span>
+    </a>
+    <a class="tool tool-follow" href="following.html" aria-label="我的关注" title="我的关注">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+    </a>
+    <button class="tool" id="themeBtn" aria-label="切换昼夜" title="切换昼夜">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>
+    </button>
+    <button class="tool menu-btn" id="menuBtn" aria-label="打开七卷目录" aria-expanded="false" aria-controls="toc">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+<main id="main" data-fp="6ddd89"><section class="layout"><div class="codex-mast" data-zone="benchmark">
+  <nav class="crumb" aria-label="位置"><a href="index.html">首页</a><span>/</span><a href="leaderboard.html">榜单</a><span>/</span><span>Genie Sim</span><a href="atlas.html#n=genie-sim" style="margin-left:auto">在山海图中查看 →</a></nav>
+  <div class="codex-title-row">
+    <div class="codex-seal">GE</div>
+    <div>
+      <h1 class="codex-name">Genie Sim</h1>
+      
+      <p class="codex-one">智元的仿真平台，用于批量生产具身训练数据，配套挑战赛。</p>
+    </div>
+  </div>
+  <div class="codex-bar">
+    <span class="badge z">榜单</span>
+    <span class="badge">仿真</span><span class="badge">数据生产</span><span class="badge">赛事</span>
+    
+    <span class="realm-badges" title="境界按站内已核字段推导，是证据刻度，不是评价"><a class="realm-badge" href="world.html#trial-5" title="看这一级要交什么">铸境</a><span class="realm-badge seal-side" title="支线：有官方榜成绩">立碑</span></span>
+    <span class="act-break" aria-hidden="true"></span>
+    <span class="spacer"></span>
+    
+    
+    
+    <button class="btn" data-follow-id="genie-sim" data-follow-name="Genie Sim">关注</button>
+    <button class="btn btn-ghost" data-copy="Genie Sim（Genie Sim）· 具身山海志 · 核验 2026-11-13 · https://fbddcz.github.io/Embodied-Shanhai-Atlas/benchmark-genie-sim.html">复制引用</button>
+    <button class="btn btn-ghost" data-claim-id="genie-sim" data-claim-name="Genie Sim">认领 / 纠错</button>
+  </div>
+</div></section>
+<section class="layout"><div class="codex-body"><div class="folio">
+  <aside><div style="position:sticky;top:calc(var(--header-h) + 32px)">
+  <div class="side-head"><span class="seal-mini">志</span><span style="font-family:var(--f-kai);font-size:15px;letter-spacing:.3em;color:var(--text-3)">档案</span></div>
+  <dl class="facts-dl" style="margin-top:18px;grid-template-columns:1fr"><div><dt>运营</dt><dd>智元机器人</dd></div><div><dt>类型</dt><dd>仿真</dd></div><div><dt>任务</dt><dd>按场景与任务划分</dd></div><div><dt>指标</dt><dd>成功率</dd></div><div><dt>核验</dt><dd>2026-11-13</dd></div></dl>
+  <div class="margin-note" style="margin-top:24px"><b>出处</b><ol class="ref-list"><li><a href="https://agibot-world.com/genie-sim" target="_blank" rel="noopener noreferrer">Genie Sim</a></li></ol></div>
+  <div class="margin-note" style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap"><b>纠错</b><span>出处或事实有误？</span><button class="link-arrow" style="background:none;border:0;padding:0;cursor:pointer" data-claim-id="genie-sim" data-claim-name="Genie Sim">认领 / 纠错</button></div>
+</div></aside>
+  <div><section class="sec"><div class="sec-head"><span class="sec-no">壹</span><span class="sec-title">已知之弊</span><span class="rule"></span></div><ul class="prose" style="padding-left:1.2em;list-style:disc"><li>公开榜数据未稳定发布。</li></ul></section><section class="sec"><div class="sec-head"><span class="sec-no">贰</span><span class="sec-title">碑面</span><span class="rule"></span></div><div class="board-head"><h2>Genie Sim</h2><a class="btn" href="https://agibot-world.com/genie-sim" target="_blank" rel="noopener noreferrer">官方榜单 ↗</a></div>
+  <figure class="board-cover"><img src="assets/real/v2/resource-res-genie-sim.jpg" alt="Genie Sim 官方图" loading="lazy" decoding="async"><figcaption>genie_sim 仓库 docs/banner.webp（已比对一致）：Genie Sim 平台、Benchmark 八类评测、数据采集与 Dream 组件总 <a href="https://raw.githubusercontent.com/AgibotTech/genie_sim/main/docs/banner.webp" target="_blank" rel="noopener noreferrer">图源 ↗</a></figcaption></figure>
+  <div class="board-sub"><span><b>类型</b> 仿真</span><span><b>指标</b> 任务得分（总分或平均分，按分榜）</span><span><b>行数</b> 66</span><span><b>最近</b> 2026-08-14</span></div>
+  <p class="board-note">据智元挑战赛测试服与 Genie Sim 3.0 技术报告 v4（2026-08），本榜分两类：挑战赛线上仿真总分（满分 10，官方榜）与报告评测集平均分（0–1，自报）。两类训练数据与计分不同，不可互比；常设公开榜见 RoboColiseum。</p>
+  
+  <div class="table-wrap" style="margin-top:22px"><table class="data-table board-table">
+    <thead><tr><th class="th-rank">#</th><th class="th-name">模型</th><th class="th-score">任务得分（总分或平均分，按分榜）</th><th class="th-proto">协议</th><th class="th-board">分榜</th><th class="th-date">日期</th><th class="th-status">状态</th></tr></thead>
+    <tbody><tr id="row-autorobot" class=""><td class="rank top">1</td>
+        <td class="name-cell"><div class="name">AutoRobot</div><div class="org">Shanghai Jiao Tong University, Meituan</div></td>
+        <td class="score-cell"><div class="score">5.1292</div><div class="bar" style="width:58%;animation-delay:40ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）；机构据赛事页决赛名单同名队伍 AutoRobot"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）；</span><span class="cl">机构据赛事页决赛名单同名队伍 AutoRobot</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-waterrobot" class=""><td class="rank">2</td>
+        <td class="name-cell"><div class="name">WaterRobot</div><div class="org">Microsoft Research Asia, Huazhong University of Science and Technology, The Chinese University of Hong Kong (Shenzhen)</div></td>
+        <td class="score-cell"><div class="score">4.8356</div><div class="bar" style="width:55%;animation-delay:80ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）；机构据赛事页决赛名单同名队伍 WaterRobot"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）；</span><span class="cl">机构据赛事页决赛名单同名队伍 WaterRobot</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-bluebot" class=""><td class="rank">3</td>
+        <td class="name-cell"><div class="name">bluebot</div><div class="org">Vivo</div></td>
+        <td class="score-cell"><div class="score">4.7884</div><div class="bar" style="width:54%;animation-delay:120ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）；机构据赛事页决赛名单同名队伍 Bluebot"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）；</span><span class="cl">机构据赛事页决赛名单同名队伍 Bluebot</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-dlj" class=""><td class="rank">4</td>
+        <td class="name-cell"><div class="name">DLJ</div></td>
+        <td class="score-cell"><div class="score">4.7556</div><div class="bar" style="width:54%;animation-delay:160ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-vla-robotic-lab" class=""><td class="rank">5</td>
+        <td class="name-cell"><div class="name">VLA Robotic Lab</div></td>
+        <td class="score-cell"><div class="score">4.6044</div><div class="bar" style="width:52%;animation-delay:200ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-onlysim" class=""><td class="rank">6</td>
+        <td class="name-cell"><div class="name">onlysim</div></td>
+        <td class="score-cell"><div class="score">4.5984</div><div class="bar" style="width:52%;animation-delay:240ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-2toinf" class=""><td class="rank">7</td>
+        <td class="name-cell"><div class="name">2toINF</div></td>
+        <td class="score-cell"><div class="score">4.5412</div><div class="bar" style="width:51%;animation-delay:280ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-hku-manipulation" class=""><td class="rank">8</td>
+        <td class="name-cell"><div class="name">HKU Manipulation</div></td>
+        <td class="score-cell"><div class="score">3.8684</div><div class="bar" style="width:44%;animation-delay:320ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-agibot218" class=""><td class="rank">9</td>
+        <td class="name-cell"><div class="name">AGIBOT218</div></td>
+        <td class="score-cell"><div class="score">3.6972</div><div class="bar" style="width:42%;animation-delay:360ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-ddws" class=""><td class="rank">10</td>
+        <td class="name-cell"><div class="name">DDWS</div></td>
+        <td class="score-cell"><div class="score">3.6952</div><div class="bar" style="width:42%;animation-delay:400ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-mj1024" class=""><td class="rank">11</td>
+        <td class="name-cell"><div class="name">mj1024</div></td>
+        <td class="score-cell"><div class="score">3.6524</div><div class="bar" style="width:41%;animation-delay:440ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-uos-mie" class=""><td class="rank">12</td>
+        <td class="name-cell"><div class="name">UOS-MIE</div><div class="org">University of Seoul</div></td>
+        <td class="score-cell"><div class="score">3.5936</div><div class="bar" style="width:41%;animation-delay:480ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）；机构据赛事页决赛名单同名队伍 UOS-MIE"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）；</span><span class="cl">机构据赛事页决赛名单同名队伍 UOS-MIE</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-mrl" class=""><td class="rank">13</td>
+        <td class="name-cell"><div class="name">MRL</div></td>
+        <td class="score-cell"><div class="score">3.5192</div><div class="bar" style="width:40%;animation-delay:520ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-blade-runner" class=""><td class="rank">14</td>
+        <td class="name-cell"><div class="name">Blade runner</div></td>
+        <td class="score-cell"><div class="score">3.4264</div><div class="bar" style="width:39%;animation-delay:560ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-unibot" class=""><td class="rank">15</td>
+        <td class="name-cell"><div class="name">UniBot</div></td>
+        <td class="score-cell"><div class="score">3.426</div><div class="bar" style="width:39%;animation-delay:600ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-actingai" class=""><td class="rank">16</td>
+        <td class="name-cell"><div class="name">ActingAI</div></td>
+        <td class="score-cell"><div class="score">3.2124</div><div class="bar" style="width:36%;animation-delay:640ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-opentvi" class=""><td class="rank">17</td>
+        <td class="name-cell"><div class="name">OpenTVI</div></td>
+        <td class="score-cell"><div class="score">3.2064</div><div class="bar" style="width:36%;animation-delay:680ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-msf-shrdc" class=""><td class="rank">18</td>
+        <td class="name-cell"><div class="name">MSF-SHRDC</div></td>
+        <td class="score-cell"><div class="score">3.1948</div><div class="bar" style="width:36%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-icl" class=""><td class="rank">19</td>
+        <td class="name-cell"><div class="name">ICL</div></td>
+        <td class="score-cell"><div class="score">3.112</div><div class="bar" style="width:35%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-cocococo" class=""><td class="rank">20</td>
+        <td class="name-cell"><div class="name">cocococo</div></td>
+        <td class="score-cell"><div class="score">3.0304</div><div class="bar" style="width:34%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-onebot" class=""><td class="rank">21</td>
+        <td class="name-cell"><div class="name">OneBot</div></td>
+        <td class="score-cell"><div class="score">3.0148</div><div class="bar" style="width:34%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-mint-go" class=""><td class="rank">22</td>
+        <td class="name-cell"><div class="name">mint-go</div></td>
+        <td class="score-cell"><div class="score">2.9476</div><div class="bar" style="width:33%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-h_t" class=""><td class="rank">23</td>
+        <td class="name-cell"><div class="name">H_T</div></td>
+        <td class="score-cell"><div class="score">2.9188</div><div class="bar" style="width:33%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-au-burst" class=""><td class="rank">24</td>
+        <td class="name-cell"><div class="name">au burst</div></td>
+        <td class="score-cell"><div class="score">2.9072</div><div class="bar" style="width:33%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-poi" class=""><td class="rank">25</td>
+        <td class="name-cell"><div class="name">POI</div></td>
+        <td class="score-cell"><div class="score">2.8492</div><div class="bar" style="width:32%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；10 任务分步计分求和，满分 10；2025-09-15 锁榜，共 53 个账号；原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）"><span class="cl">AgiBot World Challenge@IROS 2025 操作赛道线上仿真赛段（Genie Sim Benchmark）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">2025-09-15 锁榜，共 53 个账号；</span><span class="cl">原测试服页面已下线，分数取自其前端包（显示值 = total_score×10，保留 4 位小数）</span></div></td>
+        <td class="board-cell"><span class="badge">2025 挑战赛·线上仿真</span></td>
+        <td class="when">09·15</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-greenvla" class=""><td class="rank top">1</td>
+        <td class="name-cell"><div class="name">GreenVLA</div></td>
+        <td class="score-cell"><div class="score">8.85</div><div class="bar" style="width:100%;animation-delay:40ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10；据智元 2026-06-08 新闻稿真机决赛列季军"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10；</span><span class="cl">据智元 2026-06-08 新闻稿真机决赛列季军</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-synapx" class=""><td class="rank">2</td>
+        <td class="name-cell"><div class="name">SynapX</div></td>
+        <td class="score-cell"><div class="score">8.48</div><div class="bar" style="width:96%;animation-delay:80ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-rp_vla" class=""><td class="rank">3</td>
+        <td class="name-cell"><div class="name">RP_VLA</div><div class="org">上海萝博派对</div></td>
+        <td class="score-cell"><div class="score">8.47</div><div class="bar" style="width:96%;animation-delay:120ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10；据智元 2026-06-08 新闻稿真机决赛列第二（队名 RP-VLA）"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10；</span><span class="cl">据智元 2026-06-08 新闻稿真机决赛列第二（队名 RP-VLA）</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-aether" class=""><td class="rank">4</td>
+        <td class="name-cell"><div class="name">aether</div></td>
+        <td class="score-cell"><div class="score">8.46</div><div class="bar" style="width:96%;animation-delay:160ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-king-of-vla" class=""><td class="rank">5</td>
+        <td class="name-cell"><div class="name">King of VLA</div></td>
+        <td class="score-cell"><div class="score">8.03</div><div class="bar" style="width:91%;animation-delay:200ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-robot_level2" class=""><td class="rank">6</td>
+        <td class="name-cell"><div class="name">robot_level2</div></td>
+        <td class="score-cell"><div class="score">8.02</div><div class="bar" style="width:91%;animation-delay:240ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-embodied-horse" class=""><td class="rank">7</td>
+        <td class="name-cell"><div class="name">Embodied horse</div></td>
+        <td class="score-cell"><div class="score">7.99</div><div class="bar" style="width:90%;animation-delay:280ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-echomind-master" class=""><td class="rank">8</td>
+        <td class="name-cell"><div class="name">EchoMind Master</div></td>
+        <td class="score-cell"><div class="score">7.96</div><div class="bar" style="width:90%;animation-delay:320ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-kp-robot" class=""><td class="rank">9</td>
+        <td class="name-cell"><div class="name">kp-robot</div></td>
+        <td class="score-cell"><div class="score">7.95</div><div class="bar" style="width:90%;animation-delay:360ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-prismbot" class=""><td class="rank">10</td>
+        <td class="name-cell"><div class="name">PrismBot</div><div class="org">vivo</div></td>
+        <td class="score-cell"><div class="score">7.93</div><div class="bar" style="width:90%;animation-delay:400ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10；据智元 2026-06-08 新闻稿真机决赛列冠军"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10；</span><span class="cl">据智元 2026-06-08 新闻稿真机决赛列冠军</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-idata" class=""><td class="rank">11</td>
+        <td class="name-cell"><div class="name">IDATA</div></td>
+        <td class="score-cell"><div class="score">7.92</div><div class="bar" style="width:89%;animation-delay:440ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-no-89757" class=""><td class="rank">12</td>
+        <td class="name-cell"><div class="name">No.89757</div></td>
+        <td class="score-cell"><div class="score">7.88</div><div class="bar" style="width:89%;animation-delay:480ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-airlab" class=""><td class="rank">13</td>
+        <td class="name-cell"><div class="name">AIRLab</div></td>
+        <td class="score-cell"><div class="score">7.88</div><div class="bar" style="width:89%;animation-delay:520ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-autorobots" class=""><td class="rank">14</td>
+        <td class="name-cell"><div class="name">AutoRobots</div></td>
+        <td class="score-cell"><div class="score">7.86</div><div class="bar" style="width:89%;animation-delay:560ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-bestmodel" class=""><td class="rank">15</td>
+        <td class="name-cell"><div class="name">BestModel</div></td>
+        <td class="score-cell"><div class="score">7.85</div><div class="bar" style="width:89%;animation-delay:600ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-go" class=""><td class="rank">16</td>
+        <td class="name-cell"><div class="name">Go</div></td>
+        <td class="score-cell"><div class="score">7.7</div><div class="bar" style="width:87%;animation-delay:640ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-genvla" class=""><td class="rank">17</td>
+        <td class="name-cell"><div class="name">GENVLA</div></td>
+        <td class="score-cell"><div class="score">7.67</div><div class="bar" style="width:87%;animation-delay:680ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-断雁无凭" class=""><td class="rank">18</td>
+        <td class="name-cell"><div class="name">断雁无凭</div></td>
+        <td class="score-cell"><div class="score">7.56</div><div class="bar" style="width:85%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-哈基米曼波" class=""><td class="rank">19</td>
+        <td class="name-cell"><div class="name">哈基米曼波</div></td>
+        <td class="score-cell"><div class="score">7.55</div><div class="bar" style="width:85%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-cooler" class=""><td class="rank">20</td>
+        <td class="name-cell"><div class="name">Cooler</div></td>
+        <td class="score-cell"><div class="score">7.49</div><div class="bar" style="width:85%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-acot-vla" class=""><td class="rank">21</td>
+        <td class="name-cell"><div class="name">ACoT-VLA</div></td>
+        <td class="score-cell"><div class="score">7.48</div><div class="bar" style="width:85%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10；账号名与官方基线模型 ACoT-VLA 相同，榜上未标注是否为基线提交"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10；</span><span class="cl">账号名与官方基线模型 ACoT-VLA 相同，榜上未标注是否为基线提交</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-longgraph-vla" class=""><td class="rank">22</td>
+        <td class="name-cell"><div class="name">longgraph-VLA</div></td>
+        <td class="score-cell"><div class="score">7.45</div><div class="bar" style="width:84%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-lingyun" class=""><td class="rank">23</td>
+        <td class="name-cell"><div class="name">Lingyun</div></td>
+        <td class="score-cell"><div class="score">7.45</div><div class="bar" style="width:84%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-dean" class=""><td class="rank">24</td>
+        <td class="name-cell"><div class="name">Dean</div></td>
+        <td class="score-cell"><div class="score">7.44</div><div class="bar" style="width:84%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-aldi" class=""><td class="rank">25</td>
+        <td class="name-cell"><div class="name">ALDI</div></td>
+        <td class="score-cell"><div class="score">7.36</div><div class="bar" style="width:83%;animation-delay:700ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；10 任务分步计分求和，满分 10；每队取最高分；2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；显示值 = 前端 total_score×10"><span class="cl">AGIBOT WORLD CHALLENGE@ICRA 2026 R2A 赛道线上仿真赛段（Genie Sim 3.0，G2 机器人）；</span><span class="cl">10 任务分步计分求和，满分 10；</span><span class="cl">每队取最高分；</span><span class="cl">2026-04-20 锁榜（官方称 04-30 公布人工复核后的线上排名），页面现存 79 个账号；</span><span class="cl">显示值 = 前端 total_score×10</span></div></td>
+        <td class="board-cell"><span class="badge">2026 R2A·线上仿真</span></td>
+        <td class="when">04·20</td>
+        <td class="status-cell"><span class="badge">官方榜</span></td></tr><tr id="row-acot-vla" class=""><td class="rank top">1</td>
+        <td class="name-cell"><div class="name">ACoT-VLA</div><div class="org">AGIBOT</div></td>
+        <td class="score-cell"><div class="score">0.76</div><div class="bar" style="width:9%;animation-delay:40ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；基准论文复现；表 III，10 个语言条件操作任务平均分"><span class="cl">Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；</span><span class="cl">各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；</span><span class="cl">基准论文复现；</span><span class="cl">表 III，10 个语言条件操作任务平均分</span></div></td>
+        <td class="board-cell"><span class="badge">指令遵循（报告）</span></td>
+        <td class="when">08·14</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row--0-5" class=""><td class="rank">2</td>
+        <td class="name-cell"><div class="name">π0.5</div><div class="org">Physical Intelligence</div></td>
+        <td class="score-cell"><div class="score">0.75</div><div class="bar" style="width:8%;animation-delay:80ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；基准论文复现；表 III，10 个语言条件操作任务平均分"><span class="cl">Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；</span><span class="cl">各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；</span><span class="cl">基准论文复现；</span><span class="cl">表 III，10 个语言条件操作任务平均分</span></div></td>
+        <td class="board-cell"><span class="badge">指令遵循（报告）</span></td>
+        <td class="when">08·14</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-gr00t-n1-7" class=""><td class="rank">3</td>
+        <td class="name-cell"><div class="name">GR00T-N1.7</div><div class="org">NVIDIA</div></td>
+        <td class="score-cell"><div class="score">0.65</div><div class="bar" style="width:7%;animation-delay:120ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；基准论文复现；表 III，10 个语言条件操作任务平均分"><span class="cl">Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；</span><span class="cl">各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；</span><span class="cl">基准论文复现；</span><span class="cl">表 III，10 个语言条件操作任务平均分</span></div></td>
+        <td class="board-cell"><span class="badge">指令遵循（报告）</span></td>
+        <td class="when">08·14</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row--0" class=""><td class="rank">4</td>
+        <td class="name-cell"><div class="name">π0</div><div class="org">Physical Intelligence</div></td>
+        <td class="score-cell"><div class="score">0.37</div><div class="bar" style="width:4%;animation-delay:160ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；基准论文复现；表 III，10 个语言条件操作任务平均分"><span class="cl">Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；</span><span class="cl">各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；</span><span class="cl">基准论文复现；</span><span class="cl">表 III，10 个语言条件操作任务平均分</span></div></td>
+        <td class="board-cell"><span class="badge">指令遵循（报告）</span></td>
+        <td class="when">08·14</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-acot-vla" class=""><td class="rank top">1</td>
+        <td class="name-cell"><div class="name">ACoT-VLA</div><div class="org">AGIBOT</div></td>
+        <td class="score-cell"><div class="score">0.622</div><div class="bar" style="width:7%;animation-delay:40ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；基准论文复现；表 IV，参考抓放任务上 5 类扰动（指令、机器人位姿、背景、图像质量、相机位置）得分平均；未扰动参考分 0.760"><span class="cl">Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；</span><span class="cl">各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；</span><span class="cl">基准论文复现；</span><span class="cl">表 IV，参考抓放任务上 5 类扰动（指令、机器人位姿、背景、图像质量、相机位置）得分平均；</span><span class="cl">未扰动参考分 0.760</span></div></td>
+        <td class="board-cell"><span class="badge">扰动鲁棒（报告）</span></td>
+        <td class="when">08·14</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row--0-5" class=""><td class="rank">2</td>
+        <td class="name-cell"><div class="name">π0.5</div><div class="org">Physical Intelligence</div></td>
+        <td class="score-cell"><div class="score">0.613</div><div class="bar" style="width:7%;animation-delay:80ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；基准论文复现；表 IV，参考抓放任务上 5 类扰动（指令、机器人位姿、背景、图像质量、相机位置）得分平均；未扰动参考分 0.750"><span class="cl">Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；</span><span class="cl">各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；</span><span class="cl">基准论文复现；</span><span class="cl">表 IV，参考抓放任务上 5 类扰动（指令、机器人位姿、背景、图像质量、相机位置）得分平均；</span><span class="cl">未扰动参考分 0.750</span></div></td>
+        <td class="board-cell"><span class="badge">扰动鲁棒（报告）</span></td>
+        <td class="when">08·14</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-gr00t-n1-7" class=""><td class="rank">3</td>
+        <td class="name-cell"><div class="name">GR00T-N1.7</div><div class="org">NVIDIA</div></td>
+        <td class="score-cell"><div class="score">0.538</div><div class="bar" style="width:6%;animation-delay:120ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；基准论文复现；表 IV，参考抓放任务上 5 类扰动（指令、机器人位姿、背景、图像质量、相机位置）得分平均；未扰动参考分 0.650"><span class="cl">Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；</span><span class="cl">各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；</span><span class="cl">基准论文复现；</span><span class="cl">表 IV，参考抓放任务上 5 类扰动（指令、机器人位姿、背景、图像质量、相机位置）得分平均；</span><span class="cl">未扰动参考分 0.650</span></div></td>
+        <td class="board-cell"><span class="badge">扰动鲁棒（报告）</span></td>
+        <td class="when">08·14</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row--0" class=""><td class="rank">4</td>
+        <td class="name-cell"><div class="name">π0</div><div class="org">Physical Intelligence</div></td>
+        <td class="score-cell"><div class="score">0.313</div><div class="bar" style="width:4%;animation-delay:160ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；基准论文复现；表 IV，参考抓放任务上 5 类扰动（指令、机器人位姿、背景、图像质量、相机位置）得分平均；未扰动参考分 0.370"><span class="cl">Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；</span><span class="cl">各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；</span><span class="cl">基准论文复现；</span><span class="cl">表 IV，参考抓放任务上 5 类扰动（指令、机器人位姿、背景、图像质量、相机位置）得分平均；</span><span class="cl">未扰动参考分 0.370</span></div></td>
+        <td class="board-cell"><span class="badge">扰动鲁棒（报告）</span></td>
+        <td class="when">08·14</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row--0-5" class=""><td class="rank top">1</td>
+        <td class="name-cell"><div class="name">π0.5</div><div class="org">Physical Intelligence</div></td>
+        <td class="score-cell"><div class="score">0.58</div><div class="bar" style="width:7%;animation-delay:40ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；基准论文复现；表 V，10 个复杂操作任务平均分（任务同 2026 R2A 线上赛段）"><span class="cl">Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；</span><span class="cl">各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；</span><span class="cl">基准论文复现；</span><span class="cl">表 V，10 个复杂操作任务平均分（任务同 2026 R2A 线上赛段）</span></div></td>
+        <td class="board-cell"><span class="badge">通用操作（报告）</span></td>
+        <td class="when">08·14</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-acot-vla" class=""><td class="rank">2</td>
+        <td class="name-cell"><div class="name">ACoT-VLA</div><div class="org">AGIBOT</div></td>
+        <td class="score-cell"><div class="score">0.48</div><div class="bar" style="width:5%;animation-delay:80ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；基准论文复现；表 V，10 个复杂操作任务平均分（任务同 2026 R2A 线上赛段）"><span class="cl">Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；</span><span class="cl">各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；</span><span class="cl">基准论文复现；</span><span class="cl">表 V，10 个复杂操作任务平均分（任务同 2026 R2A 线上赛段）</span></div></td>
+        <td class="board-cell"><span class="badge">通用操作（报告）</span></td>
+        <td class="when">08·14</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-gr00t-n1-7" class=""><td class="rank">3</td>
+        <td class="name-cell"><div class="name">GR00T-N1.7</div><div class="org">NVIDIA</div></td>
+        <td class="score-cell"><div class="score">0.44</div><div class="bar" style="width:5%;animation-delay:120ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；基准论文复现；表 V，10 个复杂操作任务平均分（任务同 2026 R2A 线上赛段）"><span class="cl">Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；</span><span class="cl">各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；</span><span class="cl">基准论文复现；</span><span class="cl">表 V，10 个复杂操作任务平均分（任务同 2026 R2A 线上赛段）</span></div></td>
+        <td class="board-cell"><span class="badge">通用操作（报告）</span></td>
+        <td class="when">08·14</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row--0" class=""><td class="rank">4</td>
+        <td class="name-cell"><div class="name">π0</div><div class="org">Physical Intelligence</div></td>
+        <td class="score-cell"><div class="score">0.35</div><div class="bar" style="width:4%;animation-delay:160ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；基准论文复现；表 V，10 个复杂操作任务平均分（任务同 2026 R2A 线上赛段）"><span class="cl">Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；</span><span class="cl">各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；</span><span class="cl">基准论文复现；</span><span class="cl">表 V，10 个复杂操作任务平均分（任务同 2026 R2A 线上赛段）</span></div></td>
+        <td class="board-cell"><span class="badge">通用操作（报告）</span></td>
+        <td class="when">08·14</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-acot-vla" class=""><td class="rank top">1</td>
+        <td class="name-cell"><div class="name">ACoT-VLA</div><div class="org">AGIBOT</div></td>
+        <td class="score-cell"><div class="score">0.40</div><div class="bar" style="width:5%;animation-delay:40ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；基准论文复现；表 VI，8 个空间推理任务平均分"><span class="cl">Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；</span><span class="cl">各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；</span><span class="cl">基准论文复现；</span><span class="cl">表 VI，8 个空间推理任务平均分</span></div></td>
+        <td class="board-cell"><span class="badge">空间理解（报告）</span></td>
+        <td class="when">08·14</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row--0-5" class=""><td class="rank">2</td>
+        <td class="name-cell"><div class="name">π0.5</div><div class="org">Physical Intelligence</div></td>
+        <td class="score-cell"><div class="score">0.36</div><div class="bar" style="width:4%;animation-delay:80ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；基准论文复现；表 VI，8 个空间推理任务平均分"><span class="cl">Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；</span><span class="cl">各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；</span><span class="cl">基准论文复现；</span><span class="cl">表 VI，8 个空间推理任务平均分</span></div></td>
+        <td class="board-cell"><span class="badge">空间理解（报告）</span></td>
+        <td class="when">08·14</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row-gr00t-n1-7" class=""><td class="rank">3</td>
+        <td class="name-cell"><div class="name">GR00T-N1.7</div><div class="org">NVIDIA</div></td>
+        <td class="score-cell"><div class="score">0.25</div><div class="bar" style="width:4%;animation-delay:120ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；基准论文复现；表 VI，8 个空间推理任务平均分"><span class="cl">Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；</span><span class="cl">各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；</span><span class="cl">基准论文复现；</span><span class="cl">表 VI，8 个空间推理任务平均分</span></div></td>
+        <td class="board-cell"><span class="badge">空间理解（报告）</span></td>
+        <td class="when">08·14</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr><tr id="row--0" class=""><td class="rank">4</td>
+        <td class="name-cell"><div class="name">π0</div><div class="org">Physical Intelligence</div></td>
+        <td class="score-cell"><div class="score">0.13</div><div class="bar" style="width:4%;animation-delay:160ms"></div></td>
+        <td class="proto-cell"><div class="proto" title="Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；基准论文复现；表 VI，8 个空间推理任务平均分"><span class="cl">Genie Sim 3.0 技术报告 v4（各版数值有改动，取 v4）；</span><span class="cl">各模型用 GenieSim 合成数据按任务微调，Agibot G2，自动闭环评测；</span><span class="cl">基准论文复现；</span><span class="cl">表 VI，8 个空间推理任务平均分</span></div></td>
+        <td class="board-cell"><span class="badge">空间理解（报告）</span></td>
+        <td class="when">08·14</td>
+        <td class="status-cell"><span class="badge warn">自报</span></td></tr></tbody></table></div>
+  <div class="board-foot"><a class="btn btn-ghost" href="lb-genie-sim.html">本碑专页 →</a></div></section><section class="sec"><div class="sec-head"><span class="sec-no">叁</span><span class="sec-title">上榜之器</span><span class="rule"></span><span class="aside">2 个</span></div><div class="rel-grid"><a class="rel-card" href="model-pi05.html" data-zone="model"><span class="glyph-mini">0</span><span><span class="nm">π0.5</span><span class="sub">Physical Intelligence</span></span><span class="go">→</span></a><a class="rel-card" href="model-pi0.html" data-zone="model"><span class="glyph-mini">0</span><span><span class="nm">π0</span><span class="sub">Physical Intelligence</span></span><span class="go">→</span></a></div></section><section class="sec"><div class="sec-head"><span class="sec-no">肆</span><span class="sec-title">同类之碑</span><span class="rule"></span></div><div class="rel-grid"><a class="rel-card" href="benchmark-libero.html" data-zone="benchmark"><span class="glyph-mini">L</span><span><span class="nm">LIBERO</span><span class="sub">仿真 · 17 行</span></span><span class="go">→</span></a><a class="rel-card" href="benchmark-robotwin.html" data-zone="benchmark"><span class="glyph-mini">R</span><span><span class="nm">RoboTwin 2.0</span><span class="sub">仿真 · 31 行</span></span><span class="go">→</span></a><a class="rel-card" href="benchmark-robocasa.html" data-zone="benchmark"><span class="glyph-mini">R</span><span><span class="nm">RoboCasa GR1 TableTop</span><span class="sub">仿真 · 30 行</span></span><span class="go">→</span></a><a class="rel-card" href="benchmark-robocoliseum.html" data-zone="benchmark"><span class="glyph-mini">R</span><span><span class="nm">RoboColiseum</span><span class="sub">仿真 · 82 行</span></span><span class="go">→</span></a><a class="rel-card" href="benchmark-calvin.html" data-zone="benchmark"><span class="glyph-mini">C</span><span><span class="nm">CALVIN</span><span class="sub">仿真 · 33 行</span></span><span class="go">→</span></a><a class="rel-card" href="benchmark-rlbench.html" data-zone="benchmark"><span class="glyph-mini">R</span><span><span class="nm">RLBench</span><span class="sub">仿真 · 22 行</span></span><span class="go">→</span></a></div></section></div>
+  <aside class="margin-note" style="padding-top:6px">
+    <b>榜单页</b>
+    碑林 · 榜单
+  </aside>
+</div></div></section><section class="layout"><a class="next-vol" href="jobs.html" data-zone="job" style="border-top:1px solid var(--line)">
+    <span><span class="lbl">下一卷 · 招贤</span><span class="nm">岗位</span></span><span class="link-arrow">招贤 · 悬榜求士</span>
+  </a></section></main>
+<span id="main-end"></span>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="foot-brand">
+      <a class="foot-mark" href="index.html" aria-label="具身山海志 · 返回首页"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55" stroke-dasharray="86 6" transform="rotate(-24 20 20)"/>
+  <path d="M7.5 26.5 14 15.6l4.4 7 3.5-5.6 10.6 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6.4 30.2c2.4-1.5 3.6-.2 5.6-.9 2-.7 3.2-1.0 5.2-.2 2 .8 3.4.3 5.3-.4 2-.7 3.3-.1 5.4.6 1.8.6 3.4.2 5.4-.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28.6" cy="12.4" r="2.6" fill="#c21f30"/>
+</svg><span class="foot-word"><b>具身山海志</b><small>Embodied Atlas</small></span></a>
+      <p class="foot-motto">多闻阙疑　慎言其余</p>
+      <a class="btn foot-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.16l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg>到 GitHub 点 Star</a>
+    </div>
+    <nav class="set" aria-label="页脚导航">
+      <div class="set-col"><b>七卷</b><a href="companies.html">公司</a><a href="labs.html">机构</a><a href="models.html">模型</a><a href="leaderboard.html">榜单</a><a href="jobs.html">岗位</a><a href="resources.html">资源</a><a href="news.html">动态</a></div>
+      <div class="set-col"><b>别册</b><a href="world.html">总览</a><a href="atlas.html">山海图</a><a href="compare.html">选型对比</a><a href="papers.html">论文索引</a><a href="events.html">会期与投稿</a></div>
+      <div class="set-col"><b>卷末</b><a href="about.html">关于</a><a href="legend.html">凡例</a><a href="credits.html">素材与许可</a><a href="copyright.html">版权</a></div>
+      <div class="set-col"><b>往来</b><button type="button" class="footer-btn" data-open-contact>合作联系</button><a href="coop.html">合作方式</a><a href="news.html#subscribe">订阅更新</a></div>
+    </nav>
+    <div class="foot-base">
+      <span class="src-line">源：<a href="https://fbddcz.github.io/Embodied-Shanhai-Atlas/benchmark-genie-sim.html">具身山海志</a> · <a href="copyright.html">版权与许可</a> · 核验 2026-11-16</span>
+      <span class="colophon">© 2026 具身山海志 · <span data-world-label>秋·小雪</span></span>
+      <button class="clock-btn" id="worldClock" type="button" aria-haspopup="true" aria-expanded="false" title="四时天候：跟随真实时间，或把一年浓缩成一天">
+        <span class="cc-dot" aria-hidden="true"></span><span data-clock-mode>随天时</span>
+      </button>
+      <div class="clock-menu" id="worldClockMenu" hidden>
+        <p class="clock-q">四时如何流转</p>
+        <button data-clock="real" type="button">跟随真实时间</button>
+        <button data-clock="cycle" type="button">一年浓缩成一日（每 24 小时一轮）</button>
+        <button data-clock="fast" type="button">一年浓缩成四分钟（演示用）</button>
+        <button data-clock="off" type="button">停在当前节令</button>
+        <p class="clock-now" data-world-label></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="toc" id="toc" role="dialog" aria-modal="true" aria-label="七卷目录">
+  <div class="toc-head"><span class="toc-title">七卷</span><button class="tool" id="tocClose" aria-label="关闭目录"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="toc-body"><div class="toc-list"><a class="toc-item" href="world.html"><span class="no">纲</span><span class="nm">总纲<small>总览</small></span><span class="ct">7宗</span></a><a class="toc-item" href="companies.html" data-zone="company"><span class="no">壹</span><span class="nm">人间<small>公司</small></span><span class="ct">154</span></a><a class="toc-item" href="labs.html" data-zone="lab"><span class="no">贰</span><span class="nm">学宫<small>机构</small></span><span class="ct">60</span></a><a class="toc-item" href="models.html" data-zone="model"><span class="no">叁</span><span class="nm">灵物<small>模型</small></span><span class="ct">91</span></a><a class="toc-item" href="leaderboard.html" data-zone="benchmark"><span class="no">肆</span><span class="nm">碑林<small>榜单</small></span><span class="ct">33</span></a><a class="toc-item" href="jobs.html" data-zone="job"><span class="no">伍</span><span class="nm">招贤<small>岗位</small></span><span class="ct">57</span></a><a class="toc-item" href="resources.html" data-zone="resource"><span class="no">陆</span><span class="nm">藏经<small>资源</small></span><span class="ct">116</span></a><a class="toc-item" href="news.html" data-zone="news"><span class="no">柒</span><span class="nm">驿路<small>动态</small></span><span class="ct">95</span></a><a class="toc-item" href="atlas.html"><span class="no">图</span><span class="nm">山海图<small>七域一图</small></span><span class="ct">606</span></a></div></div>
+  <div class="toc-foot"><a href="hardware.html">本体与传感</a><a href="compare.html">选型对比</a><a href="papers.html">论文索引</a><a href="events.html">会期与投稿</a><a href="following.html">我的关注</a><a href="legend.html">凡例</a><a href="about.html">关于</a><a class="toc-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer">★ 到 GitHub 点 Star</a></div>
+</div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="搜索">
+  <div class="palette-panel">
+    <div class="palette-input">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <input id="paletteInput" type="search" placeholder="寻一司、一器、一碑、一文" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="paletteResults" aria-autocomplete="list">
+      <span class="palette-hint">ESC</span>
+    </div>
+    <div class="palette-results" id="paletteResults" role="listbox" aria-label="搜索结果"></div>
+  </div>
+</div>
+<div class="modal" id="claimModal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="claimTitle">
+    <div class="modal-head"><h3 id="claimTitle">认领与纠错</h3><button class="modal-close" type="button" data-close-modal aria-label="关闭">×</button></div>
+    <p class="modal-sub" id="claimTarget">写明要更正的内容，附可打开的来源。</p>
+    <form id="claimForm" data-issues="https://github.com/FBddcz/Embodied-Shanhai-Atlas">
+      <label class="field"><span>称呼或机构（可不填）</span><input name="name" autocomplete="off" placeholder="例如：某公司市场部"></label>
+      <label class="field"><span>要更正或补充的内容</span><textarea name="message" required rows="5" placeholder="哪一条事实、原文是什么、应改为什么。"></textarea></label>
+      <label class="field"><span>来源链接</span><input name="source" type="url" placeholder="https://"></label>
+      <div class="modal-actions"><button type="button" class="btn" data-copy-claim>复制</button><button type="submit" class="btn btn-solid">在 GitHub 提交</button></div>
+    </form>
+  </div>
+</div>
+<div class="modal" id="contactModal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal-head"><h3 id="contactTitle">合作联系</h3><button class="modal-close" type="button" data-close-contact aria-label="关闭">×</button></div>
+    <p class="modal-sub">合作、招聘、投稿或数据授权。可以填写在线表单，也可以扫码进群直接联系。</p>
+    <div class="contact-link"><a class="btn btn-solid" href="https://www.wjx.top/vm/mB7vmKF.aspx" target="_blank" rel="noopener noreferrer">填写在线表单 ↗</a><p class="modal-note">表单由问卷星托管，提交后维护者会收到通知。</p></div>
+    
+    <div class="contact-qr">
+      <img src="assets/contact/xhs-group-2.png" alt="小红书交流群二维码" width="132" height="132" loading="lazy" decoding="async">
+      <div class="contact-qr-text"><b>小红书交流群</b><p>具身 AI 交流实习群 2 · 扫码加入，直接在群里联系维护者。</p><p class="contact-qr-valid">此码 2026-12-14 前有效</p></div>
+    </div>
+    <form id="contactForm" hidden data-endpoint="" data-key="" data-email="" data-qr="1" data-mode="link">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+      
+      
+      <div class="field-row">
+        <label class="field"><span>称呼或机构</span><input name="name" required autocomplete="off" placeholder="张三 / 某公司"></label>
+        <label class="field"><span>来意</span><select name="intent"><option>合作</option><option>招聘</option><option>投稿</option><option>数据授权</option><option>其他</option></select></label>
+      </div>
+      <label class="field"><span>微信、邮箱或电话</span><input name="contact" required autocomplete="off"></label>
+      <label class="field"><span>想聊什么</span><textarea name="message" rows="4" required></textarea></label>
+      <label class="check"><input type="checkbox" name="consent" required><span>以上信息只用于回复，不作他用。</span></label>
+      <div class="modal-actions"><button type="button" class="btn" data-copy-contact>复制</button><button type="submit" class="btn btn-solid">复制这段文字</button></div>
+      <p class="modal-note" id="contactStatus"></p>
+    </form>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="title-card" aria-hidden="true"><b>碑林</b><small>刻石记分</small></div>
+<script src="app.js" defer></script>
+
+
+
+</body>
+</html>

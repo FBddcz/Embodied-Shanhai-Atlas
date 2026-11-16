@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="ink" data-season="spring">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>人间 · 公司 · 具身山海志</title>
+<meta name="description" content="具身智能公司：技术栈、模型、榜单成绩、融资与岗位，逐条注明来源。">
+<link rel="canonical" href="https://fbddcz.github.io/Embodied-Shanhai-Atlas/companies.html">
+<meta name="atlas-fp" content="3e9f49-1dfa79">
+<meta name="author" content="具身山海志 · Embodied Atlas">
+<meta property="og:url" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/companies.html">
+<meta name="twitter:url" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/companies.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"人间 · 公司 · 具身山海志","description":"具身智能公司：技术栈、模型、榜单成绩、融资与岗位，逐条注明来源。","url":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/companies.html","inLanguage":"zh-CN","dateModified":"2026-11-16","isPartOf":{"@type":"WebSite","name":"具身山海志 · Embodied Atlas","url":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/index.html","inLanguage":"zh-CN"},"creator":{"@type":"Person","name":"具身山海志","url":"https://github.com/FBddcz"},"copyrightHolder":{"@type":"Person","name":"具身山海志","url":"https://github.com/FBddcz"},"copyrightYear":2026,"license":"https://fbddcz.github.io/Embodied-Shanhai-Atlas/copyright.html","citation":"具身山海志（Embodied Atlas）· 核验 2026-11-16 · https://fbddcz.github.io/Embodied-Shanhai-Atlas/companies.html"}</script>
+<meta name="theme-color" content="#f2e6ce" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1423" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.svg">
+<meta property="og:site_name" content="具身山海志">
+<meta property="og:title" content="人间 · 公司 · 具身山海志">
+<meta property="og:description" content="具身智能公司：技术栈、模型、榜单成绩、融资与岗位，逐条注明来源。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://fbddcz.github.io/Embodied-Shanhai-Atlas/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="license" href="copyright.html">
+<link rel="stylesheet" href="styles.css">
+
+<script>
+(function(){
+  var d=document.documentElement;
+  try{d.dataset.theme=localStorage.getItem('atlas-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'ink');}catch(e){d.dataset.theme='ink';}
+  // 季候与时辰：四时配色、山海图的天候都从这里取
+  var m=new Date().getMonth()+1;
+  d.dataset.season = (m>=3&&m<=5)?'spring':(m>=6&&m<=8)?'summer':(m>=9&&m<=11)?'autumn':'winter';
+  var h=new Date().getHours();
+  d.dataset.hour = h<5?'night':h<8?'dawn':h<11?'morning':h<16?'day':h<19?'dusk':'night';
+  var XDOC='CSSViewTransitionRule' in window;
+  d.classList.add(XDOC?'vt-x':'vt-fallback');
+  if(!XDOC){try{if(sessionStorage.getItem('veil')){sessionStorage.removeItem('veil');d.classList.add('veil-pending');}}catch(e){}return;}
+  var file=function(p){return p.split('/').pop()||'index.html';};
+  var seen=function(path){
+    var el=document.querySelector('[data-list] a[href$="'+file(path)+'"] .plate');
+    if(!el)return null;
+    el.style.viewTransitionName='entity-seal';
+    return el;
+  };
+  addEventListener('pageswap',function(e){
+    if(!e.viewTransition||!e.activation)return;
+    try{sessionStorage.setItem('vt-from',location.pathname);}catch(err){}
+    var el=seen(new URL(e.activation.entry.url).pathname);
+    if(el)e.viewTransition.finished.finally(function(){el.style.viewTransitionName='';});
+  });
+  addEventListener('pagereveal',function(e){
+    if(!e.viewTransition)return;
+    var nt=(window.navigation&&navigation.activation&&navigation.activation.navigationType)||(performance.getEntriesByType('navigation')[0]||{}).type;
+    var back=nt==='traverse'||nt==='back_forward';
+    e.viewTransition.types.add(back?'back':'ink');
+    if(back){
+      var prev='';try{prev=sessionStorage.getItem('vt-from')||'';}catch(err){}
+      if(prev)seen(prev);
+    }
+  });
+})();
+</script>
+</head>
+<body data-page="companies" data-zone="company">
+<a class="skip" href="#main">跳到正文</a>
+<div class="atmo" aria-hidden="true"><video class="atmo-video" muted loop playsinline disablepictureinpicture preload="none"></video><span class="atmo-season"></span><span class="atmo-hour"></span><span class="atmo-veil"></span><span class="atmo-tint"></span></div>
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="index.html" aria-label="具身山海志 · 返回首页">
+    <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55" stroke-dasharray="86 6" transform="rotate(-24 20 20)"/>
+  <path d="M7.5 26.5 14 15.6l4.4 7 3.5-5.6 10.6 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6.4 30.2c2.4-1.5 3.6-.2 5.6-.9 2-.7 3.2-1.0 5.2-.2 2 .8 3.4.3 5.3-.4 2-.7 3.3-.1 5.4.6 1.8.6 3.4.2 5.4-.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28.6" cy="12.4" r="2.6" fill="#c21f30"/>
+</svg>
+    <span class="brand-word"><span class="brand-cn">具身山海志</span><span class="brand-en">Embodied Atlas</span></span>
+  </a>
+  <nav class="nav" aria-label="主导航"><a href="world.html" class="nav-world" title="山海大世界 · 总纲">总览</a><a href="companies.html" data-zone="company" aria-current="page" title="人间 · 诸司都邑">公司</a><a href="labs.html" data-zone="lab" title="学宫 · 讲学著述">机构</a><a href="models.html" data-zone="model" title="灵物 · 山海异兽">模型</a><a href="leaderboard.html" data-zone="benchmark" title="碑林 · 刻石记分">榜单</a><a href="jobs.html" data-zone="job" title="招贤 · 悬榜求士">岗位</a><a href="resources.html" data-zone="resource" title="藏经 · 典籍器用">资源</a><a href="news.html" data-zone="news" title="驿路 · 驿报存录">动态</a><a href="atlas.html" title="七域一图">山海图</a></nav>
+  <div class="header-tools">
+    <button class="tool tool-search" data-open-search aria-label="搜索，快捷键 Command K">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <span class="ph">搜索公司、模型、论文</span><span class="kbd">⌘K</span>
+    </button>
+    <a class="tool tool-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer" aria-label="到 GitHub 给具身山海志点 Star" title="到 GitHub 点 Star">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.16l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg><span class="gs-t">Star</span><span class="gs-n" data-gh-count hidden></span>
+    </a>
+    <a class="tool tool-follow" href="following.html" aria-label="我的关注" title="我的关注">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+    </a>
+    <button class="tool" id="themeBtn" aria-label="切换昼夜" title="切换昼夜">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>
+    </button>
+    <button class="tool menu-btn" id="menuBtn" aria-label="打开七卷目录" aria-expanded="false" aria-controls="toc">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+<main id="main" data-fp="3e9f49-1dfa79"><section class="layout"><div class="vol-head" data-zone="company">
+  <span class="vol-no">卷壹 · 诸司都邑</span>
+  <h1 class="vol-title">人间<small>公司</small></h1>
+  <p class="vol-epigraph">人间之首，曰诸司之邑。凡司一百五十四，居北京者二十六，深圳者二十，上海者十八。造人形者二十三，治世界模型者八，治 VLA 者六。融资可考者一百零八，皆注所出。</p>
+  
+  <div class="realm-line" data-zone="company">
+    <span class="realm-sect">驮山兽 · 人间诸司</span>
+    <span class="realm-links"><a href="atlas.html#r=company">在山海图中查看 →</a></span>
+  </div>
+  <nav class="zone-tabs" aria-label="本卷分页"><a href="companies.html" aria-current="page">公司名录</a><a href="hardware.html">本体与传感</a><a href="compare.html">选型对比</a></nav>
+  <div class="vol-tools"><div class="seg" role="group" aria-label="按方向筛选"><button data-filter="全部" aria-pressed="true">全部 <span class="mono" style="color:var(--text-3)">154</span></button><button data-filter="人形" aria-pressed="false">人形本体 <span class="mono" style="color:var(--text-3)">23</span></button><button data-filter="VLA" aria-pressed="false">VLA 基座 <span class="mono" style="color:var(--text-3)">6</span></button><button data-filter="世界模型" aria-pressed="false">世界模型 <span class="mono" style="color:var(--text-3)">8</span></button><button data-filter="数据与仿真" aria-pressed="false">数据与仿真 <span class="mono" style="color:var(--text-3)">5</span></button><button data-filter="自动驾驶" aria-pressed="false">自动驾驶 <span class="mono" style="color:var(--text-3)">6</span></button><button data-filter="物流仓储" aria-pressed="false">物流仓储 <span class="mono" style="color:var(--text-3)">4</span></button></div>
+      </div>
+</div></section>
+  <div class="layout"><div class="list-bar">
+    <span class="list-count">154 家</span>
+    <div class="seg" role="group" aria-label="视图"><button data-view="ledger" aria-pressed="true">图录</button><button data-view="index" aria-pressed="false">名录</button></div>
+    <span class="list-links"><a class="link-arrow" href="hardware.html">法器与灵材</a><a class="link-arrow" href="compare.html">选型对比</a></span>
+  </div><div data-list>
+    <div class="ledger" id="ledgerView"><a class="ledger-item" href="company-qianxun.html" data-zone="company" data-tags="VLA 具身基座 杭州 VLA 具身基座 杭州">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/qianxun.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/qianxun-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>千寻智能</h3><div class="en">Spirit AI</div></div></div>
+  <p class="one">发布 Spirit 系列 VLA 与 Moz1 人形；v1.6 列 RoboArena 官方榜第一。</p>
+  <div class="meta-row"><span class="tag z">杭州</span><span class="tag">VLA</span><span class="tag">具身基座</span></div>
+</a><a class="ledger-item" href="company-wujie.html" data-zone="company" data-tags="世界模型 VLA 世界模型 VLA">
+  <div class="item-top"><span class="plate"><img class="lg has-dark" src="assets/logos/v2/wujie.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/wujie-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>无界动力</h3><div class="en">Anyverse Dynamics</div></div></div>
+  <p class="one">发布 MWA 隐空间世界模型，MWA-WALA 在 RoboCasa GR1 TableTop 自报 75.2%。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">世界模型</span><span class="tag">VLA</span></div>
+</a><a class="ledger-item" href="company-beingbeyond.html" data-zone="company" data-tags="世界模型 人类视频 世界模型 人类视频">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/beingbeyond.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/beingbeyond-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>智在无界</h3><div class="en">BeingBeyond</div></div></div>
+  <p class="one">用人类视频训练机器人模型，发布 Being-0、Being-H0.7 与 Being-H0.8。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">世界模型</span><span class="tag">人类视频</span></div>
+</a><a class="ledger-item" href="company-xiaomi.html" data-zone="company" data-tags="跨域基座 开源 北京 跨域基座 开源 北京">
+  <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/xiaomi.svg" alt="" loading="lazy" decoding="async"></span><div><h3>小米</h3><div class="en">Xiaomi</div></div></div>
+  <p class="one">开源跨域具身基座 MiMo-Embodied，另有 CyberOne 人形与 CyberDog 四足。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">跨域基座</span><span class="tag">开源</span></div>
+</a><a class="ledger-item" href="company-amap.html" data-zone="company" data-tags="VLA 导航 北京 VLA 导航 北京">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/v2/amap.png" alt="" loading="lazy" decoding="async"></span><div><h3>高德</h3><div class="en">Amap</div></div></div>
+  <p class="one">发布 ABot 系列：ABot-M0 负责操作，ABot-N0 负责导航。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">VLA</span><span class="tag">导航</span></div>
+</a><a class="ledger-item" href="company-moke.html" data-zone="company" data-tags="世界模型 世界模型">
+  <div class="item-top"><span class="plate"><img class="lg has-dark" src="assets/logos/v2/moke.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/moke-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>莫刻机器人</h3><div class="en">MUKA Robotics</div></div></div>
+  <p class="one">世界模型公司，模型 LJM 自报 WorldArena EWMScore_P 73.06，列第二。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">世界模型</span></div>
+</a><a class="ledger-item" href="company-unitree.html" data-zone="company" data-tags="人形 硬件 杭州 人形 硬件 杭州">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/unitree.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/unitree-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>宇树科技</h3><div class="en">Unitree</div></div></div>
+  <p class="one">杭州人形与四足机器人厂商，产品有 G1、H1、Go2、B2；2026 年 8 月科创板上市。</p>
+  <div class="meta-row"><span class="tag z">杭州</span><span class="tag">人形</span><span class="tag">硬件</span></div>
+</a><a class="ledger-item" href="company-agibot.html" data-zone="company" data-tags="人形 数据 上海 人形 数据 上海 数据与仿真">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/agibot.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/agibot-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>智元机器人</h3><div class="en">AgiBot</div></div></div>
+  <p class="one">上海人形机器人公司，2023 年 2 月成立，产品有远征 A2、灵犀 X1，自研基座模型 GO-1。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">人形</span><span class="tag">数据</span></div>
+</a><a class="ledger-item" href="company-galbot.html" data-zone="company" data-tags="具身基座 零售 北京 具身基座 零售 北京">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/galbot.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/galbot-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>银河通用</h3><div class="en">Galbot</div></div></div>
+  <p class="one">发布 Galbot G1、S1 与双足 ET1，模型为「银河星脑」；2024 年展出无人药房方案。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">具身基座</span><span class="tag">零售</span></div>
+</a><a class="ledger-item" href="company-pi.html" data-zone="company" data-tags="VLA 开源 美国 VLA 开源 美国">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/pi.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/pi-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Physical Intelligence</h3><div class="en">PI</div></div></div>
+  <p class="one">发布 π0、π0.5、π0.7 系列 VLA 模型，并以 openpi 开源实现与权重。</p>
+  <div class="meta-row"><span class="tag z">San Francisco</span><span class="tag">VLA</span><span class="tag">开源</span></div>
+</a><a class="ledger-item" href="company-nvidia.html" data-zone="company" data-tags="世界模型 仿真 硬件 世界模型 仿真 硬件 数据与仿真">
+  <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/nvidia.svg" alt="" loading="lazy" decoding="async"></span><div><h3>NVIDIA</h3><div class="en">NVIDIA</div></div></div>
+  <p class="one">发布 GR00T 人形 VLA 与 Cosmos 世界模型，维护 Isaac Lab 仿真框架。</p>
+  <div class="meta-row"><span class="tag z">Santa Clara</span><span class="tag">世界模型</span><span class="tag">仿真</span></div>
+</a><a class="ledger-item" href="company-lightwheel.html" data-zone="company" data-tags="数据 仿真 评测 数据 仿真 评测 数据与仿真">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/lightwheel.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/lightwheel-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>光轮智能</h3><div class="en">LightWheel</div></div></div>
+  <p class="one">提供具身数据与仿真评测基础设施，团队在北京、上海。</p>
+  <div class="meta-row"><span class="tag z">北京 / 上海</span><span class="tag">数据</span><span class="tag">仿真</span></div>
+</a><a class="ledger-item" href="company-tesla.html" data-zone="company" data-tags="人形 FSD 美国 人形 FSD 美国 自动驾驶">
+  <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/tesla.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Tesla</h3><div class="en">Tesla</div></div></div>
+  <p class="one">研发 Optimus 人形机器人，2026 年 10 月称弗里蒙特产线已开始早期生产。</p>
+  <div class="meta-row"><span class="tag z">Austin</span><span class="tag">人形</span><span class="tag">FSD</span></div>
+</a><a class="ledger-item" href="company-figure.html" data-zone="company" data-tags="人形 VLA 物流 美国 人形 VLA 物流 美国 物流仓储">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/figure.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/figure-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Figure AI</h3><div class="en">Figure AI</div></div></div>
+  <p class="one">发布 Figure 03 人形与 Helix VLA，自建 BotQ 工厂。</p>
+  <div class="meta-row"><span class="tag z">San Jose</span><span class="tag">人形</span><span class="tag">VLA</span></div>
+</a><a class="ledger-item" href="company-boston.html" data-zone="company" data-tags="人形 四足 美国 人形 四足 美国">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/boston.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/boston-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Boston Dynamics</h3><div class="en">Boston Dynamics</div></div></div>
+  <p class="one">发布 Spot、Stretch 与电动 Atlas，2021 年起由现代汽车集团控股。</p>
+  <div class="meta-row"><span class="tag z">Waltham</span><span class="tag">人形</span><span class="tag">四足</span></div>
+</a><a class="ledger-item" href="company-agility.html" data-zone="company" data-tags="人形 物流 美国 人形 物流 美国 物流仓储">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/agility.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/agility-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Agility Robotics</h3><div class="en">Agility Robotics</div></div></div>
+  <p class="one">2026 年 11 月借 SPAC 登陆纳斯达克（AGLT），Digit 已在 GXO、舍弗勒、丰田工厂部署。</p>
+  <div class="meta-row"><span class="tag z">Salem</span><span class="tag">人形</span><span class="tag">物流</span></div>
+</a><a class="ledger-item" href="company-onex.html" data-zone="company" data-tags="人形 家用 挪威 人形 家用 挪威">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/onex.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/onex-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>1X Technologies</h3><div class="en">1X Technologies</div></div></div>
+  <p class="one">挪威起家的人形机器人公司，产品从轮式 EVE 转向家用双足 NEO。</p>
+  <div class="meta-row"><span class="tag z">San Carlos</span><span class="tag">人形</span><span class="tag">家用</span></div>
+</a><a class="ledger-item" href="company-apptronik.html" data-zone="company" data-tags="人形 工业 美国 人形 工业 美国">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/apptronik.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/apptronik-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Apptronik</h3><div class="en">Apptronik</div></div></div>
+  <p class="one">研发 Apollo 人形机器人，与 Google DeepMind 合作 Gemini Robotics。</p>
+  <div class="meta-row"><span class="tag z">Austin</span><span class="tag">人形</span><span class="tag">工业</span></div>
+</a><a class="ledger-item" href="company-skild.html" data-zone="company" data-tags="机器人基础模型 跨本体 美国 机器人基础模型 跨本体 美国">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/skild.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/skild-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Skild AI</h3><div class="en">Skild AI</div></div></div>
+  <p class="one">研发跨本体基座模型 Skild Brain，称一套模型可控制不同机器人。</p>
+  <div class="meta-row"><span class="tag z">Pittsburgh</span><span class="tag">机器人基础模型</span><span class="tag">跨本体</span></div>
+</a><a class="ledger-item" href="company-generalist.html" data-zone="company" data-tags="机器人基础模型 通用操作 美国 机器人基础模型 通用操作 美国">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/generalist.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/generalist-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Generalist AI</h3><div class="en">Generalist AI</div></div></div>
+  <p class="one">发布 GEN-0 机器人基础模型，主张用单一模型覆盖多种任务。</p>
+  <div class="meta-row"><span class="tag z">San Francisco</span><span class="tag">机器人基础模型</span><span class="tag">通用操作</span></div>
+</a><a class="ledger-item" href="company-covariant.html" data-zone="company" data-tags="仓储操作 基础模型 美国 仓储操作 基础模型 美国 物流仓储">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/covariant.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/covariant-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Covariant</h3><div class="en">Covariant</div></div></div>
+  <p class="one">发布仓储操作基础模型 RFM-1，2024 年三位创始人随技术授权加入亚马逊。</p>
+  <div class="meta-row"><span class="tag z">Berkeley</span><span class="tag">仓储操作</span><span class="tag">基础模型</span></div>
+</a><a class="ledger-item" href="company-dexterity.html" data-zone="company" data-tags="灵巧操作 物流 美国 灵巧操作 物流 美国 物流仓储">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/dexterity.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/dexterity-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Dexterity</h3><div class="en">Dexterity</div></div></div>
+  <p class="one">发布物流操作机器人 DexR、Mech 与世界模型 Foresight。</p>
+  <div class="meta-row"><span class="tag z">Redwood City</span><span class="tag">灵巧操作</span><span class="tag">物流</span></div>
+</a><a class="ledger-item" href="company-dyna.html" data-zone="company" data-tags="灵巧操作 基础模型 美国 灵巧操作 基础模型 美国">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/dyna.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/dyna-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Dyna Robotics</h3><div class="en">Dyna Robotics</div></div></div>
+  <p class="one">研发 Dyna-1 机器人基座模型，用真实部署数据训练双臂精细操作。</p>
+  <div class="meta-row"><span class="tag z">Redwood City</span><span class="tag">灵巧操作</span><span class="tag">基础模型</span></div>
+</a><a class="ledger-item" href="company-neura.html" data-zone="company" data-tags="人形 协作机器人 德国 人形 协作机器人 德国">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/neura.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/neura-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>NEURA Robotics</h3><div class="en">NEURA Robotics</div></div></div>
+  <p class="one">德国认知机器人公司，产品有 4NE1 人形、MAiRA 协作臂与 Neuraverse 技能平台。</p>
+  <div class="meta-row"><span class="tag z">Metzingen</span><span class="tag">人形</span><span class="tag">协作机器人</span></div>
+</a><a class="ledger-item" href="company-wayve.html" data-zone="company" data-tags="端到端 自动驾驶 英国 端到端 自动驾驶 英国 自动驾驶">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/wayve.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/wayve-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Wayve</h3><div class="en">Wayve</div></div></div>
+  <p class="one">研发端到端自动驾驶系统 Wayve AI Driver 与生成式世界模型 GAIA。</p>
+  <div class="meta-row"><span class="tag z">London</span><span class="tag">端到端</span><span class="tag">自动驾驶</span></div>
+</a><a class="ledger-item" href="company-worldlabs.html" data-zone="company" data-tags="世界模型 空间智能 美国 世界模型 空间智能 美国">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/worldlabs.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/worldlabs-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>World Labs</h3><div class="en">World Labs</div></div></div>
+  <p class="one">李飞飞创办的空间智能公司，首个产品 Marble 从图像、视频或文本生成可交互 3D 场景。</p>
+  <div class="meta-row"><span class="tag z">San Francisco</span><span class="tag">世界模型</span><span class="tag">空间智能</span></div>
+</a><a class="ledger-item" href="company-agilerobots.html" data-zone="company" data-tags="人形 机械臂 德国 人形 机械臂 德国">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/agilerobots.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/agilerobots-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Agile Robots</h3><div class="en">Agile Robots</div></div></div>
+  <p class="one">慕尼黑机器人公司，产品有 Diana 机械臂、Agile Hand 灵巧手与 Agile ONE 人形。</p>
+  <div class="meta-row"><span class="tag z">Munich / 北京</span><span class="tag">人形</span><span class="tag">机械臂</span></div>
+</a><a class="ledger-item" href="company-ubtech.html" data-zone="company" data-tags="人形 工业 深圳 人形 工业 深圳">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/ubtech.png" alt="" loading="lazy" decoding="async"></span><div><h3>优必选 UBTECH</h3><div class="en">UBTECH</div></div></div>
+  <p class="one">深圳人形机器人厂商，2023 年 12 月港股上市，产品有 Walker S 系列与 Cruzr 服务机器人。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">人形</span><span class="tag">工业</span></div>
+</a><a class="ledger-item" href="company-fourier.html" data-zone="company" data-tags="人形 康复 上海 人形 康复 上海">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/fourier.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/fourier-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>傅利叶智能</h3><div class="en">Fourier Intelligence</div></div></div>
+  <p class="one">上海机器人公司，以康复机器人起家，2023 年起推出 GR 系列人形。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">人形</span><span class="tag">康复</span></div>
+</a><a class="ledger-item" href="company-leju.html" data-zone="company" data-tags="人形 教育 深圳 人形 教育 深圳">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/leju.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/leju-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>乐聚机器人</h3><div class="en">Leju Robotics</div></div></div>
+  <p class="one">深圳人形机器人公司，产品有夸父 KUAVO 系列与 AELOS 教育机器人。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">人形</span><span class="tag">教育</span></div>
+</a><a class="ledger-item" href="company-galaxea.html" data-zone="company" data-tags="轮式双臂 VLA 北京 轮式双臂 VLA 北京">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/galaxea.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/galaxea-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>星海图</h3><div class="en">Galaxea</div></div></div>
+  <p class="one">研发 R1 系列轮式双臂本体与 EFM-1 具身基础模型。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">轮式双臂</span><span class="tag">VLA</span></div>
+</a><a class="ledger-item" href="company-robotera.html" data-zone="company" data-tags="人形 端到端 北京 人形 端到端 北京">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/robotera.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/robotera-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>星动纪元</h3><div class="en">Robot Era</div></div></div>
+  <p class="one">清华交叉信息研究院孵化，发布 STAR1 人形与 ERA-42 端到端模型。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">人形</span><span class="tag">端到端</span></div>
+</a><a class="ledger-item" href="company-xsquare.html" data-zone="company" data-tags="端到端 世界模型 深圳 端到端 世界模型 深圳">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/xsquare.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/xsquare-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>自变量机器人</h3><div class="en">X Square Robot</div></div></div>
+  <p class="one">深圳具身模型公司，发布 WALL-A 操作基座模型与量子系列机器人。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">端到端</span><span class="tag">世界模型</span></div>
+</a><a class="ledger-item" href="company-ai2r.html" data-zone="company" data-tags="通用机器人 世界模型 深圳 通用机器人 世界模型 深圳">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/ai2r.png" alt="" loading="lazy" decoding="async"></span><div><h3>智平方</h3><div class="en">AI2Robotics</div></div></div>
+  <p class="one">发布 Alpha Bot 系列机器人与 GOVLA 模型，2024 年与北大合作发布 RoboMamba。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">通用机器人</span><span class="tag">世界模型</span></div>
+</a><a class="ledger-item" href="company-limx.html" data-zone="company" data-tags="人形 足式 深圳 人形 足式 深圳">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/limx.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/limx-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>逐际动力</h3><div class="en">LimX Dynamics</div></div></div>
+  <p class="one">深圳足式与人形机器人公司，产品有 TRON 1、TRON 2、CL-1 与 Luna。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">人形</span><span class="tag">足式</span></div>
+</a><a class="ledger-item" href="company-engineai.html" data-zone="company" data-tags="人形 高动态 深圳 人形 高动态 深圳">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/engineai.png" alt="" loading="lazy" decoding="async"></span><div><h3>众擎机器人</h3><div class="en">EngineAI</div></div></div>
+  <p class="one">深圳人形机器人公司，产品有 SA01、SE01、PM01 与 S2。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">人形</span><span class="tag">高动态</span></div>
+</a><a class="ledger-item" href="company-paxini.html" data-zone="company" data-tags="触觉 灵巧手 深圳 触觉 灵巧手 深圳">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/paxini.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/paxini-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>帕西尼感知科技</h3><div class="en">PaXini Tech</div></div></div>
+  <p class="one">深圳触觉传感器与灵巧手公司，团队出自早稻田大学菅野实验室。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">触觉</span><span class="tag">灵巧手</span></div>
+</a><a class="ledger-item" href="company-linker.html" data-zone="company" data-tags="灵巧手 数据 北京 灵巧手 数据 北京 数据与仿真">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/v2/linker.png" alt="" loading="lazy" decoding="async"></span><div><h3>灵心巧手</h3><div class="en">Linker Hand</div></div></div>
+  <p class="one">北京灵巧手公司，产品有 Linker Hand 系列与 Open TeleDex 遥操作系统。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">灵巧手</span><span class="tag">数据</span></div>
+</a><a class="ledger-item" href="company-deeprobotics.html" data-zone="company" data-tags="四足 巡检 杭州 四足 巡检 杭州">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/deeprobotics.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/deeprobotics-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>云深处科技</h3><div class="en">Deep Robotics</div></div></div>
+  <p class="one">杭州四足机器人厂商，产品有绝影 X30、山猫 M20、绝影 Lite3，另研发人形。</p>
+  <div class="meta-row"><span class="tag z">杭州</span><span class="tag">四足</span><span class="tag">巡检</span></div>
+</a><a class="ledger-item" href="company-booster.html" data-zone="company" data-tags="人形 教育 北京 人形 教育 北京">
+  <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/booster.svg" alt="" loading="lazy" decoding="async"></span><div><h3>加速进化</h3><div class="en">Booster Robotics</div></div></div>
+  <p class="one">北京人形机器人公司，发布 Booster T1、K1，面向教育与科研场景。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">人形</span><span class="tag">教育</span></div>
+</a><a class="ledger-item" href="company-tars.html" data-zone="company" data-tags="具身大脑 操作 上海 具身大脑 操作 上海">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/tars.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/tars-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>它石智航</h3><div class="en">TARS</div></div></div>
+  <p class="one">上海具身模型公司，发布 AWE3.0 大模型、SenseHub 数据采集系统与 A1 机器人。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">具身大脑</span><span class="tag">操作</span></div>
+</a><a class="ledger-item" href="company-psi.html" data-zone="company" data-tags="灵巧操作 端到端 北京 灵巧操作 端到端 北京">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/psibot.png" alt="" loading="lazy" decoding="async"></span><div><h3>灵初智能</h3><div class="en">Psi Robot</div></div></div>
+  <p class="one">发布分层端到端 VLA 模型 Psi R1 与 PsiBot 机器人。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">灵巧操作</span><span class="tag">端到端</span></div>
+</a><a class="ledger-item" href="company-gigaai.html" data-zone="company" data-tags="世界模型 数据 北京 世界模型 数据 北京 数据与仿真">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/gigaai.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/gigaai-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>极佳视界</h3><div class="en">GigaAI</div></div></div>
+  <p class="one">北京世界模型公司，发布 GigaWorld、GigaBrain 模型与 Maker H01 轮式人形。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">世界模型</span><span class="tag">数据</span></div>
+</a><a class="ledger-item" href="company-xhumanoid.html" data-zone="company" data-tags="人形 开源 北京 人形 开源 北京">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/xhumanoid.png" alt="" loading="lazy" decoding="async"></span><div><h3>北京人形机器人创新中心</h3><div class="en">X-Humanoid</div></div></div>
+  <p class="one">北京经开区的人形机器人创新中心，发布天工开源人形与慧思开物平台。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">人形</span><span class="tag">开源</span></div>
+</a><a class="ledger-item" href="company-rokae.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/rokae.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/rokae-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>珞石</h3><div class="en">ROKAE Robotics</div></div></div>
+  <p class="one">力控协作机器人厂商，产品为 xMate 系列与 NB 系列，2026 年 7 月 9 日港股主板上市。</p>
+  <div class="meta-row"><span class="tag z">山东邹城</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-flexiv.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/flexiv.png" alt="" loading="lazy" decoding="async"></span><div><h3>上海非夕机器人科技有限公司</h3><div class="en">Flexiv</div></div></div>
+  <p class="one">上海自适应机器人厂商，产品为 Rizon 系列力控机械臂。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-dobot.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/dobot.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/dobot-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>深圳市越疆科技股份有限公司</h3><div class="en">Dobot</div></div></div>
+  <p class="one">深圳协作机器人厂商，2024 年 12 月港股上市，2025 年发布全尺寸人形 Atom。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-keenon.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/keenon.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/keenon-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>上海擎朗智能科技股份有限公司</h3><div class="en">KEENON Robotics</div></div></div>
+  <p class="one">上海服务机器人厂商，从餐厅配送扩展到清洁机器人与 XMAN 人形。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-pudu.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/pudu.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/pudu-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>深圳市普渡科技股份有限公司</h3><div class="en">Pudu Robotics</div></div></div>
+  <p class="one">深圳商用服务机器人厂商，产品有欢乐送、T300 与类人形 PUDU D7。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-uniubi.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/uniubi.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/uniubi-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>杭州宇泛智能科技股份有限公司</h3><div class="en">Uniubi AI</div></div></div>
+  <p class="one">杭州视觉 AI 公司，以人脸识别起家，2026 年发布四足机器人「灵猫」。</p>
+  <div class="meta-row"><span class="tag z">杭州</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-zhicheng-ai.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/zhicheng-ai.png" alt="" loading="lazy" decoding="async"></span><div><h3>智澄英达</h3><div class="en">Zhicheng AI</div></div></div>
+  <p class="one">前华为美研 CTO 胡鲁辉创办，研发澄灵物理世界模型与 TR4 轮式人形。</p>
+  <div class="meta-row"><span class="tag z">杭州</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-dexmal.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/dexmal.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/dexmal-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>北京原力灵机智能科技有限公司</h3><div class="en">Dexmal</div></div></div>
+  <p class="one">旷视联合创始人唐文斌创办，开源 VLA 工具箱 Dexbotic，并运营 RoboChallenge。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-trans-dimensional.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/trans-dimensional.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/trans-dimensional-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>深圳跨维智能科技有限公司</h3><div class="en">Trans-Dimensional Intelligence</div></div></div>
+  <p class="one">深圳机器人公司，以 DexVerse 仿真引擎与 3D 基础模型开发 Sim2Real 操作方案。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-casia-hand.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/casia-hand.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/casia-hand-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>中科硅纪</h3><div class="en">Casia Hand</div></div></div>
+  <p class="one">中科院自动化所孵化的灵巧手公司，产品有 Casia Hand 系列与无畏、无际整机。</p>
+  <div class="meta-row"><span class="tag z">南京</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-noetix.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/noetix.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/noetix-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>松延动力</h3><div class="en">Noetix Robotics</div></div></div>
+  <p class="one">北京小尺寸人形机器人公司，产品有 N2、E1 与仿生人脸 Hobbs。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-droidup.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg has-dark" src="assets/logos/v2/droidup.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/droidup-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>上海卓益得机器人有限公司</h3><div class="en">DroidUp</div></div></div>
+  <p class="one">上海理工大学李清都团队创办，研发完全仿生人形机器人 Moya 与行者二号。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-kepler.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/kepler.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/kepler-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>上海开普勒机器人有限公司</h3><div class="en">Kepler Robot</div></div></div>
+  <p class="one">上海人形机器人公司，产品有先行者 K1 与 K2「大黄蜂」，2026 年 6 月起由杭州柯林控股。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-huawei-embodied.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/huawei-embodied.svg" alt="" loading="lazy" decoding="async"></span><div><h3>华为</h3><div class="en">Huawei Embodied AI Innovation Center</div></div></div>
+  <p class="one">华为与深圳前海、宝安共建的具身智能平台，提供算力、盘古模型与工具链。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-ant-lingbo.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/ant-lingbo.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/ant-lingbo-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>上海蚂蚁灵波科技有限公司</h3><div class="en">Ant Lingbo</div></div></div>
+  <p class="one">蚂蚁集团旗下具身智能公司，研发跨本体机器人大脑与自研机器人 R-1、R-2。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-jd-embodied.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/v2/jd-embodied.png" alt="" loading="lazy" decoding="async"></span><div><h3>京东 Joyce / 京东探索研究院具身智能业务</h3><div class="en">JD JoyInside</div></div></div>
+  <p class="one">京东的具身智能业务，推出 JoyInside 品牌，并投资智元、千寻、逐际动力等公司。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-meituan-dragonball.html" data-zone="company" data-tags="具身智能 具身智能">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/meituan-dragonball.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/meituan-dragonball-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>美团龙珠</h3><div class="en">Meituan DragonBall</div></div></div>
+  <p class="one">美团旗下产业基金，领投星海图 A4、A5 轮与法奥机器人 C+ 轮。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">具身智能</span></div>
+</a><a class="ledger-item" href="company-sanctuary-ai.html" data-zone="company" data-tags="人形 海外 人形 海外">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/sanctuary-ai.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/sanctuary-ai-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Sanctuary AI (Sanctuary Cognitive Systems Corp.)</h3><div class="en">Sanctuary AI (Sanctuary Cognitive Systems Corp.)</div></div></div>
+  <p class="one">温哥华人形机器人公司，产品有 Phoenix 人形、Carbon 控制系统与液压灵巧手。</p>
+  <div class="meta-row"><span class="tag z">Vancouver</span><span class="tag">人形</span><span class="tag">海外</span></div>
+</a><a class="ledger-item" href="company-pal-robotics.html" data-zone="company" data-tags="人形 移动操作 海外 人形 移动操作 海外">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/pal-robotics.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/pal-robotics-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>PAL Robotics</h3><div class="en">PAL Robotics</div></div></div>
+  <p class="one">巴塞罗那机器人平台厂商，产品有 TIAGo 移动操作、TALOS 人形与 ARI 社交机器人。</p>
+  <div class="meta-row"><span class="tag z">Barcelona</span><span class="tag">人形</span><span class="tag">移动操作</span></div>
+</a><a class="ledger-item" href="company-rainbow-robotics.html" data-zone="company" data-tags="人形 协作臂 海外 人形 协作臂 海外">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/rainbow-robotics.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/rainbow-robotics-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Rainbow Robotics</h3><div class="en">Rainbow Robotics</div></div></div>
+  <p class="one">KAIST HUBO 团队创办的韩国上市公司，产品有 RB 系列协作臂与轮式人形 RB-Y1。</p>
+  <div class="meta-row"><span class="tag z">Sejong</span><span class="tag">人形</span><span class="tag">协作臂</span></div>
+</a><a class="ledger-item" href="company-robotis.html" data-zone="company" data-tags="开源 海外 开源 海外">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/robotis.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/robotis-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>ROBOTIS</h3><div class="en">ROBOTIS</div></div></div>
+  <p class="one">韩国 DYNAMIXEL 智能舵机厂商，维护 TurtleBot 3、OP3 等开源 ROS 平台。</p>
+  <div class="meta-row"><span class="tag z">Seoul</span><span class="tag">开源</span><span class="tag">海外</span></div>
+</a><a class="ledger-item" href="company-kawasaki.html" data-zone="company" data-tags="海外 海外">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/kawasaki.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/kawasaki-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Kawasaki Heavy Industries — Robot Division</h3><div class="en">Kawasaki Heavy Industries — Robot Division</div></div></div>
+  <p class="one">川崎重工机器人部门，1969 年造出日本首台国产工业机器人 Kawasaki-Unimate 2000。</p>
+  <div class="meta-row"><span class="tag z">Akashi</span><span class="tag">海外</span></div>
+</a><a class="ledger-item" href="company-honda.html" data-zone="company" data-tags="人形 海外 人形 海外">
+  <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/honda.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Honda R&amp;D — Robotics (ASIMO program)</h3><div class="en">Honda R&amp;D — Robotics (ASIMO program)</div></div></div>
+  <p class="one">本田的人形机器人研发项目，1986 年 E0 起步，2000 年发布 ASIMO。</p>
+  <div class="meta-row"><span class="tag z">Tokyo</span><span class="tag">人形</span><span class="tag">海外</span></div>
+</a><a class="ledger-item" href="company-mujin.html" data-zone="company" data-tags="海外 海外">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/v2/mujin.png" alt="" loading="lazy" decoding="async"></span><div><h3>Mujin, Inc.</h3><div class="en">Mujin, Inc.</div></div></div>
+  <p class="one">东京机器人软件公司，MujinOS 让工业臂与 AMR 免示教完成码垛、拣选与卸货。</p>
+  <div class="meta-row"><span class="tag z">Tokyo</span><span class="tag">海外</span></div>
+</a><a class="ledger-item" href="company-telexistence.html" data-zone="company" data-tags="人形 海外 人形 海外">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/telexistence.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/telexistence-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Telexistence Inc. (TX)</h3><div class="en">Telexistence Inc. (TX)</div></div></div>
+  <p class="one">东京机器人公司，补货机器人用于日本便利店，与 7-Eleven 日本开发 Astra 人形。</p>
+  <div class="meta-row"><span class="tag z">Tokyo</span><span class="tag">人形</span><span class="tag">海外</span></div>
+</a><a class="ledger-item" href="company-preferred-networks.html" data-zone="company" data-tags="海外 海外">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/preferred-networks.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/preferred-networks-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Preferred Networks (PFN)</h3><div class="en">Preferred Networks (PFN)</div></div></div>
+  <p class="one">东京深度学习公司，自研 MN-Core 芯片与超算，机器人业务拆分为 PF Robotics。</p>
+  <div class="meta-row"><span class="tag z">Tokyo</span><span class="tag">海外</span></div>
+</a><a class="ledger-item" href="company-naver-labs.html" data-zone="company" data-tags="海外 海外">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/naver-labs.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/naver-labs-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>NAVER LABS</h3><div class="en">NAVER LABS</div></div></div>
+  <p class="one">NAVER 的研究子公司，研究机器人、空间智能与数字孪生，代表硬件为线驱双臂 AMBIDEX。</p>
+  <div class="meta-row"><span class="tag z">Seongnam</span><span class="tag">海外</span></div>
+</a><a class="ledger-item" href="company-bear-robotics.html" data-zone="company" data-tags="配送 服务机器人 海外 配送 服务机器人 海外">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/v2/bear-robotics.png" alt="" loading="lazy" decoding="async"></span><div><h3>Bear Robotics</h3><div class="en">Bear Robotics</div></div></div>
+  <p class="one">服务机器人公司，Servi 系列用于餐厅送餐与回收，2025 年起由 LG 电子控股。</p>
+  <div class="meta-row"><span class="tag z">Redwood City</span><span class="tag">配送</span><span class="tag">服务机器人</span></div>
+</a><a class="ledger-item" href="company-serve-robotics.html" data-zone="company" data-tags="配送 海外 配送 海外">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/serve-robotics.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/serve-robotics-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Serve Robotics</h3><div class="en">Serve Robotics</div></div></div>
+  <p class="one">人行道配送机器人运营商，前身是 Postmates 机器人部门，2024 年在纳斯达克上市。</p>
+  <div class="meta-row"><span class="tag z">Redwood City</span><span class="tag">配送</span><span class="tag">海外</span></div>
+</a><a class="ledger-item" href="company-diligent-robotics.html" data-zone="company" data-tags="海外 海外">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/diligent-robotics.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/diligent-robotics-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Diligent Robotics</h3><div class="en">Diligent Robotics</div></div></div>
+  <p class="one">奥斯汀医疗机器人公司，Moxi 在医院运送物资与样本，2026 年 1 月被 Serve Robotics 收购。</p>
+  <div class="meta-row"><span class="tag z">Austin</span><span class="tag">海外</span></div>
+</a><a class="ledger-item" href="company-nuro.html" data-zone="company" data-tags="自动驾驶 配送 海外 自动驾驶 配送 海外 自动驾驶">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/nuro.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/nuro-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Nuro, Inc.</h3><div class="en">Nuro, Inc.</div></div></div>
+  <p class="one">从无人配送转向授权 L4 自动驾驶系统 Nuro Driver，与 Uber、Lucid 合作 Robotaxi。</p>
+  <div class="meta-row"><span class="tag z">Mountain View</span><span class="tag">自动驾驶</span><span class="tag">配送</span></div>
+</a><a class="ledger-item" href="company-aurora.html" data-zone="company" data-tags="自动驾驶 海外 自动驾驶 海外 自动驾驶">
+  <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/aurora.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Aurora Innovation, Inc.</h3><div class="en">Aurora Innovation, Inc.</div></div></div>
+  <p class="one">自动驾驶公司，Aurora Driver 先用于 8 级重卡干线货运。</p>
+  <div class="meta-row"><span class="tag z">Pittsburgh</span><span class="tag">自动驾驶</span><span class="tag">海外</span></div>
+</a><a class="ledger-item" href="company-waabi.html" data-zone="company" data-tags="自动驾驶 海外 自动驾驶 海外 自动驾驶">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/waabi.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/waabi-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Waabi</h3><div class="en">Waabi</div></div></div>
+  <p class="one">Raquel Urtasun 创办的自动驾驶卡车公司，用生成式仿真 Waabi World 验证驾驶系统。</p>
+  <div class="meta-row"><span class="tag z">Toronto</span><span class="tag">自动驾驶</span><span class="tag">海外</span></div>
+</a><a class="ledger-item" href="company-kodiak.html" data-zone="company" data-tags="自动驾驶 海外 自动驾驶 海外 自动驾驶">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/kodiak.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/kodiak-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Kodiak AI (Kodiak Robotics)</h3><div class="en">Kodiak AI (Kodiak Robotics)</div></div></div>
+  <p class="one">自动驾驶卡车公司，Kodiak Driver 用于干线货运与国防车辆，2025 年 9 月登陆纳斯达克。</p>
+  <div class="meta-row"><span class="tag z">Mountain View</span><span class="tag">自动驾驶</span><span class="tag">海外</span></div>
+</a><a class="ledger-item" href="company-osaro.html" data-zone="company" data-tags="海外 海外">
+  <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/osaro.svg" alt="" loading="lazy" decoding="async"></span><div><h3>OSARO Inc.</h3><div class="en">OSARO Inc.</div></div></div>
+  <p class="one">旧金山机器视觉公司，用 AI 软件驱动工业机器人完成电商仓拣选与配套打包。</p>
+  <div class="meta-row"><span class="tag z">San Francisco</span><span class="tag">海外</span></div>
+</a><a class="ledger-item" href="company-robust-ai.html" data-zone="company" data-tags="海外 海外">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/robust-ai.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/robust-ai-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Robust.AI</h3><div class="en">Robust.AI</div></div></div>
+  <p class="one">用认知引擎 Grace 结合传统机器人学与 AI，产品 Carter 为仓储协作搬运机器人。</p>
+  <div class="meta-row"><span class="tag z">San Francisco</span><span class="tag">海外</span></div>
+</a><a class="ledger-item" href="company-open-robotics.html" data-zone="company" data-tags="开源 海外 开源 海外">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/open-robotics.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/open-robotics-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Open Robotics (OSRF)</h3><div class="en">Open Robotics (OSRF)</div></div></div>
+  <p class="one">美国非营利组织，维护 ROS、Gazebo 与 Open-RMF。</p>
+  <div class="meta-row"><span class="tag z">San Jose</span><span class="tag">开源</span><span class="tag">海外</span></div>
+</a><a class="ledger-item" href="company-realsense.html" data-zone="company" data-tags="深度 传感 深度 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/realsense.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/realsense-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Intel RealSense</h3><div class="en">Intel RealSense</div></div></div>
+  <p class="one">Intel 的立体深度相机产品线，D400 与 D500 系列用于机器人视觉与三维重建。</p>
+  <div class="meta-row"><span class="tag z">库比蒂诺</span><span class="tag">深度</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-orbbec.html" data-zone="company" data-tags="深度 传感 深度 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/v2/orbbec.png" alt="" loading="lazy" decoding="async"></span><div><h3>奥比中光</h3><div class="en">Orbbec</div></div></div>
+  <p class="one">深圳的 3D 视觉厂商，Gemini 与 Femto 两条深度相机产品线，供机器人、扫描与消费设备。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">深度</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-stereolabs.html" data-zone="company" data-tags="深度 传感 深度 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/stereolabs.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/stereolabs-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Stereolabs</h3><div class="en">Stereolabs</div></div></div>
+  <p class="one">法国的立体视觉厂商，ZED 系列相机与配套 SDK 用于空间感知与机器人视觉。</p>
+  <div class="meta-row"><span class="tag z">巴黎</span><span class="tag">深度</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-insta360.html" data-zone="company" data-tags="全景 传感 全景 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/insta360.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/insta360-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>影石 Insta360</h3><div class="en">Insta360</div></div></div>
+  <p class="one">深圳的全景与运动相机厂商，X、GO、Ace 等产品常用于采集第一视角与场景数据。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">全景</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-econ.html" data-zone="company" data-tags="工业相机 传感 工业相机 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/v2/econ.png" alt="" loading="lazy" decoding="async"></span><div><h3>e-con Systems</h3><div class="en">e-con Systems</div></div></div>
+  <p class="one">印度的嵌入式相机模组厂商，为机器人、医疗与工业设备提供 USB 与 MIPI 相机。</p>
+  <div class="meta-row"><span class="tag z">金奈</span><span class="tag">工业相机</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-livox.html" data-zone="company" data-tags="激光雷达 传感 激光雷达 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/livox.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/livox-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>览沃科技</h3><div class="en">Livox</div></div></div>
+  <p class="one">大疆孵化的激光雷达厂商，Mid 与 Avia 系列以非重复扫描方式输出点云。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">激光雷达</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-ouster.html" data-zone="company" data-tags="激光雷达 传感 激光雷达 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/ouster.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/ouster-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Ouster</h3><div class="en">Ouster</div></div></div>
+  <p class="one">美国的数字激光雷达厂商，OS 系列以数字架构输出高分辨率点云。</p>
+  <div class="meta-row"><span class="tag z">旧金山</span><span class="tag">激光雷达</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-robosense.html" data-zone="company" data-tags="激光雷达 传感 激光雷达 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/v2/robosense.png" alt="" loading="lazy" decoding="async"></span><div><h3>速腾聚创</h3><div class="en">RoboSense</div></div></div>
+  <p class="one">深圳的激光雷达厂商，M 平台与 E 平台覆盖车载与机器人。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">激光雷达</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-contactile.html" data-zone="company" data-tags="触觉 传感 触觉 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/contactile.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/contactile-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Contactile</h3><div class="en">Contactile</div></div></div>
+  <p class="one">澳大利亚的触觉传感器公司，GAL 系列以气压式柔性传感测量三维力。</p>
+  <div class="meta-row"><span class="tag z">悉尼</span><span class="tag">触觉</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-digit.html" data-zone="company" data-tags="视触觉 传感 视触觉 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/digit.png" alt="" loading="lazy" decoding="async"></span><div><h3>Meta / GelSight</h3><div class="en">Meta / GelSight</div></div></div>
+  <p class="one">Meta FAIR 的视触觉传感器产品线，从开源的 DIGIT 到 DIGIT 360，GelSight 商业化。</p>
+  <div class="meta-row"><span class="tag z">门洛帕克</span><span class="tag">视触觉</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-xsens.html" data-zone="company" data-tags="IMU 传感 IMU 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/xsens.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/xsens-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Xsens</h3><div class="en">Xsens</div></div></div>
+  <p class="one">荷兰的运动捕捉与惯性传感厂商，MTi 系列 IMU 用于机器人状态估计与标定。</p>
+  <div class="meta-row"><span class="tag z">恩斯赫德</span><span class="tag">IMU</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-bosch.html" data-zone="company" data-tags="IMU 传感 IMU 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/bosch.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/bosch-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Bosch Sensortec</h3><div class="en">Bosch Sensortec</div></div></div>
+  <p class="one">博世的 MEMS 传感器业务，BMI 系列 IMU 与加速度计广泛用于消费与机器人设备。</p>
+  <div class="meta-row"><span class="tag z">罗伊特林根</span><span class="tag">IMU</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-tdk.html" data-zone="company" data-tags="IMU 传感 IMU 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/v2/tdk.png" alt="" loading="lazy" decoding="async"></span><div><h3>TDK InvenSense</h3><div class="en">TDK InvenSense</div></div></div>
+  <p class="one">TDK 旗下的 MEMS 惯性传感器业务，ICM 系列 IMU 用于姿态与运动测量。</p>
+  <div class="meta-row"><span class="tag z">圣何塞</span><span class="tag">IMU</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-bota.html" data-zone="company" data-tags="力/力矩 传感 力/力矩 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/bota.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/bota-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Bota Systems</h3><div class="en">Bota Systems</div></div></div>
+  <p class="one">瑞士的六轴力/力矩传感器厂商，ONE 系列用于协作机器人与力控研究。</p>
+  <div class="meta-row"><span class="tag z">苏黎世</span><span class="tag">力/力矩</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-kinco.html" data-zone="company" data-tags="电机/驱动 传感 电机/驱动 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/kinco.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/kinco-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>步科</h3><div class="en">Kinco</div></div></div>
+  <p class="one">上海步科的工业自动化与机器人部件业务；无框力矩电机与一体伺服驱动电机用于关节模组。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">电机/驱动</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-calibio.html" data-zone="company" data-tags="标定 传感 标定 传感">
+  <div class="item-top"><span class="plate"><img class="lg has-dark" src="assets/logos/v2/calibio.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/calibio-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Calib.io</h3><div class="en">Calib.io</div></div></div>
+  <p class="one">丹麦的相机标定板厂商，提供高精度标定板与标定服务。</p>
+  <div class="meta-row"><span class="tag z">斯文堡</span><span class="tag">标定</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-vicon.html" data-zone="company" data-tags="动捕/标定 传感 动捕/标定 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/vicon.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/vicon-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Vicon</h3><div class="en">Vicon</div></div></div>
+  <p class="one">英国的光学动作捕捉厂商，用于机器人定位评估与多相机标定。</p>
+  <div class="meta-row"><span class="tag z">牛津</span><span class="tag">动捕/标定</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-qualisys.html" data-zone="company" data-tags="动捕/标定 传感 动捕/标定 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/qualisys.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/qualisys-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Qualisys</h3><div class="en">Qualisys</div></div></div>
+  <p class="one">瑞典的光学动作捕捉厂商，Miqus 等相机用于运动捕捉与地面真值。</p>
+  <div class="meta-row"><span class="tag z">哥德堡</span><span class="tag">动捕/标定</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-manus.html" data-zone="company" data-tags="动捕/手套 传感 动捕/手套 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/manus.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/manus-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>MANUS</h3><div class="en">MANUS</div></div></div>
+  <p class="one">荷兰的手部动作捕捉厂商，Metagloves 与 Quantum 系列用于手套式遥操作与数据采集。</p>
+  <div class="meta-row"><span class="tag z">埃因霍温</span><span class="tag">动捕/手套</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-rokoko.html" data-zone="company" data-tags="动捕 传感 动捕 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/rokoko.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/rokoko-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Rokoko</h3><div class="en">Rokoko</div></div></div>
+  <p class="one">丹麦的动作捕捉公司，Smartsuit 系列用于人体动作采集与动画。</p>
+  <div class="meta-row"><span class="tag z">哥本哈根</span><span class="tag">动捕</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-khadas.html" data-zone="company" data-tags="边缘计算 传感 边缘计算 传感">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/v2/khadas.png" alt="" loading="lazy" decoding="async"></span><div><h3>Khadas</h3><div class="en">Khadas</div></div></div>
+  <p class="one">深圳的边缘计算板卡厂商，Edge 与 VIM 系列基于瑞芯微 SoC。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">边缘计算</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-heidenhain.html" data-zone="company" data-tags="编码器 传感 编码器 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/heidenhain.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/heidenhain-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>海德汉</h3><div class="en">HEIDENHAIN</div></div></div>
+  <p class="one">德国的测量与编码器厂商，旋转与直线编码器用于机床与精密运动。</p>
+  <div class="meta-row"><span class="tag z">特劳恩罗伊特</span><span class="tag">编码器</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-seeed.html" data-zone="company" data-tags="边缘计算 传感 边缘计算 传感">
+  <div class="item-top"><span class="plate"><img class="lg has-dark" src="assets/logos/v2/seeed.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/seeed-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>矽递科技</h3><div class="en">Seeed Studio</div></div></div>
+  <p class="one">深圳的开源硬件厂商，reComputer 系列基于 Jetson 模组，用于边缘 AI。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">边缘计算</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-tamagawa.html" data-zone="company" data-tags="编码器 传感 编码器 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/tamagawa.svg" alt="" loading="lazy" decoding="async"></span><div><h3>多摩川</h3><div class="en">Tamagawa</div></div></div>
+  <p class="one">日本的编码器与旋转变压器厂商，产品用于伺服电机与关节反馈。</p>
+  <div class="meta-row"><span class="tag z">饭田</span><span class="tag">编码器</span><span class="tag">传感</span></div>
+</a><a class="ledger-item" href="company-franka.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/franka.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/franka-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Franka Robotics</h3><div class="en">Franka Robotics</div></div></div>
+  <p class="one">德国慕尼黑公司，产品为七自由度力控臂 FR3 与双臂系统 FR3 Duo，开放 1 kHz 底层控制接口 FCI。</p>
+  <div class="meta-row"><span class="tag z">慕尼黑</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-universal-robots.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/universal-robots.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/universal-robots-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>优傲机器人</h3><div class="en">Universal Robots</div></div></div>
+  <p class="one">丹麦欧登塞公司，2005 年成立；协作机器人分 e-Series、UR、g-Series 三族。</p>
+  <div class="meta-row"><span class="tag z">欧登塞</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-jaka.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/jaka.png" alt="" loading="lazy" decoding="async"></span><div><h3>节卡机器人</h3><div class="en">JAKA Robotics</div></div></div>
+  <p class="one">上海节卡，协作机器人 Zu / S / AL / A / Mini 系列，另有 K 系列人形双臂。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-kassow.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/kassow.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/kassow-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Kassow Robots</h3><div class="en">Kassow Robots</div></div></div>
+  <p class="one">丹麦哥本哈根公司，2015 年创立，全系为七轴轻量协作臂 KR 系列，2022 年博世力士乐入股控股。</p>
+  <div class="meta-row"><span class="tag z">哥本哈根</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-elephant-robotics.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/elephant-robotics.png" alt="" loading="lazy" decoding="async"></span><div><h3>大象机器人</h3><div class="en">Elephant Robotics</div></div></div>
+  <p class="one">深圳大象机器人，产品从桌面六轴 myCobot 到十七自由度双臂 Mercury B1。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-agilex.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/agilex.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/agilex-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>松灵机器人</h3><div class="en">AgileX Robotics</div></div></div>
+  <p class="one">深圳松灵，自研 PiPER 六轴臂与 NERO 七轴臂；双臂平台有 Cobot Magic 与 PiPER Dual。</p>
+  <div class="meta-row"><span class="tag z">东莞</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-realman.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/realman.png" alt="" loading="lazy" decoding="async"></span><div><h3>睿尔曼智能</h3><div class="en">RealMan Robotics</div></div></div>
+  <p class="one">北京睿尔曼，产品含 RM65/RM75 轻量臂、双臂升降平台与 RealBot 人形系列。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-trossen-robotics.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/trossen-robotics.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/trossen-robotics-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Trossen Robotics</h3><div class="en">Trossen Robotics</div></div></div>
+  <p class="one">美国 Trossen Robotics，ALOHA 开源双臂硬件的官方厂商，现出货 Trossen AI 系列。</p>
+  <div class="meta-row"><span class="tag z">唐纳斯格罗夫</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-inspire-robots.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/inspire-robots.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/inspire-robots-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>因时机器人</h3><div class="en">INSPIRE ROBOTS</div></div></div>
+  <p class="one">北京公司，做微型直线伺服执行器和五指尖仿人灵巧手 RH56 系列。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-shadow-robot.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/shadow-robot.png" alt="" loading="lazy" decoding="async"></span><div><h3>Shadow Robot</h3><div class="en">Shadow Robot Company</div></div></div>
+  <p class="one">伦敦公司，22 年做腱驱五指灵巧手，配套遥操作手套和系统。</p>
+  <div class="meta-row"><span class="tag z">伦敦</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-brainco.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/brainco.png" alt="" loading="lazy" decoding="async"></span><div><h3>强脑科技</h3><div class="en">BrainCo</div></div></div>
+  <p class="one">杭州脑机接口公司，Revo 系列仿生灵巧手用于人形与服务机器人。</p>
+  <div class="meta-row"><span class="tag z">杭州</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-oymotion.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/oymotion.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/oymotion-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>傲意科技</h3><div class="en">OYMotion</div></div></div>
+  <p class="one">上海张江公司，ROHAND 灵巧手与 OHAND 肌电仿生手同一套手部结构。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-wonik-allegro.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/wonik-allegro.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/wonik-allegro-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>元益机器人（Allegro Hand）</h3><div class="en">Wonik Robotics / Allegro Hand</div></div></div>
+  <p class="one">韩国 Wonik Robotics 的 Allegro Hand 四指灵巧手，现出到 V6 系列。</p>
+  <div class="meta-row"><span class="tag z">城南市</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-stretchsense.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/stretchsense.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/stretchsense-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>StretchSense</h3><div class="en">StretchSense</div></div></div>
+  <p class="one">新西兰柔性传感公司，Reality 手套用可拉伸传感器采手部动作与接触。</p>
+  <div class="meta-row"><span class="tag z">奥克兰</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-d-robotics.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/d-robotics.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/d-robotics-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>地瓜机器人</h3><div class="en">D-Robotics</div></div></div>
+  <p class="one">深圳地瓜机器人，做旭日系列芯片与 RDK 机器人开发者套件（X3/X5/S100/S600）。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-amd-kria.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/amd-kria.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/amd-kria-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>AMD Kria</h3><div class="en">AMD Kria</div></div></div>
+  <p class="one">AMD（原 Xilinx）的自适应 SoM 产品线，K26 SOM 配 KV260 视觉 AI 入门套件。</p>
+  <div class="meta-row"><span class="tag z">圣克拉拉</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-lattepanda.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/v2/lattepanda.png" alt="" loading="lazy" decoding="async"></span><div><h3>LattePanda</h3><div class="en">LattePanda</div></div></div>
+  <p class="one">上海 DFRobot 的单板机品牌，Sigma 2 配 Core Ultra X7 358H 与 64GB 内存。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-rockchip.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/rockchip.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/rockchip-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>瑞芯微</h3><div class="en">Rockchip</div></div></div>
+  <p class="one">福州瑞芯微，RK3588 为八核 A76/A55 加 6 TOPS NPU 的通用 SoC，多用于机器人主板。</p>
+  <div class="meta-row"><span class="tag z">福州</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-cambricon.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/cambricon.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/cambricon-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>寒武纪</h3><div class="en">Cambricon</div></div></div>
+  <p class="one">北京寒武纪，做云端与边缘 AI 芯片，MLU370 系列加速卡峰值 192 TOPS INT8。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-percipio.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/percipio.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/percipio-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>图漾科技</h3><div class="en">Percipio</div></div></div>
+  <p class="one">南京图漾科技，做 ToF 与结构光 3D 工业相机，T 系列为 dToF 高帧率相机。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-ati-ia.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/ati-ia.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/ati-ia-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>ATI 工业自动化</h3><div class="en">ATI Industrial Automation</div></div></div>
+  <p class="one">美国 ATI，做机器人末端六维力/力矩传感器与自动换枪盘，Gamma 为硅应变片 F/T 系列。</p>
+  <div class="meta-row"><span class="tag z">阿佩克斯</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-sri-force.html" data-zone="company" data-tags="本体 力/力矩 传感 本体 力/力矩 传感">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc" src="assets/logos/v2/sri-force.png" alt="" loading="lazy" decoding="async"></span><div><h3>宇立仪器</h3><div class="en">Sunrise Instruments (SRI)</div></div></div>
+  <p class="one">常州宇立仪器，做六维力/力矩传感器、关节扭矩传感器与力控打磨系统。</p>
+  <div class="meta-row"><span class="tag z">南宁</span><span class="tag">本体</span><span class="tag">力/力矩</span></div>
+</a><a class="ledger-item" href="company-clearpath.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/clearpath.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/clearpath-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Clearpath Robotics</h3><div class="en">Clearpath Robotics</div></div></div>
+  <p class="one">加拿大移动机器人厂商，产品有 Husky、Jackal、Ridgeback，现属罗克韦尔自动化。</p>
+  <div class="meta-row"><span class="tag z">基奇纳</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-robotnik.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/robotnik.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/robotnik-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Robotnik</h3><div class="en">Robotnik Automation</div></div></div>
+  <p class="one">西班牙移动机器人厂商，做室内外 AMR 与移动操作平台，如 RB-SUMMIT。</p>
+  <div class="meta-row"><span class="tag z">帕特纳</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-ghost-robotics.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/ghost-robotics.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Ghost Robotics</h3><div class="en">Ghost Robotics</div></div></div>
+  <p class="one">美国四足机器人厂商，主打 Vision 60 系列 Q-UGV，面向国防与工业巡检。</p>
+  <div class="meta-row"><span class="tag z">本体</span></div>
+</a><a class="ledger-item" href="company-astribot.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/astribot.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/astribot-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>星尘智能</h3><div class="en">Astribot</div></div></div>
+  <p class="one">深圳公司，产品为轮式人形 Astribot S1，官网按「星尘智能 S1 / 普通成年男性」两列对比给参数。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-benewake.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/benewake.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/benewake-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>北醒</h3><div class="en">Benewake</div></div></div>
+  <p class="one">北京北醒光子，做单点与线阵 ToF 测距雷达；TF 与 NOVA 系列用于机器人近场避障。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-casbot.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/casbot.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/casbot-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>中科慧灵</h3><div class="en">CASBOT</div></div></div>
+  <p class="one">北京公司（CASBOT），在售双足人形 02 与轮式 W1，官网产品页列核心参数与京东购买入口。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-gaussian-robotics.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/gaussian-robotics.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/gaussian-robotics-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>高仙机器人</h3><div class="en">Gaussian Robotics</div></div></div>
+  <p class="one">上海商用清洁机器人厂商，2013 年成立，产品含奂影 S1、Scrubber 50/75 与 Beetle。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-hailo.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/hailo.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/hailo-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Hailo</h3><div class="en">Hailo</div></div></div>
+  <p class="one">以色列特拉维夫的边缘 AI 芯片公司，Hailo-8 为 26 TOPS 推理加速器。</p>
+  <div class="meta-row"><span class="tag z">特拉维夫</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-hesai.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/v2/hesai.svg" alt="" loading="lazy" decoding="async"></span><div><h3>禾赛科技</h3><div class="en">Hesai Technology</div></div></div>
+  <p class="one">上海禾赛，车载与机器人激光雷达厂，ADAS 与机器两条产品线。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-kneron.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/kneron.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/kneron-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>耐能</h3><div class="en">Kneron</div></div></div>
+  <p class="one">2015 年成立于美国圣地亚哥的边缘 AI 芯片公司，KL730 标 8 TOPS。</p>
+  <div class="meta-row"><span class="tag z">圣地亚哥</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-kunwei.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/kunwei.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/kunwei-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>坤维科技</h3><div class="en">Kunwei</div></div></div>
+  <p class="one">常州坤维传感，做六维力与关节扭矩传感器，2020 年推出 HRS 人形系列。</p>
+  <div class="meta-row"><span class="tag z">常州</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-mab-robotics.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/mab-robotics.png" alt="" loading="lazy" decoding="async"></span><div><h3>MAB Robotics</h3><div class="en">MAB Robotics</div></div></div>
+  <p class="one">波兰公司，四足整机 Honey Badger 5.0 之外还做 MD 电机驱动器、MA 执行器等运动控制部件。</p>
+  <div class="meta-row"><span class="tag z">波兹南</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-magiclab.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/magiclab.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/magiclab-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>魔法原子</h3><div class="en">MagicLab</div></div></div>
+  <p class="one">苏州公司，通用人形 MagicBot Gen1 / Z1 / X1，官网 Gen1 页给完整机械与电气参数表。</p>
+  <div class="meta-row"><span class="tag z">苏州</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-milkv.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-box" src="assets/logos/milkv.svg" alt="" loading="lazy" decoding="async"></span><div><h3>Milk-V</h3><div class="en">Milk-V</div></div></div>
+  <p class="one">做 RISC-V 开源硬件板卡，Jupiter 是 Mini-ITX 规格八核 RISC-V 主板。</p>
+  <div class="meta-row"><span class="tag z">深圳</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-mobile-industrial-robots.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/mobile-industrial-robots.png" alt="" loading="lazy" decoding="async"></span><div><h3>Mobile Industrial Robots</h3><div class="en">Mobile Industrial Robots (MiR)</div></div></div>
+  <p class="one">丹麦工业 AMR 厂商，2013 年成立于欧登塞，现属 Teradyne，载重覆盖 250 至 1350 kg。</p>
+  <div class="meta-row"><span class="tag z">欧登塞</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-neobotix.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/neobotix.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/neobotix-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Neobotix</h3><div class="en">Neobotix GmbH</div></div></div>
+  <p class="one">德国移动平台厂商，2010 年从 GPS GmbH 机器人部门独立，做 MP/MPO 底盘与 ROX 全向平台。</p>
+  <div class="meta-row"><span class="tag z">海尔布隆</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-noitom.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/noitom.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/noitom-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>诺亦腾</h3><div class="en">Noitom</div></div></div>
+  <p class="one">北京诺亦腾，做惯性动捕 Perception Neuron 系列与 Hi5 手套，另有子公司做具身数据采集。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-otto-motors.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/otto-motors.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/otto-motors-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>OTTO Motors（罗克韦尔）</h3><div class="en">OTTO by Rockwell Automation</div></div></div>
+  <p class="one">罗克韦尔旗下的工业 AMR 品牌，前身是 Clearpath 工业部门，载重 100 至 1500 kg。</p>
+  <div class="meta-row"><span class="tag z">基奇纳</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-persona-ai.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/persona-ai.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/persona-ai-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Persona AI</h3><div class="en">Persona AI</div></div></div>
+  <p class="one">美国公司，面向船厂、建筑与能源的模块化工业人形，官网人形页只讲设计与工况，不列数值参数。</p>
+  <div class="meta-row"><span class="tag z">休斯敦</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-pollen-robotics.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/pollen-robotics.png" alt="" loading="lazy" decoding="async"></span><div><h3>Pollen Robotics</h3><div class="en">Pollen Robotics</div></div></div>
+  <p class="one">法国 Pollen Robotics（2025 年并入 Hugging Face）。</p>
+  <div class="meta-row"><span class="tag z">波尔多</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-quicktron.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/quicktron.png" alt="" loading="lazy" decoding="async"></span><div><h3>快仓智能</h3><div class="en">Quicktron Robotics</div></div></div>
+  <p class="one">上海仓储机器人厂商，官网按 C/M/F 系列给出各型号负载、举升高度、导航方式与速度。</p>
+  <div class="meta-row"><span class="tag z">上海</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-reflex-robotics.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/reflex-robotics.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/reflex-robotics-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Reflex Robotics</h3><div class="en">Reflex Robotics</div></div></div>
+  <p class="one">美国公司，做轮式人形做仓库上架/取货，官网称本体可达超人的臂展、负载与续航，未公布数值。</p>
+  <div class="meta-row"><span class="tag z">纽约</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-senseglove.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dc has-dark" src="assets/logos/v2/senseglove.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/senseglove-dark.svg" alt="" loading="lazy" decoding="async"></span><div><h3>SenseGlove</h3><div class="en">SenseGlove</div></div></div>
+  <p class="one">荷兰代尔夫特理工孵化，做力反馈与触觉手套，Nova 2 与 R1 两条线。</p>
+  <div class="meta-row"><span class="tag z">代尔夫特</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-weilan.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg lg-dm has-dark" src="assets/logos/v2/weilan.png" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/weilan-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>蔚蓝科技</h3><div class="en">WEILAN</div></div></div>
+  <p class="one">南京蔚蓝智能科技，做 BabyAlpha 系列消费级四足与 Alpha Dog C 系列。</p>
+  <div class="meta-row"><span class="tag z">南京</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-yunji.html" data-zone="company" data-tags="本体 本体">
+  <div class="item-top"><span class="plate"><img class="lg" src="assets/logos/v2/yunji.png" alt="" loading="lazy" decoding="async"></span><div><h3>云迹科技</h3><div class="en">YunJi Technology</div></div></div>
+  <p class="one">2014 年在北京成立的酒店服务机器人公司，2025 年 10 月在港交所上市，主推复合多态机器人 UP。</p>
+  <div class="meta-row"><span class="tag z">北京</span><span class="tag">本体</span></div>
+</a><a class="ledger-item" href="company-anthropic.html" data-zone="company" data-tags="基座模型 智能体 海外 基座模型 智能体 海外">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/anthropic.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/anthropic-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>Anthropic</h3><div class="en">Anthropic</div></div></div>
+  <p class="one">Claude 系列模型的开发方；Claude Fable 5.2 自报 RoboDojo 仿真成功率 64.9%。</p>
+  <div class="meta-row"><span class="tag z">旧金山</span><span class="tag">基座模型</span><span class="tag">智能体</span></div>
+</a><a class="ledger-item" href="company-openai.html" data-zone="company" data-tags="基座模型 智能体 海外 基座模型 智能体 海外">
+  <div class="item-top"><span class="plate"><img class="lg lg-box has-dark" src="assets/logos/v2/openai.svg" alt="" loading="lazy" decoding="async"><img class="lg lg-night" src="assets/logos/v2/openai-dark.png" alt="" loading="lazy" decoding="async"></span><div><h3>OpenAI</h3><div class="en">OpenAI</div></div></div>
+  <p class="one">GPT 系列模型的开发方；2026 年 11 月解散独立机器人团队，人员并入研究与产品部门。</p>
+  <div class="meta-row"><span class="tag z">旧金山</span><span class="tag">基座模型</span><span class="tag">智能体</span></div>
+</a></div>
+    <div class="index-list" id="indexView" hidden><a class="row" href="company-qianxun.html" data-tags="VLA 具身基座 杭州"><span class="no">01</span><span class="nm">千寻智能<small>Spirit AI</small></span><span class="ct">杭州</span><span class="yr">2024-01</span></a><a class="row" href="company-wujie.html" data-tags="世界模型 VLA"><span class="no">02</span><span class="nm">无界动力<small>Anyverse Dynamics</small></span><span class="ct">北京</span><span class="yr">2025-03</span></a><a class="row" href="company-beingbeyond.html" data-tags="世界模型 人类视频"><span class="no">03</span><span class="nm">智在无界<small>BeingBeyond</small></span><span class="ct">北京</span><span class="yr">2025-05</span></a><a class="row" href="company-xiaomi.html" data-tags="跨域基座 开源 北京"><span class="no">04</span><span class="nm">小米<small>Xiaomi</small></span><span class="ct">北京</span><span class="yr">2010-04-06</span></a><a class="row" href="company-amap.html" data-tags="VLA 导航 北京"><span class="no">05</span><span class="nm">高德<small>Amap</small></span><span class="ct">北京</span><span class="yr">2002</span></a><a class="row" href="company-moke.html" data-tags="世界模型"><span class="no">06</span><span class="nm">莫刻机器人<small>MUKA Robotics</small></span><span class="ct">北京</span><span class="yr">2026-04-01</span></a><a class="row" href="company-unitree.html" data-tags="人形 硬件 杭州"><span class="no">07</span><span class="nm">宇树科技<small>Unitree</small></span><span class="ct">杭州</span><span class="yr">2016-08</span></a><a class="row" href="company-agibot.html" data-tags="人形 数据 上海"><span class="no">08</span><span class="nm">智元机器人<small>AgiBot</small></span><span class="ct">上海</span><span class="yr">2023-02</span></a><a class="row" href="company-galbot.html" data-tags="具身基座 零售 北京"><span class="no">09</span><span class="nm">银河通用<small>Galbot</small></span><span class="ct">北京</span><span class="yr">2023-05</span></a><a class="row" href="company-pi.html" data-tags="VLA 开源 美国"><span class="no">10</span><span class="nm">Physical Intelligence<small>PI</small></span><span class="ct">San Francisco</span><span class="yr">2024-02</span></a><a class="row" href="company-nvidia.html" data-tags="世界模型 仿真 硬件"><span class="no">11</span><span class="nm">NVIDIA<small>NVIDIA</small></span><span class="ct">Santa Clara</span><span class="yr">1993-04-05</span></a><a class="row" href="company-lightwheel.html" data-tags="数据 仿真 评测"><span class="no">12</span><span class="nm">光轮智能<small>LightWheel</small></span><span class="ct">北京 / 上海</span><span class="yr">2023-01</span></a><a class="row" href="company-tesla.html" data-tags="人形 FSD 美国"><span class="no">13</span><span class="nm">Tesla<small>Tesla</small></span><span class="ct">Austin</span><span class="yr">2003</span></a><a class="row" href="company-figure.html" data-tags="人形 VLA 物流 美国"><span class="no">14</span><span class="nm">Figure AI<small>Figure AI</small></span><span class="ct">San Jose</span><span class="yr">2022-05</span></a><a class="row" href="company-boston.html" data-tags="人形 四足 美国"><span class="no">15</span><span class="nm">Boston Dynamics<small>Boston Dynamics</small></span><span class="ct">Waltham</span><span class="yr">1992</span></a><a class="row" href="company-agility.html" data-tags="人形 物流 美国"><span class="no">16</span><span class="nm">Agility Robotics<small>Agility Robotics</small></span><span class="ct">Salem</span><span class="yr">2015</span></a><a class="row" href="company-onex.html" data-tags="人形 家用 挪威"><span class="no">17</span><span class="nm">1X Technologies<small>1X Technologies</small></span><span class="ct">San Carlos</span><span class="yr">2014</span></a><a class="row" href="company-apptronik.html" data-tags="人形 工业 美国"><span class="no">18</span><span class="nm">Apptronik<small>Apptronik</small></span><span class="ct">Austin</span><span class="yr">2016</span></a><a class="row" href="company-skild.html" data-tags="机器人基础模型 跨本体 美国"><span class="no">19</span><span class="nm">Skild AI<small>Skild AI</small></span><span class="ct">Pittsburgh</span><span class="yr">2023</span></a><a class="row" href="company-generalist.html" data-tags="机器人基础模型 通用操作 美国"><span class="no">20</span><span class="nm">Generalist AI<small>Generalist AI</small></span><span class="ct">San Francisco</span><span class="yr">2024</span></a><a class="row" href="company-covariant.html" data-tags="仓储操作 基础模型 美国"><span class="no">21</span><span class="nm">Covariant<small>Covariant</small></span><span class="ct">Berkeley</span><span class="yr">2017</span></a><a class="row" href="company-dexterity.html" data-tags="灵巧操作 物流 美国"><span class="no">22</span><span class="nm">Dexterity<small>Dexterity</small></span><span class="ct">Redwood City</span><span class="yr">2017</span></a><a class="row" href="company-dyna.html" data-tags="灵巧操作 基础模型 美国"><span class="no">23</span><span class="nm">Dyna Robotics<small>Dyna Robotics</small></span><span class="ct">Redwood City</span><span class="yr">2024</span></a><a class="row" href="company-neura.html" data-tags="人形 协作机器人 德国"><span class="no">24</span><span class="nm">NEURA Robotics<small>NEURA Robotics</small></span><span class="ct">Metzingen</span><span class="yr">2019</span></a><a class="row" href="company-wayve.html" data-tags="端到端 自动驾驶 英国"><span class="no">25</span><span class="nm">Wayve<small>Wayve</small></span><span class="ct">London</span><span class="yr">2017</span></a><a class="row" href="company-worldlabs.html" data-tags="世界模型 空间智能 美国"><span class="no">26</span><span class="nm">World Labs<small>World Labs</small></span><span class="ct">San Francisco</span><span class="yr">2024</span></a><a class="row" href="company-agilerobots.html" data-tags="人形 机械臂 德国"><span class="no">27</span><span class="nm">Agile Robots<small>Agile Robots</small></span><span class="ct">Munich / 北京</span><span class="yr">2018</span></a><a class="row" href="company-ubtech.html" data-tags="人形 工业 深圳"><span class="no">28</span><span class="nm">优必选 UBTECH<small>UBTECH</small></span><span class="ct">深圳</span><span class="yr">2012</span></a><a class="row" href="company-fourier.html" data-tags="人形 康复 上海"><span class="no">29</span><span class="nm">傅利叶智能<small>Fourier Intelligence</small></span><span class="ct">上海</span><span class="yr">2015</span></a><a class="row" href="company-leju.html" data-tags="人形 教育 深圳"><span class="no">30</span><span class="nm">乐聚机器人<small>Leju Robotics</small></span><span class="ct">深圳</span><span class="yr">2016</span></a><a class="row" href="company-galaxea.html" data-tags="轮式双臂 VLA 北京"><span class="no">31</span><span class="nm">星海图<small>Galaxea</small></span><span class="ct">北京</span><span class="yr">2023-09</span></a><a class="row" href="company-robotera.html" data-tags="人形 端到端 北京"><span class="no">32</span><span class="nm">星动纪元<small>Robot Era</small></span><span class="ct">北京</span><span class="yr">2023-08</span></a><a class="row" href="company-xsquare.html" data-tags="端到端 世界模型 深圳"><span class="no">33</span><span class="nm">自变量机器人<small>X Square Robot</small></span><span class="ct">深圳</span><span class="yr">2023-12</span></a><a class="row" href="company-ai2r.html" data-tags="通用机器人 世界模型 深圳"><span class="no">34</span><span class="nm">智平方<small>AI2Robotics</small></span><span class="ct">深圳</span><span class="yr">2023-04</span></a><a class="row" href="company-limx.html" data-tags="人形 足式 深圳"><span class="no">35</span><span class="nm">逐际动力<small>LimX Dynamics</small></span><span class="ct">深圳</span><span class="yr">2022-01</span></a><a class="row" href="company-engineai.html" data-tags="人形 高动态 深圳"><span class="no">36</span><span class="nm">众擎机器人<small>EngineAI</small></span><span class="ct">深圳</span><span class="yr">2023-10</span></a><a class="row" href="company-paxini.html" data-tags="触觉 灵巧手 深圳"><span class="no">37</span><span class="nm">帕西尼感知科技<small>PaXini Tech</small></span><span class="ct">北京</span><span class="yr">2021-06</span></a><a class="row" href="company-linker.html" data-tags="灵巧手 数据 北京"><span class="no">38</span><span class="nm">灵心巧手<small>Linker Hand</small></span><span class="ct">北京</span><span class="yr">2023-07</span></a><a class="row" href="company-deeprobotics.html" data-tags="四足 巡检 杭州"><span class="no">39</span><span class="nm">云深处科技<small>Deep Robotics</small></span><span class="ct">杭州</span><span class="yr">2017-11</span></a><a class="row" href="company-booster.html" data-tags="人形 教育 北京"><span class="no">40</span><span class="nm">加速进化<small>Booster Robotics</small></span><span class="ct">北京</span><span class="yr">2023-06</span></a><a class="row" href="company-tars.html" data-tags="具身大脑 操作 上海"><span class="no">41</span><span class="nm">它石智航<small>TARS</small></span><span class="ct">上海</span><span class="yr">2025-02</span></a><a class="row" href="company-psi.html" data-tags="灵巧操作 端到端 北京"><span class="no">42</span><span class="nm">灵初智能<small>Psi Robot</small></span><span class="ct">上海</span><span class="yr">2024-09</span></a><a class="row" href="company-gigaai.html" data-tags="世界模型 数据 北京"><span class="no">43</span><span class="nm">极佳视界<small>GigaAI</small></span><span class="ct">北京</span><span class="yr">2023</span></a><a class="row" href="company-xhumanoid.html" data-tags="人形 开源 北京"><span class="no">44</span><span class="nm">北京人形机器人创新中心<small>X-Humanoid</small></span><span class="ct">北京</span><span class="yr">2023-11</span></a><a class="row" href="company-rokae.html" data-tags="具身智能"><span class="no">45</span><span class="nm">珞石<small>ROKAE Robotics</small></span><span class="ct">山东邹城</span><span class="yr">2014-12</span></a><a class="row" href="company-flexiv.html" data-tags="具身智能"><span class="no">46</span><span class="nm">上海非夕机器人科技有限公司<small>Flexiv</small></span><span class="ct">上海</span><span class="yr">2016-06</span></a><a class="row" href="company-dobot.html" data-tags="具身智能"><span class="no">47</span><span class="nm">深圳市越疆科技股份有限公司<small>Dobot</small></span><span class="ct">深圳</span><span class="yr">2015-07</span></a><a class="row" href="company-keenon.html" data-tags="具身智能"><span class="no">48</span><span class="nm">上海擎朗智能科技股份有限公司<small>KEENON Robotics</small></span><span class="ct">上海</span><span class="yr">2010-02</span></a><a class="row" href="company-pudu.html" data-tags="具身智能"><span class="no">49</span><span class="nm">深圳市普渡科技股份有限公司<small>Pudu Robotics</small></span><span class="ct">深圳</span><span class="yr">2016-01</span></a><a class="row" href="company-uniubi.html" data-tags="具身智能"><span class="no">50</span><span class="nm">杭州宇泛智能科技股份有限公司<small>Uniubi AI</small></span><span class="ct">杭州</span><span class="yr">2014-03</span></a><a class="row" href="company-zhicheng-ai.html" data-tags="具身智能"><span class="no">51</span><span class="nm">智澄英达<small>Zhicheng AI</small></span><span class="ct">杭州</span><span class="yr">2024-03-28</span></a><a class="row" href="company-dexmal.html" data-tags="具身智能"><span class="no">52</span><span class="nm">北京原力灵机智能科技有限公司<small>Dexmal</small></span><span class="ct">北京</span><span class="yr">2025-03</span></a><a class="row" href="company-trans-dimensional.html" data-tags="具身智能"><span class="no">53</span><span class="nm">深圳跨维智能科技有限公司<small>Trans-Dimensional Intelligence</small></span><span class="ct">深圳</span><span class="yr">2021-06</span></a><a class="row" href="company-casia-hand.html" data-tags="具身智能"><span class="no">54</span><span class="nm">中科硅纪<small>Casia Hand</small></span><span class="ct">南京</span><span class="yr">2024-05</span></a><a class="row" href="company-noetix.html" data-tags="具身智能"><span class="no">55</span><span class="nm">松延动力<small>Noetix Robotics</small></span><span class="ct">北京</span><span class="yr">2023-09</span></a><a class="row" href="company-droidup.html" data-tags="具身智能"><span class="no">56</span><span class="nm">上海卓益得机器人有限公司<small>DroidUp</small></span><span class="ct">上海</span><span class="yr">2021-05</span></a><a class="row" href="company-kepler.html" data-tags="具身智能"><span class="no">57</span><span class="nm">上海开普勒机器人有限公司<small>Kepler Robot</small></span><span class="ct">上海</span><span class="yr">2023-08</span></a><a class="row" href="company-huawei-embodied.html" data-tags="具身智能"><span class="no">58</span><span class="nm">华为<small>Huawei Embodied AI Innovation Center</small></span><span class="ct">深圳</span><span class="yr">2024-09</span></a><a class="row" href="company-ant-lingbo.html" data-tags="具身智能"><span class="no">59</span><span class="nm">上海蚂蚁灵波科技有限公司<small>Ant Lingbo</small></span><span class="ct">上海</span><span class="yr">2025-03</span></a><a class="row" href="company-jd-embodied.html" data-tags="具身智能"><span class="no">60</span><span class="nm">京东 Joyce / 京东探索研究院具身智能业务<small>JD JoyInside</small></span><span class="ct">北京</span><span class="yr">2025-07</span></a><a class="row" href="company-meituan-dragonball.html" data-tags="具身智能"><span class="no">61</span><span class="nm">美团龙珠<small>Meituan DragonBall</small></span><span class="ct">北京</span><span class="yr">2026</span></a><a class="row" href="company-sanctuary-ai.html" data-tags="人形 海外"><span class="no">62</span><span class="nm">Sanctuary AI (Sanctuary Cognitive Systems Corp.)<small>Sanctuary AI (Sanctuary Cognitive Systems Corp.)</small></span><span class="ct">Vancouver</span><span class="yr">2018</span></a><a class="row" href="company-pal-robotics.html" data-tags="人形 移动操作 海外"><span class="no">63</span><span class="nm">PAL Robotics<small>PAL Robotics</small></span><span class="ct">Barcelona</span><span class="yr">2004</span></a><a class="row" href="company-rainbow-robotics.html" data-tags="人形 协作臂 海外"><span class="no">64</span><span class="nm">Rainbow Robotics<small>Rainbow Robotics</small></span><span class="ct">Sejong</span><span class="yr">2011-02-10</span></a><a class="row" href="company-robotis.html" data-tags="开源 海外"><span class="no">65</span><span class="nm">ROBOTIS<small>ROBOTIS</small></span><span class="ct">Seoul</span><span class="yr">1999</span></a><a class="row" href="company-kawasaki.html" data-tags="海外"><span class="no">66</span><span class="nm">Kawasaki Heavy Industries — Robot Division<small>Kawasaki Heavy Industries — Robot Division</small></span><span class="ct">Akashi</span><span class="yr">1968</span></a><a class="row" href="company-honda.html" data-tags="人形 海外"><span class="no">67</span><span class="nm">Honda R&amp;D — Robotics (ASIMO program)<small>Honda R&amp;D — Robotics (ASIMO program)</small></span><span class="ct">Tokyo</span><span class="yr">1986</span></a><a class="row" href="company-mujin.html" data-tags="海外"><span class="no">68</span><span class="nm">Mujin, Inc.<small>Mujin, Inc.</small></span><span class="ct">Tokyo</span><span class="yr">2011-07</span></a><a class="row" href="company-telexistence.html" data-tags="人形 海外"><span class="no">69</span><span class="nm">Telexistence Inc. (TX)<small>Telexistence Inc. (TX)</small></span><span class="ct">Tokyo</span><span class="yr">2017-01-23</span></a><a class="row" href="company-preferred-networks.html" data-tags="海外"><span class="no">70</span><span class="nm">Preferred Networks (PFN)<small>Preferred Networks (PFN)</small></span><span class="ct">Tokyo</span><span class="yr">2014-03-26</span></a><a class="row" href="company-naver-labs.html" data-tags="海外"><span class="no">71</span><span class="nm">NAVER LABS<small>NAVER LABS</small></span><span class="ct">Seongnam</span><span class="yr">2017</span></a><a class="row" href="company-bear-robotics.html" data-tags="配送 服务机器人 海外"><span class="no">72</span><span class="nm">Bear Robotics<small>Bear Robotics</small></span><span class="ct">Redwood City</span><span class="yr">2017-05</span></a><a class="row" href="company-serve-robotics.html" data-tags="配送 海外"><span class="no">73</span><span class="nm">Serve Robotics<small>Serve Robotics</small></span><span class="ct">Redwood City</span><span class="yr">2017</span></a><a class="row" href="company-diligent-robotics.html" data-tags="海外"><span class="no">74</span><span class="nm">Diligent Robotics<small>Diligent Robotics</small></span><span class="ct">Austin</span><span class="yr">2017</span></a><a class="row" href="company-nuro.html" data-tags="自动驾驶 配送 海外"><span class="no">75</span><span class="nm">Nuro, Inc.<small>Nuro, Inc.</small></span><span class="ct">Mountain View</span><span class="yr">2016</span></a><a class="row" href="company-aurora.html" data-tags="自动驾驶 海外"><span class="no">76</span><span class="nm">Aurora Innovation, Inc.<small>Aurora Innovation, Inc.</small></span><span class="ct">Pittsburgh</span><span class="yr">2017</span></a><a class="row" href="company-waabi.html" data-tags="自动驾驶 海外"><span class="no">77</span><span class="nm">Waabi<small>Waabi</small></span><span class="ct">Toronto</span><span class="yr">2021</span></a><a class="row" href="company-kodiak.html" data-tags="自动驾驶 海外"><span class="no">78</span><span class="nm">Kodiak AI (Kodiak Robotics)<small>Kodiak AI (Kodiak Robotics)</small></span><span class="ct">Mountain View</span><span class="yr">2018-04</span></a><a class="row" href="company-osaro.html" data-tags="海外"><span class="no">79</span><span class="nm">OSARO Inc.<small>OSARO Inc.</small></span><span class="ct">San Francisco</span><span class="yr">2015</span></a><a class="row" href="company-robust-ai.html" data-tags="海外"><span class="no">80</span><span class="nm">Robust.AI<small>Robust.AI</small></span><span class="ct">San Francisco</span><span class="yr">2019-05</span></a><a class="row" href="company-open-robotics.html" data-tags="开源 海外"><span class="no">81</span><span class="nm">Open Robotics (OSRF)<small>Open Robotics (OSRF)</small></span><span class="ct">San Jose</span><span class="yr">2012-03-22</span></a><a class="row" href="company-realsense.html" data-tags="深度 传感"><span class="no">82</span><span class="nm">Intel RealSense<small>Intel RealSense</small></span><span class="ct">库比蒂诺</span><span class="yr">2014</span></a><a class="row" href="company-orbbec.html" data-tags="深度 传感"><span class="no">83</span><span class="nm">奥比中光<small>Orbbec</small></span><span class="ct">深圳</span><span class="yr">2013</span></a><a class="row" href="company-stereolabs.html" data-tags="深度 传感"><span class="no">84</span><span class="nm">Stereolabs<small>Stereolabs</small></span><span class="ct">巴黎</span><span class="yr">2010</span></a><a class="row" href="company-insta360.html" data-tags="全景 传感"><span class="no">85</span><span class="nm">影石 Insta360<small>Insta360</small></span><span class="ct">深圳</span><span class="yr">2015-07</span></a><a class="row" href="company-econ.html" data-tags="工业相机 传感"><span class="no">86</span><span class="nm">e-con Systems<small>e-con Systems</small></span><span class="ct">金奈</span><span class="yr">2003</span></a><a class="row" href="company-livox.html" data-tags="激光雷达 传感"><span class="no">87</span><span class="nm">览沃科技<small>Livox</small></span><span class="ct">深圳</span><span class="yr">2016</span></a><a class="row" href="company-ouster.html" data-tags="激光雷达 传感"><span class="no">88</span><span class="nm">Ouster<small>Ouster</small></span><span class="ct">旧金山</span><span class="yr">2015-06-30</span></a><a class="row" href="company-robosense.html" data-tags="激光雷达 传感"><span class="no">89</span><span class="nm">速腾聚创<small>RoboSense</small></span><span class="ct">深圳</span><span class="yr">2014-08</span></a><a class="row" href="company-contactile.html" data-tags="触觉 传感"><span class="no">90</span><span class="nm">Contactile<small>Contactile</small></span><span class="ct">悉尼</span><span class="yr">2019</span></a><a class="row" href="company-digit.html" data-tags="视触觉 传感"><span class="no">91</span><span class="nm">Meta / GelSight<small>Meta / GelSight</small></span><span class="ct">门洛帕克</span><span class="yr">—</span></a><a class="row" href="company-xsens.html" data-tags="IMU 传感"><span class="no">92</span><span class="nm">Xsens<small>Xsens</small></span><span class="ct">恩斯赫德</span><span class="yr">2000</span></a><a class="row" href="company-bosch.html" data-tags="IMU 传感"><span class="no">93</span><span class="nm">Bosch Sensortec<small>Bosch Sensortec</small></span><span class="ct">罗伊特林根</span><span class="yr">2005</span></a><a class="row" href="company-tdk.html" data-tags="IMU 传感"><span class="no">94</span><span class="nm">TDK InvenSense<small>TDK InvenSense</small></span><span class="ct">圣何塞</span><span class="yr">2003</span></a><a class="row" href="company-bota.html" data-tags="力/力矩 传感"><span class="no">95</span><span class="nm">Bota Systems<small>Bota Systems</small></span><span class="ct">苏黎世</span><span class="yr">2020</span></a><a class="row" href="company-kinco.html" data-tags="电机/驱动 传感"><span class="no">96</span><span class="nm">步科<small>Kinco</small></span><span class="ct">上海</span><span class="yr">1996</span></a><a class="row" href="company-calibio.html" data-tags="标定 传感"><span class="no">97</span><span class="nm">Calib.io<small>Calib.io</small></span><span class="ct">斯文堡</span><span class="yr">2018</span></a><a class="row" href="company-vicon.html" data-tags="动捕/标定 传感"><span class="no">98</span><span class="nm">Vicon<small>Vicon</small></span><span class="ct">牛津</span><span class="yr">1984</span></a><a class="row" href="company-qualisys.html" data-tags="动捕/标定 传感"><span class="no">99</span><span class="nm">Qualisys<small>Qualisys</small></span><span class="ct">哥德堡</span><span class="yr">1989</span></a><a class="row" href="company-manus.html" data-tags="动捕/手套 传感"><span class="no">100</span><span class="nm">MANUS<small>MANUS</small></span><span class="ct">埃因霍温</span><span class="yr">2014</span></a><a class="row" href="company-rokoko.html" data-tags="动捕 传感"><span class="no">101</span><span class="nm">Rokoko<small>Rokoko</small></span><span class="ct">哥本哈根</span><span class="yr">2014</span></a><a class="row" href="company-khadas.html" data-tags="边缘计算 传感"><span class="no">102</span><span class="nm">Khadas<small>Khadas</small></span><span class="ct">深圳</span><span class="yr">2016</span></a><a class="row" href="company-heidenhain.html" data-tags="编码器 传感"><span class="no">103</span><span class="nm">海德汉<small>HEIDENHAIN</small></span><span class="ct">特劳恩罗伊特</span><span class="yr">1889</span></a><a class="row" href="company-seeed.html" data-tags="边缘计算 传感"><span class="no">104</span><span class="nm">矽递科技<small>Seeed Studio</small></span><span class="ct">深圳</span><span class="yr">2009-08</span></a><a class="row" href="company-tamagawa.html" data-tags="编码器 传感"><span class="no">105</span><span class="nm">多摩川<small>Tamagawa</small></span><span class="ct">饭田</span><span class="yr">1938-03-03</span></a><a class="row" href="company-franka.html" data-tags="本体"><span class="no">106</span><span class="nm">Franka Robotics<small>Franka Robotics</small></span><span class="ct">慕尼黑</span><span class="yr">2016</span></a><a class="row" href="company-universal-robots.html" data-tags="本体"><span class="no">107</span><span class="nm">优傲机器人<small>Universal Robots</small></span><span class="ct">欧登塞</span><span class="yr">2005</span></a><a class="row" href="company-jaka.html" data-tags="本体"><span class="no">108</span><span class="nm">节卡机器人<small>JAKA Robotics</small></span><span class="ct">上海</span><span class="yr">2014-07</span></a><a class="row" href="company-kassow.html" data-tags="本体"><span class="no">109</span><span class="nm">Kassow Robots<small>Kassow Robots</small></span><span class="ct">哥本哈根</span><span class="yr">2015</span></a><a class="row" href="company-elephant-robotics.html" data-tags="本体"><span class="no">110</span><span class="nm">大象机器人<small>Elephant Robotics</small></span><span class="ct">深圳</span><span class="yr">2016-08</span></a><a class="row" href="company-agilex.html" data-tags="本体"><span class="no">111</span><span class="nm">松灵机器人<small>AgileX Robotics</small></span><span class="ct">东莞</span><span class="yr">2016</span></a><a class="row" href="company-realman.html" data-tags="本体"><span class="no">112</span><span class="nm">睿尔曼智能<small>RealMan Robotics</small></span><span class="ct">北京</span><span class="yr">2018</span></a><a class="row" href="company-trossen-robotics.html" data-tags="本体"><span class="no">113</span><span class="nm">Trossen Robotics<small>Trossen Robotics</small></span><span class="ct">唐纳斯格罗夫</span><span class="yr">—</span></a><a class="row" href="company-inspire-robots.html" data-tags="本体"><span class="no">114</span><span class="nm">因时机器人<small>INSPIRE ROBOTS</small></span><span class="ct">北京</span><span class="yr">2016</span></a><a class="row" href="company-shadow-robot.html" data-tags="本体"><span class="no">115</span><span class="nm">Shadow Robot<small>Shadow Robot Company</small></span><span class="ct">伦敦</span><span class="yr">1987</span></a><a class="row" href="company-brainco.html" data-tags="本体"><span class="no">116</span><span class="nm">强脑科技<small>BrainCo</small></span><span class="ct">杭州</span><span class="yr">2015</span></a><a class="row" href="company-oymotion.html" data-tags="本体"><span class="no">117</span><span class="nm">傲意科技<small>OYMotion</small></span><span class="ct">上海</span><span class="yr">2015</span></a><a class="row" href="company-wonik-allegro.html" data-tags="本体"><span class="no">118</span><span class="nm">元益机器人（Allegro Hand）<small>Wonik Robotics / Allegro Hand</small></span><span class="ct">城南市</span><span class="yr">2004</span></a><a class="row" href="company-stretchsense.html" data-tags="本体"><span class="no">119</span><span class="nm">StretchSense<small>StretchSense</small></span><span class="ct">奥克兰</span><span class="yr">2012</span></a><a class="row" href="company-d-robotics.html" data-tags="本体"><span class="no">120</span><span class="nm">地瓜机器人<small>D-Robotics</small></span><span class="ct">深圳</span><span class="yr">2024-01</span></a><a class="row" href="company-amd-kria.html" data-tags="本体"><span class="no">121</span><span class="nm">AMD Kria<small>AMD Kria</small></span><span class="ct">圣克拉拉</span><span class="yr">—</span></a><a class="row" href="company-lattepanda.html" data-tags="本体"><span class="no">122</span><span class="nm">LattePanda<small>LattePanda</small></span><span class="ct">上海</span><span class="yr">2015</span></a><a class="row" href="company-rockchip.html" data-tags="本体"><span class="no">123</span><span class="nm">瑞芯微<small>Rockchip</small></span><span class="ct">福州</span><span class="yr">2001-11</span></a><a class="row" href="company-cambricon.html" data-tags="本体"><span class="no">124</span><span class="nm">寒武纪<small>Cambricon</small></span><span class="ct">北京</span><span class="yr">2016-03</span></a><a class="row" href="company-percipio.html" data-tags="本体"><span class="no">125</span><span class="nm">图漾科技<small>Percipio</small></span><span class="ct">上海</span><span class="yr">2015</span></a><a class="row" href="company-ati-ia.html" data-tags="本体"><span class="no">126</span><span class="nm">ATI 工业自动化<small>ATI Industrial Automation</small></span><span class="ct">阿佩克斯</span><span class="yr">1989</span></a><a class="row" href="company-sri-force.html" data-tags="本体 力/力矩 传感"><span class="no">127</span><span class="nm">宇立仪器<small>Sunrise Instruments (SRI)</small></span><span class="ct">南宁</span><span class="yr">2007</span></a><a class="row" href="company-clearpath.html" data-tags="本体"><span class="no">128</span><span class="nm">Clearpath Robotics<small>Clearpath Robotics</small></span><span class="ct">基奇纳</span><span class="yr">2009</span></a><a class="row" href="company-robotnik.html" data-tags="本体"><span class="no">129</span><span class="nm">Robotnik<small>Robotnik Automation</small></span><span class="ct">帕特纳</span><span class="yr">2002</span></a><a class="row" href="company-ghost-robotics.html" data-tags="本体"><span class="no">130</span><span class="nm">Ghost Robotics<small>Ghost Robotics</small></span><span class="ct">—</span><span class="yr">2014</span></a><a class="row" href="company-astribot.html" data-tags="本体"><span class="no">131</span><span class="nm">星尘智能<small>Astribot</small></span><span class="ct">深圳</span><span class="yr">2022-12</span></a><a class="row" href="company-benewake.html" data-tags="本体"><span class="no">132</span><span class="nm">北醒<small>Benewake</small></span><span class="ct">北京</span><span class="yr">2015-06</span></a><a class="row" href="company-casbot.html" data-tags="本体"><span class="no">133</span><span class="nm">中科慧灵<small>CASBOT</small></span><span class="ct">北京</span><span class="yr">2023-08</span></a><a class="row" href="company-gaussian-robotics.html" data-tags="本体"><span class="no">134</span><span class="nm">高仙机器人<small>Gaussian Robotics</small></span><span class="ct">上海</span><span class="yr">2013</span></a><a class="row" href="company-hailo.html" data-tags="本体"><span class="no">135</span><span class="nm">Hailo<small>Hailo</small></span><span class="ct">特拉维夫</span><span class="yr">2017-02</span></a><a class="row" href="company-hesai.html" data-tags="本体"><span class="no">136</span><span class="nm">禾赛科技<small>Hesai Technology</small></span><span class="ct">上海</span><span class="yr">2014-10</span></a><a class="row" href="company-kneron.html" data-tags="本体"><span class="no">137</span><span class="nm">耐能<small>Kneron</small></span><span class="ct">圣地亚哥</span><span class="yr">2015-10</span></a><a class="row" href="company-kunwei.html" data-tags="本体"><span class="no">138</span><span class="nm">坤维科技<small>Kunwei</small></span><span class="ct">常州</span><span class="yr">2018</span></a><a class="row" href="company-mab-robotics.html" data-tags="本体"><span class="no">139</span><span class="nm">MAB Robotics<small>MAB Robotics</small></span><span class="ct">波兹南</span><span class="yr">2016</span></a><a class="row" href="company-magiclab.html" data-tags="本体"><span class="no">140</span><span class="nm">魔法原子<small>MagicLab</small></span><span class="ct">苏州</span><span class="yr">2024-01</span></a><a class="row" href="company-milkv.html" data-tags="本体"><span class="no">141</span><span class="nm">Milk-V<small>Milk-V</small></span><span class="ct">深圳</span><span class="yr">—</span></a><a class="row" href="company-mobile-industrial-robots.html" data-tags="本体"><span class="no">142</span><span class="nm">Mobile Industrial Robots<small>Mobile Industrial Robots (MiR)</small></span><span class="ct">欧登塞</span><span class="yr">2013</span></a><a class="row" href="company-neobotix.html" data-tags="本体"><span class="no">143</span><span class="nm">Neobotix<small>Neobotix GmbH</small></span><span class="ct">海尔布隆</span><span class="yr">2010</span></a><a class="row" href="company-noitom.html" data-tags="本体"><span class="no">144</span><span class="nm">诺亦腾<small>Noitom</small></span><span class="ct">北京</span><span class="yr">2012</span></a><a class="row" href="company-otto-motors.html" data-tags="本体"><span class="no">145</span><span class="nm">OTTO Motors（罗克韦尔）<small>OTTO by Rockwell Automation</small></span><span class="ct">基奇纳</span><span class="yr">2015</span></a><a class="row" href="company-persona-ai.html" data-tags="本体"><span class="no">146</span><span class="nm">Persona AI<small>Persona AI</small></span><span class="ct">休斯敦</span><span class="yr">2024</span></a><a class="row" href="company-pollen-robotics.html" data-tags="本体"><span class="no">147</span><span class="nm">Pollen Robotics<small>Pollen Robotics</small></span><span class="ct">波尔多</span><span class="yr">2016</span></a><a class="row" href="company-quicktron.html" data-tags="本体"><span class="no">148</span><span class="nm">快仓智能<small>Quicktron Robotics</small></span><span class="ct">上海</span><span class="yr">2014</span></a><a class="row" href="company-reflex-robotics.html" data-tags="本体"><span class="no">149</span><span class="nm">Reflex Robotics<small>Reflex Robotics</small></span><span class="ct">纽约</span><span class="yr">2023</span></a><a class="row" href="company-senseglove.html" data-tags="本体"><span class="no">150</span><span class="nm">SenseGlove<small>SenseGlove</small></span><span class="ct">代尔夫特</span><span class="yr">2017</span></a><a class="row" href="company-weilan.html" data-tags="本体"><span class="no">151</span><span class="nm">蔚蓝科技<small>WEILAN</small></span><span class="ct">南京</span><span class="yr">2019</span></a><a class="row" href="company-yunji.html" data-tags="本体"><span class="no">152</span><span class="nm">云迹科技<small>YunJi Technology</small></span><span class="ct">北京</span><span class="yr">2014</span></a><a class="row" href="company-anthropic.html" data-tags="基座模型 智能体 海外"><span class="no">153</span><span class="nm">Anthropic<small>Anthropic</small></span><span class="ct">旧金山</span><span class="yr">2021</span></a><a class="row" href="company-openai.html" data-tags="基座模型 智能体 海外"><span class="no">154</span><span class="nm">OpenAI<small>OpenAI</small></span><span class="ct">旧金山</span><span class="yr">2015</span></a></div>
+    <p class="empty" id="listEmpty" hidden>此方向未收。</p>
+  </div></div>
+  <section class="layout"><a class="next-vol" href="labs.html" data-zone="lab" style="border-top:1px solid var(--line)">
+    <span><span class="lbl">下一卷 · 学宫</span><span class="nm">机构</span></span><span class="link-arrow">学宫 · 讲学著述</span>
+  </a></section></main>
+<span id="main-end"></span>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="foot-brand">
+      <a class="foot-mark" href="index.html" aria-label="具身山海志 · 返回首页"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  <circle cx="20" cy="20" r="18.4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55" stroke-dasharray="86 6" transform="rotate(-24 20 20)"/>
+  <path d="M7.5 26.5 14 15.6l4.4 7 3.5-5.6 10.6 9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M6.4 30.2c2.4-1.5 3.6-.2 5.6-.9 2-.7 3.2-1.0 5.2-.2 2 .8 3.4.3 5.3-.4 2-.7 3.3-.1 5.4.6 1.8.6 3.4.2 5.4-.4" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" opacity=".8"/>
+  <circle cx="28.6" cy="12.4" r="2.6" fill="#c21f30"/>
+</svg><span class="foot-word"><b>具身山海志</b><small>Embodied Atlas</small></span></a>
+      <p class="foot-motto">多闻阙疑　慎言其余</p>
+      <a class="btn foot-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.16l-5.7 3 1.09-6.35-4.62-4.5 6.38-.93z"/></svg>到 GitHub 点 Star</a>
+    </div>
+    <nav class="set" aria-label="页脚导航">
+      <div class="set-col"><b>七卷</b><a href="companies.html">公司</a><a href="labs.html">机构</a><a href="models.html">模型</a><a href="leaderboard.html">榜单</a><a href="jobs.html">岗位</a><a href="resources.html">资源</a><a href="news.html">动态</a></div>
+      <div class="set-col"><b>别册</b><a href="world.html">总览</a><a href="atlas.html">山海图</a><a href="compare.html">选型对比</a><a href="papers.html">论文索引</a><a href="events.html">会期与投稿</a></div>
+      <div class="set-col"><b>卷末</b><a href="about.html">关于</a><a href="legend.html">凡例</a><a href="credits.html">素材与许可</a><a href="copyright.html">版权</a></div>
+      <div class="set-col"><b>往来</b><button type="button" class="footer-btn" data-open-contact>合作联系</button><a href="coop.html">合作方式</a><a href="news.html#subscribe">订阅更新</a></div>
+    </nav>
+    <div class="foot-base">
+      <span class="src-line">源：<a href="https://fbddcz.github.io/Embodied-Shanhai-Atlas/companies.html">具身山海志</a> · <a href="copyright.html">版权与许可</a> · 核验 2026-11-16</span>
+      <span class="colophon">© 2026 具身山海志 · <span data-world-label>秋·小雪</span></span>
+      <button class="clock-btn" id="worldClock" type="button" aria-haspopup="true" aria-expanded="false" title="四时天候：跟随真实时间，或把一年浓缩成一天">
+        <span class="cc-dot" aria-hidden="true"></span><span data-clock-mode>随天时</span>
+      </button>
+      <div class="clock-menu" id="worldClockMenu" hidden>
+        <p class="clock-q">四时如何流转</p>
+        <button data-clock="real" type="button">跟随真实时间</button>
+        <button data-clock="cycle" type="button">一年浓缩成一日（每 24 小时一轮）</button>
+        <button data-clock="fast" type="button">一年浓缩成四分钟（演示用）</button>
+        <button data-clock="off" type="button">停在当前节令</button>
+        <p class="clock-now" data-world-label></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="toc" id="toc" role="dialog" aria-modal="true" aria-label="七卷目录">
+  <div class="toc-head"><span class="toc-title">七卷</span><button class="tool" id="tocClose" aria-label="关闭目录"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="toc-body"><div class="toc-list"><a class="toc-item" href="world.html"><span class="no">纲</span><span class="nm">总纲<small>总览</small></span><span class="ct">7宗</span></a><a class="toc-item" href="companies.html" data-zone="company"><span class="no">壹</span><span class="nm">人间<small>公司</small></span><span class="ct">154</span></a><a class="toc-item" href="labs.html" data-zone="lab"><span class="no">贰</span><span class="nm">学宫<small>机构</small></span><span class="ct">60</span></a><a class="toc-item" href="models.html" data-zone="model"><span class="no">叁</span><span class="nm">灵物<small>模型</small></span><span class="ct">91</span></a><a class="toc-item" href="leaderboard.html" data-zone="benchmark"><span class="no">肆</span><span class="nm">碑林<small>榜单</small></span><span class="ct">33</span></a><a class="toc-item" href="jobs.html" data-zone="job"><span class="no">伍</span><span class="nm">招贤<small>岗位</small></span><span class="ct">57</span></a><a class="toc-item" href="resources.html" data-zone="resource"><span class="no">陆</span><span class="nm">藏经<small>资源</small></span><span class="ct">116</span></a><a class="toc-item" href="news.html" data-zone="news"><span class="no">柒</span><span class="nm">驿路<small>动态</small></span><span class="ct">95</span></a><a class="toc-item" href="atlas.html"><span class="no">图</span><span class="nm">山海图<small>七域一图</small></span><span class="ct">606</span></a></div></div>
+  <div class="toc-foot"><a href="hardware.html">本体与传感</a><a href="compare.html">选型对比</a><a href="papers.html">论文索引</a><a href="events.html">会期与投稿</a><a href="following.html">我的关注</a><a href="legend.html">凡例</a><a href="about.html">关于</a><a class="toc-star" href="https://github.com/FBddcz/Embodied-Shanhai-Atlas" target="_blank" rel="noopener noreferrer">★ 到 GitHub 点 Star</a></div>
+</div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="搜索">
+  <div class="palette-panel">
+    <div class="palette-input">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <input id="paletteInput" type="search" placeholder="寻一司、一器、一碑、一文" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="paletteResults" aria-autocomplete="list">
+      <span class="palette-hint">ESC</span>
+    </div>
+    <div class="palette-results" id="paletteResults" role="listbox" aria-label="搜索结果"></div>
+  </div>
+</div>
+<div class="modal" id="claimModal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="claimTitle">
+    <div class="modal-head"><h3 id="claimTitle">认领与纠错</h3><button class="modal-close" type="button" data-close-modal aria-label="关闭">×</button></div>
+    <p class="modal-sub" id="claimTarget">写明要更正的内容，附可打开的来源。</p>
+    <form id="claimForm" data-issues="https://github.com/FBddcz/Embodied-Shanhai-Atlas">
+      <label class="field"><span>称呼或机构（可不填）</span><input name="name" autocomplete="off" placeholder="例如：某公司市场部"></label>
+      <label class="field"><span>要更正或补充的内容</span><textarea name="message" required rows="5" placeholder="哪一条事实、原文是什么、应改为什么。"></textarea></label>
+      <label class="field"><span>来源链接</span><input name="source" type="url" placeholder="https://"></label>
+      <div class="modal-actions"><button type="button" class="btn" data-copy-claim>复制</button><button type="submit" class="btn btn-solid">在 GitHub 提交</button></div>
+    </form>
+  </div>
+</div>
+<div class="modal" id="contactModal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal-head"><h3 id="contactTitle">合作联系</h3><button class="modal-close" type="button" data-close-contact aria-label="关闭">×</button></div>
+    <p class="modal-sub">合作、招聘、投稿或数据授权。可以填写在线表单，也可以扫码进群直接联系。</p>
+    <div class="contact-link"><a class="btn btn-solid" href="https://www.wjx.top/vm/mB7vmKF.aspx" target="_blank" rel="noopener noreferrer">填写在线表单 ↗</a><p class="modal-note">表单由问卷星托管，提交后维护者会收到通知。</p></div>
+    
+    <div class="contact-qr">
+      <img src="assets/contact/xhs-group-2.png" alt="小红书交流群二维码" width="132" height="132" loading="lazy" decoding="async">
+      <div class="contact-qr-text"><b>小红书交流群</b><p>具身 AI 交流实习群 2 · 扫码加入，直接在群里联系维护者。</p><p class="contact-qr-valid">此码 2026-12-14 前有效</p></div>
+    </div>
+    <form id="contactForm" hidden data-endpoint="" data-key="" data-email="" data-qr="1" data-mode="link">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+      
+      
+      <div class="field-row">
+        <label class="field"><span>称呼或机构</span><input name="name" required autocomplete="off" placeholder="张三 / 某公司"></label>
+        <label class="field"><span>来意</span><select name="intent"><option>合作</option><option>招聘</option><option>投稿</option><option>数据授权</option><option>其他</option></select></label>
+      </div>
+      <label class="field"><span>微信、邮箱或电话</span><input name="contact" required autocomplete="off"></label>
+      <label class="field"><span>想聊什么</span><textarea name="message" rows="4" required></textarea></label>
+      <label class="check"><input type="checkbox" name="consent" required><span>以上信息只用于回复，不作他用。</span></label>
+      <div class="modal-actions"><button type="button" class="btn" data-copy-contact>复制</button><button type="submit" class="btn btn-solid">复制这段文字</button></div>
+      <p class="modal-note" id="contactStatus"></p>
+    </form>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="title-card" aria-hidden="true"><b>人间</b><small>诸司都邑</small></div>
+<script src="app.js" defer></script>
+
+
+
+</body>
+</html>
