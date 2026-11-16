@@ -1,0 +1,45 @@
+name: 纠错 / Correction
+description: 报告一条错误、过时或失效的来源
+title: "[纠错] "
+labels: ["correction"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: 页面链接
+      placeholder: https://fbddcz.github.io/Embodied-Shanhai-Atlas/...
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 问题类型
+      options:
+        - 事实错误（数字、日期、名称）
+        - 来源失效或不可打开
+        - 榜单口径 / 状态标错
+        - 岗位已下线
+        - 图片错误或非官方
+        - 排版 / 链接问题
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 具体哪里不对
+      description: 原文是什么、应改为什么、依据是什么。
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 依据链接
+      placeholder: https://
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 确认
+      options:
+        - label: 我提交的内容可公开核查；如涉版权，我可证明自己是权利人或获授权。
+          required: true

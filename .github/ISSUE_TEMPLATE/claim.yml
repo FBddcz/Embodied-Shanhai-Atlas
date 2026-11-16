@@ -1,0 +1,52 @@
+name: 认领条目 / Claim a listing
+description: 企业或机构认领本站条目，或补正条目内容
+title: "[认领] "
+labels: ["claim"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        认领只改事实，不改判词与榜单状态。请附上能打开的官方来源。
+  - type: input
+    id: entity
+    attributes:
+      label: 条目名称或页面链接
+      placeholder: 例如 宇树科技 / company-unitree.html
+    validations:
+      required: true
+  - type: dropdown
+    id: role
+    attributes:
+      label: 你的身份
+      options:
+        - 公司或机构官方人员
+        - 官方授权的公关 / 市场代理
+        - 普通读者
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: 要补正的内容
+      description: 逐条写「原文 → 应改为」。附可打开的官方来源。
+      placeholder: |
+        1. 员工人数：原文 800 → 官方 1,200（来源：官网 About，2026-11）
+        2. 补一条融资：C 轮，2026-09，5 亿元（来源：官方公告链接）
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: 来源链接
+      description: 每条一行，必须指向官方页面或可核查的公开报道。
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 确认
+      options:
+        - label: 我理解认领不改变本站的编辑判断与榜单状态，也不构成排名或推荐。
+          required: true
+        - label: 我提交的来源可公开核查，同意在条目页的「出处」中列出。
+          required: true
