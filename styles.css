@@ -1,11 +1,12 @@
 /* 具身山海志 · 样式系统
-   @layer reset → tokens → base → layout → components → motion
+   分区：reset → tokens → base → layout → components → motion（原 @layer 已拍平）
+   背景：不少手机内置浏览器（旧 WebView / 旧 WKWebView）不认识 @layer，
+   会把整份图层块当作未知 at-rule 丢弃，页面退化成无样式白页；
+   所以这里不再用 @layer，规则的先后顺序与图层顺序一致，级联结果不变。
    主题：ink（昼·绢本）/ night（夜·烛照）；七区各有字色与颜料色。 */
 
-@layer reset, tokens, base, layout, components, motion;
 
 /* ---------------------------------------------------------------- reset */
-@layer reset {
   *, *::before, *::after { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
   body, h1, h2, h3, h4, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
@@ -17,10 +18,8 @@
   table { border-collapse: collapse; width: 100%; }
   :focus-visible { outline: 2px solid var(--seal-ink); outline-offset: 3px; border-radius: 2px; }
   ::selection { background: color-mix(in oklab, var(--seal) 26%, transparent); }
-}
 
 /* ---------------------------------------------------------------- tokens */
-@layer tokens {
   @font-face {
     font-family: 'MaShanZheng';
     src: url('assets/fonts/mashanzheng-subset.woff2') format('woff2');
@@ -88,7 +87,7 @@
     --bg: #f0ece3; --surface: #faf8f3; --raised: #f4f0e7; --sunken: #e2ddd2;
     --bg-warm: #efe7d8; --bg-cool: #e8ecec;
     --text-1: #1a1c22; --text-2: #46423b; --text-3: #6b675e;
-    --line: #b9b3a6; --line-soft: color-mix(in oklab, #b9b3a6 42%, transparent); --line-strong: #7d7a72;
+    --line: #b9b3a6; --line-soft: rgba(185, 179, 166, .42); --line-strong: #7d7a72;
     --accent: #0f6b74; --on-accent: #f6fbfa;
     --seal: #c21f30; --on-seal: #f9f1db; --seal-ink: #b01e2b;
     --gold: #8a6a26;
@@ -110,7 +109,7 @@
     --bg-warm: #12131c; --bg-cool: #0b1622;
     --text-1: #f7f2e6; --text-2: #d7d2c9; --text-3: #9e9a92;
     --accent: #6fc9d0; --on-accent: #08201f;
-    --line: #2b333e; --line-soft: color-mix(in oklab, #2b333e 60%, transparent); --line-strong: #80766e;
+    --line: #2b333e; --line-soft: rgba(43, 51, 62, .6); --line-strong: #80766e;
     --seal: #c21f30; --on-seal: #f9f1db; --seal-ink: #ef6f48;
     --gold: #d9b46a;
     --z-company: #d99156; --z-company-pig: #be7e4a;
@@ -134,13 +133,20 @@
   [data-zone="resource"] { --z: var(--z-resource); --z-pig: var(--z-resource-pig); }
   [data-zone="news"] { --z: var(--z-news); --z-pig: var(--z-news-pig); }
   [data-zone] { --z: var(--z-company); --z-pig: var(--z-company-pig); }
-}
 
 /* ---------------------------------------------------------------- base */
-@layer base {
+  /* 旧内核兜底：不支持 color-mix()（Chrome/WebView <111、Safari <16.2）。
+     只补最影响观感的底色，其余装饰性 color-mix 缺失时退为透明，页面仍可用。 */
+  @supports not (color: color-mix(in oklab, red 50%, blue)) {
+    body { background: var(--bg); }
+    .site-header, .site-header.is-solid { background: var(--bg); }
+    .tool:hover, .tool-search, .btn:hover { background: var(--surface); }
+    .plate { background: var(--raised); }
+    .mast-scene .sky { background: var(--bg); }
+  }
   html { scroll-behavior: smooth; scrollbar-color: var(--line) transparent; }
   body {
-    margin: 0; min-height: 100svh;
+    margin: 0; min-height: 100vh; min-height: 100svh;
     background:
       radial-gradient(70vmax 50vmax at 12% -8%, color-mix(in oklab, var(--glow) 14%, transparent), transparent 70%),
       radial-gradient(60vmax 45vmax at 105% 110%, color-mix(in oklab, var(--haze) 10%, transparent), transparent 70%),
@@ -183,10 +189,8 @@
   }
 
   [hidden] { display: none !important; }
-}
 
 /* ---------------------------------------------------------------- layout */
-@layer layout {
   .layout {
     display: grid;
     grid-template-columns:
@@ -207,10 +211,8 @@
 
   .folio { display: grid; grid-template-columns: 3.2fr 8fr 3.2fr; column-gap: clamp(24px, 3vw, 48px); align-items: start; }
   @media (max-width: 62rem) { .folio { grid-template-columns: 1fr; } }
-}
 
 /* ---------------------------------------------------------------- components */
-@layer components {
 
   /* ---------- 页头 ---------- */
   .site-header {
@@ -537,7 +539,7 @@
 
   /* ---------- 首页 ---------- */
   .mast {
-    position: relative; min-height: 100svh; max-height: 100svh; display: grid; align-items: end;
+    position: relative; min-height: 100vh; min-height: 100svh; max-height: 100vh; max-height: 100svh; display: grid; align-items: end;
     padding-bottom: clamp(40px, 8vh, 96px); overflow: hidden; isolation: isolate;
   }
   .mast-scene { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
@@ -661,7 +663,7 @@
   /* ---------- 榜单 ---------- */
   .board-shell { display: grid; grid-template-columns: 17rem minmax(0, 1fr); gap: clamp(24px, 3vw, 48px); align-items: start; }
   @media (max-width: 60rem) { .board-shell { grid-template-columns: 1fr; } }
-  .board-rail { position: sticky; top: calc(var(--header-h) + 20px); max-height: calc(100svh - var(--header-h) - 40px); overflow: auto; padding-right: 6px; scrollbar-width: thin; }
+  .board-rail { position: sticky; top: calc(var(--header-h) + 20px); max-height: calc(100vh - var(--header-h) - 40px); max-height: calc(100svh - var(--header-h) - 40px); overflow: auto; padding-right: 6px; scrollbar-width: thin; }
   /* 碑目：单列。两列时「RoboDojo（仿真）」这类长名会把计数挤出栏外，压到正文上 */
   .board-rail { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; }
   .board-rail .grp { grid-column: 1 / -1; }
@@ -961,11 +963,11 @@
 
   /* ---------- 移动端 ---------- */
   @media (min-width: 48rem) and (max-width: 62rem) {
-    .mast { min-height: 100svh; max-height: none; align-items: end; padding-top: calc(var(--header-h) + 6vh); padding-bottom: 12vh; }
+    .mast { min-height: 100vh; min-height: 100svh; max-height: none; align-items: end; padding-top: calc(var(--header-h) + 6vh); padding-bottom: 12vh; }
     .mast-title { font-size: clamp(72px, 11vw, 132px); }
   }
   @media (max-width: 47.99rem) {
-    .mast { min-height: 100svh; max-height: none; padding-top: calc(var(--header-h) + 10vh); padding-bottom: 52px; align-items: start; }
+    .mast { min-height: 100vh; min-height: 100svh; max-height: none; padding-top: calc(var(--header-h) + 10vh); padding-bottom: 52px; align-items: start; }
     .mast-scene .art { inset: -12% -8% -24% -8%; }
     .mast-scene .mist, .mast-scene .mist.b { inset: 6% -10% auto -10%; height: 42%; opacity: .28; }
     .mast-scene .mist.b { inset: 26% -10% auto -10%; height: 30%; }
@@ -1161,10 +1163,8 @@
   .next-vol .lbl { font-family: var(--f-kai); font-size: 14px; letter-spacing: .3em; color: var(--text-3); }
   .next-vol .nm { font-family: var(--f-brush); font-size: clamp(34px, 4vw, 52px); letter-spacing: .06em; margin-top: 6px; }
   .next-vol:hover .nm { color: var(--z); }
-}
 
 /* ---------------------------------------------------------------- motion */
-@layer motion {
   html { --enter-delay: 120ms; }
   .ch { display: inline-block; opacity: 0; filter: blur(8px); transform: translateY(.32em); animation: ch 700ms var(--ease-out) forwards; animation-delay: calc(var(--enter-delay) + var(--i) * 45ms); }
   @keyframes ch { to { opacity: 1; filter: none; transform: none; } }
@@ -1236,13 +1236,12 @@
   @keyframes tc-calm { 0%, 100% { opacity: 0; } 30%, 62% { opacity: 1; } }
 
   /* 山海图页：不滚动，画布占满 */
-  html:has(body.is-atlas) { overflow: hidden; }
+  html.is-atlas, html:has(body.is-atlas) { overflow: hidden; }
   body.is-atlas { overflow: hidden; }
   body.is-atlas .site-header { background: color-mix(in oklab, var(--bg) 72%, transparent); backdrop-filter: blur(10px); }
   body.is-atlas .site-footer { display: none; }
-  body.is-atlas main { height: calc(100svh - var(--header-h)); margin-top: var(--header-h); }
+  body.is-atlas main { height: calc(100vh - var(--header-h)); height: calc(100svh - var(--header-h)); margin-top: var(--header-h); }
   .atlas-root { position: relative; width: 100%; height: 100%; }
-}
   /* 论文检索命中 */
   .paper-hit { margin-bottom: var(--space-l); }
   .hit-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; padding: 14px 0 12px; border-bottom: 1px solid var(--line); }
@@ -1746,7 +1745,7 @@ body.is-atlas .atmo { display: none; }
 
 /* ================================================================
    上线检查修整 · 2026-11-16
-   导航与按钮层级、列表行、榜单、事实表、窄屏。写在 @layer 之外，覆盖层内同名规则。
+   导航与按钮层级、列表行、榜单、事实表、窄屏。放在基础规则之后，按源码顺序覆盖同名规则。
    ================================================================ */
 
 /* 页头：搜索提示单行；Star 醒目；极窄屏把「关注」收进目录 */
