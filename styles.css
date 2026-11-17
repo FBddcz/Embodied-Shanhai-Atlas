@@ -1997,3 +1997,8 @@ body.is-atlas .site-header { -webkit-backdrop-filter: blur(10px); }
 .data-table.board-table .proto-cell { overflow: hidden; }
 .data-table.board-table .proto .cl { display: inline; }
 .data-table.board-table .proto .cl::after { content: "\A"; white-space: pre; }
+
+/* 榜单表头：指标名较长（如「名次 / 测试服得分（仅分榜）」）时换行，不压到协议列；分榜标签整块显示 */
+.data-table.board-table thead th { white-space: normal; line-height: 1.35; vertical-align: bottom; }
+.data-table.board-table .board-cell { white-space: normal; }
+.data-table.board-table .board-cell .badge { display: inline-block; max-width: 100%; line-height: 1.4; border-radius: 12px; }
