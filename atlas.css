@@ -422,3 +422,12 @@ body.is-atlas .site-header { background: color-mix(in srgb, var(--atlas-paper) 8
   color: var(--atlas-ink); background: color-mix(in srgb, var(--atlas-paper) 92%, transparent);
   pointer-events: none;
 }
+
+/* iPhone 底部横条与横屏圆角：山海图的按钮与详情卡让出安全区 */
+:root { --sab: env(safe-area-inset-bottom, 0px); --sal: env(safe-area-inset-left, 0px); --sar: env(safe-area-inset-right, 0px); }
+.atlas-tools { bottom: calc(18px + var(--sab)); right: calc(16px + var(--sar)); }
+.atlas-hud { padding-left: max(12px, var(--sal)); }
+@media (max-width: 760px) {
+  .atlas-tools { bottom: calc(12px + var(--sab)); right: calc(10px + var(--sar)); }
+  .atlas-dossier { padding-bottom: calc(16px + var(--sab)); }
+}

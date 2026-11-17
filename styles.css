@@ -1947,3 +1947,53 @@ body.is-atlas .atmo { display: none; }
 .film { margin: 0; display: grid; gap: 10px; }
 .film video { width: 100%; aspect-ratio: 16 / 9; background: #05070d; border: 1px solid var(--line-soft); border-radius: 3px; }
 .film figcaption { font-family: var(--f-sans); font-size: 13.5px; color: var(--text-3); line-height: 1.7; }
+
+/* ================================================================
+   iPhone / iOS Safari 修整 · 2026-11-17
+   ================================================================ */
+/* 1. iOS 不支持 background-attachment: fixed：滚动时背景重绘、闪烁甚至发白；触屏设备改回 scroll。
+      全屏山水底图由 .atmo（position: fixed）负责，不受影响。 */
+@media (hover: none) and (pointer: coarse) {
+  body { background-attachment: scroll; }
+}
+
+/* 2. 刘海 / 灵动岛：viewport-fit=cover 下页头会顶到状态栏底下。
+      把安全区高度并进 --header-h，全站所有「让出页头」的地方（卷头、条目页、山海图、锚点）自动跟着让。 */
+:root { --sat: env(safe-area-inset-top, 0px); --sab: env(safe-area-inset-bottom, 0px); --sal: env(safe-area-inset-left, 0px); --sar: env(safe-area-inset-right, 0px); }
+:root { --header-h: calc(64px + var(--sat)); }
+.site-header {
+  padding-top: var(--sat);
+  padding-left: max(clamp(16px, 3vw, 40px), var(--sal));
+  padding-right: max(clamp(16px, 3vw, 40px), var(--sar));
+}
+.toc-head { padding-top: calc(18px + var(--sat)); }
+.toast { bottom: calc(32px + var(--sab)); }
+.site-footer .footer-inner { padding-bottom: calc(24px + var(--sab)); }
+.clock-menu { bottom: calc(56px + var(--sab)); }
+
+/* 3. Safari 18 以前只认带前缀的毛玻璃；有几处只写了标准写法，iPhone 上变成全透明，字压在图上 */
+.site-header.is-solid { -webkit-backdrop-filter: blur(14px) saturate(1.1); }
+.palette { -webkit-backdrop-filter: blur(6px); }
+.modal { -webkit-backdrop-filter: blur(6px); }
+body.is-atlas .site-header { -webkit-backdrop-filter: blur(10px); }
+.world-index { -webkit-backdrop-filter: blur(6px); }
+
+/* 碑林封面：说明文字限两行，变动条从封面下方开始，不再被说明压住 */
+.board-cover figcaption { display: grid; gap: 2px; }
+.board-cover figcaption .fc-t { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+.board-cover figcaption a { justify-self: start; display: inline-flex; align-items: center; min-height: 24px; }
+@media (min-width: 75rem) {
+  .board-main:has(> .board-cover) > .board-cover { grid-row: 1 / span 3; }
+  .board-main:has(> .board-cover) > .board-changes { grid-column: 1 / -1; }
+}
+
+/* 碑林新刻：右上角的「新 / 首位」标签改为与标题同行排，不再绝对定位压字 */
+.beat { grid-template-columns: minmax(0, 1fr) auto; column-gap: 10px; }
+.beat .beat-t { grid-column: 1; grid-row: 1; padding-right: 0; }
+.beat .beat-s { grid-column: 1 / -1; grid-row: 2; }
+.beat .beat-d { position: static; grid-column: 2; grid-row: 1; align-self: start; padding-top: 2px; white-space: nowrap; }
+
+/* 榜单协议列：截断后子元素仍会画到格子外，压在下一格上；把截断落在一个块里，并裁掉溢出 */
+.data-table.board-table .proto-cell { overflow: hidden; }
+.data-table.board-table .proto .cl { display: inline; }
+.data-table.board-table .proto .cl::after { content: "\A"; white-space: pre; }
