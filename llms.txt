@@ -24,7 +24,7 @@
 - [灵物 · 模型](https://fbddcz.github.io/Embodied-Shanhai-Atlas/models.html)：具身基座、操作策略与世界模型 91 个
 - [碑林 · 榜单](https://fbddcz.github.io/Embodied-Shanhai-Atlas/leaderboard.html)：33 个榜单家族，逐行标注口径与状态
 - [法器 · 本体与传感](https://fbddcz.github.io/Embodied-Shanhai-Atlas/hardware.html)：机器人本体 187 件、传感器 83 件
-- [驿路 · 动态](https://fbddcz.github.io/Embodied-Shanhai-Atlas/news.html)：融资、发布、量产、会议与人事 95 条
+- [驿路 · 动态](https://fbddcz.github.io/Embodied-Shanhai-Atlas/news.html)：融资、发布、量产、会议与人事 99 条
 - [会期](https://fbddcz.github.io/Embodied-Shanhai-Atlas/events.html)：会议与展会 8 场
 - [招贤 · 岗位](https://fbddcz.github.io/Embodied-Shanhai-Atlas/jobs.html)：岗位 57 条，链接指向官方招聘页
 - [藏经 · 资源](https://fbddcz.github.io/Embodied-Shanhai-Atlas/resources.html)：代码、数据、教材与工具 116 条
@@ -46,4 +46,4 @@
 
 ## 全库指纹
 
-963a2d-1dfa79（核验日期 2026-11-19，789 条实体）。若他处出现与本站相同的数据与相同指纹，而署名不同，即为转载未注明来源。
+963a2d-a7a7d8（核验日期 2026-11-19，789 条实体）。若他处出现与本站相同的数据与相同指纹，而署名不同，即为转载未注明来源。
