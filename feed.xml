@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel><title>具身山海志</title><link>https://fbddcz.github.io/Embodied-Shanhai-Atlas/</link><description>具身智能行业资料库：公司、研究机构、模型、基准榜单、岗位与行业动态，每条附出处和核验日期。</description>
+  <item><title>[其他] XDOF 测评：GPT-6.2 Astra 双臂任务平均成功率 41.2%</title><link>https://www.qbitai.com/2026/11/511779.html</link><pubDate>Sat, 21 Nov 2026 00:00:00 GMT</pubDate></item>
   <item><title>[融资] Genesis AI 融资获英伟达、AMD 首次联投</title><link>https://www.qbitai.com/2026/11/510821.html</link><pubDate>Wed, 18 Nov 2026 00:00:00 GMT</pubDate></item>
   <item><title>[融资] 印度 Humyn Labs 完成 4700 万美元 A 轮融资，Accel 领投</title><link>https://techcrunch.com/2026/11/18/accel-backs-indias-humyn-labs-to-supply-training-data-needed-by-u-s-robotics-ai-developers/</link><pubDate>Wed, 18 Nov 2026 00:00:00 GMT</pubDate></item>
   <item><title>[赛事] TARS 团队获蚂蚁灵波首届具身大模型挑战赛冠军</title><link>https://www.qbitai.com/2026/11/510610.html</link><pubDate>Tue, 17 Nov 2026 00:00:00 GMT</pubDate></item>
@@ -9,7 +10,6 @@
   <item><title>[发布] 华为云发布具身世界模型 CloudRobo-WM1.2，计划 11 月 30 日开源</title><link>https://k.sina.cn/article_5953740931_162dee083067045pf8.html</link><pubDate>Mon, 16 Nov 2026 00:00:00 GMT</pubDate></item>
   <item><title>[合作] LG 电子与韩国机器人产业振兴院签约，共建人形机器人安全评价体系</title><link>https://www.lge.co.kr/story/newsroom/236241</link><pubDate>Mon, 16 Nov 2026 00:00:00 GMT</pubDate></item>
   <item><title>[榜单] CloudRobo-WM 以均值 88.98 列 RoboTwin 2.0 官方榜第一</title><link>https://robotwin-platform.github.io/leaderboard</link><pubDate>Sun, 15 Nov 2026 00:00:00 GMT</pubDate></item>
-  <item><title>[融资] 建筑机器人公司蔚建科技完成超亿元第五轮融资，财通资本投资</title><link>https://news.qq.com/rain/a/20261115A08BJ500</link><pubDate>Sun, 15 Nov 2026 00:00:00 GMT</pubDate></item>
   <item><title>[论文] One Prior, Two Dynamics: Repurposing Video Diffusion Transformers for Self-Supervised Latent Action Learning</title><link>https://fbddcz.github.io/Embodied-Shanhai-Atlas/paper-2611.26617.html</link><pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate></item>
   <item><title>[论文] AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control</title><link>https://fbddcz.github.io/Embodied-Shanhai-Atlas/paper-2611.26613.html</link><pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate></item>
   <item><title>[论文] A Tutorial on Complementarity-Based Contact Models for Robotics</title><link>https://fbddcz.github.io/Embodied-Shanhai-Atlas/paper-2611.26600.html</link><pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate></item>
