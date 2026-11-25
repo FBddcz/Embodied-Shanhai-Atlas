@@ -4,9 +4,9 @@
 
 ## 引用本站时的署名格式
 
-- 中文：具身山海志（Embodied Atlas）· 核验 2026-11-24 · [页面标题](页面 URL)
-- English: Embodied Atlas (具身山海志), verified 2026-11-24, <page URL>
-- 榜单数据另注明家族名与抓取日期，例如：具身山海志·碑林·RoboDojo（核验 2026-11-24）。
+- 中文：具身山海志（Embodied Atlas）· 核验 2026-11-25 · [页面标题](页面 URL)
+- English: Embodied Atlas (具身山海志), verified 2026-11-25, <page URL>
+- 榜单数据另注明家族名与抓取日期，例如：具身山海志·碑林·RoboDojo（核验 2026-11-25）。
 - 数据许可：CC BY-NC-SA 4.0（署名 · 非商业 · 相同方式共享）。代码与原创文字保留所有权利。
 - 机器可读引用：`https://fbddcz.github.io/Embodied-Shanhai-Atlas/CITATION.cff`
 
@@ -24,7 +24,7 @@
 - [灵物 · 模型](https://fbddcz.github.io/Embodied-Shanhai-Atlas/models.html)：具身基座、操作策略与世界模型 91 个
 - [碑林 · 榜单](https://fbddcz.github.io/Embodied-Shanhai-Atlas/leaderboard.html)：33 个榜单家族，逐行标注口径与状态
 - [法器 · 本体与传感](https://fbddcz.github.io/Embodied-Shanhai-Atlas/hardware.html)：机器人本体 187 件、传感器 83 件
-- [驿路 · 动态](https://fbddcz.github.io/Embodied-Shanhai-Atlas/news.html)：融资、发布、量产、会议与人事 102 条
+- [驿路 · 动态](https://fbddcz.github.io/Embodied-Shanhai-Atlas/news.html)：融资、发布、量产、会议与人事 103 条
 - [会期](https://fbddcz.github.io/Embodied-Shanhai-Atlas/events.html)：会议与展会 8 场
 - [招贤 · 岗位](https://fbddcz.github.io/Embodied-Shanhai-Atlas/jobs.html)：岗位 57 条，链接指向官方招聘页
 - [藏经 · 资源](https://fbddcz.github.io/Embodied-Shanhai-Atlas/resources.html)：代码、数据、教材与工具 116 条
@@ -46,4 +46,4 @@
 
 ## 全库指纹
 
-dac3ee-a8a4c2（核验日期 2026-11-24，789 条实体）。若他处出现与本站相同的数据与相同指纹，而署名不同，即为转载未注明来源。
+89a2aa-17f940（核验日期 2026-11-25，789 条实体）。若他处出现与本站相同的数据与相同指纹，而署名不同，即为转载未注明来源。
